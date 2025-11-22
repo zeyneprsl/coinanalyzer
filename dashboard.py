@@ -467,10 +467,116 @@ elif page == "Korelasyon Analizi":
                 ascending=False
             )
             
-            st.dataframe(
-                filtered_corr[['coin1', 'coin2', 'correlation', 'abs_correlation']],
-                use_container_width=True
-            )
+            # Pozitif ve Negatif korelasyonları ayır
+            positive_corr = filtered_corr[filtered_corr['correlation'] > 0].sort_values('correlation', ascending=False)
+            negative_corr = filtered_corr[filtered_corr['correlation'] < 0].sort_values('correlation', ascending=True)
+            
+            # Tab görünümü ile pozitif/negatif ayrımı
+            tab1, tab2, tab3 = st.tabs(["📊 Tümü", "📈 Pozitif Korelasyon", "📉 Negatif Korelasyon"])
+            
+            with tab1:
+                st.markdown("**Tüm Yüksek Korelasyonlu Çiftler**")
+                # Renk kodlu tablo
+                display_df = pd.DataFrame({
+                    'Coin 1': filtered_corr['coin1'],
+                    'Coin 2': filtered_corr['coin2'],
+                    'Korelasyon': filtered_corr['correlation'].apply(lambda x: f"{x:+.4f}"),
+                    'Mutlak Korelasyon': filtered_corr['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                    'İlişki Tipi': filtered_corr['correlation'].apply(
+                        lambda x: "🟢 Pozitif (Aynı Yön)" if x > 0 else "🔴 Negatif (Ters Yön)"
+                    ),
+                    'Açıklama': filtered_corr['correlation'].apply(
+                        lambda x: "Birlikte yükselir/düşer" if x > 0 else "Biri yükselirken diğeri düşer"
+                    )
+                })
+                st.dataframe(display_df, use_container_width=True, height=400)
+            
+            with tab2:
+                st.markdown("**📈 Pozitif Korelasyonlu Çiftler**")
+                st.info("💡 **Pozitif Korelasyon:** Coinler aynı yönde hareket eder. Biri yükselirse diğeri de yükselir, biri düşerse diğeri de düşer.")
+                
+                if len(positive_corr) > 0:
+                    pos_display = pd.DataFrame({
+                        'Coin 1': positive_corr['coin1'],
+                        'Coin 2': positive_corr['coin2'],
+                        'Korelasyon': positive_corr['correlation'].apply(lambda x: f"{x:+.4f}"),
+                        'Mutlak Korelasyon': positive_corr['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                        'Güç': positive_corr['correlation'].apply(
+                            lambda x: "🟢🟢🟢 Çok Güçlü" if x > 0.9 else "🟢🟢 Güçlü" if x > 0.8 else "🟢 Orta"
+                        ),
+                        'Açıklama': "Birlikte yükselir/düşer"
+                    })
+                    st.dataframe(pos_display, use_container_width=True, height=400)
+                    
+                    # Pozitif korelasyon grafiği
+                    fig_pos = go.Figure()
+                    fig_pos.add_trace(go.Bar(
+                        x=positive_corr['coin1'] + ' ↔ ' + positive_corr['coin2'],
+                        y=positive_corr['correlation'],
+                        marker_color='green',
+                        text=positive_corr['correlation'].round(3),
+                        textposition='outside',
+                        hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<br>Tip: Pozitif (Aynı Yön)<extra></extra>'
+                    ))
+                    fig_pos.update_layout(
+                        title="Pozitif Korelasyonlu Coin Çiftleri",
+                        xaxis_title="Coin Çifti",
+                        yaxis_title="Korelasyon Değeri",
+                        height=500,
+                        xaxis_tickangle=-45,
+                        yaxis_range=[0, 1]
+                    )
+                    st.plotly_chart(fig_pos, use_container_width=True)
+                else:
+                    st.warning("⚠️ Seçilen eşik için pozitif korelasyonlu çift bulunamadı.")
+            
+            with tab3:
+                st.markdown("**📉 Negatif Korelasyonlu Çiftler**")
+                st.info("💡 **Negatif Korelasyon:** Coinler ters yönde hareket eder. Biri yükselirse diğeri düşer, biri düşerse diğeri yükselir.")
+                
+                if len(negative_corr) > 0:
+                    neg_display = pd.DataFrame({
+                        'Coin 1': negative_corr['coin1'],
+                        'Coin 2': negative_corr['coin2'],
+                        'Korelasyon': negative_corr['correlation'].apply(lambda x: f"{x:+.4f}"),
+                        'Mutlak Korelasyon': negative_corr['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                        'Güç': negative_corr['correlation'].apply(
+                            lambda x: "🔴🔴🔴 Çok Güçlü" if x < -0.9 else "🔴🔴 Güçlü" if x < -0.8 else "🔴 Orta"
+                        ),
+                        'Açıklama': "Biri yükselirken diğeri düşer"
+                    })
+                    st.dataframe(neg_display, use_container_width=True, height=400)
+                    
+                    # Negatif korelasyon grafiği
+                    fig_neg = go.Figure()
+                    fig_neg.add_trace(go.Bar(
+                        x=negative_corr['coin1'] + ' ↔ ' + negative_corr['coin2'],
+                        y=negative_corr['correlation'],
+                        marker_color='red',
+                        text=negative_corr['correlation'].round(3),
+                        textposition='outside',
+                        hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<br>Tip: Negatif (Ters Yön)<extra></extra>'
+                    ))
+                    fig_neg.update_layout(
+                        title="Negatif Korelasyonlu Coin Çiftleri",
+                        xaxis_title="Coin Çifti",
+                        yaxis_title="Korelasyon Değeri",
+                        height=500,
+                        xaxis_tickangle=-45,
+                        yaxis_range=[-1, 0]
+                    )
+                    st.plotly_chart(fig_neg, use_container_width=True)
+                else:
+                    st.warning("⚠️ Seçilen eşik için negatif korelasyonlu çift bulunamadı.")
+            
+            # Özet istatistikler
+            st.markdown("---")
+            st.subheader("📊 Özet İstatistikler")
+            col1, col2, col3, col4 = st.columns(4)
+            col1.metric("Toplam Çift", len(filtered_corr))
+            col2.metric("📈 Pozitif", len(positive_corr), f"%{len(positive_corr)/len(filtered_corr)*100:.1f}" if len(filtered_corr) > 0 else "")
+            col3.metric("📉 Negatif", len(negative_corr), f"%{len(negative_corr)/len(filtered_corr)*100:.1f}" if len(filtered_corr) > 0 else "")
+            col4.metric("Ortalama", f"{filtered_corr['correlation'].mean():.3f}")
             
             # Grafik
             fig = go.Figure()
@@ -570,7 +676,7 @@ elif page == "Korelasyon Analizi":
                 fig.update_layout(height=600)
                 st.plotly_chart(fig, use_container_width=True)
                 
-                # Korelasyon tablosu
+                # Korelasyon tablosu - Pozitif/Negatif ayrımı ile
                 st.markdown("### 📋 Detaylı Korelasyon Tablosu")
                 
                 # Üst üçgen matrisi (duplicate'leri önlemek için)
@@ -589,14 +695,62 @@ elif page == "Korelasyon Analizi":
                 df_pairs = pd.DataFrame(correlation_pairs)
                 df_pairs = df_pairs.sort_values('Mutlak Korelasyon', ascending=False)
                 
-                # Tablo göster
-                st.dataframe(
-                    df_pairs,
-                    use_container_width=True,
-                    height=400
-                )
+                # Pozitif ve Negatif ayrımı
+                df_pairs_positive = df_pairs[df_pairs['Korelasyon'] > 0].copy()
+                df_pairs_negative = df_pairs[df_pairs['Korelasyon'] < 0].copy()
                 
-                # En yüksek korelasyonlu çiftler
+                # Tab görünümü
+                tab_all, tab_pos, tab_neg = st.tabs(["📊 Tümü", "📈 Pozitif", "📉 Negatif"])
+                
+                with tab_all:
+                    # Renk kodlu tablo
+                    display_all = pd.DataFrame({
+                        'Coin 1': df_pairs['Coin 1'],
+                        'Coin 2': df_pairs['Coin 2'],
+                        'Korelasyon': df_pairs['Korelasyon'].apply(lambda x: f"{x:+.4f}"),
+                        'Mutlak Korelasyon': df_pairs['Mutlak Korelasyon'].apply(lambda x: f"{x:.4f}"),
+                        'İlişki': df_pairs['Korelasyon'].apply(
+                            lambda x: "🟢 Pozitif" if x > 0 else "🔴 Negatif" if x < 0 else "⚪ Sıfır"
+                        ),
+                        'Açıklama': df_pairs['Korelasyon'].apply(
+                            lambda x: "Aynı yönde hareket" if x > 0 else "Ters yönde hareket" if x < 0 else "İlişki yok"
+                        )
+                    })
+                    st.dataframe(display_all, use_container_width=True, height=400)
+                
+                with tab_pos:
+                    st.markdown("**📈 Pozitif Korelasyonlu Çiftler (Aynı Yönde Hareket)**")
+                    if len(df_pairs_positive) > 0:
+                        display_pos = pd.DataFrame({
+                            'Coin 1': df_pairs_positive['Coin 1'],
+                            'Coin 2': df_pairs_positive['Coin 2'],
+                            'Korelasyon': df_pairs_positive['Korelasyon'].apply(lambda x: f"{x:+.4f}"),
+                            'Mutlak Korelasyon': df_pairs_positive['Mutlak Korelasyon'].apply(lambda x: f"{x:.4f}"),
+                            'Güç': df_pairs_positive['Korelasyon'].apply(
+                                lambda x: "🟢🟢🟢 Çok Güçlü" if x > 0.9 else "🟢🟢 Güçlü" if x > 0.8 else "🟢 Orta" if x > 0.6 else "🟢 Zayıf"
+                            )
+                        })
+                        st.dataframe(display_pos, use_container_width=True, height=400)
+                    else:
+                        st.info("Seçilen coinler arasında pozitif korelasyon bulunamadı.")
+                
+                with tab_neg:
+                    st.markdown("**📉 Negatif Korelasyonlu Çiftler (Ters Yönde Hareket)**")
+                    if len(df_pairs_negative) > 0:
+                        display_neg = pd.DataFrame({
+                            'Coin 1': df_pairs_negative['Coin 1'],
+                            'Coin 2': df_pairs_negative['Coin 2'],
+                            'Korelasyon': df_pairs_negative['Korelasyon'].apply(lambda x: f"{x:+.4f}"),
+                            'Mutlak Korelasyon': df_pairs_negative['Mutlak Korelasyon'].apply(lambda x: f"{x:.4f}"),
+                            'Güç': df_pairs_negative['Korelasyon'].apply(
+                                lambda x: "🔴🔴🔴 Çok Güçlü" if x < -0.9 else "🔴🔴 Güçlü" if x < -0.8 else "🔴 Orta" if x < -0.6 else "🔴 Zayıf"
+                            )
+                        })
+                        st.dataframe(display_neg, use_container_width=True, height=400)
+                    else:
+                        st.info("Seçilen coinler arasında negatif korelasyon bulunamadı.")
+                
+                # En yüksek korelasyonlu çiftler - Pozitif/Negatif ayrımı ile
                 st.markdown("### 🏆 En Yüksek Korelasyonlu Çiftler")
                 
                 threshold_multi = st.slider(
@@ -609,27 +763,61 @@ elif page == "Korelasyon Analizi":
                 )
                 
                 high_corr_pairs = df_pairs[df_pairs['Mutlak Korelasyon'] >= threshold_multi]
+                high_pos = high_corr_pairs[high_corr_pairs['Korelasyon'] > 0]
+                high_neg = high_corr_pairs[high_corr_pairs['Korelasyon'] < 0]
                 
                 if len(high_corr_pairs) > 0:
-                    # Grafik
+                    # Grafik - Pozitif ve Negatif birlikte
                     fig = go.Figure()
-                    fig.add_trace(go.Bar(
-                        x=high_corr_pairs['Coin 1'] + ' ↔ ' + high_corr_pairs['Coin 2'],
-                        y=high_corr_pairs['Korelasyon'],
-                        marker_color=high_corr_pairs['Korelasyon'],
-                        marker_colorscale='RdBu',
-                        text=high_corr_pairs['Korelasyon'].round(3),
-                        textposition='outside',
-                        hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<extra></extra>'
-                    ))
+                    
+                    if len(high_pos) > 0:
+                        fig.add_trace(go.Bar(
+                            x=high_pos['Coin 1'] + ' ↔ ' + high_pos['Coin 2'],
+                            y=high_pos['Korelasyon'],
+                            name='Pozitif Korelasyon',
+                            marker_color='green',
+                            text=high_pos['Korelasyon'].round(3),
+                            textposition='outside',
+                            hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<br>Tip: Pozitif (Aynı Yön)<extra></extra>'
+                        ))
+                    
+                    if len(high_neg) > 0:
+                        fig.add_trace(go.Bar(
+                            x=high_neg['Coin 1'] + ' ↔ ' + high_neg['Coin 2'],
+                            y=high_neg['Korelasyon'],
+                            name='Negatif Korelasyon',
+                            marker_color='red',
+                            text=high_neg['Korelasyon'].round(3),
+                            textposition='outside',
+                            hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<br>Tip: Negatif (Ters Yön)<extra></extra>'
+                        ))
+                    
                     fig.update_layout(
                         title=f"Yüksek Korelasyonlu Coin Çiftleri (Eşik: ≥{threshold_multi})",
                         xaxis_title="Coin Çifti",
-                        yaxis_title="Korelasyon",
+                        yaxis_title="Korelasyon Değeri",
                         height=500,
-                        xaxis_tickangle=-45
+                        xaxis_tickangle=-45,
+                        barmode='group',
+                        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
                     )
                     st.plotly_chart(fig, use_container_width=True)
+                    
+                    # Özet tablo
+                    st.markdown("#### 📊 Özet Tablo")
+                    summary_df = pd.DataFrame({
+                        'Coin 1': high_corr_pairs['Coin 1'],
+                        'Coin 2': high_corr_pairs['Coin 2'],
+                        'Korelasyon': high_corr_pairs['Korelasyon'].apply(lambda x: f"{x:+.4f}"),
+                        'Mutlak Korelasyon': high_corr_pairs['Mutlak Korelasyon'].apply(lambda x: f"{x:.4f}"),
+                        'Tip': high_corr_pairs['Korelasyon'].apply(
+                            lambda x: "🟢 Pozitif" if x > 0 else "🔴 Negatif"
+                        ),
+                        'Açıklama': high_corr_pairs['Korelasyon'].apply(
+                            lambda x: "Aynı yönde hareket" if x > 0 else "Ters yönde hareket"
+                        )
+                    })
+                    st.dataframe(summary_df, use_container_width=True, height=300)
                     
                     # Özet istatistikler
                     col1, col2, col3, col4 = st.columns(4)
