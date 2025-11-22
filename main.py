@@ -142,9 +142,18 @@ class ContinuousAnalyzer:
                     resample_interval='1min'
                 )
                 
-                # Sonuçları kaydet
-                self.price_volume_analyzer.save_analysis(coin_analyses_pv, 'price_volume_analysis.json')
-                self.price_volume_analyzer.save_sudden_analysis(sudden_analyses, 'sudden_price_volume_analysis.json')
+                # Sonuçları kaydet (None kontrolü ile)
+                if coin_analyses_pv:
+                    self.price_volume_analyzer.save_analysis(coin_analyses_pv, 'price_volume_analysis.json')
+                    print(f"✓ Fiyat-Volume analizi kaydedildi ({len(coin_analyses_pv)} coin)")
+                else:
+                    print("⚠️  Fiyat-Volume analizi sonucu boş!")
+                
+                if sudden_analyses:
+                    self.price_volume_analyzer.save_sudden_analysis(sudden_analyses, 'sudden_price_volume_analysis.json')
+                    print(f"✓ Ani değişim analizi kaydedildi ({len(sudden_analyses)} coin)")
+                else:
+                    print("⚠️  Ani değişim analizi sonucu boş!")
                 
                 print("✓ Fiyat-Volume analizi tamamlandı!")
             else:
