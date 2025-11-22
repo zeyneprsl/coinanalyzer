@@ -2,6 +2,7 @@ import requests
 import websocket
 import json
 import threading
+import time
 from collections import defaultdict
 from datetime import datetime
 
@@ -13,6 +14,9 @@ class BinanceWebSocket:
         self.price_data = defaultdict(list)
         self.price_volume_data = defaultdict(list)  # Fiyat ve volume birlikte
         self.ws_threads = []  # Her chunk için thread saklamak için
+        self.ws_apps = []  # WebSocket uygulamalarını sakla
+        self.running = False
+        self.reconnect_delay = 5  # Yeniden bağlanma gecikmesi (saniye)
 
     # ---------------- REST API ile USDT çiftlerini alma ----------------
     def get_usdt_pairs(self):
@@ -70,7 +74,8 @@ class BinanceWebSocket:
         print(f"WebSocket hatası: {error}")
 
     def on_close(self, ws, close_status_code, close_msg):
-        print("WebSocket kapandı")
+        print(f"WebSocket kapandı (kod: {close_status_code})")
+        # Yeniden bağlanma run_forever içinde otomatik yapılacak
 
     def on_open(self, ws):
         print("WebSocket açıldı")
@@ -80,8 +85,14 @@ class BinanceWebSocket:
         streams = [f"{pair.lower()}@ticker" for pair in pairs_chunk]
         return f"{self.stream_url}?streams={'/'.join(streams)}"
 
-    # ---------------- Streaming başlat ----------------
-    def start_streaming(self):
+    # ---------------- Streaming başlat ---------------- 
+    def start_streaming(self, auto_reconnect=True):
+        """WebSocket streaming'i başlat
+        
+        auto_reconnect: Otomatik yeniden bağlanma (varsayılan: True)
+        """
+        self.running = True
+        
         if not self.usdt_pairs:
             self.get_usdt_pairs()
 
@@ -99,11 +110,36 @@ class BinanceWebSocket:
                 on_close=self.on_close,
                 on_open=self.on_open
             )
+            
+            self.ws_apps.append(ws_app)
 
-            t = threading.Thread(target=ws_app.run_forever)
+            def run_with_reconnect(ws_app_instance, chunk_data):
+                """Yeniden bağlanma ile çalıştır"""
+                while self.running:
+                    try:
+                        ws_app_instance.run_forever()
+                    except Exception as e:
+                        if self.running:
+                            print(f"⚠️  WebSocket hatası (yeniden bağlanılıyor): {e}")
+                            time.sleep(self.reconnect_delay)
+                        else:
+                            break
+
+            t = threading.Thread(target=run_with_reconnect, args=(ws_app, chunk))
             t.daemon = True  # Program kapanınca thread'ler de kapanır
             t.start()
             self.ws_threads.append(t)
+    
+    def stop_streaming(self):
+        """WebSocket streaming'i durdur"""
+        self.running = False
+        for ws_app in self.ws_apps:
+            try:
+                ws_app.close()
+            except:
+                pass
+        self.ws_apps = []
+        self.ws_threads = []
 
     # ---------------- Fiyat verilerini alma ----------------
     def get_price_data(self):

@@ -6,6 +6,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
 import os
+import time
+from datetime import datetime
 
 # Sayfa yapılandırması
 st.set_page_config(
@@ -37,12 +39,47 @@ st.markdown("""
 # Başlık
 st.markdown('<h1 class="main-header">📊 Binance Coin Korelasyon Dashboard</h1>', unsafe_allow_html=True)
 
+# Otomatik yenileme ayarları
+st.sidebar.title("⚙️ Ayarlar")
+auto_refresh = st.sidebar.checkbox("🔄 Otomatik Yenileme", value=True)
+refresh_interval = st.sidebar.slider("Yenileme Aralığı (saniye)", min_value=10, max_value=300, value=60, step=10)
+
+# Son güncelleme zamanını göster
+if 'last_refresh' not in st.session_state:
+    st.session_state.last_refresh = datetime.now()
+
 # Sidebar - Menü
 st.sidebar.title("Menü")
 page = st.sidebar.selectbox(
     "Sayfa Seçin",
     ["Ana Sayfa", "Korelasyon Analizi", "Fiyat-Volume Analizi", "Ani Değişim Analizi"]
 )
+
+# Otomatik yenileme
+if auto_refresh:
+    # Son güncelleme zamanını göster
+    elapsed = (datetime.now() - st.session_state.last_refresh).total_seconds()
+    remaining = refresh_interval - elapsed
+    st.sidebar.info(f"⏱️ Son yenileme: {int(elapsed)}s önce\n🔄 Sonraki: {int(remaining)}s")
+    
+    # Belirtilen süre sonra yenile
+    if elapsed >= refresh_interval:
+        st.session_state.last_refresh = datetime.now()
+        st.rerun()
+    
+    # Otomatik yenileme için placeholder (her çalıştırmada kontrol edilir)
+    placeholder = st.sidebar.empty()
+    placeholder.markdown(f"⏳ {int(remaining)} saniye sonra otomatik yenilenecek...")
+    
+else:
+    # Manuel yenileme butonu
+    if st.sidebar.button("🔄 Şimdi Yenile"):
+        st.session_state.last_refresh = datetime.now()
+        st.rerun()
+    
+    # Son yenileme zamanını göster
+    elapsed = (datetime.now() - st.session_state.last_refresh).total_seconds()
+    st.sidebar.info(f"⏱️ Son yenileme: {int(elapsed)}s önce")
 
 # JSON dosyalarını yükleme fonksiyonu
 def load_json_file(filename):
