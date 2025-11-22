@@ -52,7 +52,7 @@ if 'last_refresh' not in st.session_state:
 st.sidebar.title("Menü")
 page = st.sidebar.selectbox(
     "Sayfa Seçin",
-    ["Ana Sayfa", "Korelasyon Analizi", "Fiyat-Volume Analizi", "Ani Değişim Analizi"]
+    ["Ana Sayfa", "Korelasyon Analizi", "Fiyat-Volume Analizi", "Ani Değişim Analizi", "Korelasyon Değişiklikleri"]
 )
 
 # Otomatik yenileme
@@ -839,6 +839,149 @@ elif page == "Ani Değişim Analizi":
             st.dataframe(df_sudden, use_container_width=True)
     else:
         st.warning("⚠️ sudden_price_volume_analysis.json dosyası bulunamadı. Önce analiz çalıştırın.")
+
+# ==================== KORELASYON DEĞİŞİKLİKLERİ ====================
+elif page == "Korelasyon Değişiklikleri":
+    st.header("📈 Korelasyon Değişiklik Takibi")
+    
+    st.info("""
+    **Bu sayfa, coinler arasındaki korelasyon değişikliklerini gösterir.**
+    - Her 5 dakikalık analizde önceki analizle karşılaştırma yapılır
+    - Yüksek korelasyonlu çiftlerin korelasyonu düşerse veya artarsa burada görünür
+    - Yeni yüksek korelasyonlu çiftler veya kaybolan yüksek korelasyonlar takip edilir
+    """)
+    
+    # Değişiklik geçmişini yükle
+    changes_data = load_json_file('correlation_changes_history.json')
+    
+    if changes_data and 'changes_history' in changes_data:
+        changes = changes_data['changes_history']
+        
+        if changes:
+            # Filtreleme seçenekleri
+            st.subheader("🔍 Filtreleme")
+            col1, col2, col3 = st.columns(3)
+            
+            with col1:
+                change_types = ['TÜMÜ'] + list(set([c.get('change_type', '') for c in changes]))
+                selected_type = st.selectbox("Değişiklik Tipi", change_types)
+            
+            with col2:
+                limit = st.slider("Gösterilecek Kayıt Sayısı", min_value=10, max_value=len(changes), value=min(50, len(changes)), step=10)
+            
+            with col3:
+                show_only_significant = st.checkbox("Sadece Önemli Değişiklikler", value=False)
+            
+            # Filtreleme
+            filtered_changes = changes
+            if selected_type != 'TÜMÜ':
+                filtered_changes = [c for c in filtered_changes if c.get('change_type') == selected_type]
+            
+            if show_only_significant:
+                filtered_changes = [
+                    c for c in filtered_changes 
+                    if c.get('change_type') in ['HIGH_TO_LOW', 'LOST_HIGH_CORRELATION', 'LOW_TO_HIGH', 'NEW_HIGH_CORRELATION']
+                ]
+            
+            # En yeni değişiklikler önce
+            filtered_changes = sorted(filtered_changes, key=lambda x: x.get('timestamp', ''), reverse=True)[:limit]
+            
+            # Özet metrikler
+            st.subheader("📊 Özet İstatistikler")
+            col1, col2, col3, col4 = st.columns(4)
+            
+            high_to_low = len([c for c in changes if c.get('change_type') == 'HIGH_TO_LOW'])
+            low_to_high = len([c for c in changes if c.get('change_type') == 'LOW_TO_HIGH'])
+            new_high = len([c for c in changes if c.get('change_type') == 'NEW_HIGH_CORRELATION'])
+            lost_high = len([c for c in changes if c.get('change_type') == 'LOST_HIGH_CORRELATION'])
+            
+            col1.metric("Yüksekten Düşüş", high_to_low)
+            col2.metric("Düşükten Yükseliş", low_to_high)
+            col3.metric("Yeni Yüksek Korelasyon", new_high)
+            col4.metric("Kaybolan Yüksek Korelasyon", lost_high)
+            
+            # Değişiklikler tablosu
+            st.subheader(f"📋 Değişiklik Geçmişi ({len(filtered_changes)} kayıt)")
+            
+            if filtered_changes:
+                # DataFrame oluştur
+                df_changes = pd.DataFrame(filtered_changes)
+                
+                # Renklendirme için
+                def get_status_color(status):
+                    if 'YÜKSEK' in status and 'DÜŞÜK' in status:
+                        return '🔴'
+                    elif 'DÜŞÜK' in status and 'YÜKSEK' in status:
+                        return '🟢'
+                    elif 'KAYBOLDU' in status:
+                        return '⚫'
+                    elif 'YENİ' in status:
+                        return '🆕'
+                    elif 'ARTTI' in status:
+                        return '📈'
+                    elif 'AZALDI' in status:
+                        return '📉'
+                    else:
+                        return '🔄'
+                
+                # Görüntüleme için DataFrame hazırla
+                display_df = pd.DataFrame({
+                    'Tarih/Saat': df_changes['timestamp'],
+                    'Coin 1': df_changes['coin1'],
+                    'Coin 2': df_changes['coin2'],
+                    'Önceki Korelasyon': df_changes['previous_correlation'].apply(lambda x: f"{x:.4f}" if x is not None else "Yok"),
+                    'Sonraki Korelasyon': df_changes['current_correlation'].apply(lambda x: f"{x:.4f}" if x is not None else "Yok"),
+                    'Değişim': df_changes['change_amount'].apply(lambda x: f"{x:+.4f}" if x is not None else "Yeni/Kayıp"),
+                    'Mutlak Değişim': df_changes['abs_change_amount'].apply(lambda x: f"{x:.4f}" if x is not None else "-"),
+                    'Durum': df_changes['status'],
+                    'Tip': df_changes['change_type']
+                })
+                
+                # Tabloyu göster
+                st.dataframe(display_df, use_container_width=True, height=600)
+                
+                # Detaylı görünüm
+                st.subheader("📊 Detaylı Görünüm")
+                
+                for idx, change in enumerate(filtered_changes[:20]):  # İlk 20'sini göster
+                    with st.expander(f"{change['timestamp']} - {change['coin1']} ↔ {change['coin2']} - {change['status']}"):
+                        col1, col2 = st.columns(2)
+                        
+                        with col1:
+                            st.markdown("**Önceki Durum:**")
+                            if change['previous_correlation'] is not None:
+                                st.metric("Korelasyon", f"{change['previous_correlation']:.4f}")
+                                st.metric("Mutlak Korelasyon", f"{change['previous_abs_correlation']:.4f}")
+                            else:
+                                st.info("Önceki veri yok (yeni çift)")
+                        
+                        with col2:
+                            st.markdown("**Sonraki Durum:**")
+                            if change['current_correlation'] is not None:
+                                st.metric("Korelasyon", f"{change['current_correlation']:.4f}")
+                                st.metric("Mutlak Korelasyon", f"{change['current_abs_correlation']:.4f}")
+                            else:
+                                st.warning("Korelasyon kayboldu")
+                        
+                        if change['change_amount'] is not None:
+                            st.markdown("**Değişim:**")
+                            st.metric("Değişim Miktarı", f"{change['change_amount']:+.4f}")
+                            st.metric("Mutlak Değişim", f"{change['abs_change_amount']:.4f}")
+                        
+                        st.markdown(f"**Değişiklik Tipi:** {change['change_type']}")
+            else:
+                st.warning("Seçilen filtrelerle eşleşen değişiklik bulunamadı.")
+        else:
+            st.warning("⚠️  Henüz korelasyon değişikliği kaydedilmemiş. Birkaç analiz döngüsü sonrası veriler görünecektir.")
+    else:
+        st.warning("⚠️  Korelasyon değişiklik geçmişi dosyası bulunamadı. Sistem çalışmaya başladığında otomatik oluşturulacak.")
+        st.info("""
+        **Nasıl Çalışır?**
+        1. `main.py` çalıştırıldığında her 5 dakikada bir analiz yapılır
+        2. Her analizde önceki analizle karşılaştırma yapılır
+        3. Önemli değişiklikler (≥%10) otomatik kaydedilir
+        4. Bu sayfada tüm değişiklikler görüntülenir
+        """)
 
 # Footer
 st.markdown("---")

@@ -4,6 +4,7 @@ from datetime import datetime
 from binance_websocket import BinanceWebSocket
 from correlation_analyzer import CorrelationAnalyzer
 from price_volume_analyzer import PriceVolumeAnalyzer
+from correlation_change_tracker import CorrelationChangeTracker
 
 class ContinuousAnalyzer:
     def __init__(self, analysis_interval_minutes=5):
@@ -21,6 +22,10 @@ class ContinuousAnalyzer:
         )
         self.price_volume_analyzer = PriceVolumeAnalyzer(
             correlation_threshold=0.5
+        )
+        self.change_tracker = CorrelationChangeTracker(
+            threshold_change=0.1,  # %10 değişim eşiği
+            min_correlation=0.7    # Minimum takip edilecek korelasyon
         )
         self.pairs = []
         self.analysis_thread = None
@@ -111,6 +116,13 @@ class ContinuousAnalyzer:
                         resample_interval='1min'
                     )
                 print("✓ Korelasyon analizi tamamlandı!")
+                
+                # Korelasyon değişikliklerini tespit et ve kaydet
+                if high_corr_realtime:
+                    print("\n[KORELASYON TAKİBİ] Değişiklikler kontrol ediliyor...")
+                    changes = self.change_tracker.analyze_and_save(high_corr_realtime)
+                    if changes:
+                        print(f"✓ {len(changes)} önemli değişiklik tespit edildi ve kaydedildi!")
             else:
                 print("⚠️  Fiyat verisi bulunamadı!")
             
