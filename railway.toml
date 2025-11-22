@@ -3,4 +3,5 @@ builder = "nixpacks"
 
 [deploy]
 startCommand = "python main.py"
+region = "eu-west"
 
