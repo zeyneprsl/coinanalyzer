@@ -1352,8 +1352,19 @@ elif page == "Korelasyon Değişiklikleri":
     - Yeni yüksek korelasyonlu çiftler veya kaybolan yüksek korelasyonlar takip edilir
     """)
     
-    # Değişiklik geçmişini yükle
+    # Değişiklik geçmişini yükle (dosya yoksa oluştur)
     changes_data = load_json_file('correlation_changes_history.json')
+    
+    # Dosya yoksa veya boşsa, boş bir yapı oluştur
+    if not changes_data:
+        changes_data = {'changes_history': [], 'last_correlations': {}}
+        # Dosyayı oluştur
+        try:
+            import json
+            with open('correlation_changes_history.json', 'w', encoding='utf-8') as f:
+                json.dump(changes_data, f, indent=2, ensure_ascii=False)
+        except:
+            pass
     
     if changes_data and 'changes_history' in changes_data:
         changes = changes_data['changes_history']
@@ -1474,15 +1485,15 @@ elif page == "Korelasyon Değişiklikleri":
                 st.warning("Seçilen filtrelerle eşleşen değişiklik bulunamadı.")
         else:
             st.warning("⚠️  Henüz korelasyon değişikliği kaydedilmemiş. Birkaç analiz döngüsü sonrası veriler görünecektir.")
-    else:
-        st.warning("⚠️  Korelasyon değişiklik geçmişi dosyası bulunamadı. Sistem çalışmaya başladığında otomatik oluşturulacak.")
-        st.info("""
-        **Nasıl Çalışır?**
-        1. `main.py` çalıştırıldığında her 5 dakikada bir analiz yapılır
-        2. Her analizde önceki analizle karşılaştırma yapılır
-        3. Önemli değişiklikler (≥%10) otomatik kaydedilir
-        4. Bu sayfada tüm değişiklikler görüntülenir
-        """)
+            
+            st.info("""
+            **Nasıl Çalışır?**
+            1. `main.py` çalıştırıldığında her **30 dakikada** bir analiz yapılır
+            2. Her analizde önceki analizle karşılaştırma yapılır
+            3. Önemli değişiklikler (≥%10) otomatik kaydedilir
+            4. Son **30 günlük** değişiklikler bu sayfada görüntülenir
+            5. Daha eski kayıtlar otomatik olarak temizlenir
+            """)
 
 # Footer
 st.markdown("---")

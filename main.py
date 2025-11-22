@@ -7,11 +7,11 @@ from price_volume_analyzer import PriceVolumeAnalyzer
 from correlation_change_tracker import CorrelationChangeTracker
 
 class ContinuousAnalyzer:
-    def __init__(self, analysis_interval_minutes=5):
+    def __init__(self, analysis_interval_minutes=30):
         """
         Sürekli çalışan analiz servisi
         
-        analysis_interval_minutes: Her kaç dakikada bir analiz yapılacak (varsayılan: 5)
+        analysis_interval_minutes: Her kaç dakikada bir analiz yapılacak (varsayılan: 30 dakika)
         """
         self.analysis_interval = analysis_interval_minutes * 60  # Saniyeye çevir
         self.running = False

@@ -222,9 +222,21 @@ class CorrelationChangeTracker:
             
             data['changes_history'].extend(changes)
             
-            # Son 1000 değişikliği tut (dosya boyutunu sınırla)
-            if len(data['changes_history']) > 1000:
-                data['changes_history'] = data['changes_history'][-1000:]
+            # Son 30 günlük değişiklikleri tut (dosya boyutunu sınırla)
+            from datetime import timedelta
+            cutoff_date = datetime.now() - timedelta(days=30)
+            
+            # 30 günden eski kayıtları filtrele
+            filtered_history = [
+                change for change in data['changes_history']
+                if datetime.strptime(change.get('timestamp', ''), "%Y-%m-%d %H:%M:%S") >= cutoff_date
+            ]
+            
+            data['changes_history'] = filtered_history
+            
+            # Eğer hala çok fazla kayıt varsa (güvenlik için), son 5000'ini tut
+            if len(data['changes_history']) > 5000:
+                data['changes_history'] = data['changes_history'][-5000:]
             
             # Dosyaya kaydet
             with open(self.history_file, 'w', encoding='utf-8') as f:
