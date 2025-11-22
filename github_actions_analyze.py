@@ -361,24 +361,26 @@ def main():
                     
                     # Volume verisi varsa ve geçerliyse korelasyonu kullan
                     has_volume_data = any(v != 0 for v in volumes) if volumes else False
-                        # Fiyat artışı olduğunda volume artışı analizi
-                        price_up_indices = [i for i, pc in enumerate(price_changes) if pc > 0]
-                        if price_up_indices:
-                            volume_changes_on_price_up = [volume_changes[i] for i in price_up_indices]
-                            volume_increase_count = sum(1 for vc in volume_changes_on_price_up if vc > 0)
-                            volume_increase_pct = (volume_increase_count / len(volume_changes_on_price_up)) * 100
-                            avg_volume_change_on_price_up = np.mean(volume_changes_on_price_up) * 100
-                        else:
-                            volume_increase_pct = 0
-                            avg_volume_change_on_price_up = 0
-                        
-                        pv_analyses[symbol] = {
-                            'correlation': float(correlation),
-                            'abs_correlation': float(abs(correlation)),
-                            'data_points': len(price_changes),
-                            'volume_increase_on_price_up_pct': float(volume_increase_pct),
-                            'avg_volume_change_on_price_up': float(avg_volume_change_on_price_up)
-                        }
+                    
+                    # Fiyat artışı olduğunda volume artışı analizi
+                    price_up_indices = [i for i, pc in enumerate(price_changes) if pc > 0]
+                    if price_up_indices and has_volume_data:
+                        volume_changes_on_price_up = [volume_changes[i] for i in price_up_indices]
+                        volume_increase_count = sum(1 for vc in volume_changes_on_price_up if vc > 0)
+                        volume_increase_pct = (volume_increase_count / len(volume_changes_on_price_up)) * 100 if volume_changes_on_price_up else 0
+                        avg_volume_change_on_price_up = np.mean(volume_changes_on_price_up) * 100 if volume_changes_on_price_up else 0
+                    else:
+                        volume_increase_pct = 0
+                        avg_volume_change_on_price_up = 0
+                    
+                    # Volume verisi yoksa bile coin'i kaydet (korelasyon 0 olacak)
+                    pv_analyses[symbol] = {
+                        'correlation': float(correlation) if has_volume_data else 0.0,
+                        'abs_correlation': float(abs(correlation)) if has_volume_data else 0.0,
+                        'data_points': len(price_changes),
+                        'volume_increase_on_price_up_pct': float(volume_increase_pct),
+                        'avg_volume_change_on_price_up': float(avg_volume_change_on_price_up)
+                    }
             
             if pv_analyses:
                 # Eski format ile uyumlu kaydet
