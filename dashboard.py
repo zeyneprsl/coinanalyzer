@@ -422,25 +422,47 @@ if page == "Ana Sayfa":
         
         pv_data = load_json_file('price_volume_analysis.json')
         if pv_data:
-            df_pv = pd.DataFrame([
-                {
-                    'coin': coin,
-                    'correlation': stats.get('correlation', 0),
-                    'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
-                    'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
-                }
-                for coin, stats in pv_data.items()
-            ])
+            # Yeni format kontrolü (CoinGecko - analyses array)
+            if isinstance(pv_data, dict) and 'analyses' in pv_data:
+                # Yeni format: CoinGecko'dan gelen basit format
+                df_pv = pd.DataFrame(pv_data['analyses'])
+                if 'symbol' in df_pv.columns:
+                    df_pv['coin'] = df_pv['symbol']
+                # CoinGecko formatında correlation yok, sadece price_change_24h var
+                df_pv['correlation'] = 0  # CoinGecko formatında correlation hesaplanmıyor
+                df_pv['volume_increase_on_price_up_pct'] = 0
+                df_pv['avg_volume_change_on_price_up'] = 0
+                df_pv['abs_correlation'] = 0
+            else:
+                # Eski format: correlation_analyzer'dan gelen format
+                df_pv = pd.DataFrame([
+                    {
+                        'coin': coin,
+                        'correlation': stats.get('correlation', 0),
+                        'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
+                        'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
+                    }
+                    for coin, stats in pv_data.items()
+                ])
             if 'abs_correlation' not in df_pv.columns:
                 df_pv['abs_correlation'] = df_pv['correlation'].abs()
-            df_pv_sorted = df_pv.sort_values('abs_correlation', ascending=False)
+            
+            # CoinGecko formatında farklı sıralama
+            if 'price_change_24h' in df_pv.columns:
+                df_pv_sorted = df_pv.sort_values('price_change_24h', ascending=False, key=abs)
+            else:
+                df_pv_sorted = df_pv.sort_values('abs_correlation', ascending=False)
             
             # Özet metrikler
             col1, col2, col3, col4 = st.columns(4)
             col1.metric("Toplam Coin", len(df_pv))
-            col2.metric("Güçlü Pozitif (>0.5)", len(df_pv[df_pv['correlation'] > 0.5]))
-            col3.metric("Ortalama Korelasyon", f"{df_pv['correlation'].mean():.3f}")
-            col4.metric("Ort. Vol Artışı %", f"{df_pv['volume_increase_on_price_up_pct'].mean():.1f}%")
+            if 'correlation' in df_pv.columns and df_pv['correlation'].sum() != 0:
+                col2.metric("Güçlü Pozitif (>0.5)", len(df_pv[df_pv['correlation'] > 0.5]))
+                col3.metric("Ortalama Korelasyon", f"{df_pv['correlation'].mean():.3f}")
+            else:
+                col2.metric("Pozitif Değişim", len(df_pv[df_pv.get('price_change_24h', 0) > 0]))
+                col3.metric("Ort. Fiyat Değişimi", f"{df_pv.get('price_change_24h', 0).mean():.2f}%")
+            col4.metric("Ort. Vol Artışı %", f"{df_pv.get('volume_increase_on_price_up_pct', 0).mean():.1f}%")
             
             # Top 20 grafik
             df_pv_top = df_pv_sorted.head(20)
