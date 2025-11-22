@@ -33,27 +33,33 @@ st.markdown("""
         border-radius: 0.5rem;
         margin: 0.5rem 0;
     }
+    .sidebar-settings {
+        margin-top: -1rem;
+    }
     </style>
 """, unsafe_allow_html=True)
 
-# Başlık
-st.markdown('<h1 class="main-header">📊 Binance Coin Korelasyon Dashboard</h1>', unsafe_allow_html=True)
-
-# Otomatik yenileme ayarları
+# Sidebar - Ayarlar (EN ÜSTTE)
+st.sidebar.markdown('<div class="sidebar-settings">', unsafe_allow_html=True)
 st.sidebar.title("⚙️ Ayarlar")
 auto_refresh = st.sidebar.checkbox("🔄 Otomatik Yenileme", value=True)
 refresh_interval = st.sidebar.slider("Yenileme Aralığı (saniye)", min_value=10, max_value=300, value=60, step=10)
+st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 # Son güncelleme zamanını göster
 if 'last_refresh' not in st.session_state:
     st.session_state.last_refresh = datetime.now()
 
 # Sidebar - Menü
-st.sidebar.title("Menü")
+st.sidebar.markdown("---")
+st.sidebar.title("📑 Menü")
 page = st.sidebar.selectbox(
     "Sayfa Seçin",
     ["Ana Sayfa", "Korelasyon Analizi", "Tüm Korelasyonlar", "Fiyat-Volume Analizi", "Ani Değişim Analizi", "Korelasyon Değişiklikleri"]
 )
+
+# Başlık
+st.markdown('<h1 class="main-header">📊 Binance Coin Korelasyon Dashboard</h1>', unsafe_allow_html=True)
 
 # Otomatik yenileme
 if auto_refresh:
