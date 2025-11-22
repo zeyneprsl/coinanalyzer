@@ -216,6 +216,44 @@ class ContinuousAnalyzer:
     def push_to_github(self):
         """JSON ve CSV dosyalarını GitHub'a otomatik pushla (Railway/Render için)"""
         try:
+            # GitHub token kontrolü
+            github_token = os.getenv('GITHUB_TOKEN')
+            if not github_token:
+                print("⚠️  GITHUB_TOKEN bulunamadı - GitHub push atlanıyor")
+                print("💡 Railway/Render'da GITHUB_TOKEN environment variable'ı ekleyin")
+                return False
+            
+            # Git config ayarları (Railway/Render için)
+            subprocess.run(
+                ['git', 'config', '--global', 'user.name', 'Railway Bot'],
+                cwd=os.getcwd(),
+                capture_output=True
+            )
+            subprocess.run(
+                ['git', 'config', '--global', 'user.email', 'railway@railway.app'],
+                cwd=os.getcwd(),
+                capture_output=True
+            )
+            
+            # Remote URL'i token ile güncelle
+            repo_url = subprocess.run(
+                ['git', 'config', '--get', 'remote.origin.url'],
+                cwd=os.getcwd(),
+                capture_output=True,
+                text=True
+            ).stdout.strip()
+            
+            if repo_url and 'github.com' in repo_url:
+                # HTTPS URL'ini token ile güncelle
+                if repo_url.startswith('https://'):
+                    # https://github.com/user/repo.git -> https://token@github.com/user/repo.git
+                    repo_url = repo_url.replace('https://', f'https://{github_token}@')
+                    subprocess.run(
+                        ['git', 'remote', 'set-url', 'origin', repo_url],
+                        cwd=os.getcwd(),
+                        capture_output=True
+                    )
+            
             # JSON ve CSV dosyalarını kontrol et
             json_files = [
                 'realtime_correlations.json',
@@ -275,12 +313,12 @@ class ContinuousAnalyzer:
                 return True
             else:
                 print(f"⚠️  Git push hatası: {result.stderr}")
-                print("💡 İpucu: Railway/Render'da GITHUB_TOKEN environment variable'ı ayarlayın")
                 return False
                 
         except Exception as e:
             print(f"⚠️  GitHub push hatası: {e}")
-            print("💡 İpucu: Railway/Render'da git yapılandırması kontrol edin")
+            import traceback
+            traceback.print_exc()
             return False
     
     def analysis_loop(self):
