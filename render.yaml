@@ -3,14 +3,12 @@ services:
   - type: worker
     name: coinanalyzer-worker
     env: python
-    buildCommand: |
-      python -m pip install --upgrade pip
-      pip install -r requirements.txt
+    # buildCommand belirtilmezse Render otomatik olarak pip install -r requirements.txt çalıştırır
+    # buildCommand: pip install -r requirements.txt
     startCommand: python main.py
-    pythonVersion: "3.11"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.11
       - key: RENDER
         value: true
       # GitHub token ekleyin (otomatik push için)
