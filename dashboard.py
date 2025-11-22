@@ -241,18 +241,27 @@ if page == "Ana Sayfa":
         st.markdown("---")
         st.subheader("🗺️ Korelasyon Matrisi Önizleme")
         
+        st.info("""
+        **Veri Kaynağı Açıklaması:**
+        - **Geçmiş Veriler**: Binance REST API'den çekilen geçmiş fiyat verileriyle yapılan korelasyon analizi (1 saatlik aralıklarla, 200 veri noktası)
+        - **Anlık Veriler**: WebSocket üzerinden gerçek zamanlı olarak toplanan verilerle yapılan korelasyon analizi (her 5 dakikada bir güncellenir)
+        """)
+        
         # Veri kaynağı seçimi
         data_source = st.radio(
-            "Veri Kaynağı",
+            "📊 Veri Kaynağı Seçin",
             ["Geçmiş Veriler", "Anlık Veriler"],
             horizontal=True,
-            key="home_page_source"
+            key="home_page_source",
+            help="Geçmiş Veriler: REST API'den çekilen geçmiş veriler | Anlık Veriler: WebSocket'ten toplanan gerçek zamanlı veriler"
         )
         
         if data_source == "Geçmiş Veriler":
             corr_matrix_file = "historical_correlation_matrix.csv"
+            st.caption("💡 Geçmiş Veriler: Binance REST API'den çekilen 1 saatlik aralıklarla 200 veri noktası kullanılarak hesaplanan korelasyonlar")
         else:
             corr_matrix_file = "realtime_correlation_matrix.csv"
+            st.caption("💡 Anlık Veriler: WebSocket üzerinden gerçek zamanlı olarak toplanan verilerle hesaplanan korelasyonlar (her 5 dakikada bir güncellenir)")
         
         corr_matrix = load_csv_file(corr_matrix_file)
         
