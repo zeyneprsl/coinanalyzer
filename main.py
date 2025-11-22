@@ -45,10 +45,23 @@ class ContinuousAnalyzer:
         
         # USDT çiftlerini al
         print("\n[BAŞLATMA] USDT çiftleri alınıyor...")
-        self.pairs = self.ws.get_usdt_pairs()
-        
-        if not self.pairs:
-            print("❌ USDT çifti bulunamadı!")
+        try:
+            self.pairs = self.ws.get_usdt_pairs()
+            
+            if not self.pairs:
+                print("❌ USDT çifti bulunamadı!")
+                print("⚠️  Binance API'ye erişim sorunu olabilir. 30 saniye sonra tekrar denenecek...")
+                import time
+                time.sleep(30)
+                # Tekrar dene
+                self.pairs = self.ws.get_usdt_pairs()
+                if not self.pairs:
+                    print("❌ İkinci denemede de USDT çifti bulunamadı!")
+                    return False
+        except Exception as e:
+            print(f"❌ USDT çiftleri alınırken hata: {e}")
+            import traceback
+            traceback.print_exc()
             return False
         
         # Coin sayısını sınırla (performans için)
