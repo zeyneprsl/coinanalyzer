@@ -1,0 +1,11 @@
+# NOT: Netlify Streamlit uygulamalarını doğrudan desteklemez
+# Bu dosya referans amaçlıdır. Streamlit Cloud kullanmanız önerilir.
+
+[build]
+  # Netlify Python runtime desteklemediği için bu çalışmayabilir
+  command = "echo 'Streamlit uygulamaları için Streamlit Cloud kullanın: https://share.streamlit.io'"
+  publish = "."
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
