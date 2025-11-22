@@ -1347,9 +1347,10 @@ elif page == "Korelasyon Değişiklikleri":
     
     st.info("""
     **Bu sayfa, coinler arasındaki korelasyon değişikliklerini gösterir.**
-    - Her 5 dakikalık analizde önceki analizle karşılaştırma yapılır
+    - Her **30 dakikalık** analizde önceki analizle karşılaştırma yapılır
     - Yüksek korelasyonlu çiftlerin korelasyonu düşerse veya artarsa burada görünür
     - Yeni yüksek korelasyonlu çiftler veya kaybolan yüksek korelasyonlar takip edilir
+    - Son **30 günlük** değişiklikler saklanır ve gösterilir (daha eski kayıtlar otomatik temizlenir)
     """)
     
     # Değişiklik geçmişini yükle (dosya yoksa oluştur)
