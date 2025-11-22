@@ -6,6 +6,9 @@ on:
     - cron: '*/30 * * * *'
   workflow_dispatch: # Manuel çalıştırma için
 
+permissions:
+  contents: write  # JSON dosyalarını pushlamak için
+
 jobs:
   analyze:
     runs-on: ubuntu-latest
@@ -92,7 +95,11 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add *.json *.csv || true
-        git diff --staged --quiet || git commit -m "Analiz sonuçları güncellendi - $(date +'%Y-%m-%d %H:%M:%S')"
-        git push origin main || echo "Push başarısız veya değişiklik yok"
+        git add *.json *.csv 2>/dev/null || echo "Dosya bulunamadı veya zaten ekli"
+        if git diff --staged --quiet; then
+          echo "Değişiklik yok, commit yapılmayacak"
+        else
+          git commit -m "Analiz sonuçları güncellendi - $(date +'%Y-%m-%d %H:%M:%S')" || echo "Commit başarısız"
+          git push origin main || echo "Push başarısız"
+        fi
 
