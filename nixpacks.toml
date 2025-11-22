@@ -2,8 +2,14 @@
 nixPkgs = ["python311"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = [
+  "python --version",
+  "pip install -r requirements.txt"
+]
 
 [start]
 cmd = "python main.py"
+
+[variables]
+PYTHON_VERSION = "3.11"
 
