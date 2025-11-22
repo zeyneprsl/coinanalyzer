@@ -290,9 +290,13 @@ def main():
         print(f'  [{i}/{max_coins_for_history}] {symbol} ({coin_id}) verisi çekiliyor...', end=' ')
         data = fetch_historical_single(coin_id, days=7)  # Son 7 gün, günlük
         if data and len(data['prices']) > 0:
+            # Volume verisi kontrolü
+            volumes_count = len(data.get('volumes', []))
+            has_volume = any(v > 0 for v in data.get('volumes', [])) if volumes_count > 0 else False
+            vol_status = '✓Vol' if has_volume else '✗Vol'
             historical_data[symbol] = data
             successful += 1
-            print(f'✓ ({len(data["prices"])} veri)')
+            print(f'✓ ({len(data["prices"])} fiyat, {volumes_count} volume) {vol_status}')
         else:
             print('✗')
     
