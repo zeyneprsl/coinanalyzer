@@ -190,9 +190,15 @@ class ContinuousAnalyzer:
             print(f"{'='*80}\n")
             
         except Exception as e:
-            print(f"\n❌ Analiz hatası: {e}")
+            print(f"\n❌ Analiz hatası: {type(e).__name__}: {e}")
+            # Railway log rate limit için traceback'i sadece önemli hatalarda göster
             import traceback
-            traceback.print_exc()
+            error_trace = traceback.format_exc()
+            # Sadece ilk 500 karakteri göster (log rate limit için)
+            if len(error_trace) > 500:
+                print(error_trace[:500] + "...")
+            else:
+                print(error_trace)
     
     def clean_old_data(self, keep_hours=1):
         """Eski verileri temizle (son N saatlik veriyi tut)"""
@@ -355,9 +361,14 @@ class ContinuousAnalyzer:
                 self.stop()
                 break
             except Exception as e:
-                print(f"\n❌ Döngü hatası: {e}")
+                print(f"\n❌ Döngü hatası: {type(e).__name__}: {e}")
+                # Railway log rate limit için traceback'i kısalt
                 import traceback
-                traceback.print_exc()
+                error_trace = traceback.format_exc()
+                if len(error_trace) > 300:
+                    print(error_trace[:300] + "...")
+                else:
+                    print(error_trace)
                 print("⏳ 30 saniye sonra tekrar denenecek...")
                 time.sleep(30)
     
