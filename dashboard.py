@@ -1412,6 +1412,42 @@ elif page == "Fiyat-Volume Analizi":
         # Tablo
         st.subheader("📊 Detaylı Sonuçlar")
         st.dataframe(filtered_pv, use_container_width=True)
+        
+        st.markdown("---")
+        st.markdown("""
+        ### 📋 Sütun Açıklamaları
+        
+        **coin**: Coin çifti (örn: BTCUSDT, ETHUSDT)
+        
+        **correlation**: Fiyat ve volume değişimleri arasındaki korelasyon katsayısı
+        - **+1.0**: Mükemmel pozitif korelasyon (fiyat arttıkça volume da artar)
+        - **0.0**: Korelasyon yok (fiyat ve volume bağımsız hareket eder)
+        - **-1.0**: Mükemmel negatif korelasyon (fiyat arttıkça volume azalır)
+        - **0.5-1.0**: Güçlü pozitif ilişki (iyi alım-satım ilgisi)
+        - **-0.5 ile -1.0**: Güçlü negatif ilişki (ters yönlü hareket)
+        
+        **abs_correlation**: Korelasyonun mutlak değeri (ilişkinin gücü, yönü önemli değil)
+        - **0.7+**: Çok güçlü ilişki
+        - **0.5-0.7**: Orta-güçlü ilişki
+        - **0.3-0.5**: Zayıf ilişki
+        - **0.0-0.3**: Çok zayıf ilişki
+        
+        **data_points**: Analizde kullanılan veri noktası sayısı
+        - Daha fazla veri noktası = Daha güvenilir sonuçlar
+        - Genellikle 7 günlük günlük veri kullanılır (7 veri noktası)
+        
+        **volume_increase_on_price_up_pct**: Fiyat artışı olduğunda volume'un da arttığı durumların yüzdesi
+        - **%75+**: Fiyat artışlarının çoğunda volume da artıyor (güçlü alım ilgisi)
+        - **%50-75**: Fiyat artışlarının yarısından fazlasında volume artıyor
+        - **%25-50**: Fiyat artışlarının az bir kısmında volume artıyor
+        - **%0-25**: Fiyat artışlarında volume genelde artmıyor
+        
+        **avg_volume_change_on_price_up**: Fiyat artışı olduğunda ortalama volume değişimi (%)
+        - **Pozitif değer**: Fiyat arttığında volume ortalama olarak artıyor
+        - **Negatif değer**: Fiyat arttığında volume ortalama olarak azalıyor
+        - **Yüksek pozitif**: Güçlü alım ilgisi (fiyat artışı volume artışıyla destekleniyor)
+        - **Düşük/Negatif**: Zayıf alım ilgisi veya manipülasyon şüphesi
+        """)
     else:
         st.warning("⚠️ price_volume_analysis.json dosyası bulunamadı. Önce analiz çalıştırın.")
 
