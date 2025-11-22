@@ -28,6 +28,7 @@ jobs:
         
     - name: Run analysis
       run: |
+        echo "CoinGecko API kullanılıyor..."
         python github_actions_analyze.py
         
     - name: Commit and push results
