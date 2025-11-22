@@ -20,22 +20,36 @@ st.set_page_config(
 # CSS stilleri
 st.markdown("""
     <style>
+    /* Sayfa üst boşluğunu azalt */
+    .main .block-container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
     .main-header {
         font-size: 3rem;
         font-weight: bold;
         text-align: center;
         color: #1f77b4;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+        margin-top: -0.5rem;
     }
+    
     .metric-card {
         background-color: #f0f2f6;
         padding: 1rem;
         border-radius: 0.5rem;
         margin: 0.5rem 0;
     }
+    
     .sidebar-settings {
         margin-top: -1rem;
     }
+    
+    /* Streamlit'in varsayılan üst boşluğunu azalt */
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
     </style>
 """, unsafe_allow_html=True)
 
