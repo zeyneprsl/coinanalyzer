@@ -10,7 +10,7 @@ import json
 from datetime import datetime, timedelta
 import time
 
-# En popüler 15 coin (rate limit için azaltıldı)
+# Tüm popüler coinler (30 coin)
 COIN_IDS = {
     'BTCUSDT': 'bitcoin',
     'ETHUSDT': 'ethereum',
@@ -26,7 +26,22 @@ COIN_IDS = {
     'MATICUSDT': 'matic-network',
     'UNIUSDT': 'uniswap',
     'ATOMUSDT': 'cosmos',
-    'ETCUSDT': 'ethereum-classic'
+    'ETCUSDT': 'ethereum-classic',
+    'FILUSDT': 'filecoin',
+    'TRXUSDT': 'tron',
+    'XLMUSDT': 'stellar',
+    'ALGOUSDT': 'algorand',
+    'VETUSDT': 'vechain',
+    'AAVEUSDT': 'aave',
+    'MKRUSDT': 'maker',
+    'COMPUSDT': 'compound-governance-token',
+    'SANDUSDT': 'the-sandbox',
+    'MANAUSDT': 'decentraland',
+    'AXSUSDT': 'axie-infinity',
+    'THETAUSDT': 'theta-token',
+    'EOSUSDT': 'eos',
+    'NEARUSDT': 'near',
+    'FLOWUSDT': 'flow'
 }
 
 def fetch_current_prices_batch(coin_ids_list):
@@ -73,7 +88,8 @@ def fetch_historical_single(coin_id, days=7):
         }
         
         # Rate limit için uzun bekleme (CoinGecko: 5-15 req/min)
-        time.sleep(8)  # Güvenli bekleme
+        # 30 coin için: 30 * 6 saniye = 3 dakika (güvenli)
+        time.sleep(6)  # Her istek arasında 6 saniye
         
         response = requests.get(url, params=params, timeout=20)
         
@@ -187,7 +203,8 @@ def main():
     
     print(f'\n{len(popular_coins)} coin için analiz yapılıyor...')
     print('📡 CoinGecko API kullanılıyor (Rate limit: 5-15 req/min)')
-    print('⏱️  Her istek arasında 8 saniye bekleniyor...\n')
+    print('⏱️  Her istek arasında 6 saniye bekleniyor...')
+    print(f'⏱️  Tahmini süre: ~{len(popular_coins) * 6 / 60:.1f} dakika\n')
     
     # 1. Geçmiş veri çek ve korelasyon analizi
     print('[1/2] Geçmiş veri analizi yapılıyor (CoinGecko)...')
