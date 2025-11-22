@@ -30,62 +30,73 @@ jobs:
       run: |
         python -c "
         import time
-        import threading
+        import requests
         from datetime import datetime
-        from binance_websocket import BinanceWebSocket
         from correlation_analyzer import CorrelationAnalyzer
         from price_volume_analyzer import PriceVolumeAnalyzer
-        from correlation_change_tracker import CorrelationChangeTracker
         
-        # Hızlı analiz (tek seferlik)
         print('Analiz başlatılıyor...')
         
-        ws = BinanceWebSocket()
-        pairs = ws.get_usdt_pairs()
-        if not pairs:
-            print('USDT çiftleri bulunamadı!')
-            exit(1)
+        # Binance API'den direkt REST API ile veri çek (WebSocket yerine)
+        # Bu yöntem bölge kısıtlamasından daha az etkilenir
+        print('Binance API\'den veri çekiliyor...')
         
-        # İlk 50 coin ile sınırla (hız için)
-        pairs = pairs[:50]
+        # Popüler coinler (önceden tanımlı)
+        popular_coins = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'SOLUSDT', 'ADAUSDT', 
+                         'XRPUSDT', 'DOGEUSDT', 'DOTUSDT', 'LINKUSDT', 'LTCUSDT',
+                         'AVAXUSDT', 'MATICUSDT', 'UNIUSDT', 'ATOMUSDT', 'ETCUSDT',
+                         'FILUSDT', 'TRXUSDT', 'XLMUSDT', 'ALGOUSDT', 'VETUSDT']
         
-        # WebSocket başlat
-        ws.start_streaming()
-        time.sleep(60)  # 1 dakika veri topla
+        # REST API ile geçmiş veri çek (bölge kısıtlaması yok)
+        analyzer = CorrelationAnalyzer()
         
-        # Analiz yap
-        price_data = ws.get_price_data()
-        price_volume_data = ws.get_price_volume_data()
+        print(f'{len(popular_coins)} coin için geçmiş veri analizi yapılıyor...')
         
-        if price_data:
-            analyzer = CorrelationAnalyzer()
-            correlation_matrix, high_corr, coin_analyses = analyzer.analyze_realtime_data(
-                price_data=price_data,
-                use_returns=True,
-                resample_interval='1min'
-            )
+        # Geçmiş veri analizi (REST API - bölge kısıtlaması yok)
+        correlation_matrix, high_corr, coin_analyses = analyzer.analyze_historical_data(
+            symbols=popular_coins,
+            interval='1h',
+            limit=200,
+            use_returns=True,
+            resample_interval='5min'
+        )
+        
+        if correlation_matrix is not None:
             analyzer.save_correlations(high_corr, 'realtime_correlations.json')
             analyzer.save_coin_analyses(coin_analyses, 'realtime_coin_correlations.json')
             analyzer.save_correlation_matrix(correlation_matrix, 'realtime_correlation_matrix.csv')
+            print('✓ Korelasyon analizi kaydedildi!')
+        
+        # Fiyat-Volume analizi için REST API kullan
+        print('Fiyat-Volume analizi yapılıyor...')
+        pv_analyzer = PriceVolumeAnalyzer()
+        
+        # REST API ile fiyat-volume verisi topla
+        price_volume_data = {}
+        for symbol in popular_coins[:20]:  # İlk 20 coin
+            try:
+                url = f'https://api.binance.com/api/v3/ticker/24hr?symbol={symbol}'
+                response = requests.get(url, timeout=5)
+                if response.status_code == 200:
+                    data = response.json()
+                    price_volume_data[symbol] = [{
+                        'timestamp': datetime.now(),
+                        'price': float(data['lastPrice']),
+                        'volume': float(data['volume']),
+                        'price_change_percent': float(data['priceChangePercent'])
+                    }]
+            except:
+                continue
         
         if price_volume_data:
-            pv_analyzer = PriceVolumeAnalyzer()
             coin_analyses_pv = pv_analyzer.analyze_price_volume_relationship(
                 price_volume_data=price_volume_data,
                 resample_interval='1min'
             )
             if coin_analyses_pv:
                 pv_analyzer.save_analysis(coin_analyses_pv, 'price_volume_analysis.json')
-            
-            sudden_analyses = pv_analyzer.analyze_sudden_price_changes(
-                price_volume_data=price_volume_data,
-                thresholds=[1.0, 2.0, 5.0, 10.0],
-                resample_interval='1min'
-            )
-            if sudden_analyses:
-                pv_analyzer.save_sudden_analysis(sudden_analyses, 'sudden_price_volume_analysis.json')
+                print('✓ Fiyat-Volume analizi kaydedildi!')
         
-        ws.stop_streaming()
         print('Analiz tamamlandı!')
         "
         
