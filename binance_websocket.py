@@ -24,16 +24,50 @@ class BinanceWebSocket:
         print("USDT çiftleri alınıyor...")
         try:
             url = f"{self.base_url}/exchangeInfo"
-            response = requests.get(url)
+            response = requests.get(url, timeout=10)
+            
+            # HTTP status kontrolü
+            if response.status_code != 200:
+                print(f"⚠️  Binance API hatası: HTTP {response.status_code}")
+                print(f"Response: {response.text[:200]}")
+                return []
+            
             data = response.json()
+            
+            # Response format kontrolü
+            if 'symbols' not in data:
+                print(f"⚠️  Binance API response'unda 'symbols' bulunamadı!")
+                print(f"Response keys: {list(data.keys())}")
+                print(f"Response (ilk 500 karakter): {str(data)[:500]}")
+                return []
+            
             self.usdt_pairs = []
             for symbol in data['symbols']:
-                if symbol['symbol'].endswith('USDT') and symbol['status'] == 'TRADING':
-                    self.usdt_pairs.append(symbol['symbol'])
-            print(f"Toplam {len(self.usdt_pairs)} USDT çifti bulundu")
+                if isinstance(symbol, dict) and 'symbol' in symbol:
+                    if symbol['symbol'].endswith('USDT') and symbol.get('status') == 'TRADING':
+                        self.usdt_pairs.append(symbol['symbol'])
+            
+            if len(self.usdt_pairs) == 0:
+                print("⚠️  Hiç USDT çifti bulunamadı!")
+                return []
+            
+            print(f"✓ Toplam {len(self.usdt_pairs)} USDT çifti bulundu")
             return self.usdt_pairs
+            
+        except requests.exceptions.Timeout:
+            print("⚠️  Binance API'ye bağlanma zaman aşımı!")
+            return []
+        except requests.exceptions.RequestException as e:
+            print(f"⚠️  Binance API bağlantı hatası: {e}")
+            return []
+        except KeyError as e:
+            print(f"⚠️  Response format hatası: 'symbols' key'i bulunamadı - {e}")
+            print(f"Response (ilk 500 karakter): {str(data)[:500]}")
+            return []
         except Exception as e:
-            print(f"Hata: {e}")
+            print(f"⚠️  Beklenmeyen hata: {e}")
+            import traceback
+            traceback.print_exc()
             return []
 
     # ---------------- WebSocket eventleri ----------------
