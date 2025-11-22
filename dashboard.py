@@ -1253,6 +1253,26 @@ elif page == "Ani Değişim Analizi":
     
     sudden_data = load_json_file('sudden_price_volume_analysis.json')
     
+    if not sudden_data:
+        st.warning("⚠️ sudden_price_volume_analysis.json dosyası bulunamadı.")
+        st.info("""
+        **Bu analiz için `main.py` çalıştırılmalıdır.**
+        
+        **Nasıl Çalışır?**
+        1. Terminal'de `python main.py` komutunu çalıştırın
+        2. Sistem otomatik olarak WebSocket'ten veri toplamaya başlar
+        3. Her 30 dakikada bir analiz yapılır ve dosyalar güncellenir
+        4. Bu sayfada ani fiyat değişimlerindeki volume davranışlarını görüntüleyebilirsiniz
+        
+        **Ani Değişim Analizi Nedir?**
+        - Ani fiyat değişimlerinde (spike) volume'un nasıl davrandığını inceler
+        - %1, %2, %5, %10 eşiklerinde analiz yapılır
+        - Hangi coinlerde ani değişimlerde volume artışı olduğunu gösterir
+        
+        **Not:** İlk analiz için yeterli veri toplanması gereklidir (yaklaşık 30 dakika).
+        """)
+        st.stop()
+    
     if sudden_data:
         # Eşik seçimi
         thresholds = set()
