@@ -52,7 +52,7 @@ if 'last_refresh' not in st.session_state:
 st.sidebar.title("Menü")
 page = st.sidebar.selectbox(
     "Sayfa Seçin",
-    ["Ana Sayfa", "Korelasyon Analizi", "Fiyat-Volume Analizi", "Ani Değişim Analizi", "Korelasyon Değişiklikleri"]
+    ["Ana Sayfa", "Korelasyon Analizi", "Tüm Korelasyonlar", "Fiyat-Volume Analizi", "Ani Değişim Analizi", "Korelasyon Değişiklikleri"]
 )
 
 # Otomatik yenileme
@@ -117,18 +117,39 @@ if page == "Ana Sayfa":
     
     st.markdown("---")
     
-    col1, col2, col3, col4 = st.columns(4)
-    
-    # Metrikler
+    # Metrikler - Coin ve analiz bilgileri
     correlations = load_json_file('historical_correlations.json') or load_json_file('realtime_correlations.json')
+    corr_matrix_hist = load_csv_file('historical_correlation_matrix.csv')
+    corr_matrix_realtime = load_csv_file('realtime_correlation_matrix.csv')
     
-    if correlations:
+    if correlations or corr_matrix_hist is not None or corr_matrix_realtime is not None:
         col1, col2, col3, col4 = st.columns(4)
-        high_corr = [c for c in correlations if abs(c.get('correlation', 0)) > 0.7]
-        col1.metric("Toplam Korelasyon", len(correlations))
-        col2.metric("Yüksek Korelasyon", len(high_corr))
-        col3.metric("Ortalama Korelasyon", f"{np.mean([abs(c.get('correlation', 0)) for c in correlations]):.3f}")
-        col4.metric("Maksimum Korelasyon", f"{max([abs(c.get('correlation', 0)) for c in correlations]):.3f}")
+        
+        # Toplam coin sayısı
+        if corr_matrix_hist is not None:
+            total_coins = len(corr_matrix_hist.columns)
+        elif corr_matrix_realtime is not None:
+            total_coins = len(corr_matrix_realtime.columns)
+        else:
+            # Korelasyonlardan coin sayısını çıkar
+            unique_coins = set()
+            for corr in correlations:
+                unique_coins.add(corr.get('coin1', ''))
+                unique_coins.add(corr.get('coin2', ''))
+            total_coins = len(unique_coins)
+        
+        # Toplam korelasyon çifti sayısı
+        total_pairs = len(correlations) if correlations else 0
+        
+        # Yüksek korelasyon sayısı
+        high_corr = [c for c in correlations if abs(c.get('correlation', 0)) > 0.7] if correlations else []
+        high_corr_count = len(high_corr)
+        
+        # Analiz edilen coin sayısı bilgisi
+        col1.metric("📊 Analiz Edilen Coin", total_coins)
+        col2.metric("🔗 Toplam Korelasyon Çifti", total_pairs)
+        col3.metric("⭐ Yüksek Korelasyon (≥0.7)", high_corr_count)
+        col4.metric("📈 Ortalama Korelasyon", f"{np.mean([abs(c.get('correlation', 0)) for c in correlations]):.3f}" if correlations else "N/A")
         
         st.markdown("---")
         
@@ -859,6 +880,263 @@ elif page == "Korelasyon Analizi":
                 st.info("ℹ️ Analiz için coin seçin.")
     else:
         st.warning(f"⚠️ {corr_matrix_file} dosyası bulunamadı. Önce analiz çalıştırın.")
+
+# ==================== TÜM KORELASYONLAR ====================
+elif page == "Tüm Korelasyonlar":
+    st.header("📊 Tüm Coin Çiftleri Korelasyon Listesi")
+    
+    st.info("""
+    **Bu sayfada analiz edilen tüm coin çiftlerinin korelasyon değerlerini görebilirsiniz.**
+    - Filtreleme, arama ve sıralama yapabilirsiniz
+    - Pozitif/Negatif korelasyonları ayrı ayrı görüntüleyebilirsiniz
+    - Excel'e aktarabilirsiniz
+    """)
+    
+    # Veri kaynağı seçimi
+    data_source = st.radio(
+        "Veri Kaynağı",
+        ["Geçmiş Veriler", "Anlık Veriler"],
+        horizontal=True,
+        key="all_correlations_source"
+    )
+    
+    if data_source == "Geçmiş Veriler":
+        correlations_file = "historical_correlations.json"
+        corr_matrix_file = "historical_correlation_matrix.csv"
+    else:
+        correlations_file = "realtime_correlations.json"
+        corr_matrix_file = "realtime_correlation_matrix.csv"
+    
+    correlations = load_json_file(correlations_file)
+    corr_matrix = load_csv_file(corr_matrix_file)
+    
+    if correlations:
+        df_all = pd.DataFrame(correlations)
+        
+        # abs_correlation kolonu yoksa ekle
+        if 'abs_correlation' not in df_all.columns:
+            df_all['abs_correlation'] = df_all['correlation'].abs()
+        
+        # Filtreleme ve arama
+        st.subheader("🔍 Filtreleme ve Arama")
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            min_correlation = st.slider(
+                "Minimum Korelasyon",
+                min_value=-1.0,
+                max_value=1.0,
+                value=-1.0,
+                step=0.1,
+                key="all_min_corr"
+            )
+        
+        with col2:
+            max_correlation = st.slider(
+                "Maksimum Korelasyon",
+                min_value=-1.0,
+                max_value=1.0,
+                value=1.0,
+                step=0.1,
+                key="all_max_corr"
+            )
+        
+        with col3:
+            correlation_type = st.selectbox(
+                "Korelasyon Tipi",
+                ["Tümü", "Pozitif", "Negatif"],
+                key="all_corr_type"
+            )
+        
+        # Coin arama
+        search_coin = st.text_input("🔎 Coin Ara (örn: BTC, ETH)", "").upper()
+        
+        # Filtreleme
+        filtered_df = df_all[
+            (df_all['correlation'] >= min_correlation) & 
+            (df_all['correlation'] <= max_correlation)
+        ].copy()
+        
+        if correlation_type == "Pozitif":
+            filtered_df = filtered_df[filtered_df['correlation'] > 0]
+        elif correlation_type == "Negatif":
+            filtered_df = filtered_df[filtered_df['correlation'] < 0]
+        
+        if search_coin:
+            filtered_df = filtered_df[
+                (filtered_df['coin1'].str.contains(search_coin, case=False, na=False)) |
+                (filtered_df['coin2'].str.contains(search_coin, case=False, na=False))
+            ]
+        
+        # Sıralama
+        sort_by = st.selectbox(
+            "Sıralama",
+            ["Mutlak Korelasyon (Yüksekten Düşüğe)", "Mutlak Korelasyon (Düşükten Yükseğe)", 
+             "Korelasyon (Yüksekten Düşüğe)", "Korelasyon (Düşükten Yükseğe)", 
+             "Coin 1 (A-Z)", "Coin 2 (A-Z)"],
+            key="all_sort"
+        )
+        
+        if sort_by == "Mutlak Korelasyon (Yüksekten Düşüğe)":
+            filtered_df = filtered_df.sort_values('abs_correlation', ascending=False)
+        elif sort_by == "Mutlak Korelasyon (Düşükten Yükseğe)":
+            filtered_df = filtered_df.sort_values('abs_correlation', ascending=True)
+        elif sort_by == "Korelasyon (Yüksekten Düşüğe)":
+            filtered_df = filtered_df.sort_values('correlation', ascending=False)
+        elif sort_by == "Korelasyon (Düşükten Yükseğe)":
+            filtered_df = filtered_df.sort_values('correlation', ascending=True)
+        elif sort_by == "Coin 1 (A-Z)":
+            filtered_df = filtered_df.sort_values('coin1', ascending=True)
+        elif sort_by == "Coin 2 (A-Z)":
+            filtered_df = filtered_df.sort_values('coin2', ascending=True)
+        
+        # Özet istatistikler
+        st.markdown("---")
+        st.subheader("📊 Özet İstatistikler")
+        col1, col2, col3, col4, col5 = st.columns(5)
+        col1.metric("Toplam Çift", len(df_all))
+        col2.metric("Filtrelenmiş", len(filtered_df))
+        col3.metric("📈 Pozitif", len(filtered_df[filtered_df['correlation'] > 0]))
+        col4.metric("📉 Negatif", len(filtered_df[filtered_df['correlation'] < 0]))
+        col5.metric("Ortalama", f"{filtered_df['correlation'].mean():.3f}")
+        
+        # Tab görünümü
+        tab_all, tab_pos, tab_neg = st.tabs(["📊 Tümü", "📈 Pozitif Korelasyonlar", "📉 Negatif Korelasyonlar"])
+        
+        with tab_all:
+            st.markdown(f"### Tüm Korelasyonlar ({len(filtered_df)} çift)")
+            
+            # Görüntüleme için DataFrame hazırla
+            display_all = pd.DataFrame({
+                'Coin 1': filtered_df['coin1'],
+                'Coin 2': filtered_df['coin2'],
+                'Korelasyon': filtered_df['correlation'].apply(lambda x: f"{x:+.4f}"),
+                'Mutlak Korelasyon': filtered_df['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                'İlişki Tipi': filtered_df['correlation'].apply(
+                    lambda x: "🟢 Pozitif" if x > 0 else "🔴 Negatif" if x < 0 else "⚪ Sıfır"
+                ),
+                'Açıklama': filtered_df['correlation'].apply(
+                    lambda x: "Aynı yönde hareket" if x > 0 else "Ters yönde hareket" if x < 0 else "İlişki yok"
+                )
+            })
+            
+            st.dataframe(display_all, use_container_width=True, height=600)
+            
+            # CSV indirme
+            csv = filtered_df[['coin1', 'coin2', 'correlation', 'abs_correlation']].to_csv(index=False)
+            st.download_button(
+                label="📥 CSV Olarak İndir",
+                data=csv,
+                file_name=f"tum_korelasyonlar_{data_source.lower().replace(' ', '_')}.csv",
+                mime="text/csv"
+            )
+        
+        with tab_pos:
+            df_pos_all = filtered_df[filtered_df['correlation'] > 0].sort_values('correlation', ascending=False)
+            st.markdown(f"### Pozitif Korelasyonlar ({len(df_pos_all)} çift)")
+            
+            if len(df_pos_all) > 0:
+                display_pos = pd.DataFrame({
+                    'Coin 1': df_pos_all['coin1'],
+                    'Coin 2': df_pos_all['coin2'],
+                    'Korelasyon': df_pos_all['correlation'].apply(lambda x: f"{x:+.4f}"),
+                    'Mutlak Korelasyon': df_pos_all['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                    'Güç': df_pos_all['correlation'].apply(
+                        lambda x: "🟢🟢🟢 Çok Güçlü" if x > 0.9 else "🟢🟢 Güçlü" if x > 0.8 else "🟢 Orta" if x > 0.6 else "🟢 Zayıf"
+                    )
+                })
+                st.dataframe(display_pos, use_container_width=True, height=600)
+                
+                csv_pos = df_pos_all[['coin1', 'coin2', 'correlation', 'abs_correlation']].to_csv(index=False)
+                st.download_button(
+                    label="📥 Pozitif Korelasyonları CSV Olarak İndir",
+                    data=csv_pos,
+                    file_name=f"pozitif_korelasyonlar_{data_source.lower().replace(' ', '_')}.csv",
+                    mime="text/csv"
+                )
+            else:
+                st.info("Filtrelenmiş sonuçlarda pozitif korelasyon bulunamadı.")
+        
+        with tab_neg:
+            df_neg_all = filtered_df[filtered_df['correlation'] < 0].sort_values('correlation', ascending=True)
+            st.markdown(f"### Negatif Korelasyonlar ({len(df_neg_all)} çift)")
+            
+            if len(df_neg_all) > 0:
+                display_neg = pd.DataFrame({
+                    'Coin 1': df_neg_all['coin1'],
+                    'Coin 2': df_neg_all['coin2'],
+                    'Korelasyon': df_neg_all['correlation'].apply(lambda x: f"{x:+.4f}"),
+                    'Mutlak Korelasyon': df_neg_all['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                    'Güç': df_neg_all['correlation'].apply(
+                        lambda x: "🔴🔴🔴 Çok Güçlü" if x < -0.9 else "🔴🔴 Güçlü" if x < -0.8 else "🔴 Orta" if x < -0.6 else "🔴 Zayıf"
+                    )
+                })
+                st.dataframe(display_neg, use_container_width=True, height=600)
+                
+                csv_neg = df_neg_all[['coin1', 'coin2', 'correlation', 'abs_correlation']].to_csv(index=False)
+                st.download_button(
+                    label="📥 Negatif Korelasyonları CSV Olarak İndir",
+                    data=csv_neg,
+                    file_name=f"negatif_korelasyonlar_{data_source.lower().replace(' ', '_')}.csv",
+                    mime="text/csv"
+                )
+            else:
+                st.info("Filtrelenmiş sonuçlarda negatif korelasyon bulunamadı.")
+        
+        # Grafik görünümü
+        st.markdown("---")
+        st.subheader("📈 Görselleştirme")
+        
+        if len(filtered_df) > 0:
+            # İlk 50 çifti göster (performans için)
+            show_count = min(50, len(filtered_df))
+            df_chart = filtered_df.head(show_count)
+            
+            fig = go.Figure()
+            
+            # Pozitif korelasyonlar
+            pos_data = df_chart[df_chart['correlation'] > 0]
+            if len(pos_data) > 0:
+                fig.add_trace(go.Bar(
+                    x=pos_data['coin1'] + ' ↔ ' + pos_data['coin2'],
+                    y=pos_data['correlation'],
+                    name='Pozitif Korelasyon',
+                    marker_color='green',
+                    text=pos_data['correlation'].round(3),
+                    textposition='outside',
+                    hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<br>Tip: Pozitif<extra></extra>'
+                ))
+            
+            # Negatif korelasyonlar
+            neg_data = df_chart[df_chart['correlation'] < 0]
+            if len(neg_data) > 0:
+                fig.add_trace(go.Bar(
+                    x=neg_data['coin1'] + ' ↔ ' + neg_data['coin2'],
+                    y=neg_data['correlation'],
+                    name='Negatif Korelasyon',
+                    marker_color='red',
+                    text=neg_data['correlation'].round(3),
+                    textposition='outside',
+                    hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<br>Tip: Negatif<extra></extra>'
+                ))
+            
+            fig.update_layout(
+                title=f"Korelasyon Görselleştirmesi (İlk {show_count} çift)",
+                xaxis_title="Coin Çifti",
+                yaxis_title="Korelasyon Değeri",
+                height=600,
+                xaxis_tickangle=-45,
+                barmode='group',
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+            )
+            st.plotly_chart(fig, use_container_width=True)
+            
+            if len(filtered_df) > show_count:
+                st.info(f"💡 Grafikte ilk {show_count} çift gösteriliyor. Toplam {len(filtered_df)} çift var.")
+        else:
+            st.warning("Filtrelenmiş sonuç bulunamadı.")
+    else:
+        st.warning(f"⚠️ {correlations_file} dosyası bulunamadı. Önce analiz çalıştırın.")
 
 # ==================== FİYAT-VOLUME ANALİZİ ====================
 elif page == "Fiyat-Volume Analizi":
