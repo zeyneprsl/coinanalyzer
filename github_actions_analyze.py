@@ -1,7 +1,7 @@
 """
 GitHub Actions için özel analiz scripti
-Binance API HTTP 451 hatası nedeniyle CoinGecko API kullanılıyor
-CoinGecko: Ücretsiz, bölge kısıtlaması yok, geçmiş veri desteği var
+CoinGecko API kullanılıyor - Rate limit yönetimi ile
+CoinGecko ücretsiz plan: 5-15 req/min
 """
 import requests
 import pandas as pd
@@ -10,7 +10,7 @@ import json
 from datetime import datetime, timedelta
 import time
 
-# CoinGecko coin ID'leri (Binance USDT çiftlerine karşılık gelen)
+# En popüler 15 coin (rate limit için azaltıldı)
 COIN_IDS = {
     'BTCUSDT': 'bitcoin',
     'ETHUSDT': 'ethereum',
@@ -26,34 +26,61 @@ COIN_IDS = {
     'MATICUSDT': 'matic-network',
     'UNIUSDT': 'uniswap',
     'ATOMUSDT': 'cosmos',
-    'ETCUSDT': 'ethereum-classic',
-    'FILUSDT': 'filecoin',
-    'TRXUSDT': 'tron',
-    'XLMUSDT': 'stellar',
-    'ALGOUSDT': 'algorand',
-    'VETUSDT': 'vechain',
-    'AAVEUSDT': 'aave',
-    'MKRUSDT': 'maker',
-    'COMPUSDT': 'compound-governance-token',
-    'SANDUSDT': 'the-sandbox',
-    'MANAUSDT': 'decentraland',
-    'AXSUSDT': 'axie-infinity',
-    'THETAUSDT': 'theta-token',
-    'EOSUSDT': 'eos',
-    'NEARUSDT': 'near',
-    'FLOWUSDT': 'flow'
+    'ETCUSDT': 'ethereum-classic'
 }
 
-def fetch_historical_prices_gecko(coin_id, days=7):
-    """CoinGecko'dan geçmiş fiyat verilerini çek"""
+def fetch_current_prices_batch(coin_ids_list):
+    """CoinGecko'dan toplu anlık fiyat verilerini çek (tek istek)"""
+    try:
+        ids_str = ','.join(coin_ids_list)
+        url = f'https://api.coingecko.com/api/v3/simple/price'
+        params = {
+            'ids': ids_str,
+            'vs_currencies': 'usd',
+            'include_24hr_vol': 'true',
+            'include_24hr_change': 'true',
+            'include_last_updated_at': 'true'
+        }
+        
+        # Rate limit için bekleme
+        time.sleep(2)
+        
+        response = requests.get(url, params=params, timeout=20)
+        
+        if response.status_code == 429:
+            print('⚠️  Rate limit! 60 saniye bekleniyor...')
+            time.sleep(60)
+            response = requests.get(url, params=params, timeout=20)
+        
+        if response.status_code != 200:
+            print(f'⚠️  Batch fiyat çekme hatası: HTTP {response.status_code}')
+            return {}
+        
+        data = response.json()
+        return data
+    except Exception as e:
+        print(f'⚠️  Batch fiyat çekme hatası: {e}')
+        return {}
+
+def fetch_historical_single(coin_id, days=7):
+    """CoinGecko'dan tek coin için geçmiş fiyat verilerini çek"""
     try:
         url = f'https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart'
         params = {
             'vs_currency': 'usd',
             'days': days,
-            'interval': 'hourly'  # Saatlik veri
+            'interval': 'daily'  # Günlük veri (daha az veri, daha hızlı)
         }
-        response = requests.get(url, params=params, timeout=15)
+        
+        # Rate limit için uzun bekleme (CoinGecko: 5-15 req/min)
+        time.sleep(8)  # Güvenli bekleme
+        
+        response = requests.get(url, params=params, timeout=20)
+        
+        if response.status_code == 429:
+            print(f'⚠️  {coin_id}: Rate limit! 60 saniye bekleniyor...')
+            time.sleep(60)
+            response = requests.get(url, params=params, timeout=20)
         
         if response.status_code != 200:
             print(f'⚠️  {coin_id}: HTTP {response.status_code}')
@@ -150,29 +177,6 @@ def save_correlation_matrix(correlation_matrix, filename='realtime_correlation_m
     """Korelasyon matrisini CSV'ye kaydet"""
     correlation_matrix.to_csv(filename)
 
-def fetch_current_prices_gecko(coin_ids_list):
-    """CoinGecko'dan anlık fiyat ve volume verilerini çek"""
-    try:
-        # CoinGecko simple/price endpoint - toplu istek
-        ids_str = ','.join(coin_ids_list)
-        url = f'https://api.coingecko.com/api/v3/simple/price'
-        params = {
-            'ids': ids_str,
-            'vs_currencies': 'usd',
-            'include_24hr_vol': 'true',
-            'include_24hr_change': 'true'
-        }
-        response = requests.get(url, params=params, timeout=15)
-        
-        if response.status_code != 200:
-            return {}
-        
-        data = response.json()
-        return data
-    except Exception as e:
-        print(f'⚠️  Anlık fiyat çekme hatası: {e}')
-        return {}
-
 def main():
     print('='*80)
     print('GitHub Actions - Coin Korelasyon Analizi (CoinGecko API)')
@@ -182,7 +186,8 @@ def main():
     coin_ids_list = list(COIN_IDS.values())
     
     print(f'\n{len(popular_coins)} coin için analiz yapılıyor...')
-    print('📡 CoinGecko API kullanılıyor (bölge kısıtlaması yok)\n')
+    print('📡 CoinGecko API kullanılıyor (Rate limit: 5-15 req/min)')
+    print('⏱️  Her istek arasında 8 saniye bekleniyor...\n')
     
     # 1. Geçmiş veri çek ve korelasyon analizi
     print('[1/2] Geçmiş veri analizi yapılıyor (CoinGecko)...')
@@ -191,22 +196,19 @@ def main():
     
     for i, (symbol, coin_id) in enumerate(COIN_IDS.items(), 1):
         print(f'  [{i}/{len(COIN_IDS)}] {symbol} ({coin_id}) verisi çekiliyor...', end=' ')
-        data = fetch_historical_prices_gecko(coin_id, days=7)  # Son 7 gün, saatlik
+        data = fetch_historical_single(coin_id, days=7)  # Son 7 gün, günlük
         if data and len(data['prices']) > 0:
             historical_data[symbol] = data
             successful += 1
             print(f'✓ ({len(data["prices"])} veri)')
         else:
             print('✗')
-        
-        # Rate limit için bekleme (CoinGecko: 10-50 req/min)
-        if i < len(COIN_IDS):
-            time.sleep(1.5)  # Güvenli bekleme
     
     print(f'\n✓ {successful}/{len(popular_coins)} coin için veri toplandı\n')
     
     if len(historical_data) < 2:
         print('❌ Yetersiz veri! En az 2 coin gerekli.')
+        print('💡 Not: CoinGecko rate limit nedeniyle bazı coinler atlanmış olabilir.')
         return
     
     # Korelasyon analizi
@@ -230,10 +232,10 @@ def main():
         import traceback
         traceback.print_exc()
     
-    # 2. Fiyat-Volume analizi (anlık veriler)
-    print('\n[2/2] Fiyat-Volume analizi yapılıyor (CoinGecko)...')
+    # 2. Fiyat-Volume analizi (anlık veriler - batch)
+    print('\n[2/2] Fiyat-Volume analizi yapılıyor (CoinGecko - Batch)...')
     try:
-        current_prices = fetch_current_prices_gecko(coin_ids_list)
+        current_prices = fetch_current_prices_batch(coin_ids_list)
         
         if current_prices:
             analyses = []
