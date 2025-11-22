@@ -8,6 +8,8 @@ from plotly.subplots import make_subplots
 import os
 import time
 from datetime import datetime
+import subprocess
+import threading
 
 # Sayfa yapılandırması
 st.set_page_config(
@@ -71,6 +73,37 @@ page = st.sidebar.selectbox(
     "Sayfa Seçin",
     ["Ana Sayfa", "Korelasyon Analizi", "Tüm Korelasyonlar", "Fiyat-Volume Analizi", "Ani Değişim Analizi", "Korelasyon Değişiklikleri"]
 )
+
+# Otomatik analiz kontrolü ve başlatma (arka planda)
+@st.cache_resource
+def check_and_start_analysis():
+    """Analiz dosyaları yoksa otomatik analiz başlat"""
+    # Kritik dosyaları kontrol et
+    critical_files = [
+        'price_volume_analysis.json',
+        'sudden_price_volume_analysis.json',
+        'realtime_correlations.json'
+    ]
+    
+    missing_files = [f for f in critical_files if not os.path.exists(f)]
+    
+    if missing_files and 'analysis_started' not in st.session_state:
+        # Sadece bir kez başlat
+        st.session_state['analysis_started'] = True
+        
+        # Arka planda analiz başlat (non-blocking)
+        try:
+            # Streamlit Cloud'da main.py çalıştırmaya çalış (sınırlı çalışabilir)
+            # Not: Streamlit Cloud'da sürekli çalışan servisler desteklenmez
+            # Bu yüzden sadece tek seferlik analiz yapılabilir
+            pass  # Streamlit Cloud'da main.py çalıştırılamaz
+        except:
+            pass
+    
+    return len(missing_files) == 0
+
+# Analiz durumunu kontrol et
+analysis_ready = check_and_start_analysis()
 
 # Başlık
 st.markdown('<h1 class="main-header">📊 Binance Coin Korelasyon Dashboard</h1>', unsafe_allow_html=True)
@@ -1284,30 +1317,66 @@ elif page == "Ani Değişim Analizi":
     
     if not sudden_data:
         st.warning("⚠️ sudden_price_volume_analysis.json dosyası bulunamadı.")
+        
         st.info("""
-        **📌 Önemli Bilgi:**
+        **📌 Streamlit Cloud Limitation:**
         
-        Streamlit Cloud'da sadece dashboard çalışır. Arka plan analiz servisi (`main.py`) Streamlit Cloud'da çalışmaz.
+        Streamlit Cloud'da sadece dashboard çalışır. Arka plan analiz servisi (`main.py`) Streamlit Cloud'da **çalışamaz**.
         
-        **Analiz dosyalarını oluşturmak için:**
+        **Çözüm:**
         
-        **Seçenek 1: Lokal Bilgisayarınızda (Önerilen)**
-        1. Terminal'de `python main.py` komutunu çalıştırın
-        2. Sistem otomatik olarak WebSocket'ten veri toplamaya başlar
-        3. Her 30 dakikada bir analiz yapılır ve dosyalar güncellenir
-        4. Oluşan JSON dosyalarını GitHub'a pushlayın
-        5. Streamlit Cloud otomatik olarak güncellenecektir
+        Analiz dosyalarını görmek için **lokal bilgisayarınızda** `main.py` çalıştırıp sonuçları GitHub'a pushlamanız gerekiyor.
         
-        **Seçenek 2: Arka Plan Servisi (Railway, Render, Heroku)**
-        - `main.py`'yi Railway, Render veya Heroku gibi bir platformda çalıştırın
-        - Dashboard Streamlit Cloud'da, analiz servisi başka platformda çalışır
+        **Hızlı Başlangıç:**
+        1. Terminal'de: `python main.py`
+        2. 30-40 dakika bekleyin (ilk analiz için)
+        3. Oluşan JSON dosyalarını GitHub'a pushlayın
+        4. Streamlit Cloud otomatik güncellenecek
         
         **Ani Değişim Analizi Nedir?**
         - Ani fiyat değişimlerinde (spike) volume'un nasıl davrandığını inceler
         - %1, %2, %5, %10 eşiklerinde analiz yapılır
         - Hangi coinlerde ani değişimlerde volume artışı olduğunu gösterir
+        
+        **Detaylı rehber:** GitHub repo'da `NASIL_CALISTIRILIR.md` dosyasına bakın.
         """)
-        st.stop()
+        
+        # Test verileri göster (opsiyonel)
+        if st.checkbox("🔧 Test verileri göster (geliştirme için)", value=False, key="sudden_test"):
+            st.info("Test modu aktif - gerçek veriler yerine örnek veriler gösterilecek")
+            # Basit test verileri oluştur
+            sudden_data = {
+                "BTCUSDT": {
+                    "threshold_2.0": {
+                        "sudden_up": {
+                            "count": 15,
+                            "volume_increase_pct": 80.5,
+                            "avg_volume_change": 0.15
+                        },
+                        "sudden_down": {
+                            "count": 12,
+                            "volume_increase_pct": 75.2,
+                            "avg_volume_change": 0.13
+                        }
+                    }
+                },
+                "ETHUSDT": {
+                    "threshold_2.0": {
+                        "sudden_up": {
+                            "count": 18,
+                            "volume_increase_pct": 72.3,
+                            "avg_volume_change": 0.12
+                        },
+                        "sudden_down": {
+                            "count": 14,
+                            "volume_increase_pct": 68.5,
+                            "avg_volume_change": 0.11
+                        }
+                    }
+                }
+            }
+        else:
+            st.stop()
     
     if sudden_data:
         # Eşik seçimi
