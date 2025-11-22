@@ -1,7 +1,6 @@
-requests
-websocket-client
-pandas
-numpy
-streamlit
-plotly
-
+requests>=2.31.0
+websocket-client>=1.6.0
+pandas>=2.0.0
+numpy>=1.24.0
+streamlit>=1.28.0
+plotly>=5.17.0
