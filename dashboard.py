@@ -1324,17 +1324,30 @@ elif page == "Fiyat-Volume Analizi":
         st.stop()
     
     if pv_data:
-        df_pv = pd.DataFrame([
-            {
-                'coin': coin,
-                'correlation': stats.get('correlation', 0),
-                'abs_correlation': stats.get('abs_correlation', 0),
-                'data_points': stats.get('data_points', 0),
-                'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
-                'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
-            }
-            for coin, stats in pv_data.items()
-        ])
+        # Yeni format kontrolü (CoinGecko - analyses array)
+        if isinstance(pv_data, dict) and 'analyses' in pv_data:
+            # Yeni format: CoinGecko'dan gelen basit format
+            df_pv = pd.DataFrame(pv_data['analyses'])
+            if 'symbol' in df_pv.columns:
+                df_pv['coin'] = df_pv['symbol']
+            df_pv['correlation'] = 0
+            df_pv['abs_correlation'] = 0
+            df_pv['data_points'] = 1
+            df_pv['volume_increase_on_price_up_pct'] = 0
+            df_pv['avg_volume_change_on_price_up'] = 0
+        else:
+            # Eski format: correlation_analyzer'dan gelen format
+            df_pv = pd.DataFrame([
+                {
+                    'coin': coin,
+                    'correlation': stats.get('correlation', 0),
+                    'abs_correlation': stats.get('abs_correlation', 0),
+                    'data_points': stats.get('data_points', 0),
+                    'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
+                    'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
+                }
+                for coin, stats in pv_data.items()
+            ])
         
         # Filtreleme
         threshold = st.slider(
