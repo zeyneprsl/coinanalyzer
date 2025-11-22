@@ -265,4 +265,6 @@ def main():
     analyzer.start()
 
 if __name__ == "__main__":
-    main()
+    # 30 dakikada bir analiz yapılacak (daha mantıklı bir süre)
+    analyzer = ContinuousAnalyzer(analysis_interval_minutes=30)
+    analyzer.start()
