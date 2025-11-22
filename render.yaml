@@ -1,0 +1,16 @@
+services:
+  # Background Worker - main.py çalıştırır (analiz servisi)
+  - type: worker
+    name: coinanalyzer-worker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: RENDER
+        value: true
+      # GitHub token ekleyin (otomatik push için)
+      # - key: GITHUB_TOKEN
+      #   value: your_github_token_here
+
