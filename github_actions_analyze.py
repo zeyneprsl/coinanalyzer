@@ -129,6 +129,13 @@ def fetch_historical_single(coin_id, days=7):
         volumes = []
         if 'total_volumes' in data and data['total_volumes']:
             volumes = [float(vol) for _, vol in data['total_volumes']]
+            # Prices ve volumes aynı uzunlukta olmalı
+            if len(volumes) != len(prices):
+                # Eğer farklıysa, prices uzunluğuna göre ayarla
+                if len(volumes) < len(prices):
+                    volumes.extend([0] * (len(prices) - len(volumes)))
+                else:
+                    volumes = volumes[:len(prices)]
         else:
             volumes = [0] * len(prices)  # Volume yoksa 0
         
@@ -325,9 +332,18 @@ def main():
                 volumes = data.get('volumes', [])
                 timestamps = data['timestamps']
                 
-                # Volume verisi yoksa veya yetersizse, sıfırlarla doldur
-                if not volumes or len(volumes) < len(prices):
+                # Volume verisi kontrolü ve debug
+                if not volumes:
                     volumes = [0] * len(prices)
+                elif len(volumes) != len(prices):
+                    # Uzunluk uyumsuzluğu varsa düzelt
+                    if len(volumes) < len(prices):
+                        volumes.extend([volumes[-1] if volumes else 0] * (len(prices) - len(volumes)))
+                    else:
+                        volumes = volumes[:len(prices)]
+                
+                # Volume verisi gerçekten var mı kontrol et
+                has_real_volume = any(v > 0 for v in volumes) if volumes else False
                 
                 # Fiyat ve volume değişimlerini hesapla
                 price_changes = []
@@ -360,11 +376,11 @@ def main():
                         correlation = 0.0  # Volume verisi yoksa korelasyon 0
                     
                     # Volume verisi varsa ve geçerliyse korelasyonu kullan
-                    has_volume_data = any(v != 0 for v in volumes) if volumes else False
+                    # has_volume_data değişkeni yukarıda tanımlı
                     
                     # Fiyat artışı olduğunda volume artışı analizi
                     price_up_indices = [i for i, pc in enumerate(price_changes) if pc > 0]
-                    if price_up_indices and has_volume_data:
+                    if price_up_indices and has_real_volume:
                         volume_changes_on_price_up = [volume_changes[i] for i in price_up_indices]
                         volume_increase_count = sum(1 for vc in volume_changes_on_price_up if vc > 0)
                         volume_increase_pct = (volume_increase_count / len(volume_changes_on_price_up)) * 100 if volume_changes_on_price_up else 0
@@ -375,12 +391,16 @@ def main():
                     
                     # Volume verisi yoksa bile coin'i kaydet (korelasyon 0 olacak)
                     pv_analyses[symbol] = {
-                        'correlation': float(correlation) if has_volume_data else 0.0,
-                        'abs_correlation': float(abs(correlation)) if has_volume_data else 0.0,
+                        'correlation': float(correlation) if has_real_volume and not np.isnan(correlation) else 0.0,
+                        'abs_correlation': float(abs(correlation)) if has_real_volume and not np.isnan(correlation) else 0.0,
                         'data_points': len(price_changes),
                         'volume_increase_on_price_up_pct': float(volume_increase_pct),
                         'avg_volume_change_on_price_up': float(avg_volume_change_on_price_up)
                     }
+                    
+                    # Debug: Volume verisi olmayan coinleri logla
+                    if not has_real_volume:
+                        print(f'  ⚠️  {symbol}: Volume verisi yok, korelasyon 0 olarak kaydedildi')
             
             if pv_analyses:
                 # Eski format ile uyumlu kaydet
