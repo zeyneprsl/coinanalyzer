@@ -167,6 +167,11 @@ class ContinuousAnalyzer:
             print("\n[VERİ TEMİZLİĞİ] Eski veriler temizleniyor...")
             self.clean_old_data(keep_hours=1)
             
+            # Otomatik GitHub push (Railway/Render için)
+            if self.auto_push_to_github:
+                print("\n[GITHUB PUSH] JSON dosyaları GitHub'a pushlanıyor...")
+                self.push_to_github()
+            
             self.last_analysis_time = datetime.now()
             print(f"\n✅ Analiz tamamlandı! Sonraki analiz: {self.analysis_interval // 60} dakika sonra")
             print(f"{'='*80}\n")
@@ -207,6 +212,76 @@ class ContinuousAnalyzer:
                 print(f"✓ Temizlendi: {cleaned_price} fiyat, {cleaned_pv} fiyat-volume verisi")
         except Exception as e:
             print(f"⚠️  Veri temizleme hatası: {e}")
+    
+    def push_to_github(self):
+        """JSON ve CSV dosyalarını GitHub'a otomatik pushla (Railway/Render için)"""
+        try:
+            # JSON ve CSV dosyalarını kontrol et
+            json_files = [
+                'realtime_correlations.json',
+                'price_volume_analysis.json',
+                'sudden_price_volume_analysis.json',
+                'correlation_changes_history.json',
+                'realtime_correlation_matrix.csv',
+                'realtime_coin_correlations.json'
+            ]
+            
+            changed_files = [f for f in json_files if os.path.exists(f)]
+            
+            if not changed_files:
+                print("⚠️  Güncellenecek dosya yok")
+                return False
+            
+            # Git add
+            result = subprocess.run(
+                ['git', 'add'] + changed_files,
+                cwd=os.getcwd(),
+                capture_output=True,
+                text=True
+            )
+            
+            if result.returncode != 0:
+                print(f"⚠️  Git add hatası: {result.stderr}")
+                return False
+            
+            # Git commit
+            commit_message = f"Analiz sonuçları güncellendi - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+            result = subprocess.run(
+                ['git', 'commit', '-m', commit_message],
+                cwd=os.getcwd(),
+                capture_output=True,
+                text=True
+            )
+            
+            # Commit mesajı kontrolü (değişiklik yoksa "nothing to commit" hatası normal)
+            if "nothing to commit" in result.stdout.lower():
+                print("✓ Dosyalar zaten güncel, push gerekmiyor")
+                return True
+            
+            if result.returncode != 0 and "nothing to commit" not in result.stdout.lower():
+                print(f"⚠️  Git commit hatası: {result.stderr}")
+                return False
+            
+            # Git push
+            result = subprocess.run(
+                ['git', 'push', 'origin', 'main'],
+                cwd=os.getcwd(),
+                capture_output=True,
+                text=True
+            )
+            
+            if result.returncode == 0:
+                print(f"✅ Başarıyla GitHub'a pushlandı!")
+                return True
+            else:
+                print(f"⚠️  Git push hatası: {result.stderr}")
+                print("💡 İpucu: Railway/Render'da GITHUB_TOKEN environment variable'ı ayarlayın")
+                return False
+                
+        except Exception as e:
+            print(f"⚠️  GitHub push hatası: {e}")
+            print("💡 İpucu: Railway/Render'da git yapılandırması kontrol edin")
+            return False
     
     def analysis_loop(self):
         """Sürekli analiz döngüsü"""
