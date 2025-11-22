@@ -1162,13 +1162,22 @@ elif page == "Fiyat-Volume Analizi":
     if not pv_data:
         st.warning("⚠️ price_volume_analysis.json dosyası bulunamadı.")
         st.info("""
-        **Bu analiz için `main.py` çalıştırılmalıdır.**
+        **📌 Önemli Bilgi:**
         
-        **Nasıl Çalışır?**
+        Streamlit Cloud'da sadece dashboard çalışır. Arka plan analiz servisi (`main.py`) Streamlit Cloud'da çalışmaz.
+        
+        **Analiz dosyalarını oluşturmak için:**
+        
+        **Seçenek 1: Lokal Bilgisayarınızda (Önerilen)**
         1. Terminal'de `python main.py` komutunu çalıştırın
         2. Sistem otomatik olarak WebSocket'ten veri toplamaya başlar
         3. Her 30 dakikada bir analiz yapılır ve dosyalar güncellenir
-        4. Bu sayfada sonuçları görüntüleyebilirsiniz
+        4. Oluşan JSON dosyalarını GitHub'a pushlayın
+        5. Streamlit Cloud otomatik olarak güncellenecektir
+        
+        **Seçenek 2: Arka Plan Servisi (Railway, Render, Heroku)**
+        - `main.py`'yi Railway, Render veya Heroku gibi bir platformda çalıştırın
+        - Dashboard Streamlit Cloud'da, analiz servisi başka platformda çalışır
         
         **Not:** İlk analiz için yeterli veri toplanması gereklidir (yaklaşık 30 dakika).
         """)
@@ -1262,20 +1271,27 @@ elif page == "Ani Değişim Analizi":
     if not sudden_data:
         st.warning("⚠️ sudden_price_volume_analysis.json dosyası bulunamadı.")
         st.info("""
-        **Bu analiz için `main.py` çalıştırılmalıdır.**
+        **📌 Önemli Bilgi:**
         
-        **Nasıl Çalışır?**
+        Streamlit Cloud'da sadece dashboard çalışır. Arka plan analiz servisi (`main.py`) Streamlit Cloud'da çalışmaz.
+        
+        **Analiz dosyalarını oluşturmak için:**
+        
+        **Seçenek 1: Lokal Bilgisayarınızda (Önerilen)**
         1. Terminal'de `python main.py` komutunu çalıştırın
         2. Sistem otomatik olarak WebSocket'ten veri toplamaya başlar
         3. Her 30 dakikada bir analiz yapılır ve dosyalar güncellenir
-        4. Bu sayfada ani fiyat değişimlerindeki volume davranışlarını görüntüleyebilirsiniz
+        4. Oluşan JSON dosyalarını GitHub'a pushlayın
+        5. Streamlit Cloud otomatik olarak güncellenecektir
+        
+        **Seçenek 2: Arka Plan Servisi (Railway, Render, Heroku)**
+        - `main.py`'yi Railway, Render veya Heroku gibi bir platformda çalıştırın
+        - Dashboard Streamlit Cloud'da, analiz servisi başka platformda çalışır
         
         **Ani Değişim Analizi Nedir?**
         - Ani fiyat değişimlerinde (spike) volume'un nasıl davrandığını inceler
         - %1, %2, %5, %10 eşiklerinde analiz yapılır
         - Hangi coinlerde ani değişimlerde volume artışı olduğunu gösterir
-        
-        **Not:** İlk analiz için yeterli veri toplanması gereklidir (yaklaşık 30 dakika).
         """)
         st.stop()
     
