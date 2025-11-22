@@ -1153,6 +1153,21 @@ elif page == "Fiyat-Volume Analizi":
     
     pv_data = load_json_file('price_volume_analysis.json')
     
+    if not pv_data:
+        st.warning("⚠️ price_volume_analysis.json dosyası bulunamadı.")
+        st.info("""
+        **Bu analiz için `main.py` çalıştırılmalıdır.**
+        
+        **Nasıl Çalışır?**
+        1. Terminal'de `python main.py` komutunu çalıştırın
+        2. Sistem otomatik olarak WebSocket'ten veri toplamaya başlar
+        3. Her 30 dakikada bir analiz yapılır ve dosyalar güncellenir
+        4. Bu sayfada sonuçları görüntüleyebilirsiniz
+        
+        **Not:** İlk analiz için yeterli veri toplanması gereklidir (yaklaşık 30 dakika).
+        """)
+        st.stop()
+    
     if pv_data:
         df_pv = pd.DataFrame([
             {
