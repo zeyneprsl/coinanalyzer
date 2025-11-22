@@ -95,7 +95,7 @@ def fetch_current_prices_batch(coin_ids_list):
         return {}
 
 def fetch_historical_single(coin_id, days=7):
-    """CoinGecko'dan tek coin için geçmiş fiyat verilerini çek"""
+    """CoinGecko'dan tek coin için geçmiş fiyat ve volume verilerini çek"""
     try:
         url = f'https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart'
         params = {
@@ -125,8 +125,16 @@ def fetch_historical_single(coin_id, days=7):
         prices = [float(price) for _, price in data['prices']]
         timestamps = [datetime.fromtimestamp(ts / 1000) for ts, _ in data['prices']]
         
+        # Volume verisi de çek (total_volumes)
+        volumes = []
+        if 'total_volumes' in data and data['total_volumes']:
+            volumes = [float(vol) for _, vol in data['total_volumes']]
+        else:
+            volumes = [0] * len(prices)  # Volume yoksa 0
+        
         return {
             'prices': prices,
+            'volumes': volumes,
             'timestamps': timestamps
         }
     except Exception as e:
@@ -305,43 +313,95 @@ def main():
             import traceback
             traceback.print_exc()
     
-    # 3. Fiyat-Volume analizi (TÜM coinler - batch)
-    print('\n[2/3] Fiyat-Volume analizi yapılıyor (CoinGecko - Batch - TÜM coinler)...')
+    # 3. Fiyat-Volume analizi (Geçmiş verilerden korelasyon hesapla)
+    print('\n[2/3] Fiyat-Volume korelasyon analizi yapılıyor...')
     try:
-        current_prices = fetch_current_prices_batch(coin_ids_list)
-        
-        if current_prices:
-            analyses = []
-            for symbol, coin_id in coin_mapping.items():
-                if coin_id in current_prices:
-                    data = current_prices[coin_id]
-                    analyses.append({
-                        'symbol': symbol,
-                        'price': data.get('usd', 0),
-                        'volume_24h': data.get('usd_24h_vol', 0),
-                        'price_change_24h': data.get('usd_24h_change', 0),
-                        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                    })
+        if historical_data:
+            # Geçmiş verilerden fiyat-volume korelasyonu hesapla
+            pv_analyses = {}
             
-            if analyses:
-                pv_data = {
-                    'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                    'analyses': analyses
-                }
+            for symbol, data in historical_data.items():
+                if 'volumes' not in data or len(data['volumes']) < 2:
+                    continue
+                
+                prices = data['prices']
+                volumes = data['volumes']
+                timestamps = data['timestamps']
+                
+                # Fiyat ve volume değişimlerini hesapla
+                price_changes = []
+                volume_changes = []
+                
+                for i in range(1, len(prices)):
+                    if prices[i-1] != 0:
+                        price_change = (prices[i] - prices[i-1]) / prices[i-1]
+                        price_changes.append(price_change)
+                    else:
+                        price_changes.append(0)
+                    
+                    if volumes[i-1] != 0:
+                        volume_change = (volumes[i] - volumes[i-1]) / volumes[i-1]
+                        volume_changes.append(volume_change)
+                    else:
+                        volume_changes.append(0)
+                
+                # Korelasyon hesapla
+                if len(price_changes) >= 2 and len(volume_changes) >= 2:
+                    df_temp = pd.DataFrame({
+                        'price_change': price_changes,
+                        'volume_change': volume_changes
+                    })
+                    correlation = df_temp['price_change'].corr(df_temp['volume_change'])
+                    
+                    if not np.isnan(correlation):
+                        # Fiyat artışı olduğunda volume artışı analizi
+                        price_up_indices = [i for i, pc in enumerate(price_changes) if pc > 0]
+                        if price_up_indices:
+                            volume_changes_on_price_up = [volume_changes[i] for i in price_up_indices]
+                            volume_increase_count = sum(1 for vc in volume_changes_on_price_up if vc > 0)
+                            volume_increase_pct = (volume_increase_count / len(volume_changes_on_price_up)) * 100
+                            avg_volume_change_on_price_up = np.mean(volume_changes_on_price_up) * 100
+                        else:
+                            volume_increase_pct = 0
+                            avg_volume_change_on_price_up = 0
+                        
+                        pv_analyses[symbol] = {
+                            'correlation': float(correlation),
+                            'abs_correlation': float(abs(correlation)),
+                            'data_points': len(price_changes),
+                            'volume_increase_on_price_up_pct': float(volume_increase_pct),
+                            'avg_volume_change_on_price_up': float(avg_volume_change_on_price_up)
+                        }
+            
+            if pv_analyses:
+                # Eski format ile uyumlu kaydet
                 with open('price_volume_analysis.json', 'w', encoding='utf-8') as f:
-                    json.dump(pv_data, f, indent=2, ensure_ascii=False)
-                print(f'✓ Fiyat-Volume analizi kaydedildi! ({len(analyses)} coin)')
+                    json.dump(pv_analyses, f, indent=2, ensure_ascii=False)
+                print(f'✓ Fiyat-Volume korelasyon analizi kaydedildi! ({len(pv_analyses)} coin)')
             else:
-                print('⚠️  Fiyat-Volume analizi sonucu boş!')
+                print('⚠️  Fiyat-Volume korelasyon analizi sonucu boş!')
         else:
-            print('⚠️  Anlık fiyat verisi alınamadı!')
+            print('⚠️  Geçmiş veri olmadığı için fiyat-volume korelasyonu hesaplanamadı!')
     except Exception as e:
         print(f'⚠️  Fiyat-Volume analizi hatası: {e}')
         import traceback
         traceback.print_exc()
     
-    # 4. Ani değişim analizi (TÜM coinler)
-    print('\n[3/3] Ani değişim analizi yapılıyor (TÜM coinler)...')
+    # 4. Anlık fiyat verileri (TÜM coinler - batch)
+    print('\n[3/4] Anlık fiyat verileri çekiliyor (CoinGecko - Batch - TÜM coinler)...')
+    try:
+        current_prices = fetch_current_prices_batch(coin_ids_list)
+        
+        if current_prices:
+            # Anlık verileri ayrı bir dosyaya kaydet (isteğe bağlı)
+            print(f'✓ {len(current_prices)} coin için anlık fiyat verisi alındı')
+        else:
+            print('⚠️  Anlık fiyat verisi alınamadı!')
+    except Exception as e:
+        print(f'⚠️  Anlık fiyat çekme hatası: {e}')
+    
+    # 5. Ani değişim analizi (TÜM coinler)
+    print('\n[4/4] Ani değişim analizi yapılıyor (TÜM coinler)...')
     try:
         if current_prices:
             sudden_analyses = analyze_sudden_changes(current_prices, coin_mapping)
