@@ -158,37 +158,63 @@ if page == "Ana Sayfa":
         )
         st.plotly_chart(fig, use_container_width=True)
         
-        # Korelasyon dağılımı
-        st.subheader("📊 Korelasyon Dağılımı")
-        st.markdown("""
-        **Bu grafikler ne gösteriyor?**
-        - **Histogram (Sol)**: Tüm korelasyon değerlerinin dağılımını gösterir. Hangi korelasyon aralığında daha fazla coin çifti olduğunu görürsünüz.
-        - **Box Plot (Sağ)**: Korelasyon değerlerinin istatistiksel dağılımını gösterir. Ortalama, medyan, çeyrekler ve aykırı değerleri görürsünüz.
-        - **Pozitif değerler (mavi)**: Coinler aynı yönde hareket ediyor (biri yükselirse diğeri de yükselir)
-        - **Negatif değerler (kırmızı)**: Coinler ters yönde hareket ediyor (biri yükselirse diğeri düşer)
-        """)
-        col1, col2 = st.columns(2)
+        # Pozitif/Negatif ayrımı ile tablo
+        st.markdown("---")
+        st.subheader("📋 Detaylı Korelasyon Tablosu")
         
-        with col1:
-            # Histogram
-            fig = px.histogram(
-                df_corr,
-                x='correlation',
-                nbins=30,
-                title="Korelasyon Değerleri Dağılımı",
-                labels={'correlation': 'Korelasyon', 'count': 'Frekans'}
-            )
-            st.plotly_chart(fig, use_container_width=True)
+        # Pozitif ve Negatif ayrımı
+        df_pos = df_corr[df_corr['correlation'] > 0].sort_values('correlation', ascending=False)
+        df_neg = df_corr[df_corr['correlation'] < 0].sort_values('correlation', ascending=True)
         
-        with col2:
-            # Box plot
-            fig = px.box(
-                df_corr,
-                y='correlation',
-                title="Korelasyon Değerleri Box Plot",
-                labels={'correlation': 'Korelasyon'}
-            )
-            st.plotly_chart(fig, use_container_width=True)
+        # Tab görünümü
+        tab_all, tab_pos, tab_neg = st.tabs(["📊 Tümü", "📈 Pozitif Korelasyon", "📉 Negatif Korelasyon"])
+        
+        with tab_all:
+            display_all = pd.DataFrame({
+                'Coin 1': df_corr['coin1'],
+                'Coin 2': df_corr['coin2'],
+                'Korelasyon': df_corr['correlation'].apply(lambda x: f"{x:+.4f}"),
+                'Mutlak Korelasyon': df_corr['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                'İlişki Tipi': df_corr['correlation'].apply(
+                    lambda x: "🟢 Pozitif (Aynı Yön)" if x > 0 else "🔴 Negatif (Ters Yön)"
+                ),
+                'Açıklama': df_corr['correlation'].apply(
+                    lambda x: "Birlikte yükselir/düşer" if x > 0 else "Biri yükselirken diğeri düşer"
+                )
+            })
+            st.dataframe(display_all, use_container_width=True, height=400)
+        
+        with tab_pos:
+            st.info("💡 **Pozitif Korelasyon:** Coinler aynı yönde hareket eder. Biri yükselirse diğeri de yükselir.")
+            if len(df_pos) > 0:
+                display_pos = pd.DataFrame({
+                    'Coin 1': df_pos['coin1'],
+                    'Coin 2': df_pos['coin2'],
+                    'Korelasyon': df_pos['correlation'].apply(lambda x: f"{x:+.4f}"),
+                    'Mutlak Korelasyon': df_pos['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                    'Güç': df_pos['correlation'].apply(
+                        lambda x: "🟢🟢🟢 Çok Güçlü" if x > 0.9 else "🟢🟢 Güçlü" if x > 0.8 else "🟢 Orta"
+                    )
+                })
+                st.dataframe(display_pos, use_container_width=True, height=400)
+            else:
+                st.warning("Pozitif korelasyon bulunamadı.")
+        
+        with tab_neg:
+            st.info("💡 **Negatif Korelasyon:** Coinler ters yönde hareket eder. Biri yükselirse diğeri düşer.")
+            if len(df_neg) > 0:
+                display_neg = pd.DataFrame({
+                    'Coin 1': df_neg['coin1'],
+                    'Coin 2': df_neg['coin2'],
+                    'Korelasyon': df_neg['correlation'].apply(lambda x: f"{x:+.4f}"),
+                    'Mutlak Korelasyon': df_neg['abs_correlation'].apply(lambda x: f"{x:.4f}"),
+                    'Güç': df_neg['correlation'].apply(
+                        lambda x: "🔴🔴🔴 Çok Güçlü" if x < -0.9 else "🔴🔴 Güçlü" if x < -0.8 else "🔴 Orta"
+                    )
+                })
+                st.dataframe(display_neg, use_container_width=True, height=400)
+            else:
+                st.warning("Negatif korelasyon bulunamadı.")
         
         # Korelasyon matrisi (önizleme)
         st.markdown("---")
