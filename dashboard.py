@@ -1420,11 +1420,33 @@ elif page == "Fiyat-Volume Analizi":
         **coin**: Coin çifti (örn: BTCUSDT, ETHUSDT)
         
         **correlation**: Fiyat ve volume değişimleri arasındaki korelasyon katsayısı
-        - **+1.0**: Mükemmel pozitif korelasyon (fiyat arttıkça volume da artar)
+        
+        **🔍 Korelasyon Ne Anlama Geliyor?**
+        
+        Bu analiz, **fiyat değişimleri** ile **volume değişimleri** arasındaki ilişkiyi ölçer:
+        
+        **Pozitif Korelasyon (+0.5 ile +1.0):**
+        - ✅ **Fiyat ARTTIKÇA** → Volume da **ARTIYOR**
+        - ✅ **Fiyat AZALDIKÇA** → Volume da **AZALIYOR**
+        - 💡 **Anlamı**: Güçlü alım-satım ilgisi var. Fiyat hareketleri gerçek piyasa ilgisiyle destekleniyor.
+        - 📈 **Örnek**: BTC fiyatı %5 arttığında, volume da %10 artıyor → Pozitif korelasyon
+        
+        **Negatif Korelasyon (-0.5 ile -1.0):**
+        - ⚠️ **Fiyat ARTTIKÇA** → Volume **AZALIYOR**
+        - ⚠️ **Fiyat AZALDIKÇA** → Volume **ARTIYOR**
+        - 💡 **Anlamı**: Ters yönlü hareket. Manipülasyon veya zayıf piyasa ilgisi şüphesi.
+        - 📉 **Örnek**: BTC fiyatı %5 arttığında, volume %10 azalıyor → Negatif korelasyon
+        
+        **Zayıf Korelasyon (-0.3 ile +0.3):**
+        - ➡️ Fiyat ve volume bağımsız hareket ediyor
+        - 💡 **Anlamı**: Fiyat hareketleri volume ile desteklenmiyor veya zayıf ilişki var
+        
+        **Korelasyon Değerleri:**
+        - **+1.0**: Mükemmel pozitif korelasyon (fiyat arttıkça volume da artar, fiyat azaldıkça volume da azalır)
+        - **+0.5 ile +1.0**: Güçlü pozitif ilişki (iyi alım-satım ilgisi)
         - **0.0**: Korelasyon yok (fiyat ve volume bağımsız hareket eder)
-        - **-1.0**: Mükemmel negatif korelasyon (fiyat arttıkça volume azalır)
-        - **0.5-1.0**: Güçlü pozitif ilişki (iyi alım-satım ilgisi)
         - **-0.5 ile -1.0**: Güçlü negatif ilişki (ters yönlü hareket)
+        - **-1.0**: Mükemmel negatif korelasyon (fiyat arttıkça volume azalır, fiyat azaldıkça volume artar)
         
         **abs_correlation**: Korelasyonun mutlak değeri (ilişkinin gücü, yönü önemli değil)
         - **0.7+**: Çok güçlü ilişki
@@ -1436,11 +1458,16 @@ elif page == "Fiyat-Volume Analizi":
         - Daha fazla veri noktası = Daha güvenilir sonuçlar
         - Genellikle 7 günlük günlük veri kullanılır (7 veri noktası)
         
-        **volume_increase_on_price_up_pct**: Fiyat artışı olduğunda volume'un da arttığı durumların yüzdesi
+        **volume_increase_on_price_up_pct**: **Sadece fiyat artışında** volume'un nasıl davrandığını gösterir
+        - Bu metrik, **sadece fiyatın arttığı günlerde** volume'un da arttığı durumların yüzdesidir
         - **%75+**: Fiyat artışlarının çoğunda volume da artıyor (güçlü alım ilgisi)
         - **%50-75**: Fiyat artışlarının yarısından fazlasında volume artıyor
         - **%25-50**: Fiyat artışlarının az bir kısmında volume artıyor
         - **%0-25**: Fiyat artışlarında volume genelde artmıyor
+        
+        **💡 Fark:**
+        - **correlation**: Hem fiyat artışı hem azalışında genel ilişkiyi gösterir
+        - **volume_increase_on_price_up_pct**: Sadece fiyat artışında volume davranışını gösterir
         
         **avg_volume_change_on_price_up**: Fiyat artışı olduğunda ortalama volume değişimi (%)
         - **Pozitif değer**: Fiyat arttığında volume ortalama olarak artıyor
