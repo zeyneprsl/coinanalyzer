@@ -1,5 +1,7 @@
 import time
 import threading
+import os
+import subprocess
 from datetime import datetime
 from binance_websocket import BinanceWebSocket
 from correlation_analyzer import CorrelationAnalyzer
@@ -7,13 +9,15 @@ from price_volume_analyzer import PriceVolumeAnalyzer
 from correlation_change_tracker import CorrelationChangeTracker
 
 class ContinuousAnalyzer:
-    def __init__(self, analysis_interval_minutes=30):
+    def __init__(self, analysis_interval_minutes=30, auto_push_to_github=False):
         """
         Sürekli çalışan analiz servisi
         
         analysis_interval_minutes: Her kaç dakikada bir analiz yapılacak (varsayılan: 30 dakika)
+        auto_push_to_github: Analiz sonrası otomatik GitHub push yapılsın mı? (Railway/Render için)
         """
         self.analysis_interval = analysis_interval_minutes * 60  # Saniyeye çevir
+        self.auto_push_to_github = auto_push_to_github
         self.running = False
         self.ws = BinanceWebSocket()
         self.correlation_analyzer = CorrelationAnalyzer(
@@ -274,6 +278,16 @@ def main():
     analyzer.start()
 
 if __name__ == "__main__":
+    # Otomatik GitHub push kontrolü (Railway/Render için)
+    # Railway/Render'da RAILWAY_ENVIRONMENT veya RENDER environment variable'ı varsa otomatik push aktif
+    auto_push = os.getenv('RAILWAY_ENVIRONMENT') is not None or os.getenv('RENDER') is not None
+    
+    if auto_push:
+        print("🚀 Railway/Render ortamı tespit edildi - Otomatik GitHub push aktif!")
+    
     # 30 dakikada bir analiz yapılacak (daha mantıklı bir süre)
-    analyzer = ContinuousAnalyzer(analysis_interval_minutes=30)
+    analyzer = ContinuousAnalyzer(
+        analysis_interval_minutes=30,
+        auto_push_to_github=auto_push
+    )
     analyzer.start()
