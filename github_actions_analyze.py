@@ -269,15 +269,15 @@ def main():
     print(f'\n{len(popular_coins)} coin için analiz yapılıyor...')
     print('📡 CoinGecko API kullanılıyor (Rate limit: 5-15 req/min)')
     print('⏱️  Her istek arasında 6 saniye bekleniyor...')
-    print(f'⏱️  Tahmini süre: ~{min(len(popular_coins), 50) * 6 / 60:.1f} dakika (ilk 50 coin)\n')
+    print(f'⏱️  Tahmini süre: ~{min(len(popular_coins), 100) * 6 / 60:.1f} dakika (maksimum 100 coin)\n')
     
-    # 2. Geçmiş veri çek ve korelasyon analizi (ilk 50 coin - rate limit için)
+    # 2. Geçmiş veri çek ve korelasyon analizi (maksimum 100 coin - rate limit için)
     print('[1/3] Geçmiş veri analizi yapılıyor (CoinGecko)...')
-    print(f'⚠️  Rate limit nedeniyle ilk 50 coin için geçmiş veri çekiliyor...')
+    print(f'⚠️  Rate limit nedeniyle maksimum 100 coin için geçmiş veri çekiliyor...')
     
     historical_data = {}
     successful = 0
-    max_coins_for_history = min(50, len(popular_coins))  # Rate limit için maksimum 50
+    max_coins_for_history = min(100, len(popular_coins))  # Rate limit için maksimum 100
     
     for i, (symbol, coin_id) in enumerate(list(coin_mapping.items())[:max_coins_for_history], 1):
         print(f'  [{i}/{max_coins_for_history}] {symbol} ({coin_id}) verisi çekiliyor...', end=' ')
@@ -321,12 +321,13 @@ def main():
             pv_analyses = {}
             
             for symbol, data in historical_data.items():
-                if 'volumes' not in data or len(data['volumes']) < 2:
-                    continue
-                
                 prices = data['prices']
-                volumes = data['volumes']
+                volumes = data.get('volumes', [])
                 timestamps = data['timestamps']
+                
+                # Volume verisi yoksa veya yetersizse, sıfırlarla doldur
+                if not volumes or len(volumes) < len(prices):
+                    volumes = [0] * len(prices)
                 
                 # Fiyat ve volume değişimlerini hesapla
                 price_changes = []
@@ -343,9 +344,10 @@ def main():
                         volume_change = (volumes[i] - volumes[i-1]) / volumes[i-1]
                         volume_changes.append(volume_change)
                     else:
+                        # Volume yoksa veya sıfırsa, küçük bir değer kullan (korelasyon hesaplaması için)
                         volume_changes.append(0)
                 
-                # Korelasyon hesapla
+                # Korelasyon hesapla (en az 2 veri noktası gerekli)
                 if len(price_changes) >= 2 and len(volume_changes) >= 2:
                     df_temp = pd.DataFrame({
                         'price_change': price_changes,
@@ -353,7 +355,12 @@ def main():
                     })
                     correlation = df_temp['price_change'].corr(df_temp['volume_change'])
                     
-                    if not np.isnan(correlation):
+                    # NaN kontrolü ve volume verisi kontrolü
+                    if np.isnan(correlation):
+                        correlation = 0.0  # Volume verisi yoksa korelasyon 0
+                    
+                    # Volume verisi varsa ve geçerliyse korelasyonu kullan
+                    has_volume_data = any(v != 0 for v in volumes) if volumes else False
                         # Fiyat artışı olduğunda volume artışı analizi
                         price_up_indices = [i for i, pc in enumerate(price_changes) if pc > 0]
                         if price_up_indices:
