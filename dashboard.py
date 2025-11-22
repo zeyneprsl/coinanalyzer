@@ -105,6 +105,77 @@ def check_and_start_analysis():
 # Analiz durumunu kontrol et
 analysis_ready = check_and_start_analysis()
 
+# Otomatik analiz fonksiyonu (Streamlit Cloud için)
+@st.cache_data(ttl=1800)  # 30 dakika cache
+def run_quick_analysis():
+    """Dashboard açıldığında hızlı analiz yap (Streamlit Cloud için)"""
+    try:
+        from correlation_analyzer import CorrelationAnalyzer
+        from price_volume_analyzer import PriceVolumeAnalyzer
+        import requests
+        
+        # Binance REST API'den hızlı veri çek
+        analyzer = CorrelationAnalyzer()
+        pv_analyzer = PriceVolumeAnalyzer()
+        
+        # Popüler coinler için hızlı analiz
+        popular_coins = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'SOLUSDT', 'ADAUSDT', 
+                         'XRPUSDT', 'DOGEUSDT', 'DOTUSDT', 'LINKUSDT', 'LTCUSDT']
+        
+        # Geçmiş verilerle korelasyon analizi
+        try:
+            corr_matrix, high_corr, coin_analyses = analyzer.analyze_historical_data(
+                symbols=popular_coins,
+                interval='1h',
+                limit=100,  # Daha az veri, daha hızlı
+                use_returns=True,
+                resample_interval='5min'
+            )
+            
+            # Fiyat-volume analizi için basit REST API çağrısı
+            price_volume_data = {}
+            for symbol in popular_coins[:5]:  # İlk 5 coin için
+                try:
+                    url = f"https://api.binance.com/api/v3/ticker/24hr?symbol={symbol}"
+                    response = requests.get(url, timeout=5)
+                    if response.status_code == 200:
+                        data = response.json()
+                        price_volume_data[symbol] = [{
+                            'timestamp': datetime.now(),
+                            'price': float(data['lastPrice']),
+                            'volume': float(data['volume']),
+                            'price_change_percent': float(data['priceChangePercent'])
+                        }]
+                except:
+                    continue
+            
+            if price_volume_data:
+                pv_analysis = pv_analyzer.analyze_price_volume_relationship(
+                    price_volume_data=price_volume_data,
+                    resample_interval='1min'
+                )
+                if pv_analysis:
+                    pv_analyzer.save_analysis(pv_analysis, 'price_volume_analysis.json')
+            
+            return True
+        except Exception as e:
+            return False
+    except Exception as e:
+        return False
+
+# Analiz dosyaları yoksa otomatik analiz dene
+critical_files = ['price_volume_analysis.json', 'sudden_price_volume_analysis.json', 
+                  'realtime_correlations.json']
+missing_files = [f for f in critical_files if not os.path.exists(f)]
+
+if missing_files and 'auto_analysis_attempted' not in st.session_state:
+    st.session_state['auto_analysis_attempted'] = True
+    with st.spinner("🔄 Analiz dosyaları bulunamadı, otomatik analiz başlatılıyor..."):
+        success = run_quick_analysis()
+        if success:
+            st.success("✅ Otomatik analiz tamamlandı! Sayfayı yenileyin.")
+            st.rerun()
+
 # Başlık
 st.markdown('<h1 class="main-header">📊 Binance Coin Korelasyon Dashboard</h1>', unsafe_allow_html=True)
 
