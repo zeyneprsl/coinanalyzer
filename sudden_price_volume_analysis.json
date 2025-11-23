@@ -1,1013 +1,1108 @@
 {
-  "timestamp": "2025-11-23 05:00:42",
+  "timestamp": "2025-11-23 05:47:02",
   "analyses": {
     "BTCUSDT": {
-      "price_change_24h": 2.7736636872993428,
-      "volume_24h": 44422117026.49618,
-      "price": 86506,
+      "price_change_24h": 2.4167161578423397,
+      "volume_24h": 44510373265.37583,
+      "price": 86067,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.7736636872993428,
-          "volume": 44422117026.49618
+          "price_change": 2.4167161578423397,
+          "volume": 44510373265.37583
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.7736636872993428,
-          "volume": 44422117026.49618
+          "price_change": 2.4167161578423397,
+          "volume": 44510373265.37583
         }
       }
     },
     "ETHUSDT": {
-      "price_change_24h": 2.939184090382356,
-      "volume_24h": 16482537145.70056,
-      "price": 2825.7,
+      "price_change_24h": 3.1661592891748134,
+      "volume_24h": 16800224701.043022,
+      "price": 2817.77,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.939184090382356,
-          "volume": 16482537145.70056
+          "price_change": 3.1661592891748134,
+          "volume": 16800224701.043022
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.939184090382356,
-          "volume": 16482537145.70056
+          "price_change": 3.1661592891748134,
+          "volume": 16800224701.043022
         }
       }
     },
     "XRPUSDT": {
-      "price_change_24h": 6.724718629497267,
-      "volume_24h": 3533569560.5263596,
-      "price": 2.06,
+      "price_change_24h": 6.630212923053098,
+      "volume_24h": 3557081376.75605,
+      "price": 2.05,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 6.724718629497267,
-          "volume": 3533569560.5263596
+          "price_change": 6.630212923053098,
+          "volume": 3557081376.75605
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 6.724718629497267,
-          "volume": 3533569560.5263596
+          "price_change": 6.630212923053098,
+          "volume": 3557081376.75605
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 6.724718629497267,
-          "volume": 3533569560.5263596
+          "price_change": 6.630212923053098,
+          "volume": 3557081376.75605
         }
       }
     },
     "BNBUSDT": {
-      "price_change_24h": 2.3834251436841267,
-      "volume_24h": 1599882007.6643012,
-      "price": 848.82,
+      "price_change_24h": 2.886069659997425,
+      "volume_24h": 1562014069.4920666,
+      "price": 845.22,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.3834251436841267,
-          "volume": 1599882007.6643012
+          "price_change": 2.886069659997425,
+          "volume": 1562014069.4920666
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.3834251436841267,
-          "volume": 1599882007.6643012
+          "price_change": 2.886069659997425,
+          "volume": 1562014069.4920666
         }
       }
     },
     "SOLUSDT": {
-      "price_change_24h": 3.5831624466789647,
-      "volume_24h": 531674705.01935565,
-      "price": 130.79,
+      "price_change_24h": 3.7116213754103495,
+      "volume_24h": 527045575.53404635,
+      "price": 130.16,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.5831624466789647,
-          "volume": 531674705.01935565
+          "price_change": 3.7116213754103495,
+          "volume": 527045575.53404635
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.5831624466789647,
-          "volume": 531674705.01935565
+          "price_change": 3.7116213754103495,
+          "volume": 527045575.53404635
         }
       }
     },
     "STETHUSDT": {
-      "price_change_24h": 3.0155359431457343,
-      "volume_24h": 49076998.038610294,
-      "price": 2823.5,
+      "price_change_24h": 3.067002869610364,
+      "volume_24h": 48373916.37164942,
+      "price": 2813.9,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.0155359431457343,
-          "volume": 49076998.038610294
+          "price_change": 3.067002869610364,
+          "volume": 48373916.37164942
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.0155359431457343,
-          "volume": 49076998.038610294
+          "price_change": 3.067002869610364,
+          "volume": 48373916.37164942
         }
       }
     },
     "DOGEUSDT": {
-      "price_change_24h": 4.60314021643546,
-      "volume_24h": 1456187299.709083,
-      "price": 0.143706,
+      "price_change_24h": 5.175816087640799,
+      "volume_24h": 1469341671.3501313,
+      "price": 0.143158,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 4.60314021643546,
-          "volume": 1456187299.709083
+          "price_change": 5.175816087640799,
+          "volume": 1469341671.3501313
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 4.60314021643546,
-          "volume": 1456187299.709083
+          "price_change": 5.175816087640799,
+          "volume": 1469341671.3501313
+        },
+        "5.0%": {
+          "triggered": true,
+          "price_change": 5.175816087640799,
+          "volume": 1469341671.3501313
         }
       }
     },
     "ADAUSDT": {
-      "price_change_24h": 2.4075406310769725,
-      "volume_24h": 711531356.9897587,
-      "price": 0.412723,
+      "price_change_24h": 2.8637164003672075,
+      "volume_24h": 705835095.1265455,
+      "price": 0.410755,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.4075406310769725,
-          "volume": 711531356.9897587
+          "price_change": 2.8637164003672075,
+          "volume": 705835095.1265455
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.4075406310769725,
-          "volume": 711531356.9897587
+          "price_change": 2.8637164003672075,
+          "volume": 705835095.1265455
         }
       }
     },
     "WSTETHUSDT": {
-      "price_change_24h": 2.9957670730854282,
-      "volume_24h": 40525800.866473615,
-      "price": 3446.46,
+      "price_change_24h": 3.3110403363092025,
+      "volume_24h": 40585911.821701445,
+      "price": 3435.75,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.9957670730854282,
-          "volume": 40525800.866473615
+          "price_change": 3.3110403363092025,
+          "volume": 40585911.821701445
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.9957670730854282,
-          "volume": 40525800.866473615
+          "price_change": 3.3110403363092025,
+          "volume": 40585911.821701445
         }
       }
     },
     "WBTCUSDT": {
-      "price_change_24h": 2.7691845301422457,
-      "volume_24h": 226234415.6195219,
-      "price": 86352,
+      "price_change_24h": 2.9178276704214587,
+      "volume_24h": 225675128.8728131,
+      "price": 85979,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.7691845301422457,
-          "volume": 226234415.6195219
+          "price_change": 2.9178276704214587,
+          "volume": 225675128.8728131
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.7691845301422457,
-          "volume": 226234415.6195219
+          "price_change": 2.9178276704214587,
+          "volume": 225675128.8728131
+        }
+      }
+    },
+    "BCHUSDT": {
+      "price_change_24h": 3.0634498968747534,
+      "volume_24h": 711051075.8680611,
+      "price": 541.78,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 3.0634498968747534,
+          "volume": 711051075.8680611
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 3.0634498968747534,
+          "volume": 711051075.8680611
         }
       }
     },
     "WBETHUSDT": {
-      "price_change_24h": 3.0516208979882506,
-      "volume_24h": 30456014.283795465,
-      "price": 3061.44,
+      "price_change_24h": 3.3400726562428478,
+      "volume_24h": 30272731.729311872,
+      "price": 3051.53,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.0516208979882506,
-          "volume": 30456014.283795465
+          "price_change": 3.3400726562428478,
+          "volume": 30272731.729311872
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.0516208979882506,
-          "volume": 30456014.283795465
+          "price_change": 3.3400726562428478,
+          "volume": 30272731.729311872
         }
       }
     },
     "ZECUSDT": {
-      "price_change_24h": 13.812534276948194,
-      "volume_24h": 2274941359.128034,
-      "price": 579.1,
+      "price_change_24h": 19.889698455023428,
+      "volume_24h": 2291522424.6567287,
+      "price": 579.17,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 13.812534276948194,
-          "volume": 2274941359.128034
+          "price_change": 19.889698455023428,
+          "volume": 2291522424.6567287
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 13.812534276948194,
-          "volume": 2274941359.128034
+          "price_change": 19.889698455023428,
+          "volume": 2291522424.6567287
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 13.812534276948194,
-          "volume": 2274941359.128034
+          "price_change": 19.889698455023428,
+          "volume": 2291522424.6567287
         },
         "10.0%": {
           "triggered": true,
-          "price_change": 13.812534276948194,
-          "volume": 2274941359.128034
+          "price_change": 19.889698455023428,
+          "volume": 2291522424.6567287
         }
       }
     },
     "LINKUSDT": {
-      "price_change_24h": 4.242382282977704,
-      "volume_24h": 547861500.406943,
-      "price": 12.51,
+      "price_change_24h": 5.070370976360452,
+      "volume_24h": 547244680.5235882,
+      "price": 12.46,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 4.242382282977704,
-          "volume": 547861500.406943
+          "price_change": 5.070370976360452,
+          "volume": 547244680.5235882
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 4.242382282977704,
-          "volume": 547861500.406943
+          "price_change": 5.070370976360452,
+          "volume": 547244680.5235882
+        },
+        "5.0%": {
+          "triggered": true,
+          "price_change": 5.070370976360452,
+          "volume": 547244680.5235882
         }
       }
     },
     "HYPEUSDT": {
-      "price_change_24h": -5.952059876734161,
-      "volume_24h": 552697259.3561558,
-      "price": 31.53,
+      "price_change_24h": -5.863069298771744,
+      "volume_24h": 547038359.8106607,
+      "price": 31.54,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": -5.952059876734161,
-          "volume": 552697259.3561558
+          "price_change": -5.863069298771744,
+          "volume": 547038359.8106607
         },
         "2.0%": {
           "triggered": true,
-          "price_change": -5.952059876734161,
-          "volume": 552697259.3561558
+          "price_change": -5.863069298771744,
+          "volume": 547038359.8106607
         },
         "5.0%": {
           "triggered": true,
-          "price_change": -5.952059876734161,
-          "volume": 552697259.3561558
+          "price_change": -5.863069298771744,
+          "volume": 547038359.8106607
         }
       }
     },
     "XLMUSDT": {
-      "price_change_24h": 4.091322162119811,
-      "volume_24h": 148937802.11711323,
-      "price": 0.239341,
+      "price_change_24h": 3.9599918099647478,
+      "volume_24h": 149572213.71929893,
+      "price": 0.237127,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 4.091322162119811,
-          "volume": 148937802.11711323
+          "price_change": 3.9599918099647478,
+          "volume": 149572213.71929893
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 4.091322162119811,
-          "volume": 148937802.11711323
+          "price_change": 3.9599918099647478,
+          "volume": 149572213.71929893
         }
       }
     },
     "WETHUSDT": {
-      "price_change_24h": 2.9937279619112886,
-      "volume_24h": 46604608.82328588,
-      "price": 2825.15,
+      "price_change_24h": 3.262949277732613,
+      "volume_24h": 44999423.810546145,
+      "price": 2817.31,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.9937279619112886,
-          "volume": 46604608.82328588
+          "price_change": 3.262949277732613,
+          "volume": 44999423.810546145
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.9937279619112886,
-          "volume": 46604608.82328588
-        }
-      }
-    },
-    "WEETHUSDT": {
-      "price_change_24h": 2.983500020426489,
-      "volume_24h": 60715721.803998865,
-      "price": 3054.13,
-      "thresholds": {
-        "1.0%": {
-          "triggered": true,
-          "price_change": 2.983500020426489,
-          "volume": 60715721.803998865
-        },
-        "2.0%": {
-          "triggered": true,
-          "price_change": 2.983500020426489,
-          "volume": 60715721.803998865
+          "price_change": 3.262949277732613,
+          "volume": 44999423.810546145
         }
       }
     },
     "XMRUSDT": {
-      "price_change_24h": 13.009180000903026,
-      "volume_24h": 149986283.8081925,
-      "price": 392.21,
+      "price_change_24h": 15.111046047651886,
+      "volume_24h": 156854850.36158085,
+      "price": 397.13,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 13.009180000903026,
-          "volume": 149986283.8081925
+          "price_change": 15.111046047651886,
+          "volume": 156854850.36158085
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 13.009180000903026,
-          "volume": 149986283.8081925
+          "price_change": 15.111046047651886,
+          "volume": 156854850.36158085
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 13.009180000903026,
-          "volume": 149986283.8081925
+          "price_change": 15.111046047651886,
+          "volume": 156854850.36158085
         },
         "10.0%": {
           "triggered": true,
-          "price_change": 13.009180000903026,
-          "volume": 149986283.8081925
+          "price_change": 15.111046047651886,
+          "volume": 156854850.36158085
+        }
+      }
+    },
+    "WEETHUSDT": {
+      "price_change_24h": 3.217454956734451,
+      "volume_24h": 60572478.552120954,
+      "price": 3043.08,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 3.217454956734451,
+          "volume": 60572478.552120954
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 3.217454956734451,
+          "volume": 60572478.552120954
         }
       }
     },
     "CBBTCUSDT": {
-      "price_change_24h": 3.100555899297767,
-      "volume_24h": 332360281.8645257,
-      "price": 86553,
+      "price_change_24h": 2.7282450506248046,
+      "volume_24h": 334308225.9436867,
+      "price": 86084,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.100555899297767,
-          "volume": 332360281.8645257
+          "price_change": 2.7282450506248046,
+          "volume": 334308225.9436867
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.100555899297767,
-          "volume": 332360281.8645257
+          "price_change": 2.7282450506248046,
+          "volume": 334308225.9436867
+        }
+      }
+    },
+    "LTCUSDT": {
+      "price_change_24h": 2.0250255745106918,
+      "volume_24h": 488351747.2322013,
+      "price": 83.53,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 2.0250255745106918,
+          "volume": 488351747.2322013
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 2.0250255745106918,
+          "volume": 488351747.2322013
         }
       }
     },
     "HBARUSDT": {
-      "price_change_24h": 5.328826055980384,
-      "volume_24h": 163580403.29191017,
-      "price": 0.136039,
+      "price_change_24h": 6.095502763271797,
+      "volume_24h": 161178484.10861695,
+      "price": 0.135613,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 5.328826055980384,
-          "volume": 163580403.29191017
+          "price_change": 6.095502763271797,
+          "volume": 161178484.10861695
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 5.328826055980384,
-          "volume": 163580403.29191017
+          "price_change": 6.095502763271797,
+          "volume": 161178484.10861695
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 5.328826055980384,
-          "volume": 163580403.29191017
-        }
-      }
-    },
-    "SUIUSDT": {
-      "price_change_24h": 2.161228475663384,
-      "volume_24h": 608579439.6481165,
-      "price": 1.39,
-      "thresholds": {
-        "1.0%": {
-          "triggered": true,
-          "price_change": 2.161228475663384,
-          "volume": 608579439.6481165
-        },
-        "2.0%": {
-          "triggered": true,
-          "price_change": 2.161228475663384,
-          "volume": 608579439.6481165
+          "price_change": 6.095502763271797,
+          "volume": 161178484.10861695
         }
       }
     },
     "SHIBUSDT": {
-      "price_change_24h": 2.969935228406531,
-      "volume_24h": 121807552.22718586,
-      "price": 7.99e-06,
+      "price_change_24h": 3.627631103230152,
+      "volume_24h": 120228146.33263378,
+      "price": 7.96e-06,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.969935228406531,
-          "volume": 121807552.22718586
+          "price_change": 3.627631103230152,
+          "volume": 120228146.33263378
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.969935228406531,
-          "volume": 121807552.22718586
+          "price_change": 3.627631103230152,
+          "volume": 120228146.33263378
         }
       }
     },
     "CROUSDT": {
-      "price_change_24h": 13.227668544533827,
-      "volume_24h": 37397635.1184795,
-      "price": 0.111222,
+      "price_change_24h": 12.770535686587655,
+      "volume_24h": 40460305.39651899,
+      "price": 0.110078,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 13.227668544533827,
-          "volume": 37397635.1184795
+          "price_change": 12.770535686587655,
+          "volume": 40460305.39651899
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 13.227668544533827,
-          "volume": 37397635.1184795
+          "price_change": 12.770535686587655,
+          "volume": 40460305.39651899
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 13.227668544533827,
-          "volume": 37397635.1184795
+          "price_change": 12.770535686587655,
+          "volume": 40460305.39651899
         },
         "10.0%": {
           "triggered": true,
-          "price_change": 13.227668544533827,
-          "volume": 37397635.1184795
+          "price_change": 12.770535686587655,
+          "volume": 40460305.39651899
         }
       }
     },
     "WLFIUSDT": {
-      "price_change_24h": 3.838144937547833,
-      "volume_24h": 277883269.82195514,
-      "price": 0.150238,
+      "price_change_24h": 3.9250117731412266,
+      "volume_24h": 272643284.5399659,
+      "price": 0.149877,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.838144937547833,
-          "volume": 277883269.82195514
+          "price_change": 3.9250117731412266,
+          "volume": 272643284.5399659
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.838144937547833,
-          "volume": 277883269.82195514
-        }
-      }
-    },
-    "UNIUSDT": {
-      "price_change_24h": -2.443895366971786,
-      "volume_24h": 461014599.69690055,
-      "price": 6.29,
-      "thresholds": {
-        "1.0%": {
-          "triggered": true,
-          "price_change": -2.443895366971786,
-          "volume": 461014599.69690055
-        },
-        "2.0%": {
-          "triggered": true,
-          "price_change": -2.443895366971786,
-          "volume": 461014599.69690055
+          "price_change": 3.9250117731412266,
+          "volume": 272643284.5399659
         }
       }
     },
     "DOTUSDT": {
-      "price_change_24h": 2.5564964961832826,
-      "volume_24h": 162785994.57204697,
+      "price_change_24h": 3.5148149658475814,
+      "volume_24h": 161712587.82160094,
       "price": 2.35,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.5564964961832826,
-          "volume": 162785994.57204697
+          "price_change": 3.5148149658475814,
+          "volume": 161712587.82160094
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.5564964961832826,
-          "volume": 162785994.57204697
+          "price_change": 3.5148149658475814,
+          "volume": 161712587.82160094
         }
       }
     },
     "MNTUSDT": {
-      "price_change_24h": 11.654661892787884,
-      "volume_24h": 119381266.39385459,
-      "price": 1.054,
+      "price_change_24h": 10.577353152219576,
+      "volume_24h": 119557156.8128046,
+      "price": 1.034,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 11.654661892787884,
-          "volume": 119381266.39385459
+          "price_change": 10.577353152219576,
+          "volume": 119557156.8128046
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 11.654661892787884,
-          "volume": 119381266.39385459
+          "price_change": 10.577353152219576,
+          "volume": 119557156.8128046
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 11.654661892787884,
-          "volume": 119381266.39385459
+          "price_change": 10.577353152219576,
+          "volume": 119557156.8128046
         },
         "10.0%": {
           "triggered": true,
-          "price_change": 11.654661892787884,
-          "volume": 119381266.39385459
+          "price_change": 10.577353152219576,
+          "volume": 119557156.8128046
         }
       }
     },
     "CCUSDT": {
-      "price_change_24h": -5.063399520799206,
-      "volume_24h": 73792876.84521447,
-      "price": 0.076072,
+      "price_change_24h": -4.858475511894158,
+      "volume_24h": 78038330.84908885,
+      "price": 0.076059,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": -5.063399520799206,
-          "volume": 73792876.84521447
+          "price_change": -4.858475511894158,
+          "volume": 78038330.84908885
         },
         "2.0%": {
           "triggered": true,
-          "price_change": -5.063399520799206,
-          "volume": 73792876.84521447
-        },
-        "5.0%": {
-          "triggered": true,
-          "price_change": -5.063399520799206,
-          "volume": 73792876.84521447
+          "price_change": -4.858475511894158,
+          "volume": 78038330.84908885
         }
       }
     },
     "TAOUSDT": {
-      "price_change_24h": 2.4376324092003574,
-      "volume_24h": 129414781.9598021,
-      "price": 278.36,
+      "price_change_24h": 3.5710585090693874,
+      "volume_24h": 127458428.35680676,
+      "price": 277.04,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.4376324092003574,
-          "volume": 129414781.9598021
+          "price_change": 3.5710585090693874,
+          "volume": 127458428.35680676
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.4376324092003574,
-          "volume": 129414781.9598021
+          "price_change": 3.5710585090693874,
+          "volume": 127458428.35680676
         }
       }
     },
     "BGBUSDT": {
-      "price_change_24h": 3.6253725072417495,
-      "volume_24h": 62106536.896618634,
+      "price_change_24h": 3.635955008832385,
+      "volume_24h": 61655525.49264309,
       "price": 3.56,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.6253725072417495,
-          "volume": 62106536.896618634
+          "price_change": 3.635955008832385,
+          "volume": 61655525.49264309
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.6253725072417495,
-          "volume": 62106536.896618634
+          "price_change": 3.635955008832385,
+          "volume": 61655525.49264309
         }
       }
     },
     "AAVEUSDT": {
-      "price_change_24h": 3.6391916790915,
-      "volume_24h": 248364227.18155083,
-      "price": 164.02,
+      "price_change_24h": 4.462521700444457,
+      "volume_24h": 247063336.05819654,
+      "price": 163.99,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.6391916790915,
-          "volume": 248364227.18155083
+          "price_change": 4.462521700444457,
+          "volume": 247063336.05819654
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.6391916790915,
-          "volume": 248364227.18155083
+          "price_change": 4.462521700444457,
+          "volume": 247063336.05819654
         }
       }
     },
     "OKBUSDT": {
-      "price_change_24h": 5.87018819409886,
-      "volume_24h": 53661745.28295291,
-      "price": 104.62,
+      "price_change_24h": 6.083799648943586,
+      "volume_24h": 53766550.7894797,
+      "price": 103.99,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 5.87018819409886,
-          "volume": 53661745.28295291
+          "price_change": 6.083799648943586,
+          "volume": 53766550.7894797
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 5.87018819409886,
-          "volume": 53661745.28295291
+          "price_change": 6.083799648943586,
+          "volume": 53766550.7894797
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 5.87018819409886,
-          "volume": 53661745.28295291
+          "price_change": 6.083799648943586,
+          "volume": 53766550.7894797
+        }
+      }
+    },
+    "ETCUSDT": {
+      "price_change_24h": 2.334812438380309,
+      "volume_24h": 64253497.95266067,
+      "price": 13.69,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 2.334812438380309,
+          "volume": 64253497.95266067
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 2.334812438380309,
+          "volume": 64253497.95266067
         }
       }
     },
     "JITOSOLUSDT": {
-      "price_change_24h": 3.066222597632377,
-      "volume_24h": 19318989.09099936,
-      "price": 162.57,
+      "price_change_24h": 3.766420225253967,
+      "volume_24h": 19122291.93746733,
+      "price": 162.0,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.066222597632377,
-          "volume": 19318989.09099936
+          "price_change": 3.766420225253967,
+          "volume": 19122291.93746733
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.066222597632377,
-          "volume": 19318989.09099936
+          "price_change": 3.766420225253967,
+          "volume": 19122291.93746733
         }
       }
     },
-    "PEPEUSDT": {
-      "price_change_24h": 4.030669137765853,
-      "volume_24h": 327153749.8993827,
-      "price": 4.21e-06,
+    "JLPUSDT": {
+      "price_change_24h": 2.0842761387551687,
+      "volume_24h": 42813885.48378783,
+      "price": 4.52,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 4.030669137765853,
-          "volume": 327153749.8993827
+          "price_change": 2.0842761387551687,
+          "volume": 42813885.48378783
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 4.030669137765853,
-          "volume": 327153749.8993827
+          "price_change": 2.0842761387551687,
+          "volume": 42813885.48378783
         }
       }
     },
     "ENAUSDT": {
-      "price_change_24h": 2.4754456539289653,
-      "volume_24h": 147654245.96200275,
-      "price": 0.239769,
+      "price_change_24h": 3.868373433424019,
+      "volume_24h": 139402552.94747493,
+      "price": 0.238944,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.4754456539289653,
-          "volume": 147654245.96200275
+          "price_change": 3.868373433424019,
+          "volume": 139402552.94747493
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.4754456539289653,
-          "volume": 147654245.96200275
+          "price_change": 3.868373433424019,
+          "volume": 139402552.94747493
+        }
+      }
+    },
+    "PEPEUSDT": {
+      "price_change_24h": 5.21040585063303,
+      "volume_24h": 321662479.5054781,
+      "price": 4.2e-06,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 5.21040585063303,
+          "volume": 321662479.5054781
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 5.21040585063303,
+          "volume": 321662479.5054781
+        },
+        "5.0%": {
+          "triggered": true,
+          "price_change": 5.21040585063303,
+          "volume": 321662479.5054781
+        }
+      }
+    },
+    "APTUSDT": {
+      "price_change_24h": 2.778779001836714,
+      "volume_24h": 285741423.90022475,
+      "price": 2.35,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 2.778779001836714,
+          "volume": 285741423.90022475
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 2.778779001836714,
+          "volume": 285741423.90022475
         }
       }
     },
     "KCSUSDT": {
-      "price_change_24h": 2.8896075643103063,
-      "volume_24h": 6020916.51093642,
-      "price": 11.67,
+      "price_change_24h": 3.924495471300121,
+      "volume_24h": 5739729.474891563,
+      "price": 11.63,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.8896075643103063,
-          "volume": 6020916.51093642
+          "price_change": 3.924495471300121,
+          "volume": 5739729.474891563
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.8896075643103063,
-          "volume": 6020916.51093642
+          "price_change": 3.924495471300121,
+          "volume": 5739729.474891563
         }
       }
     },
     "ONDOUSDT": {
-      "price_change_24h": 2.804680493203952,
-      "volume_24h": 66622981.58465119,
-      "price": 0.472459,
+      "price_change_24h": 3.5980192791345678,
+      "volume_24h": 64347236.58870904,
+      "price": 0.470956,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.804680493203952,
-          "volume": 66622981.58465119
+          "price_change": 3.5980192791345678,
+          "volume": 64347236.58870904
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.804680493203952,
-          "volume": 66622981.58465119
+          "price_change": 3.5980192791345678,
+          "volume": 64347236.58870904
         }
       }
     },
     "POLUSDT": {
-      "price_change_24h": 3.0573390436677466,
-      "volume_24h": 69453983.79153872,
-      "price": 0.136039,
+      "price_change_24h": 4.017441994548135,
+      "volume_24h": 69868335.72982673,
+      "price": 0.135968,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.0573390436677466,
-          "volume": 69453983.79153872
+          "price_change": 4.017441994548135,
+          "volume": 69868335.72982673
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.0573390436677466,
-          "volume": 69453983.79153872
+          "price_change": 4.017441994548135,
+          "volume": 69868335.72982673
         }
       }
     },
     "WLDUSDT": {
-      "price_change_24h": 3.272572424215318,
-      "volume_24h": 116482657.46152057,
-      "price": 0.613101,
+      "price_change_24h": 4.7334357933596785,
+      "volume_24h": 115652643.58855964,
+      "price": 0.613586,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.272572424215318,
-          "volume": 116482657.46152057
+          "price_change": 4.7334357933596785,
+          "volume": 115652643.58855964
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.272572424215318,
-          "volume": 116482657.46152057
+          "price_change": 4.7334357933596785,
+          "volume": 115652643.58855964
         }
       }
     },
     "HASHUSDT": {
-      "price_change_24h": 2.8719947686817555,
-      "volume_24h": 17438.69607319162,
-      "price": 0.02492038,
+      "price_change_24h": 2.904529208005472,
+      "volume_24h": 17542.678205877797,
+      "price": 0.02492625,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.8719947686817555,
-          "volume": 17438.69607319162
+          "price_change": 2.904529208005472,
+          "volume": 17542.678205877797
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.8719947686817555,
-          "volume": 17438.69607319162
+          "price_change": 2.904529208005472,
+          "volume": 17542.678205877797
         }
       }
     },
-    "RETHUSDT": {
-      "price_change_24h": 3.1022190104548186,
-      "volume_24h": 3298809.7402949827,
-      "price": 3240.68,
+    "TRUMPUSDT": {
+      "price_change_24h": 2.136094244249865,
+      "volume_24h": 297611005.0466986,
+      "price": 6.39,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.1022190104548186,
-          "volume": 3298809.7402949827
+          "price_change": 2.136094244249865,
+          "volume": 297611005.0466986
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.1022190104548186,
-          "volume": 3298809.7402949827
+          "price_change": 2.136094244249865,
+          "volume": 297611005.0466986
         }
       }
     },
     "ATOMUSDT": {
-      "price_change_24h": 2.7670024136085245,
-      "volume_24h": 48045097.59683728,
-      "price": 2.54,
+      "price_change_24h": 3.5216332922891955,
+      "volume_24h": 47037648.59365378,
+      "price": 2.53,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.7670024136085245,
-          "volume": 48045097.59683728
+          "price_change": 3.5216332922891955,
+          "volume": 47037648.59365378
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.7670024136085245,
-          "volume": 48045097.59683728
+          "price_change": 3.5216332922891955,
+          "volume": 47037648.59365378
+        }
+      }
+    },
+    "RETHUSDT": {
+      "price_change_24h": 3.1292339139087715,
+      "volume_24h": 3318978.4358661217,
+      "price": 3229.05,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 3.1292339139087715,
+          "volume": 3318978.4358661217
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 3.1292339139087715,
+          "volume": 3318978.4358661217
+        }
+      }
+    },
+    "ALGOUSDT": {
+      "price_change_24h": 2.6226994462508166,
+      "volume_24h": 44425073.63954773,
+      "price": 0.137542,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 2.6226994462508166,
+          "volume": 44425073.63954773
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 2.6226994462508166,
+          "volume": 44425073.63954773
         }
       }
     },
     "FILUSDT": {
-      "price_change_24h": 2.3954107263706907,
-      "volume_24h": 151246784.62493595,
+      "price_change_24h": 3.7050546296678597,
+      "volume_24h": 149004531.3914061,
       "price": 1.67,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.3954107263706907,
-          "volume": 151246784.62493595
+          "price_change": 3.7050546296678597,
+          "volume": 149004531.3914061
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.3954107263706907,
-          "volume": 151246784.62493595
+          "price_change": 3.7050546296678597,
+          "volume": 149004531.3914061
         }
       }
     },
     "GTUSDT": {
-      "price_change_24h": 3.930510420431721,
-      "volume_24h": 2773608.203194276,
-      "price": 10.0,
+      "price_change_24h": 3.463302861310743,
+      "volume_24h": 2760273.5832960606,
+      "price": 9.95,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.930510420431721,
-          "volume": 2773608.203194276
+          "price_change": 3.463302861310743,
+          "volume": 2760273.5832960606
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.930510420431721,
-          "volume": 2773608.203194276
+          "price_change": 3.463302861310743,
+          "volume": 2760273.5832960606
         }
       }
     },
     "WBNBUSDT": {
-      "price_change_24h": 2.334721275587556,
-      "volume_24h": 434010096.106379,
-      "price": 848.4,
+      "price_change_24h": 2.987477499111424,
+      "volume_24h": 319388738.009398,
+      "price": 845.0,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.334721275587556,
-          "volume": 434010096.106379
+          "price_change": 2.987477499111424,
+          "volume": 319388738.009398
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.334721275587556,
-          "volume": 434010096.106379
+          "price_change": 2.987477499111424,
+          "volume": 319388738.009398
         }
       }
     },
     "BNSOLUSDT": {
-      "price_change_24h": 2.9409795313686375,
-      "volume_24h": 2666451.1765879723,
-      "price": 141.61,
+      "price_change_24h": 3.694499290005196,
+      "volume_24h": 2676986.267893317,
+      "price": 141.05,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.9409795313686375,
-          "volume": 2666451.1765879723
+          "price_change": 3.694499290005196,
+          "volume": 2676986.267893317
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.9409795313686375,
-          "volume": 2666451.1765879723
+          "price_change": 3.694499290005196,
+          "volume": 2676986.267893317
         }
       }
     },
     "ARBUSDT": {
-      "price_change_24h": 2.0080615005669933,
-      "volume_24h": 125771613.1133187,
-      "price": 0.203295,
+      "price_change_24h": 2.7789051374688203,
+      "volume_24h": 121280805.83429947,
+      "price": 0.202217,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.0080615005669933,
-          "volume": 125771613.1133187
+          "price_change": 2.7789051374688203,
+          "volume": 121280805.83429947
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.0080615005669933,
-          "volume": 125771613.1133187
+          "price_change": 2.7789051374688203,
+          "volume": 121280805.83429947
         }
       }
     },
     "QNTUSDT": {
-      "price_change_24h": 7.543869534128279,
-      "volume_24h": 29218941.641063888,
-      "price": 77.64,
+      "price_change_24h": 6.472249618387625,
+      "volume_24h": 28376231.47292859,
+      "price": 76.76,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 7.543869534128279,
-          "volume": 29218941.641063888
+          "price_change": 6.472249618387625,
+          "volume": 28376231.47292859
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 7.543869534128279,
-          "volume": 29218941.641063888
+          "price_change": 6.472249618387625,
+          "volume": 28376231.47292859
         },
         "5.0%": {
           "triggered": true,
-          "price_change": 7.543869534128279,
-          "volume": 29218941.641063888
+          "price_change": 6.472249618387625,
+          "volume": 28376231.47292859
         }
       }
     },
     "VETUSDT": {
-      "price_change_24h": 2.5042754188524134,
-      "volume_24h": 20835885.63880892,
-      "price": 0.01309813,
+      "price_change_24h": 2.833286985785175,
+      "volume_24h": 20331608.124335658,
+      "price": 0.0129837,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.5042754188524134,
-          "volume": 20835885.63880892
+          "price_change": 2.833286985785175,
+          "volume": 20331608.124335658
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.5042754188524134,
-          "volume": 20835885.63880892
+          "price_change": 2.833286985785175,
+          "volume": 20331608.124335658
         }
       }
     },
     "KASUSDT": {
-      "price_change_24h": 2.2282128208627787,
-      "volume_24h": 25273003.396934323,
-      "price": 0.03852893,
+      "price_change_24h": 3.2551031933464154,
+      "volume_24h": 24842940.693994444,
+      "price": 0.03855519,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.2282128208627787,
-          "volume": 25273003.396934323
+          "price_change": 3.2551031933464154,
+          "volume": 24842940.693994444
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.2282128208627787,
-          "volume": 25273003.396934323
+          "price_change": 3.2551031933464154,
+          "volume": 24842940.693994444
         }
       }
     },
     "FBTCUSDT": {
-      "price_change_24h": 2.4304061150378238,
-      "volume_24h": 51899.83623224656,
-      "price": 86423,
+      "price_change_24h": 2.78609279615303,
+      "volume_24h": 51820.29943331791,
+      "price": 86246,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.4304061150378238,
-          "volume": 51899.83623224656
+          "price_change": 2.78609279615303,
+          "volume": 51820.29943331791
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.4304061150378238,
-          "volume": 51899.83623224656
-        }
-      }
-    },
-    "RSETHUSDT": {
-      "price_change_24h": 2.939679131719459,
-      "volume_24h": 191808.0639142278,
-      "price": 2988.29,
-      "thresholds": {
-        "1.0%": {
-          "triggered": true,
-          "price_change": 2.939679131719459,
-          "volume": 191808.0639142278
-        },
-        "2.0%": {
-          "triggered": true,
-          "price_change": 2.939679131719459,
-          "volume": 191808.0639142278
+          "price_change": 2.78609279615303,
+          "volume": 51820.29943331791
         }
       }
     },
     "FLRUSDT": {
-      "price_change_24h": 3.6274717378975336,
-      "volume_24h": 4718918.902228727,
-      "price": 0.01287612,
+      "price_change_24h": 3.6392391334872105,
+      "volume_24h": 4778894.404164051,
+      "price": 0.01285368,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 3.6274717378975336,
-          "volume": 4718918.902228727
+          "price_change": 3.6392391334872105,
+          "volume": 4778894.404164051
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 3.6274717378975336,
-          "volume": 4718918.902228727
+          "price_change": 3.6392391334872105,
+          "volume": 4778894.404164051
+        }
+      }
+    },
+    "RSETHUSDT": {
+      "price_change_24h": 3.2409009558942325,
+      "volume_24h": 191161.7998211015,
+      "price": 2978.22,
+      "thresholds": {
+        "1.0%": {
+          "triggered": true,
+          "price_change": 3.2409009558942325,
+          "volume": 191161.7998211015
+        },
+        "2.0%": {
+          "triggered": true,
+          "price_change": 3.2409009558942325,
+          "volume": 191161.7998211015
         }
       }
     },
     "LBTCUSDT": {
-      "price_change_24h": 2.568555177039219,
-      "volume_24h": 10989964.531243997,
-      "price": 86506,
+      "price_change_24h": 2.530900671323444,
+      "volume_24h": 10816634.081842994,
+      "price": 86105,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": 2.568555177039219,
-          "volume": 10989964.531243997
+          "price_change": 2.530900671323444,
+          "volume": 10816634.081842994
         },
         "2.0%": {
           "triggered": true,
-          "price_change": 2.568555177039219,
-          "volume": 10989964.531243997
+          "price_change": 2.530900671323444,
+          "volume": 10816634.081842994
         }
       }
     },
     "KHYPEUSDT": {
-      "price_change_24h": -5.3493547089365485,
-      "volume_24h": 13683581.011436405,
-      "price": 31.79,
+      "price_change_24h": -6.209423832215632,
+      "volume_24h": 27615959.54500523,
+      "price": 31.56,
       "thresholds": {
         "1.0%": {
           "triggered": true,
-          "price_change": -5.3493547089365485,
-          "volume": 13683581.011436405
+          "price_change": -6.209423832215632,
+          "volume": 27615959.54500523
         },
         "2.0%": {
           "triggered": true,
-          "price_change": -5.3493547089365485,
-          "volume": 13683581.011436405
+          "price_change": -6.209423832215632,
+          "volume": 27615959.54500523
         },
         "5.0%": {
           "triggered": true,
-          "price_change": -5.3493547089365485,
-          "volume": 13683581.011436405
+          "price_change": -6.209423832215632,
+          "volume": 27615959.54500523
         }
       }
     }
