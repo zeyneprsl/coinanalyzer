@@ -1,80 +1,80 @@
 {
   "BTCUSDT": {
-    "correlation": -0.324783065355205,
-    "abs_correlation": 0.324783065355205,
+    "correlation": -0.3353763495914931,
+    "abs_correlation": 0.3353763495914931,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 5.557326140922624
+    "avg_volume_change_on_price_up": 5.655504447670707
   },
   "ETHUSDT": {
-    "correlation": -0.2392403097654225,
-    "abs_correlation": 0.2392403097654225,
+    "correlation": -0.24026752016174766,
+    "abs_correlation": 0.24026752016174766,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": -18.539348095135647
+    "avg_volume_change_on_price_up": -18.945607538780052
   },
   "USDTUSDT": {
-    "correlation": 0.10207045358097508,
-    "abs_correlation": 0.10207045358097508,
+    "correlation": 0.10119980456004211,
+    "abs_correlation": 0.10119980456004211,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 75.0,
-    "avg_volume_change_on_price_up": -6.611752954991269
+    "volume_increase_on_price_up_pct": 66.66666666666666,
+    "avg_volume_change_on_price_up": -9.760009885191144
   },
   "XRPUSDT": {
-    "correlation": -0.2096112345792423,
-    "abs_correlation": 0.2096112345792423,
+    "correlation": -0.24924817302753274,
+    "abs_correlation": 0.24924817302753274,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -17.70724247895397
+    "avg_volume_change_on_price_up": -18.63649311848661
   },
   "BNBUSDT": {
-    "correlation": -0.48906287310873503,
-    "abs_correlation": 0.48906287310873503,
+    "correlation": -0.4929308118468804,
+    "abs_correlation": 0.4929308118468804,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -27.97122331447836
+    "avg_volume_change_on_price_up": -28.546791527250683
   },
   "USDCUSDT": {
-    "correlation": 0.6895429143345095,
-    "abs_correlation": 0.6895429143345095,
+    "correlation": 0.5454949256537809,
+    "abs_correlation": 0.5454949256537809,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 66.66666666666666,
     "avg_volume_change_on_price_up": 24.69307091088869
   },
   "SOLUSDT": {
-    "correlation": -0.11024747320208952,
-    "abs_correlation": 0.11024747320208952,
+    "correlation": -0.11206223322605205,
+    "abs_correlation": 0.11206223322605205,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 7.970761108876778
+    "avg_volume_change_on_price_up": 7.9167687703647545
   },
   "TRXUSDT": {
-    "correlation": -0.3287474959962943,
-    "abs_correlation": 0.3287474959962943,
+    "correlation": -0.3504785255964925,
+    "abs_correlation": 0.3504785255964925,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -21.066298695517844
+    "avg_volume_change_on_price_up": -26.14069191849719
   },
   "STETHUSDT": {
-    "correlation": -0.30099377319147497,
-    "abs_correlation": 0.30099377319147497,
+    "correlation": -0.2972502495824728,
+    "abs_correlation": 0.2972502495824728,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -30.770709819435222
+    "avg_volume_change_on_price_up": -30.014339583195408
   },
   "DOGEUSDT": {
-    "correlation": -0.5793327244973452,
-    "abs_correlation": 0.5793327244973452,
+    "correlation": -0.5860237758564258,
+    "abs_correlation": 0.5860237758564258,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -27.353375247637686
+    "avg_volume_change_on_price_up": -28.432810092923532
   },
   "ADAUSDT": {
-    "correlation": -0.3720536589526587,
-    "abs_correlation": 0.3720536589526587,
+    "correlation": -0.39557146687348704,
+    "abs_correlation": 0.39557146687348704,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -1.2947159729405675
+    "avg_volume_change_on_price_up": -1.365392515093361
   },
   "FIGR_HELOCUSDT": {
     "correlation": -0.11281472175785327,
@@ -84,291 +84,284 @@
     "avg_volume_change_on_price_up": 3.6780910683243198
   },
   "WBTUSDT": {
-    "correlation": 0.7028616531270291,
-    "abs_correlation": 0.7028616531270291,
+    "correlation": 0.7033498911481888,
+    "abs_correlation": 0.7033498911481888,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 48.50839386739468
+    "avg_volume_change_on_price_up": 48.02572377279176
   },
   "WSTETHUSDT": {
-    "correlation": -0.039295536412759395,
-    "abs_correlation": 0.039295536412759395,
+    "correlation": -0.04394670026580316,
+    "abs_correlation": 0.04394670026580316,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -7.748537629008993
+    "avg_volume_change_on_price_up": -7.640495791587234
   },
   "BCHUSDT": {
-    "correlation": 0.8759442148638287,
-    "abs_correlation": 0.8759442148638287,
+    "correlation": 0.8777991711481496,
+    "abs_correlation": 0.8777991711481496,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 75.0,
     "avg_volume_change_on_price_up": 53.920124601896646
   },
   "WBTCUSDT": {
-    "correlation": -0.108856985748856,
-    "abs_correlation": 0.108856985748856,
+    "correlation": -0.12317304575371127,
+    "abs_correlation": 0.12317304575371127,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 10.732978681881047
+    "avg_volume_change_on_price_up": 7.4172008433834815
   },
   "WBETHUSDT": {
-    "correlation": 0.5725156983836857,
-    "abs_correlation": 0.5725156983836857,
+    "correlation": 0.5691492630833606,
+    "abs_correlation": 0.5691492630833606,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 18.40613760347074
+    "avg_volume_change_on_price_up": 18.34223433825273
   },
   "ZECUSDT": {
-    "correlation": -0.04363545908895253,
-    "abs_correlation": 0.04363545908895253,
+    "correlation": -0.08415315627878375,
+    "abs_correlation": 0.08415315627878375,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -8.388351567502873
+    "avg_volume_change_on_price_up": -10.318911060217982
   },
   "USDSUSDT": {
-    "correlation": 0.4213892580283366,
-    "abs_correlation": 0.4213892580283366,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -2.9865385564996063
-  },
-  "BSC-USDUSDT": {
-    "correlation": -0.7598842765734196,
-    "abs_correlation": 0.7598842765734196,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 25.0,
-    "avg_volume_change_on_price_up": -16.26684804737393
-  },
-  "LEOUSDT": {
-    "correlation": 0.02122825475923801,
-    "abs_correlation": 0.02122825475923801,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 40.0,
-    "avg_volume_change_on_price_up": 16.22379517131131
-  },
-  "LINKUSDT": {
-    "correlation": -0.45409694255603844,
-    "abs_correlation": 0.45409694255603844,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -18.562294132808123
-  },
-  "HYPEUSDT": {
-    "correlation": -0.0973046640595309,
-    "abs_correlation": 0.0973046640595309,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 15.897960323701483
-  },
-  "XLMUSDT": {
-    "correlation": -0.32602826033269766,
-    "abs_correlation": 0.32602826033269766,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -1.9931217923984674
-  },
-  "USDEUSDT": {
-    "correlation": 0.16242214754798928,
-    "abs_correlation": 0.16242214754798928,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -2.856558298279714
-  },
-  "WETHUSDT": {
-    "correlation": -0.34070335200560337,
-    "abs_correlation": 0.34070335200560337,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -26.36238304556881
-  },
-  "XMRUSDT": {
-    "correlation": -0.132753288753876,
-    "abs_correlation": 0.132753288753876,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -4.5532039009138545
-  },
-  "WEETHUSDT": {
-    "correlation": 0.3105577289762129,
-    "abs_correlation": 0.3105577289762129,
+    "correlation": -0.031330138049239634,
+    "abs_correlation": 0.031330138049239634,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 131.86238839595455
+    "avg_volume_change_on_price_up": 7.111552919711037
   },
-  "CBBTCUSDT": {
-    "correlation": -0.18999260139518676,
-    "abs_correlation": 0.18999260139518676,
+  "BSC-USDUSDT": {
+    "correlation": -0.7533951638182994,
+    "abs_correlation": 0.7533951638182994,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -16.738549186394348
+  },
+  "LEOUSDT": {
+    "correlation": 0.02093148394380454,
+    "abs_correlation": 0.02093148394380454,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 40.0,
+    "avg_volume_change_on_price_up": 16.104554273786338
+  },
+  "LINKUSDT": {
+    "correlation": -0.4742585064822153,
+    "abs_correlation": 0.4742585064822153,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 33.33333333333333,
+    "avg_volume_change_on_price_up": -18.76252231714035
+  },
+  "HYPEUSDT": {
+    "correlation": -0.09275502496916867,
+    "abs_correlation": 0.09275502496916867,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 9.753864638691622
+    "avg_volume_change_on_price_up": 16.562713671249256
+  },
+  "XLMUSDT": {
+    "correlation": -0.3087068604796767,
+    "abs_correlation": 0.3087068604796767,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 50.0,
+    "avg_volume_change_on_price_up": -1.905184718922067
+  },
+  "USDEUSDT": {
+    "correlation": 0.16347790025313544,
+    "abs_correlation": 0.16347790025313544,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 33.33333333333333,
+    "avg_volume_change_on_price_up": -6.646899448682896
+  },
+  "WETHUSDT": {
+    "correlation": -0.3556315703701627,
+    "abs_correlation": 0.3556315703701627,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -27.56340884991191
+  },
+  "XMRUSDT": {
+    "correlation": -0.13589439297487602,
+    "abs_correlation": 0.13589439297487602,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 33.33333333333333,
+    "avg_volume_change_on_price_up": -4.31664194743126
+  },
+  "WEETHUSDT": {
+    "correlation": 0.31403491382975773,
+    "abs_correlation": 0.31403491382975773,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 66.66666666666666,
+    "avg_volume_change_on_price_up": 131.21980930875583
   },
   "LTCUSDT": {
-    "correlation": -0.2520932831470435,
-    "abs_correlation": 0.2520932831470435,
+    "correlation": -0.2613974084029734,
+    "abs_correlation": 0.2613974084029734,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 5.194142745914975
+    "avg_volume_change_on_price_up": 4.473234064774513
   },
   "HBARUSDT": {
-    "correlation": -0.38597077466922647,
-    "abs_correlation": 0.38597077466922647,
+    "correlation": -0.34324724473609125,
+    "abs_correlation": 0.34324724473609125,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -23.7044901820548
+    "volume_increase_on_price_up_pct": 33.33333333333333,
+    "avg_volume_change_on_price_up": -22.213166804434174
   },
   "AVAXUSDT": {
-    "correlation": -0.781400528336776,
-    "abs_correlation": 0.781400528336776,
+    "correlation": -0.7967719289759575,
+    "abs_correlation": 0.7967719289759575,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -11.162007070927684
+    "avg_volume_change_on_price_up": -11.625479726206697
   },
   "SUIUSDT": {
-    "correlation": -0.4561073516109908,
-    "abs_correlation": 0.4561073516109908,
+    "correlation": -0.4782640235508112,
+    "abs_correlation": 0.4782640235508112,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -9.829480076291562
+    "avg_volume_change_on_price_up": -10.608166142513467
   },
   "SHIBUSDT": {
-    "correlation": -0.474030859026533,
-    "abs_correlation": 0.474030859026533,
+    "correlation": -0.4918651464400539,
+    "abs_correlation": 0.4918651464400539,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -1.6080092374613209
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -2.624098971774136
   },
   "DAIUSDT": {
-    "correlation": 0.035307350218926434,
-    "abs_correlation": 0.035307350218926434,
+    "correlation": 0.03840130549385326,
+    "abs_correlation": 0.03840130549385326,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 80.0,
-    "avg_volume_change_on_price_up": 33.57030378786941
+    "avg_volume_change_on_price_up": 33.35589927644077
   },
   "SUSDEUSDT": {
-    "correlation": -0.43094043937440163,
-    "abs_correlation": 0.43094043937440163,
+    "correlation": -0.41037244730585143,
+    "abs_correlation": 0.41037244730585143,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 7.561715752906684
+    "avg_volume_change_on_price_up": 5.671058327711937
   },
   "WLFIUSDT": {
-    "correlation": 0.7729548476366516,
-    "abs_correlation": 0.7729548476366516,
+    "correlation": 0.771235988733741,
+    "abs_correlation": 0.771235988733741,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
     "avg_volume_change_on_price_up": 49.610543473174644
   },
-  "CROUSDT": {
-    "correlation": 0.29778081124254374,
-    "abs_correlation": 0.29778081124254374,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 22.0943324383634
-  },
   "USDT0USDT": {
-    "correlation": 0.4171245817285067,
-    "abs_correlation": 0.4171245817285067,
+    "correlation": 0.4168028311754001,
+    "abs_correlation": 0.4168028311754001,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 75.0,
+    "avg_volume_change_on_price_up": 19.867194753349732
+  },
+  "CROUSDT": {
+    "correlation": 0.25973600942216607,
+    "abs_correlation": 0.25973600942216607,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 24.829714981482876
+    "avg_volume_change_on_price_up": 23.05033567326198
   },
   "UNIUSDT": {
-    "correlation": 0.4311653579567017,
-    "abs_correlation": 0.4311653579567017,
+    "correlation": 0.44251125675857406,
+    "abs_correlation": 0.44251125675857406,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": 7.292589735112099
-  },
-  "DOTUSDT": {
-    "correlation": -0.5119473232045625,
-    "abs_correlation": 0.5119473232045625,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -5.347019067517928
+    "volume_increase_on_price_up_pct": 50.0,
+    "avg_volume_change_on_price_up": 16.01720418386686
   },
   "SUSDSUSDT": {
-    "correlation": -0.3630216627112737,
-    "abs_correlation": 0.3630216627112737,
+    "correlation": -0.21407343127533535,
+    "abs_correlation": 0.21407343127533535,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 9.82306087510728
+    "volume_increase_on_price_up_pct": 75.0,
+    "avg_volume_change_on_price_up": 28.801886851698878
+  },
+  "DOTUSDT": {
+    "correlation": -0.5179178236355193,
+    "abs_correlation": 0.5179178236355193,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -5.212501420426336
   },
   "TONUSDT": {
-    "correlation": -0.514937190571523,
-    "abs_correlation": 0.514937190571523,
+    "correlation": -0.5152790699199162,
+    "abs_correlation": 0.5152790699199162,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
     "avg_volume_change_on_price_up": -26.07924308423968
   },
   "PYUSDUSDT": {
-    "correlation": 0.7030145639178984,
-    "abs_correlation": 0.7030145639178984,
+    "correlation": 0.611706663364873,
+    "abs_correlation": 0.611706663364873,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 52.16541192327573
-  },
-  "MNTUSDT": {
-    "correlation": -0.608279498122423,
-    "abs_correlation": 0.608279498122423,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -4.449603133750404
+    "volume_increase_on_price_up_pct": 75.0,
+    "avg_volume_change_on_price_up": 43.961622548588196
   },
   "MUSDT": {
-    "correlation": 0.34064274945103573,
-    "abs_correlation": 0.34064274945103573,
+    "correlation": 0.43613856681160257,
+    "abs_correlation": 0.43613856681160257,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 1.3526919765737042
+    "avg_volume_change_on_price_up": 8.392096497176057
   },
-  "TAOUSDT": {
-    "correlation": -0.17532970141174029,
-    "abs_correlation": 0.17532970141174029,
+  "MNTUSDT": {
+    "correlation": -0.6073186212867392,
+    "abs_correlation": 0.6073186212867392,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 8.477682124246122
+    "volume_increase_on_price_up_pct": 50.0,
+    "avg_volume_change_on_price_up": -4.032140828657879
   },
   "USD1USDT": {
-    "correlation": 0.612272811673299,
-    "abs_correlation": 0.612272811673299,
+    "correlation": 0.6033902939163202,
+    "abs_correlation": 0.6033902939163202,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 13.304849918676972
+    "avg_volume_change_on_price_up": 11.925715858860396
+  },
+  "TAOUSDT": {
+    "correlation": -0.17684281416665412,
+    "abs_correlation": 0.17684281416665412,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 100.0,
+    "avg_volume_change_on_price_up": 8.51355535012766
   },
   "CCUSDT": {
-    "correlation": 0.07467603792719175,
-    "abs_correlation": 0.07467603792719175,
+    "correlation": -0.08573700246688379,
+    "abs_correlation": 0.08573700246688379,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 28.150580535146634
+    "avg_volume_change_on_price_up": 42.93345510173238
   },
   "C1USDUSDT": {
-    "correlation": 0.46798884396897317,
-    "abs_correlation": 0.46798884396897317,
+    "correlation": 0.49943610479165057,
+    "abs_correlation": 0.49943610479165057,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 137.2575470280065
+    "avg_volume_change_on_price_up": 205.553571138547
   },
   "AAVEUSDT": {
-    "correlation": -0.6175647038637568,
-    "abs_correlation": 0.6175647038637568,
+    "correlation": -0.6189386669451028,
+    "abs_correlation": 0.6189386669451028,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -17.146924914928242
+    "avg_volume_change_on_price_up": -17.514730802732128
   },
   "BGBUSDT": {
-    "correlation": -0.8172510212431467,
-    "abs_correlation": 0.8172510212431467,
+    "correlation": -0.8159528217694141,
+    "abs_correlation": 0.8159528217694141,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -18.455501960994958
+    "avg_volume_change_on_price_up": -18.642374263570154
   },
   "NEARUSDT": {
-    "correlation": -0.1750215284039953,
-    "abs_correlation": 0.1750215284039953,
+    "correlation": -0.18233948088469265,
+    "abs_correlation": 0.18233948088469265,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": 0.8544747762756914
+    "volume_increase_on_price_up_pct": 50.0,
+    "avg_volume_change_on_price_up": 4.081612799446343
   },
   "BUIDLUSDT": {
     "correlation": 0.0,
@@ -378,200 +371,193 @@
     "avg_volume_change_on_price_up": 0.0
   },
   "ASTERUSDT": {
-    "correlation": 0.29074487184154924,
-    "abs_correlation": 0.29074487184154924,
+    "correlation": 0.28760005968080987,
+    "abs_correlation": 0.28760005968080987,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
     "avg_volume_change_on_price_up": 19.66324800629988
   },
   "ICPUSDT": {
-    "correlation": 0.7286048643215521,
-    "abs_correlation": 0.7286048643215521,
+    "correlation": 0.7388440759067344,
+    "abs_correlation": 0.7388440759067344,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 34.79462091857529
+    "avg_volume_change_on_price_up": 34.658942847014565
   },
   "OKBUSDT": {
-    "correlation": -0.5401519805774208,
-    "abs_correlation": 0.5401519805774208,
+    "correlation": -0.5430482477644029,
+    "abs_correlation": 0.5430482477644029,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": -7.339214161136974
+    "avg_volume_change_on_price_up": -7.332856036018755
   },
   "USDFUSDT": {
-    "correlation": -0.2434109812196447,
-    "abs_correlation": 0.2434109812196447,
+    "correlation": -0.061577767288011856,
+    "abs_correlation": 0.061577767288011856,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
     "avg_volume_change_on_price_up": 70.33969411802082
   },
-  "ETCUSDT": {
-    "correlation": -0.2411651837242073,
-    "abs_correlation": 0.2411651837242073,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": 2.688548175788354
-  },
   "XAUTUSDT": {
-    "correlation": -0.2232789071468367,
-    "abs_correlation": 0.2232789071468367,
+    "correlation": -0.22674592590274564,
+    "abs_correlation": 0.22674592590274564,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": 1.014132173051726
+    "avg_volume_change_on_price_up": 0.6734569427941787
+  },
+  "ETCUSDT": {
+    "correlation": -0.19068568270829875,
+    "abs_correlation": 0.19068568270829875,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 33.33333333333333,
+    "avg_volume_change_on_price_up": 6.135775959424981
   },
   "PIUSDT": {
-    "correlation": 0.5823962019890034,
-    "abs_correlation": 0.5823962019890034,
+    "correlation": 0.5770625509319774,
+    "abs_correlation": 0.5770625509319774,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
     "avg_volume_change_on_price_up": 26.58124463020353
   },
   "JITOSOLUSDT": {
-    "correlation": -0.2611851900604775,
-    "abs_correlation": 0.2611851900604775,
+    "correlation": -0.26093079299161326,
+    "abs_correlation": 0.26093079299161326,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 4.518849219236701
+    "avg_volume_change_on_price_up": 4.481223853430253
   },
   "JLPUSDT": {
-    "correlation": -0.21921747950343712,
-    "abs_correlation": 0.21921747950343712,
+    "correlation": -0.21925923177113066,
+    "abs_correlation": 0.21925923177113066,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -0.16491329439789135
+    "avg_volume_change_on_price_up": -0.889891832893161
   },
   "ENAUSDT": {
-    "correlation": -0.020300838024801208,
-    "abs_correlation": 0.020300838024801208,
+    "correlation": -0.025373243386658615,
+    "abs_correlation": 0.025373243386658615,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 8.738319394958957
+    "avg_volume_change_on_price_up": 8.688255510817461
   },
   "PEPEUSDT": {
-    "correlation": -0.7906269177724665,
-    "abs_correlation": 0.7906269177724665,
+    "correlation": -0.7922951424797641,
+    "abs_correlation": 0.7922951424797641,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -24.291231257203886
+    "avg_volume_change_on_price_up": -24.65121943104167
   },
   "APTUSDT": {
-    "correlation": -0.6300022581556496,
-    "abs_correlation": 0.6300022581556496,
+    "correlation": -0.6238495188908988,
+    "abs_correlation": 0.6238495188908988,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -11.18862812636733
+    "avg_volume_change_on_price_up": -11.756221820054167
   },
   "HTXUSDT": {
-    "correlation": -0.4546389281895217,
-    "abs_correlation": 0.4546389281895217,
+    "correlation": -0.45865050402176805,
+    "abs_correlation": 0.45865050402176805,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
     "avg_volume_change_on_price_up": -37.52511312007743
   },
   "PUMPUSDT": {
-    "correlation": -0.42839224425213884,
-    "abs_correlation": 0.42839224425213884,
+    "correlation": -0.4387988504364157,
+    "abs_correlation": 0.4387988504364157,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
     "avg_volume_change_on_price_up": -12.374694114362738
   },
   "KCSUSDT": {
-    "correlation": 0.2925537332525775,
-    "abs_correlation": 0.2925537332525775,
+    "correlation": 0.2206274928345226,
+    "abs_correlation": 0.2206274928345226,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 13.714185909156818
+    "volume_increase_on_price_up_pct": 33.33333333333333,
+    "avg_volume_change_on_price_up": 10.724327290959213
   },
   "ONDOUSDT": {
-    "correlation": -0.42673058970003214,
-    "abs_correlation": 0.42673058970003214,
+    "correlation": -0.4290558131078551,
+    "abs_correlation": 0.4290558131078551,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 0.16179145252634558
+    "avg_volume_change_on_price_up": -0.05240638295942179
   },
   "POLUSDT": {
-    "correlation": -0.5200226394390663,
-    "abs_correlation": 0.5200226394390663,
+    "correlation": -0.5274166510685709,
+    "abs_correlation": 0.5274166510685709,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -17.763363408435538
+    "avg_volume_change_on_price_up": -17.89123739191059
   },
   "WLDUSDT": {
-    "correlation": -0.34389702306531333,
-    "abs_correlation": 0.34389702306531333,
+    "correlation": -0.3430140103028439,
+    "abs_correlation": 0.3430140103028439,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -19.17906882113706
+    "avg_volume_change_on_price_up": -19.38042434549805
   },
   "PAXGUSDT": {
-    "correlation": -0.4840890902193772,
-    "abs_correlation": 0.4840890902193772,
+    "correlation": -0.4870845357761222,
+    "abs_correlation": 0.4870845357761222,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 4.598273052837988
+    "volume_increase_on_price_up_pct": 33.33333333333333,
+    "avg_volume_change_on_price_up": 2.2325652790574617
   },
   "USDTBUSDT": {
-    "correlation": 0.38191365647301556,
-    "abs_correlation": 0.38191365647301556,
+    "correlation": 0.3963423881020744,
+    "abs_correlation": 0.3963423881020744,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 707.4157006683994
+    "avg_volume_change_on_price_up": 707.2858280519613
   },
   "BFUSDUSDT": {
-    "correlation": 0.2657842020495892,
-    "abs_correlation": 0.2657842020495892,
+    "correlation": 0.3455632084204511,
+    "abs_correlation": 0.3455632084204511,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 20.04188651209166
+    "volume_increase_on_price_up_pct": 66.66666666666666,
+    "avg_volume_change_on_price_up": 40.744185642216735
   },
   "SYRUPUSDCUSDT": {
-    "correlation": 0.32068475714841327,
-    "abs_correlation": 0.32068475714841327,
+    "correlation": 0.2975442733587198,
+    "abs_correlation": 0.2975442733587198,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 60.0,
     "avg_volume_change_on_price_up": 36.77092810828909
   },
   "HASHUSDT": {
-    "correlation": 0.20875992149708825,
-    "abs_correlation": 0.20875992149708825,
+    "correlation": 0.21127317075802413,
+    "abs_correlation": 0.21127317075802413,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
     "avg_volume_change_on_price_up": 54.77714923374801
   },
   "TRUMPUSDT": {
-    "correlation": -0.6806126418040459,
-    "abs_correlation": 0.6806126418040459,
+    "correlation": -0.6853984876762799,
+    "abs_correlation": 0.6853984876762799,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -25.5221105438417
+    "avg_volume_change_on_price_up": -26.019183250528773
   },
   "ATOMUSDT": {
-    "correlation": 0.3382457993889848,
-    "abs_correlation": 0.3382457993889848,
+    "correlation": 0.34741305844495585,
+    "abs_correlation": 0.34741305844495585,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": 70.70147539447103
+    "avg_volume_change_on_price_up": 72.81758398282237
   },
   "RETHUSDT": {
-    "correlation": -0.3008305453460352,
-    "abs_correlation": 0.3008305453460352,
+    "correlation": -0.30014380132001045,
+    "abs_correlation": 0.30014380132001045,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -31.31670831089353
-  },
-  "ALGOUSDT": {
-    "correlation": -0.6336268525416359,
-    "abs_correlation": 0.6336268525416359,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -18.934984193618423
+    "avg_volume_change_on_price_up": -31.172202509985176
   },
   "FILUSDT": {
-    "correlation": 0.22263587980042213,
-    "abs_correlation": 0.22263587980042213,
+    "correlation": 0.22315296126538295,
+    "abs_correlation": 0.22315296126538295,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 30.371715082828615
+    "avg_volume_change_on_price_up": 30.508002005145656
   },
   "USYCUSDT": {
     "correlation": -0.5087777816239474,
@@ -581,101 +567,101 @@
     "avg_volume_change_on_price_up": 1046.9401334738548
   },
   "GTUSDT": {
-    "correlation": -0.5666771092353122,
-    "abs_correlation": 0.5666771092353122,
+    "correlation": -0.732376309289825,
+    "abs_correlation": 0.732376309289825,
     "data_points": 7,
-    "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -32.79832839480033
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -45.02836213133315
   },
   "RLUSDUSDT": {
-    "correlation": 0.5844307388753126,
-    "abs_correlation": 0.5844307388753126,
+    "correlation": 0.5508997840202666,
+    "abs_correlation": 0.5508997840202666,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 31.761902011653298
+    "avg_volume_change_on_price_up": 33.9061627384051
   },
   "USDGUSDT": {
-    "correlation": -0.04389338010955078,
-    "abs_correlation": 0.04389338010955078,
+    "correlation": -0.1272576295531306,
+    "abs_correlation": 0.1272576295531306,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 6.684495272141867
+    "avg_volume_change_on_price_up": 5.775234315990808
   },
   "WBNBUSDT": {
-    "correlation": -0.47166158573400274,
-    "abs_correlation": 0.47166158573400274,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -29.175041263179974
-  },
-  "ARBUSDT": {
-    "correlation": -0.5825417590528238,
-    "abs_correlation": 0.5825417590528238,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -9.744266430139191
-  },
-  "BNSOLUSDT": {
-    "correlation": -0.24442359654647772,
-    "abs_correlation": 0.24442359654647772,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 11.717078217696573
-  },
-  "QNTUSDT": {
-    "correlation": -0.07466951306114503,
-    "abs_correlation": 0.07466951306114503,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 66.66666666666666,
-    "avg_volume_change_on_price_up": 1.1135587958784823
-  },
-  "VETUSDT": {
-    "correlation": -0.5874912168318539,
-    "abs_correlation": 0.5874912168318539,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -10.866383256709018
-  },
-  "KASUSDT": {
-    "correlation": -0.16906229387398936,
-    "abs_correlation": 0.16906229387398936,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": 5.219453626015437
-  },
-  "FBTCUSDT": {
-    "correlation": 0.15718193035009353,
-    "abs_correlation": 0.15718193035009353,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 0.0,
-    "avg_volume_change_on_price_up": -25.188084490945833
-  },
-  "FLRUSDT": {
-    "correlation": -0.049024227379423566,
-    "abs_correlation": 0.049024227379423566,
-    "data_points": 7,
-    "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 3.5318798736015995
-  },
-  "RSETHUSDT": {
-    "correlation": -0.24331729503966476,
-    "abs_correlation": 0.24331729503966476,
+    "correlation": -0.26365615224507644,
+    "abs_correlation": 0.26365615224507644,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 33.33333333333333,
-    "avg_volume_change_on_price_up": -6.799833694465877
+    "avg_volume_change_on_price_up": -7.852950860176648
   },
-  "LBTCUSDT": {
-    "correlation": -0.18477088685179105,
-    "abs_correlation": 0.18477088685179105,
+  "ARBUSDT": {
+    "correlation": -0.5837303552479832,
+    "abs_correlation": 0.5837303552479832,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -9.930126546503635
+  },
+  "BNSOLUSDT": {
+    "correlation": -0.24589242552386348,
+    "abs_correlation": 0.24589242552386348,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 50.0,
-    "avg_volume_change_on_price_up": -24.639498890602308
+    "avg_volume_change_on_price_up": 10.574089852724338
   },
-  "KHYPEUSDT": {
-    "correlation": 0.5707370033789045,
-    "abs_correlation": 0.5707370033789045,
+  "VETUSDT": {
+    "correlation": -0.5893198538386138,
+    "abs_correlation": 0.5893198538386138,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -10.957983063413405
+  },
+  "QNTUSDT": {
+    "correlation": -0.06496059234670279,
+    "abs_correlation": 0.06496059234670279,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 66.66666666666666,
+    "avg_volume_change_on_price_up": 1.0898200788205046
+  },
+  "KASUSDT": {
+    "correlation": -0.17279568673327816,
+    "abs_correlation": 0.17279568673327816,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 50.0,
+    "avg_volume_change_on_price_up": 4.8883776096064295
+  },
+  "FLRUSDT": {
+    "correlation": -0.013588469450618328,
+    "abs_correlation": 0.013588469450618328,
     "data_points": 7,
     "volume_increase_on_price_up_pct": 100.0,
-    "avg_volume_change_on_price_up": 62.563142663108614
+    "avg_volume_change_on_price_up": 6.320184213551714
+  },
+  "FBTCUSDT": {
+    "correlation": 0.13313898699309962,
+    "abs_correlation": 0.13313898699309962,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 0.0,
+    "avg_volume_change_on_price_up": -26.151930849670634
+  },
+  "RSETHUSDT": {
+    "correlation": -0.1959078293260302,
+    "abs_correlation": 0.1959078293260302,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 66.66666666666666,
+    "avg_volume_change_on_price_up": 105.45032613446406
+  },
+  "LBTCUSDT": {
+    "correlation": -0.18162652972478446,
+    "abs_correlation": 0.18162652972478446,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 50.0,
+    "avg_volume_change_on_price_up": -28.3750290779031
+  },
+  "KHYPEUSDT": {
+    "correlation": 0.5699966717871887,
+    "abs_correlation": 0.5699966717871887,
+    "data_points": 7,
+    "volume_increase_on_price_up_pct": 100.0,
+    "avg_volume_change_on_price_up": 61.92328641012752
   }
 }
