@@ -1,3360 +1,2418 @@
 {
-  "timestamp": "2025-11-24 18:53:30",
+  "timestamp": "2025-11-24 19:39:27",
   "high_correlations": [
     {
       "coin1": "USDTUSDT",
       "coin2": "BFUSDUSDT",
-      "correlation": 0.956898398205135,
-      "abs_correlation": 0.956898398205135
-    },
-    {
-      "coin1": "WBNBUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.9556594226411531,
-      "abs_correlation": 0.9556594226411531
+      "correlation": 0.9784407218304311,
+      "abs_correlation": 0.9784407218304311
     },
     {
       "coin1": "TAOUSDT",
       "coin2": "ALGOUSDT",
-      "correlation": 0.9426205853507964,
-      "abs_correlation": 0.9426205853507964
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "HBARUSDT",
-      "correlation": 0.9403957191300785,
-      "abs_correlation": 0.9403957191300785
+      "correlation": 0.944146664648364,
+      "abs_correlation": 0.944146664648364
     },
     {
       "coin1": "USDTUSDT",
       "coin2": "SUSDEUSDT",
-      "correlation": 0.9266578466949549,
-      "abs_correlation": 0.9266578466949549
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WBTCUSDT",
-      "correlation": 0.9236021320682161,
-      "abs_correlation": 0.9236021320682161
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.9221723357373662,
-      "abs_correlation": 0.9221723357373662
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.920735563636681,
-      "abs_correlation": 0.920735563636681
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.919329794081493,
-      "abs_correlation": 0.919329794081493
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.9134553248268998,
-      "abs_correlation": 0.9134553248268998
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.910990200770762,
-      "abs_correlation": 0.910990200770762
+      "correlation": 0.9154365966673205,
+      "abs_correlation": 0.9154365966673205
     },
     {
       "coin1": "HBARUSDT",
       "coin2": "ALGOUSDT",
-      "correlation": 0.9094192618816912,
-      "abs_correlation": 0.9094192618816912
+      "correlation": 0.9096297698869643,
+      "abs_correlation": 0.9096297698869643
+    },
+    {
+      "coin1": "XLMUSDT",
+      "coin2": "HBARUSDT",
+      "correlation": 0.906370965815149,
+      "abs_correlation": 0.906370965815149
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.9051875523104368,
+      "abs_correlation": 0.9051875523104368
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.9005699627112077,
+      "abs_correlation": 0.9005699627112077
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "WBTCUSDT",
+      "correlation": 0.8980827512955699,
+      "abs_correlation": 0.8980827512955699
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.892982618614861,
+      "abs_correlation": 0.892982618614861
+    },
+    {
+      "coin1": "USDTUSDT",
+      "coin2": "BSC-USDUSDT",
+      "correlation": 0.892189606370619,
+      "abs_correlation": 0.892189606370619
     },
     {
       "coin1": "CBBTCUSDT",
       "coin2": "LBTCUSDT",
-      "correlation": 0.9067769740407106,
-      "abs_correlation": 0.9067769740407106
+      "correlation": 0.8877783903273178,
+      "abs_correlation": 0.8877783903273178
     },
     {
-      "coin1": "XLMUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.9016438543632086,
-      "abs_correlation": 0.9016438543632086
+      "coin1": "WBTCUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.8877162024379226,
+      "abs_correlation": 0.8877162024379226
     },
     {
       "coin1": "FBTCUSDT",
       "coin2": "LBTCUSDT",
-      "correlation": 0.8996670734426544,
-      "abs_correlation": 0.8996670734426544
+      "correlation": 0.887296926578912,
+      "abs_correlation": 0.887296926578912
     },
     {
       "coin1": "WBTUSDT",
       "coin2": "ASTERUSDT",
-      "correlation": 0.8895083085041605,
-      "abs_correlation": 0.8895083085041605
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.8890417736593799,
-      "abs_correlation": 0.8890417736593799
-    },
-    {
-      "coin1": "POLUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.8856176692762543,
-      "abs_correlation": 0.8856176692762543
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.8845377638152949,
-      "abs_correlation": 0.8845377638152949
-    },
-    {
-      "coin1": "APTUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": 0.8834170519719989,
-      "abs_correlation": 0.8834170519719989
-    },
-    {
-      "coin1": "USDTUSDT",
-      "coin2": "BSC-USDUSDT",
-      "correlation": 0.8824694129984351,
-      "abs_correlation": 0.8824694129984351
-    },
-    {
-      "coin1": "SUSDEUSDT",
-      "coin2": "BFUSDUSDT",
-      "correlation": 0.8809960661167845,
-      "abs_correlation": 0.8809960661167845
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.880620308414815,
-      "abs_correlation": 0.880620308414815
-    },
-    {
-      "coin1": "HBARUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.8801678765654297,
-      "abs_correlation": 0.8801678765654297
+      "correlation": 0.8860203717447662,
+      "abs_correlation": 0.8860203717447662
     },
     {
       "coin1": "WBTUSDT",
       "coin2": "LEOUSDT",
-      "correlation": 0.8800558094931775,
-      "abs_correlation": 0.8800558094931775
-    },
-    {
-      "coin1": "USDFUSDT",
-      "coin2": "BFUSDUSDT",
-      "correlation": 0.8742925876788239,
-      "abs_correlation": 0.8742925876788239
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.8723552343745559,
-      "abs_correlation": 0.8723552343745559
-    },
-    {
-      "coin1": "USDTUSDT",
-      "coin2": "USDFUSDT",
-      "correlation": 0.8706898264966478,
-      "abs_correlation": 0.8706898264966478
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8697089129063525,
-      "abs_correlation": 0.8697089129063525
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.8686124823237928,
-      "abs_correlation": 0.8686124823237928
-    },
-    {
-      "coin1": "TRUMPUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.8674853208573495,
-      "abs_correlation": 0.8674853208573495
-    },
-    {
-      "coin1": "BCHUSDT",
-      "coin2": "USDFUSDT",
-      "correlation": 0.8645561417896102,
-      "abs_correlation": 0.8645561417896102
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.8641685650131052,
-      "abs_correlation": 0.8641685650131052
-    },
-    {
-      "coin1": "USDEUSDT",
-      "coin2": "USDTBUSDT",
-      "correlation": 0.8640510071612213,
-      "abs_correlation": 0.8640510071612213
-    },
-    {
-      "coin1": "CROUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": -0.8627444913332608,
-      "abs_correlation": 0.8627444913332608
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.8588489085193246,
-      "abs_correlation": 0.8588489085193246
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8571868328469615,
-      "abs_correlation": 0.8571868328469615
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.8550020353495931,
-      "abs_correlation": 0.8550020353495931
+      "correlation": 0.8854181468197206,
+      "abs_correlation": 0.8854181468197206
     },
     {
       "coin1": "APTUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": 0.8824518958869513,
+      "abs_correlation": 0.8824518958869513
+    },
+    {
+      "coin1": "HBARUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.8813350072084032,
+      "abs_correlation": 0.8813350072084032
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "WBETHUSDT",
+      "correlation": 0.881007113031728,
+      "abs_correlation": 0.881007113031728
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.8804820559584587,
+      "abs_correlation": 0.8804820559584587
+    },
+    {
+      "coin1": "SUSDEUSDT",
+      "coin2": "BFUSDUSDT",
+      "correlation": 0.8776292470956366,
+      "abs_correlation": 0.8776292470956366
+    },
+    {
+      "coin1": "USDEUSDT",
+      "coin2": "USDT0USDT",
+      "correlation": 0.8711016220095165,
+      "abs_correlation": 0.8711016220095165
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "FBTCUSDT",
+      "correlation": 0.8703460627685772,
+      "abs_correlation": 0.8703460627685772
+    },
+    {
+      "coin1": "XLMUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.8698037318811468,
+      "abs_correlation": 0.8698037318811468
+    },
+    {
+      "coin1": "POLUSDT",
       "coin2": "TRUMPUSDT",
-      "correlation": 0.8546888784050729,
-      "abs_correlation": 0.8546888784050729
-    },
-    {
-      "coin1": "XRPUSDT",
-      "coin2": "BNBUSDT",
-      "correlation": 0.8535149594563983,
-      "abs_correlation": 0.8535149594563983
-    },
-    {
-      "coin1": "USDFUSDT",
-      "coin2": "PIUSDT",
-      "correlation": -0.8510082278087615,
-      "abs_correlation": 0.8510082278087615
+      "correlation": 0.8672560840591815,
+      "abs_correlation": 0.8672560840591815
     },
     {
       "coin1": "OKBUSDT",
       "coin2": "GTUSDT",
-      "correlation": 0.8504377084165896,
-      "abs_correlation": 0.8504377084165896
-    },
-    {
-      "coin1": "XMRUSDT",
-      "coin2": "BGBUSDT",
-      "correlation": 0.8503464431359584,
-      "abs_correlation": 0.8503464431359584
-    },
-    {
-      "coin1": "USDGUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": -0.8502983426629632,
-      "abs_correlation": 0.8502983426629632
-    },
-    {
-      "coin1": "DAIUSDT",
-      "coin2": "HASHUSDT",
-      "correlation": -0.8494134236182944,
-      "abs_correlation": 0.8494134236182944
-    },
-    {
-      "coin1": "FIGR_HELOCUSDT",
-      "coin2": "USDEUSDT",
-      "correlation": 0.8469816814247098,
-      "abs_correlation": 0.8469816814247098
-    },
-    {
-      "coin1": "BGBUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.8458872110051777,
-      "abs_correlation": 0.8458872110051777
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.8449606937151048,
-      "abs_correlation": 0.8449606937151048
-    },
-    {
-      "coin1": "TRUMPUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8447378279942123,
-      "abs_correlation": 0.8447378279942123
-    },
-    {
-      "coin1": "HBARUSDT",
-      "coin2": "FLRUSDT",
-      "correlation": 0.8436610319758141,
-      "abs_correlation": 0.8436610319758141
+      "correlation": 0.8645342783732652,
+      "abs_correlation": 0.8645342783732652
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.8435729680540905,
-      "abs_correlation": 0.8435729680540905
+      "coin2": "FBTCUSDT",
+      "correlation": 0.8641807509071241,
+      "abs_correlation": 0.8641807509071241
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8636523387878025,
+      "abs_correlation": 0.8636523387878025
     },
     {
       "coin1": "BSC-USDUSDT",
       "coin2": "BFUSDUSDT",
-      "correlation": 0.8434399674564826,
-      "abs_correlation": 0.8434399674564826
+      "correlation": 0.8598633659569026,
+      "abs_correlation": 0.8598633659569026
     },
     {
-      "coin1": "WLFIUSDT",
-      "coin2": "USDFUSDT",
-      "correlation": 0.8425683685502788,
-      "abs_correlation": 0.8425683685502788
+      "coin1": "WBNBUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8587300755369394,
+      "abs_correlation": 0.8587300755369394
     },
     {
-      "coin1": "USDSUSDT",
-      "coin2": "LEOUSDT",
-      "correlation": -0.842148950015412,
-      "abs_correlation": 0.842148950015412
+      "coin1": "TRUMPUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8582040268276644,
+      "abs_correlation": 0.8582040268276644
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.8576048208952698,
+      "abs_correlation": 0.8576048208952698
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.8570597188459493,
+      "abs_correlation": 0.8570597188459493
+    },
+    {
+      "coin1": "APTUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.8557272337257114,
+      "abs_correlation": 0.8557272337257114
+    },
+    {
+      "coin1": "MNTUSDT",
+      "coin2": "OKBUSDT",
+      "correlation": 0.8554223228894571,
+      "abs_correlation": 0.8554223228894571
+    },
+    {
+      "coin1": "TRUMPUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.8522768751522113,
+      "abs_correlation": 0.8522768751522113
+    },
+    {
+      "coin1": "XMRUSDT",
+      "coin2": "BGBUSDT",
+      "correlation": 0.8511512904958816,
+      "abs_correlation": 0.8511512904958816
+    },
+    {
+      "coin1": "HTXUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8500297265178055,
+      "abs_correlation": 0.8500297265178055
+    },
+    {
+      "coin1": "BGBUSDT",
+      "coin2": "OKBUSDT",
+      "correlation": 0.8489948617743918,
+      "abs_correlation": 0.8489948617743918
+    },
+    {
+      "coin1": "DOTUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.8484990895805237,
+      "abs_correlation": 0.8484990895805237
+    },
+    {
+      "coin1": "CBBTCUSDT",
+      "coin2": "FBTCUSDT",
+      "correlation": 0.8481520669135968,
+      "abs_correlation": 0.8481520669135968
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8476761648768343,
+      "abs_correlation": 0.8476761648768343
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": -0.8458680447861426,
+      "abs_correlation": 0.8458680447861426
+    },
+    {
+      "coin1": "RSETHUSDT",
+      "coin2": "FBTCUSDT",
+      "correlation": 0.8456235087102923,
+      "abs_correlation": 0.8456235087102923
     },
     {
       "coin1": "APTUSDT",
       "coin2": "WLDUSDT",
-      "correlation": 0.839660839891906,
-      "abs_correlation": 0.839660839891906
+      "correlation": 0.8446997609020451,
+      "abs_correlation": 0.8446997609020451
     },
     {
-      "coin1": "APTUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.8394016128218428,
-      "abs_correlation": 0.8394016128218428
+      "coin1": "ALGOUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8431152711572787,
+      "abs_correlation": 0.8431152711572787
     },
     {
       "coin1": "XLMUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.8389195274017244,
-      "abs_correlation": 0.8389195274017244
-    },
-    {
-      "coin1": "BSC-USDUSDT",
-      "coin2": "USDFUSDT",
-      "correlation": 0.8371293224391783,
-      "abs_correlation": 0.8371293224391783
-    },
-    {
-      "coin1": "POLUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.8355461832538918,
-      "abs_correlation": 0.8355461832538918
-    },
-    {
-      "coin1": "ONDOUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8336192657916818,
-      "abs_correlation": 0.8336192657916818
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "UNIUSDT",
-      "correlation": 0.8335647192122594,
-      "abs_correlation": 0.8335647192122594
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8325088390905306,
-      "abs_correlation": 0.8325088390905306
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.8324649925654662,
-      "abs_correlation": 0.8324649925654662
-    },
-    {
-      "coin1": "XMRUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.8324300179730965,
-      "abs_correlation": 0.8324300179730965
+      "coin2": "TAOUSDT",
+      "correlation": 0.8424488792118131,
+      "abs_correlation": 0.8424488792118131
     },
     {
       "coin1": "USDTUSDT",
       "coin2": "BCHUSDT",
-      "correlation": 0.8313927463126276,
-      "abs_correlation": 0.8313927463126276
+      "correlation": 0.8404989687002745,
+      "abs_correlation": 0.8404989687002745
     },
     {
-      "coin1": "POLUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8313326725227128,
-      "abs_correlation": 0.8313326725227128
+      "coin1": "BSC-USDUSDT",
+      "coin2": "USDT0USDT",
+      "correlation": 0.836820602471989,
+      "abs_correlation": 0.836820602471989
     },
     {
       "coin1": "WLDUSDT",
       "coin2": "TRUMPUSDT",
-      "correlation": 0.8312582473297014,
-      "abs_correlation": 0.8312582473297014
+      "correlation": 0.835370971225191,
+      "abs_correlation": 0.835370971225191
     },
     {
-      "coin1": "CROUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.8310329089028841,
-      "abs_correlation": 0.8310329089028841
+      "coin1": "USDFUSDT",
+      "coin2": "BFUSDUSDT",
+      "correlation": 0.8328670884807546,
+      "abs_correlation": 0.8328670884807546
     },
     {
-      "coin1": "BNBUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.8309332103346813,
-      "abs_correlation": 0.8309332103346813
+      "coin1": "FIGR_HELOCUSDT",
+      "coin2": "USDEUSDT",
+      "correlation": 0.8325602617462251,
+      "abs_correlation": 0.8325602617462251
     },
     {
-      "coin1": "ALGOUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8296142806585132,
-      "abs_correlation": 0.8296142806585132
-    },
-    {
-      "coin1": "USDEUSDT",
-      "coin2": "USD1USDT",
-      "correlation": 0.8293262504294717,
-      "abs_correlation": 0.8293262504294717
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.8288460086153074,
-      "abs_correlation": 0.8288460086153074
-    },
-    {
-      "coin1": "OKBUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.8283955211121365,
-      "abs_correlation": 0.8283955211121365
-    },
-    {
-      "coin1": "WBTCUSDT",
+      "coin1": "CBBTCUSDT",
       "coin2": "ALGOUSDT",
-      "correlation": 0.8280950805934666,
-      "abs_correlation": 0.8280950805934666
-    },
-    {
-      "coin1": "WLDUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": 0.8277570675054081,
-      "abs_correlation": 0.8277570675054081
-    },
-    {
-      "coin1": "PYUSDUSDT",
-      "coin2": "RLUSDUSDT",
-      "correlation": 0.8270710017977418,
-      "abs_correlation": 0.8270710017977418
+      "correlation": 0.8319223307199761,
+      "abs_correlation": 0.8319223307199761
     },
     {
       "coin1": "BCHUSDT",
       "coin2": "WLFIUSDT",
-      "correlation": 0.8267984420270166,
-      "abs_correlation": 0.8267984420270166
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.8262081593226539,
-      "abs_correlation": 0.8262081593226539
+      "correlation": 0.83139049883045,
+      "abs_correlation": 0.83139049883045
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "TRXUSDT",
-      "correlation": 0.8251746415672513,
-      "abs_correlation": 0.8251746415672513
+      "coin2": "ALGOUSDT",
+      "correlation": 0.8310131707855863,
+      "abs_correlation": 0.8310131707855863
     },
     {
-      "coin1": "ADAUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.8236967204748179,
-      "abs_correlation": 0.8236967204748179
+      "coin1": "WLDUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": 0.8296322907169287,
+      "abs_correlation": 0.8296322907169287
     },
     {
-      "coin1": "LINKUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.8229336883967434,
-      "abs_correlation": 0.8229336883967434
-    },
-    {
-      "coin1": "MUSDT",
-      "coin2": "HASHUSDT",
-      "correlation": 0.8227300739052533,
-      "abs_correlation": 0.8227300739052533
-    },
-    {
-      "coin1": "UNIUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.8226735135166002,
-      "abs_correlation": 0.8226735135166002
+      "coin1": "POLUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.82720093948859,
+      "abs_correlation": 0.82720093948859
     },
     {
       "coin1": "TRXUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.8225262316967377,
-      "abs_correlation": 0.8225262316967377
+      "coin2": "UNIUSDT",
+      "correlation": 0.8270177455842136,
+      "abs_correlation": 0.8270177455842136
     },
     {
-      "coin1": "CROUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.8220024164666914,
-      "abs_correlation": 0.8220024164666914
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.8212308472525288,
-      "abs_correlation": 0.8212308472525288
-    },
-    {
-      "coin1": "BGBUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.819664080908486,
-      "abs_correlation": 0.819664080908486
-    },
-    {
-      "coin1": "CROUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.8191587560505905,
-      "abs_correlation": 0.8191587560505905
+      "coin1": "LTCUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.8248374207143018,
+      "abs_correlation": 0.8248374207143018
     },
     {
       "coin1": "BCHUSDT",
       "coin2": "BSC-USDUSDT",
-      "correlation": 0.8180195457557796,
-      "abs_correlation": 0.8180195457557796
+      "correlation": 0.8246772088552385,
+      "abs_correlation": 0.8246772088552385
     },
     {
-      "coin1": "ONDOUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.8177720116156262,
-      "abs_correlation": 0.8177720116156262
+      "coin1": "APTUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.8228692551920715,
+      "abs_correlation": 0.8228692551920715
     },
     {
-      "coin1": "CBBTCUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.8173261868270942,
-      "abs_correlation": 0.8173261868270942
+      "coin1": "DOTUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.8217124020579558,
+      "abs_correlation": 0.8217124020579558
     },
     {
-      "coin1": "ADAUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.816619526725417,
-      "abs_correlation": 0.816619526725417
+      "coin1": "USDTUSDT",
+      "coin2": "USDFUSDT",
+      "correlation": 0.8216598592321547,
+      "abs_correlation": 0.8216598592321547
     },
     {
-      "coin1": "USDSUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": 0.8164391782319617,
-      "abs_correlation": 0.8164391782319617
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.8154370871294916,
-      "abs_correlation": 0.8154370871294916
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.8152888338153207,
-      "abs_correlation": 0.8152888338153207
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "DOGEUSDT",
-      "correlation": 0.815267649943078,
-      "abs_correlation": 0.815267649943078
-    },
-    {
-      "coin1": "ALGOUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.8149535258654478,
-      "abs_correlation": 0.8149535258654478
+      "coin1": "LINKUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.8213267033922295,
+      "abs_correlation": 0.8213267033922295
     },
     {
       "coin1": "LEOUSDT",
       "coin2": "USDGUSDT",
-      "correlation": -0.8146664560896174,
-      "abs_correlation": 0.8146664560896174
+      "correlation": -0.821325945482521,
+      "abs_correlation": 0.821325945482521
+    },
+    {
+      "coin1": "BCHUSDT",
+      "coin2": "BFUSDUSDT",
+      "correlation": 0.8212733661088253,
+      "abs_correlation": 0.8212733661088253
+    },
+    {
+      "coin1": "HBARUSDT",
+      "coin2": "FLRUSDT",
+      "correlation": 0.8204548061346253,
+      "abs_correlation": 0.8204548061346253
     },
     {
       "coin1": "LTCUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.8144640099662073,
-      "abs_correlation": 0.8144640099662073
+      "coin2": "GTUSDT",
+      "correlation": 0.8203406556506448,
+      "abs_correlation": 0.8203406556506448
     },
     {
-      "coin1": "BTCUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.8134178391814528,
-      "abs_correlation": 0.8134178391814528
+      "coin1": "ONDOUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8177396355549553,
+      "abs_correlation": 0.8177396355549553
     },
     {
-      "coin1": "WBTUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": -0.8133540777140181,
-      "abs_correlation": 0.8133540777140181
+      "coin1": "WBTCUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.8174581409027312,
+      "abs_correlation": 0.8174581409027312
     },
     {
-      "coin1": "TRXUSDT",
-      "coin2": "WBTCUSDT",
-      "correlation": 0.813331934924985,
-      "abs_correlation": 0.813331934924985
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.8129354161657721,
-      "abs_correlation": 0.8129354161657721
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.8126623506111355,
-      "abs_correlation": 0.8126623506111355
+      "coin1": "ADAUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.816717771947547,
+      "abs_correlation": 0.816717771947547
     },
     {
       "coin1": "BCHUSDT",
       "coin2": "ZECUSDT",
-      "correlation": -0.812094383622054,
-      "abs_correlation": 0.812094383622054
+      "correlation": -0.8160679958523898,
+      "abs_correlation": 0.8160679958523898
     },
     {
-      "coin1": "KCSUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.8120503174312731,
-      "abs_correlation": 0.8120503174312731
+      "coin1": "BTCUSDT",
+      "coin2": "TRXUSDT",
+      "correlation": 0.8159649026851467,
+      "abs_correlation": 0.8159649026851467
     },
     {
-      "coin1": "LINKUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.8115871607572321,
-      "abs_correlation": 0.8115871607572321
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.8113987479246644,
-      "abs_correlation": 0.8113987479246644
-    },
-    {
-      "coin1": "ALGOUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.8109374981813585,
-      "abs_correlation": 0.8109374981813585
-    },
-    {
-      "coin1": "HBARUSDT",
+      "coin1": "XMRUSDT",
       "coin2": "QNTUSDT",
-      "correlation": 0.8108709112255638,
-      "abs_correlation": 0.8108709112255638
+      "correlation": 0.8148749450255688,
+      "abs_correlation": 0.8148749450255688
     },
     {
-      "coin1": "USD1USDT",
-      "coin2": "PIUSDT",
-      "correlation": -0.8106472082916989,
-      "abs_correlation": 0.8106472082916989
-    },
-    {
-      "coin1": "APTUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.8093211659103756,
-      "abs_correlation": 0.8093211659103756
-    },
-    {
-      "coin1": "BSC-USDUSDT",
-      "coin2": "WLFIUSDT",
-      "correlation": 0.8086241416166989,
-      "abs_correlation": 0.8086241416166989
-    },
-    {
-      "coin1": "CROUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.8082077609857299,
-      "abs_correlation": 0.8082077609857299
-    },
-    {
-      "coin1": "ALGOUSDT",
-      "coin2": "FLRUSDT",
-      "correlation": 0.8068735841244316,
-      "abs_correlation": 0.8068735841244316
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.8060696619294199,
-      "abs_correlation": 0.8060696619294199
-    },
-    {
-      "coin1": "WLDUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.8059214525461325,
-      "abs_correlation": 0.8059214525461325
-    },
-    {
-      "coin1": "BCHUSDT",
-      "coin2": "BFUSDUSDT",
-      "correlation": 0.8057764626896663,
-      "abs_correlation": 0.8057764626896663
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.8052809240056414,
-      "abs_correlation": 0.8052809240056414
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.8047647070552406,
-      "abs_correlation": 0.8047647070552406
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.8042202690192176,
-      "abs_correlation": 0.8042202690192176
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "ICPUSDT",
-      "correlation": 0.8040790219541143,
-      "abs_correlation": 0.8040790219541143
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.8039499943160631,
-      "abs_correlation": 0.8039499943160631
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.8030177573665741,
-      "abs_correlation": 0.8030177573665741
+      "coin1": "WLFIUSDT",
+      "coin2": "USDT0USDT",
+      "correlation": 0.814618422458594,
+      "abs_correlation": 0.814618422458594
     },
     {
       "coin1": "CCUSDT",
       "coin2": "FILUSDT",
-      "correlation": 0.8027674447159766,
-      "abs_correlation": 0.8027674447159766
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": -0.8024298253393024,
-      "abs_correlation": 0.8024298253393024
-    },
-    {
-      "coin1": "USD1USDT",
-      "coin2": "USDFUSDT",
-      "correlation": 0.8019276279782197,
-      "abs_correlation": 0.8019276279782197
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.8013471558013617,
-      "abs_correlation": 0.8013471558013617
-    },
-    {
-      "coin1": "CROUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.8010659209018712,
-      "abs_correlation": 0.8010659209018712
-    },
-    {
-      "coin1": "PYUSDUSDT",
-      "coin2": "USD1USDT",
-      "correlation": 0.8007910569083756,
-      "abs_correlation": 0.8007910569083756
-    },
-    {
-      "coin1": "ZECUSDT",
-      "coin2": "HYPEUSDT",
-      "correlation": 0.8004976620108626,
-      "abs_correlation": 0.8004976620108626
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.8002904617637474,
-      "abs_correlation": 0.8002904617637474
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.798993186597814,
-      "abs_correlation": 0.798993186597814
-    },
-    {
-      "coin1": "ALGOUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7985547519045536,
-      "abs_correlation": 0.7985547519045536
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7982084276391148,
-      "abs_correlation": 0.7982084276391148
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7981506130084501,
-      "abs_correlation": 0.7981506130084501
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "ADAUSDT",
-      "correlation": 0.797249842199746,
-      "abs_correlation": 0.797249842199746
-    },
-    {
-      "coin1": "USD1USDT",
-      "coin2": "BFUSDUSDT",
-      "correlation": 0.796801249751402,
-      "abs_correlation": 0.796801249751402
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7957397650589315,
-      "abs_correlation": 0.7957397650589315
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.7954937773479607,
-      "abs_correlation": 0.7954937773479607
-    },
-    {
-      "coin1": "JITOSOLUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": -0.7945809291628192,
-      "abs_correlation": 0.7945809291628192
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7939153983979824,
-      "abs_correlation": 0.7939153983979824
-    },
-    {
-      "coin1": "USDEUSDT",
-      "coin2": "USDFUSDT",
-      "correlation": 0.7937865409389387,
-      "abs_correlation": 0.7937865409389387
-    },
-    {
-      "coin1": "CROUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7937049684458433,
-      "abs_correlation": 0.7937049684458433
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7930064948390128,
-      "abs_correlation": 0.7930064948390128
-    },
-    {
-      "coin1": "USDTUSDT",
-      "coin2": "WLFIUSDT",
-      "correlation": 0.7929304831765714,
-      "abs_correlation": 0.7929304831765714
-    },
-    {
-      "coin1": "WBNBUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7920714021406764,
-      "abs_correlation": 0.7920714021406764
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "DOTUSDT",
-      "correlation": 0.7916826777241873,
-      "abs_correlation": 0.7916826777241873
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7907858949667584,
-      "abs_correlation": 0.7907858949667584
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.790125986731228,
-      "abs_correlation": 0.790125986731228
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "FLRUSDT",
-      "correlation": 0.790053786637575,
-      "abs_correlation": 0.790053786637575
-    },
-    {
-      "coin1": "ONDOUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7898045244328268,
-      "abs_correlation": 0.7898045244328268
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7892196560747311,
-      "abs_correlation": 0.7892196560747311
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7888444344385284,
-      "abs_correlation": 0.7888444344385284
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7885178954470995,
-      "abs_correlation": 0.7885178954470995
-    },
-    {
-      "coin1": "JITOSOLUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7882748575221848,
-      "abs_correlation": 0.7882748575221848
-    },
-    {
-      "coin1": "UNIUSDT",
-      "coin2": "KCSUSDT",
-      "correlation": 0.7881659432063357,
-      "abs_correlation": 0.7881659432063357
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "DOGEUSDT",
-      "correlation": 0.7881541383961903,
-      "abs_correlation": 0.7881541383961903
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7880585815079864,
-      "abs_correlation": 0.7880585815079864
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7875537961933325,
-      "abs_correlation": 0.7875537961933325
-    },
-    {
-      "coin1": "APTUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7874402076932215,
-      "abs_correlation": 0.7874402076932215
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7873383047646906,
-      "abs_correlation": 0.7873383047646906
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7867938373374288,
-      "abs_correlation": 0.7867938373374288
-    },
-    {
-      "coin1": "GTUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7866823600475199,
-      "abs_correlation": 0.7866823600475199
-    },
-    {
-      "coin1": "USDTUSDT",
-      "coin2": "USD1USDT",
-      "correlation": 0.7864420306801752,
-      "abs_correlation": 0.7864420306801752
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7860250304316694,
-      "abs_correlation": 0.7860250304316694
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7857021791076182,
-      "abs_correlation": 0.7857021791076182
-    },
-    {
-      "coin1": "OKBUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7853378038775334,
-      "abs_correlation": 0.7853378038775334
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "FILUSDT",
-      "correlation": 0.7844901514551307,
-      "abs_correlation": 0.7844901514551307
+      "correlation": 0.814127937740651,
+      "abs_correlation": 0.814127937740651
     },
     {
       "coin1": "BSC-USDUSDT",
-      "coin2": "SUSDEUSDT",
-      "correlation": 0.7842783395611614,
-      "abs_correlation": 0.7842783395611614
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "KCSUSDT",
-      "correlation": 0.7840685456105737,
-      "abs_correlation": 0.7840685456105737
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7838881763370652,
-      "abs_correlation": 0.7838881763370652
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.783810293672441,
-      "abs_correlation": 0.783810293672441
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7825231364340665,
-      "abs_correlation": 0.7825231364340665
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7810824556394728,
-      "abs_correlation": 0.7810824556394728
+      "coin2": "WLFIUSDT",
+      "correlation": 0.8130713328932584,
+      "abs_correlation": 0.8130713328932584
     },
     {
       "coin1": "OKBUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7810728212810382,
-      "abs_correlation": 0.7810728212810382
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7809321652534763,
-      "abs_correlation": 0.7809321652534763
-    },
-    {
-      "coin1": "WBTUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7795913738814323,
-      "abs_correlation": 0.7795913738814323
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "FLRUSDT",
-      "correlation": 0.7794852202914107,
-      "abs_correlation": 0.7794852202914107
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7792371108992208,
-      "abs_correlation": 0.7792371108992208
-    },
-    {
-      "coin1": "HBARUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7791337813419766,
-      "abs_correlation": 0.7791337813419766
-    },
-    {
-      "coin1": "ONDOUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7790400349391429,
-      "abs_correlation": 0.7790400349391429
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.7786431500993539,
-      "abs_correlation": 0.7786431500993539
-    },
-    {
-      "coin1": "OKBUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.778450926252135,
-      "abs_correlation": 0.778450926252135
-    },
-    {
-      "coin1": "NEARUSDT",
-      "coin2": "HASHUSDT",
-      "correlation": 0.7784344418761379,
-      "abs_correlation": 0.7784344418761379
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.7777203632509525,
-      "abs_correlation": 0.7777203632509525
-    },
-    {
-      "coin1": "OKBUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7777081475046507,
-      "abs_correlation": 0.7777081475046507
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": -0.7773641553592403,
-      "abs_correlation": 0.7773641553592403
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.7770787942800038,
-      "abs_correlation": 0.7770787942800038
-    },
-    {
-      "coin1": "FILUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7763819067239338,
-      "abs_correlation": 0.7763819067239338
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7763572850355229,
-      "abs_correlation": 0.7763572850355229
-    },
-    {
-      "coin1": "JITOSOLUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7759978136055278,
-      "abs_correlation": 0.7759978136055278
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7756975198025108,
-      "abs_correlation": 0.7756975198025108
-    },
-    {
-      "coin1": "USDEUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": -0.775621400347633,
-      "abs_correlation": 0.775621400347633
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7753984124212201,
-      "abs_correlation": 0.7753984124212201
-    },
-    {
-      "coin1": "ONDOUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.775368135135222,
-      "abs_correlation": 0.775368135135222
-    },
-    {
-      "coin1": "UNIUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7752728855444857,
-      "abs_correlation": 0.7752728855444857
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "HBARUSDT",
-      "correlation": 0.7751972560178372,
-      "abs_correlation": 0.7751972560178372
-    },
-    {
-      "coin1": "TRUMPUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": 0.7750551228610456,
-      "abs_correlation": 0.7750551228610456
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "LINKUSDT",
-      "correlation": 0.7750175411064005,
-      "abs_correlation": 0.7750175411064005
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7745887257482075,
-      "abs_correlation": 0.7745887257482075
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7743488178199378,
-      "abs_correlation": 0.7743488178199378
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7742635907949985,
-      "abs_correlation": 0.7742635907949985
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ADAUSDT",
-      "correlation": 0.7737379840605164,
-      "abs_correlation": 0.7737379840605164
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7719047192897565,
-      "abs_correlation": 0.7719047192897565
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7711542079970032,
-      "abs_correlation": 0.7711542079970032
-    },
-    {
-      "coin1": "ENAUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.7708831640451284,
-      "abs_correlation": 0.7708831640451284
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "HBARUSDT",
-      "correlation": 0.770800768683198,
-      "abs_correlation": 0.770800768683198
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7705772123818373,
-      "abs_correlation": 0.7705772123818373
-    },
-    {
-      "coin1": "JLPUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7705714882068141,
-      "abs_correlation": 0.7705714882068141
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "HBARUSDT",
-      "correlation": 0.7705521743794791,
-      "abs_correlation": 0.7705521743794791
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7704244241697893,
-      "abs_correlation": 0.7704244241697893
-    },
-    {
-      "coin1": "JLPUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7699806314993671,
-      "abs_correlation": 0.7699806314993671
-    },
-    {
-      "coin1": "ZECUSDT",
-      "coin2": "USDFUSDT",
-      "correlation": -0.7693107207622369,
-      "abs_correlation": 0.7693107207622369
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "WBTUSDT",
-      "correlation": 0.768782217118276,
-      "abs_correlation": 0.768782217118276
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "LINKUSDT",
-      "correlation": 0.7685288287947705,
-      "abs_correlation": 0.7685288287947705
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7684167372270435,
-      "abs_correlation": 0.7684167372270435
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.768401959940073,
-      "abs_correlation": 0.768401959940073
-    },
-    {
-      "coin1": "HYPEUSDT",
-      "coin2": "CCUSDT",
-      "correlation": 0.7683924469135732,
-      "abs_correlation": 0.7683924469135732
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "KCSUSDT",
-      "correlation": 0.7681014230685932,
-      "abs_correlation": 0.7681014230685932
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7680903883596772,
-      "abs_correlation": 0.7680903883596772
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.7670484335447271,
-      "abs_correlation": 0.7670484335447271
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.766887825157853,
-      "abs_correlation": 0.766887825157853
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7661005521831382,
-      "abs_correlation": 0.7661005521831382
-    },
-    {
-      "coin1": "KCSUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.7659141798138309,
-      "abs_correlation": 0.7659141798138309
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7656288031007386,
-      "abs_correlation": 0.7656288031007386
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "STETHUSDT",
-      "correlation": 0.7649370027048835,
-      "abs_correlation": 0.7649370027048835
-    },
-    {
-      "coin1": "HBARUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.764832234330149,
-      "abs_correlation": 0.764832234330149
-    },
-    {
-      "coin1": "JLPUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": -0.7641872680020053,
-      "abs_correlation": 0.7641872680020053
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7640768079292795,
-      "abs_correlation": 0.7640768079292795
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.7640759872304471,
-      "abs_correlation": 0.7640759872304471
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7638156416499055,
-      "abs_correlation": 0.7638156416499055
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7636545363670213,
-      "abs_correlation": 0.7636545363670213
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "UNIUSDT",
-      "correlation": 0.7633769738235918,
-      "abs_correlation": 0.7633769738235918
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7631880410980273,
-      "abs_correlation": 0.7631880410980273
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7627638513288879,
-      "abs_correlation": 0.7627638513288879
-    },
-    {
-      "coin1": "WLFIUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": -0.7624040573286599,
-      "abs_correlation": 0.7624040573286599
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ETHUSDT",
-      "correlation": 0.7621558391736473,
-      "abs_correlation": 0.7621558391736473
-    },
-    {
-      "coin1": "CROUSDT",
       "coin2": "QNTUSDT",
-      "correlation": 0.761590168427362,
-      "abs_correlation": 0.761590168427362
+      "correlation": 0.8128686185463889,
+      "abs_correlation": 0.8128686185463889
     },
     {
-      "coin1": "ADAUSDT",
-      "coin2": "DOTUSDT",
-      "correlation": 0.7612193028188192,
-      "abs_correlation": 0.7612193028188192
+      "coin1": "TRXUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.812850659482626,
+      "abs_correlation": 0.812850659482626
     },
     {
       "coin1": "BCHUSDT",
-      "coin2": "SUSDEUSDT",
-      "correlation": 0.7606175148578775,
-      "abs_correlation": 0.7606175148578775
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "UNIUSDT",
-      "correlation": 0.7605327747955325,
-      "abs_correlation": 0.7605327747955325
-    },
-    {
-      "coin1": "UNIUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.7599612249694857,
-      "abs_correlation": 0.7599612249694857
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.759878369955566,
-      "abs_correlation": 0.759878369955566
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "KCSUSDT",
-      "correlation": 0.7596091495253805,
-      "abs_correlation": 0.7596091495253805
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7594627798669064,
-      "abs_correlation": 0.7594627798669064
-    },
-    {
-      "coin1": "APTUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7590226791718054,
-      "abs_correlation": 0.7590226791718054
-    },
-    {
-      "coin1": "SUSDEUSDT",
-      "coin2": "WLFIUSDT",
-      "correlation": 0.7586839004533937,
-      "abs_correlation": 0.7586839004533937
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.7586125495563467,
-      "abs_correlation": 0.7586125495563467
-    },
-    {
-      "coin1": "USDEUSDT",
-      "coin2": "USDT0USDT",
-      "correlation": 0.7584468934119116,
-      "abs_correlation": 0.7584468934119116
-    },
-    {
-      "coin1": "SHIBUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.7581515479518555,
-      "abs_correlation": 0.7581515479518555
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7580333738590159,
-      "abs_correlation": 0.7580333738590159
-    },
-    {
-      "coin1": "WBTUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.7577508485605745,
-      "abs_correlation": 0.7577508485605745
-    },
-    {
-      "coin1": "CROUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7574010244904015,
-      "abs_correlation": 0.7574010244904015
-    },
-    {
-      "coin1": "WETHUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.756373040057229,
-      "abs_correlation": 0.756373040057229
-    },
-    {
-      "coin1": "WLFIUSDT",
-      "coin2": "BFUSDUSDT",
-      "correlation": 0.7559806164248083,
-      "abs_correlation": 0.7559806164248083
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7557677013928771,
-      "abs_correlation": 0.7557677013928771
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "USDGUSDT",
-      "correlation": -0.7553628347990123,
-      "abs_correlation": 0.7553628347990123
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7549824986565559,
-      "abs_correlation": 0.7549824986565559
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "ADAUSDT",
-      "correlation": 0.7549613033062527,
-      "abs_correlation": 0.7549613033062527
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.7549524418509405,
-      "abs_correlation": 0.7549524418509405
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WETHUSDT",
-      "correlation": 0.7549447033078776,
-      "abs_correlation": 0.7549447033078776
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7548353365816718,
-      "abs_correlation": 0.7548353365816718
-    },
-    {
-      "coin1": "WEETHUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7547503315684596,
-      "abs_correlation": 0.7547503315684596
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "UNIUSDT",
-      "correlation": 0.7544082429349841,
-      "abs_correlation": 0.7544082429349841
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.7543172569071048,
-      "abs_correlation": 0.7543172569071048
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.753838458726991,
-      "abs_correlation": 0.753838458726991
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7537860247163031,
-      "abs_correlation": 0.7537860247163031
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7537842828977923,
-      "abs_correlation": 0.7537842828977923
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7532004003371774,
-      "abs_correlation": 0.7532004003371774
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7531906162993418,
-      "abs_correlation": 0.7531906162993418
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "XLMUSDT",
-      "correlation": 0.7528744370831837,
-      "abs_correlation": 0.7528744370831837
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "WBTCUSDT",
-      "correlation": 0.7528722304286392,
-      "abs_correlation": 0.7528722304286392
-    },
-    {
-      "coin1": "WETHUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7525029086585073,
-      "abs_correlation": 0.7525029086585073
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WBETHUSDT",
-      "correlation": 0.7522240623197493,
-      "abs_correlation": 0.7522240623197493
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7521920084469589,
-      "abs_correlation": 0.7521920084469589
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "WBTCUSDT",
-      "correlation": 0.7514276698935886,
-      "abs_correlation": 0.7514276698935886
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.751309055331604,
-      "abs_correlation": 0.751309055331604
-    },
-    {
-      "coin1": "WBTUSDT",
-      "coin2": "XAUTUSDT",
-      "correlation": 0.7511725038545808,
-      "abs_correlation": 0.7511725038545808
-    },
-    {
-      "coin1": "WEETHUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7508364782433051,
-      "abs_correlation": 0.7508364782433051
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7505510761815758,
-      "abs_correlation": 0.7505510761815758
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "FILUSDT",
-      "correlation": 0.7502302977801796,
-      "abs_correlation": 0.7502302977801796
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "WBTCUSDT",
-      "correlation": 0.7500501985990515,
-      "abs_correlation": 0.7500501985990515
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7497919387902549,
-      "abs_correlation": 0.7497919387902549
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7494800519333934,
-      "abs_correlation": 0.7494800519333934
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "XLMUSDT",
-      "correlation": 0.7494766133700337,
-      "abs_correlation": 0.7494766133700337
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7492535129222884,
-      "abs_correlation": 0.7492535129222884
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7490854986109851,
-      "abs_correlation": 0.7490854986109851
-    },
-    {
-      "coin1": "WBTUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7486136599284963,
-      "abs_correlation": 0.7486136599284963
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "BGBUSDT",
-      "correlation": 0.748200301993956,
-      "abs_correlation": 0.748200301993956
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "NEARUSDT",
-      "correlation": 0.7476968680427263,
-      "abs_correlation": 0.7476968680427263
-    },
-    {
-      "coin1": "WBTUSDT",
-      "coin2": "USDSUSDT",
-      "correlation": -0.7469081464917472,
-      "abs_correlation": 0.7469081464917472
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.746697608252943,
-      "abs_correlation": 0.746697608252943
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WSTETHUSDT",
-      "correlation": 0.7465769985377517,
-      "abs_correlation": 0.7465769985377517
-    },
-    {
-      "coin1": "JLPUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7465246777892266,
-      "abs_correlation": 0.7465246777892266
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7462713348010713,
-      "abs_correlation": 0.7462713348010713
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7462567138555742,
-      "abs_correlation": 0.7462567138555742
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7461986543137561,
-      "abs_correlation": 0.7461986543137561
-    },
-    {
-      "coin1": "ENAUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.7461267543956961,
-      "abs_correlation": 0.7461267543956961
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7458566881910964,
-      "abs_correlation": 0.7458566881910964
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "WLDUSDT",
-      "correlation": 0.7456360469589304,
-      "abs_correlation": 0.7456360469589304
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "CCUSDT",
-      "correlation": 0.7455620199710948,
-      "abs_correlation": 0.7455620199710948
-    },
-    {
-      "coin1": "ZECUSDT",
-      "coin2": "WLFIUSDT",
-      "correlation": -0.7454227091924299,
-      "abs_correlation": 0.7454227091924299
-    },
-    {
-      "coin1": "SHIBUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7451883621136551,
-      "abs_correlation": 0.7451883621136551
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7451383855270443,
-      "abs_correlation": 0.7451383855270443
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7451294716009155,
-      "abs_correlation": 0.7451294716009155
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7449521678719284,
-      "abs_correlation": 0.7449521678719284
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "TRUMPUSDT",
-      "correlation": 0.7448433859963236,
-      "abs_correlation": 0.7448433859963236
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "SHIBUSDT",
-      "correlation": 0.7444949323880071,
-      "abs_correlation": 0.7444949323880071
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.744058068682424,
-      "abs_correlation": 0.744058068682424
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7439537234405275,
-      "abs_correlation": 0.7439537234405275
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "XLMUSDT",
-      "correlation": 0.7434893689474663,
-      "abs_correlation": 0.7434893689474663
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7434048395658729,
-      "abs_correlation": 0.7434048395658729
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.743356992688338,
-      "abs_correlation": 0.743356992688338
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7432620550632253,
-      "abs_correlation": 0.7432620550632253
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7431532930793249,
-      "abs_correlation": 0.7431532930793249
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "WETHUSDT",
-      "correlation": 0.7430004284696475,
-      "abs_correlation": 0.7430004284696475
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7428896944463611,
-      "abs_correlation": 0.7428896944463611
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.7427535192304033,
-      "abs_correlation": 0.7427535192304033
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "STETHUSDT",
-      "correlation": 0.742506294627874,
-      "abs_correlation": 0.742506294627874
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7422983405262186,
-      "abs_correlation": 0.7422983405262186
-    },
-    {
-      "coin1": "GTUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7422925024874258,
-      "abs_correlation": 0.7422925024874258
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7419412228922164,
-      "abs_correlation": 0.7419412228922164
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7418855171016321,
-      "abs_correlation": 0.7418855171016321
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7418833680571784,
-      "abs_correlation": 0.7418833680571784
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.741452511193271,
-      "abs_correlation": 0.741452511193271
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7399081835818111,
-      "abs_correlation": 0.7399081835818111
-    },
-    {
-      "coin1": "WLDUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7398241357042097,
-      "abs_correlation": 0.7398241357042097
-    },
-    {
-      "coin1": "ENAUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7397376802499533,
-      "abs_correlation": 0.7397376802499533
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "WBETHUSDT",
-      "correlation": 0.7394968061477436,
-      "abs_correlation": 0.7394968061477436
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7384445548339299,
-      "abs_correlation": 0.7384445548339299
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7383579922250101,
-      "abs_correlation": 0.7383579922250101
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "LINKUSDT",
-      "correlation": 0.738309384952305,
-      "abs_correlation": 0.738309384952305
-    },
-    {
-      "coin1": "USDTBUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": -0.7382123156937961,
-      "abs_correlation": 0.7382123156937961
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7381500479503913,
-      "abs_correlation": 0.7381500479503913
-    },
-    {
-      "coin1": "ICPUSDT",
-      "coin2": "FILUSDT",
-      "correlation": 0.738095123423168,
-      "abs_correlation": 0.738095123423168
-    },
-    {
-      "coin1": "USDEUSDT",
-      "coin2": "PIUSDT",
-      "correlation": -0.7379303970738162,
-      "abs_correlation": 0.7379303970738162
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7378961827395548,
-      "abs_correlation": 0.7378961827395548
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7374816451113132,
-      "abs_correlation": 0.7374816451113132
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7363964988684815,
-      "abs_correlation": 0.7363964988684815
-    },
-    {
-      "coin1": "OKBUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7363602924120021,
-      "abs_correlation": 0.7363602924120021
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "MNTUSDT",
-      "correlation": 0.7363284107133332,
-      "abs_correlation": 0.7363284107133332
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "DOTUSDT",
-      "correlation": 0.7360975408610002,
-      "abs_correlation": 0.7360975408610002
-    },
-    {
-      "coin1": "USDGUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": -0.7360600354354778,
-      "abs_correlation": 0.7360600354354778
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7360000646875644,
-      "abs_correlation": 0.7360000646875644
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "WLDUSDT",
-      "correlation": 0.7359227751042036,
-      "abs_correlation": 0.7359227751042036
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7354227690013446,
-      "abs_correlation": 0.7354227690013446
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7352937219677943,
-      "abs_correlation": 0.7352937219677943
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7350375450127622,
-      "abs_correlation": 0.7350375450127622
-    },
-    {
-      "coin1": "WBNBUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7348000847144565,
-      "abs_correlation": 0.7348000847144565
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7344440712150052,
-      "abs_correlation": 0.7344440712150052
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.7343201894877297,
-      "abs_correlation": 0.7343201894877297
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "WETHUSDT",
-      "correlation": 0.7339623459437574,
-      "abs_correlation": 0.7339623459437574
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "WBTCUSDT",
-      "correlation": 0.733858204744068,
-      "abs_correlation": 0.733858204744068
-    },
-    {
-      "coin1": "WETHUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7331308050572064,
-      "abs_correlation": 0.7331308050572064
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7329515591386563,
-      "abs_correlation": 0.7329515591386563
-    },
-    {
-      "coin1": "ZECUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7327869326283287,
-      "abs_correlation": 0.7327869326283287
+      "coin2": "USDFUSDT",
+      "correlation": 0.8127768438982788,
+      "abs_correlation": 0.8127768438982788
     },
     {
       "coin1": "USDT0USDT",
       "coin2": "USDFUSDT",
-      "correlation": 0.7326607279719832,
-      "abs_correlation": 0.7326607279719832
+      "correlation": 0.8125237913389523,
+      "abs_correlation": 0.8125237913389523
     },
     {
-      "coin1": "ETHUSDT",
-      "coin2": "WETHUSDT",
-      "correlation": 0.7326019444143055,
-      "abs_correlation": 0.7326019444143055
+      "coin1": "USD1USDT",
+      "coin2": "PIUSDT",
+      "correlation": -0.8118006392145491,
+      "abs_correlation": 0.8118006392145491
     },
     {
-      "coin1": "OKBUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7322589443815781,
-      "abs_correlation": 0.7322589443815781
-    },
-    {
-      "coin1": "ENAUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.732019122352179,
-      "abs_correlation": 0.732019122352179
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "WSTETHUSDT",
-      "correlation": 0.7319003149404476,
-      "abs_correlation": 0.7319003149404476
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7318007884260888,
-      "abs_correlation": 0.7318007884260888
-    },
-    {
-      "coin1": "POLUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": 0.7317660592946732,
-      "abs_correlation": 0.7317660592946732
-    },
-    {
-      "coin1": "BSC-USDUSDT",
-      "coin2": "ASTERUSDT",
-      "correlation": 0.7314966847996502,
-      "abs_correlation": 0.7314966847996502
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7313324441227963,
-      "abs_correlation": 0.7313324441227963
-    },
-    {
-      "coin1": "WEETHUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7312607273622291,
-      "abs_correlation": 0.7312607273622291
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7311121560499239,
-      "abs_correlation": 0.7311121560499239
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7308883885542389,
-      "abs_correlation": 0.7308883885542389
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7306261855142882,
-      "abs_correlation": 0.7306261855142882
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7306033964160712,
-      "abs_correlation": 0.7306033964160712
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7303466208767342,
-      "abs_correlation": 0.7303466208767342
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "WSTETHUSDT",
-      "correlation": 0.729998630487993,
-      "abs_correlation": 0.729998630487993
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.7297915783208762,
-      "abs_correlation": 0.7297915783208762
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "RSETHUSDT",
-      "correlation": 0.729750356215995,
-      "abs_correlation": 0.729750356215995
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7296626700999221,
-      "abs_correlation": 0.7296626700999221
-    },
-    {
-      "coin1": "HTXUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7296458781901354,
-      "abs_correlation": 0.7296458781901354
-    },
-    {
-      "coin1": "USDEUSDT",
-      "coin2": "WLFIUSDT",
-      "correlation": 0.7293090081081446,
-      "abs_correlation": 0.7293090081081446
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7288541548603239,
-      "abs_correlation": 0.7288541548603239
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "WLDUSDT",
-      "correlation": 0.7284303985199269,
-      "abs_correlation": 0.7284303985199269
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "WBETHUSDT",
-      "correlation": 0.7283569831340261,
-      "abs_correlation": 0.7283569831340261
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7283381526925227,
-      "abs_correlation": 0.7283381526925227
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "RSETHUSDT",
-      "correlation": 0.7281229930426025,
-      "abs_correlation": 0.7281229930426025
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7280555783289653,
-      "abs_correlation": 0.7280555783289653
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.7276715602139465,
-      "abs_correlation": 0.7276715602139465
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7270706339006472,
-      "abs_correlation": 0.7270706339006472
-    },
-    {
-      "coin1": "WEETHUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7270285852930307,
-      "abs_correlation": 0.7270285852930307
-    },
-    {
-      "coin1": "SHIBUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7270003202530884,
-      "abs_correlation": 0.7270003202530884
+      "coin1": "USDSUSDT",
+      "coin2": "LEOUSDT",
+      "correlation": -0.8110936403865078,
+      "abs_correlation": 0.8110936403865078
     },
     {
       "coin1": "WBTUSDT",
-      "coin2": "SUSDEUSDT",
-      "correlation": 0.726845340158744,
-      "abs_correlation": 0.726845340158744
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "WBETHUSDT",
-      "correlation": 0.7267681262218028,
-      "abs_correlation": 0.7267681262218028
+      "coin2": "USDGUSDT",
+      "correlation": -0.8105515870778602,
+      "abs_correlation": 0.8105515870778602
     },
     {
       "coin1": "BNBUSDT",
-      "coin2": "STETHUSDT",
-      "correlation": 0.7267495463931124,
-      "abs_correlation": 0.7267495463931124
+      "coin2": "LTCUSDT",
+      "correlation": 0.8102108259293046,
+      "abs_correlation": 0.8102108259293046
     },
     {
-      "coin1": "ADAUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7265705654435674,
-      "abs_correlation": 0.7265705654435674
+      "coin1": "LTCUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.8098073705221842,
+      "abs_correlation": 0.8098073705221842
     },
     {
-      "coin1": "SUSDSUSDT",
+      "coin1": "USD1USDT",
       "coin2": "BFUSDUSDT",
-      "correlation": 0.7264191619502713,
-      "abs_correlation": 0.7264191619502713
+      "correlation": 0.8095418156611952,
+      "abs_correlation": 0.8095418156611952
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8092729103838756,
+      "abs_correlation": 0.8092729103838756
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.8090438056643713,
+      "abs_correlation": 0.8090438056643713
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.8090421259707268,
+      "abs_correlation": 0.8090421259707268
+    },
+    {
+      "coin1": "JITOSOLUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.8086708116130249,
+      "abs_correlation": 0.8086708116130249
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.8073766076862898,
+      "abs_correlation": 0.8073766076862898
+    },
+    {
+      "coin1": "USDEUSDT",
+      "coin2": "USD1USDT",
+      "correlation": 0.8073404717745806,
+      "abs_correlation": 0.8073404717745806
+    },
+    {
+      "coin1": "USDEUSDT",
+      "coin2": "USDTBUSDT",
+      "correlation": 0.8066529961814343,
+      "abs_correlation": 0.8066529961814343
     },
     {
       "coin1": "BNBUSDT",
-      "coin2": "WSTETHUSDT",
-      "correlation": 0.7262641710882777,
-      "abs_correlation": 0.7262641710882777
+      "coin2": "POLUSDT",
+      "correlation": 0.8066006368021456,
+      "abs_correlation": 0.8066006368021456
     },
     {
-      "coin1": "WBTCUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7261979254588277,
-      "abs_correlation": 0.7261979254588277
-    },
-    {
-      "coin1": "BSC-USDUSDT",
-      "coin2": "USDEUSDT",
-      "correlation": 0.7259346143786521,
-      "abs_correlation": 0.7259346143786521
-    },
-    {
-      "coin1": "WETHUSDT",
+      "coin1": "ALGOUSDT",
       "coin2": "LBTCUSDT",
-      "correlation": 0.725912365691497,
-      "abs_correlation": 0.725912365691497
+      "correlation": 0.8065124867991954,
+      "abs_correlation": 0.8065124867991954
+    },
+    {
+      "coin1": "BGBUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.8061674531112196,
+      "abs_correlation": 0.8061674531112196
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "WBTCUSDT",
+      "correlation": 0.805785410851969,
+      "abs_correlation": 0.805785410851969
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.8054524246017197,
+      "abs_correlation": 0.8054524246017197
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.8048005522417657,
+      "abs_correlation": 0.8048005522417657
+    },
+    {
+      "coin1": "MUSDT",
+      "coin2": "HASHUSDT",
+      "correlation": 0.8039828072725022,
+      "abs_correlation": 0.8039828072725022
+    },
+    {
+      "coin1": "USDFUSDT",
+      "coin2": "PIUSDT",
+      "correlation": -0.8038295075337897,
+      "abs_correlation": 0.8038295075337897
+    },
+    {
+      "coin1": "FILUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.803630279329427,
+      "abs_correlation": 0.803630279329427
+    },
+    {
+      "coin1": "POLUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.8033575970206163,
+      "abs_correlation": 0.8033575970206163
+    },
+    {
+      "coin1": "JITOSOLUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": -0.8032946456635771,
+      "abs_correlation": 0.8032946456635771
     },
     {
       "coin1": "SOLUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7258284000879276,
-      "abs_correlation": 0.7258284000879276
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.8032645217966573,
+      "abs_correlation": 0.8032645217966573
     },
     {
-      "coin1": "HTXUSDT",
-      "coin2": "RSETHUSDT",
-      "correlation": 0.7257231801140956,
-      "abs_correlation": 0.7257231801140956
+      "coin1": "LINKUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.8021687275635657,
+      "abs_correlation": 0.8021687275635657
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "FILUSDT",
+      "correlation": 0.8020982627755341,
+      "abs_correlation": 0.8020982627755341
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.8011879433995276,
+      "abs_correlation": 0.8011879433995276
+    },
+    {
+      "coin1": "APTUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8006408317341821,
+      "abs_correlation": 0.8006408317341821
+    },
+    {
+      "coin1": "MNTUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.8000635656574995,
+      "abs_correlation": 0.8000635656574995
+    },
+    {
+      "coin1": "ZECUSDT",
+      "coin2": "HYPEUSDT",
+      "correlation": 0.7998724523823479,
+      "abs_correlation": 0.7998724523823479
+    },
+    {
+      "coin1": "USDTUSDT",
+      "coin2": "WLFIUSDT",
+      "correlation": 0.7993647293092982,
+      "abs_correlation": 0.7993647293092982
+    },
+    {
+      "coin1": "ALGOUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.7992511312197653,
+      "abs_correlation": 0.7992511312197653
+    },
+    {
+      "coin1": "BNSOLUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": -0.7981864301688358,
+      "abs_correlation": 0.7981864301688358
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7973612653785112,
+      "abs_correlation": 0.7973612653785112
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.7971767213514048,
+      "abs_correlation": 0.7971767213514048
+    },
+    {
+      "coin1": "PYUSDUSDT",
+      "coin2": "USD1USDT",
+      "correlation": 0.7971028233027798,
+      "abs_correlation": 0.7971028233027798
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "DOGEUSDT",
+      "correlation": 0.7951156930398114,
+      "abs_correlation": 0.7951156930398114
+    },
+    {
+      "coin1": "HBARUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.7947299471635427,
+      "abs_correlation": 0.7947299471635427
+    },
+    {
+      "coin1": "XLMUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7941606120608932,
+      "abs_correlation": 0.7941606120608932
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7933136256515383,
+      "abs_correlation": 0.7933136256515383
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7927135903108458,
+      "abs_correlation": 0.7927135903108458
+    },
+    {
+      "coin1": "WLDUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7926563025308759,
+      "abs_correlation": 0.7926563025308759
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.7922874865979919,
+      "abs_correlation": 0.7922874865979919
+    },
+    {
+      "coin1": "USDTUSDT",
+      "coin2": "USD1USDT",
+      "correlation": 0.7922616618942232,
+      "abs_correlation": 0.7922616618942232
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7915551628816655,
+      "abs_correlation": 0.7915551628816655
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7902416914426301,
+      "abs_correlation": 0.7902416914426301
+    },
+    {
+      "coin1": "WLFIUSDT",
+      "coin2": "USDFUSDT",
+      "correlation": 0.7901393250157775,
+      "abs_correlation": 0.7901393250157775
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7900136142987347,
+      "abs_correlation": 0.7900136142987347
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": -0.7897488441415011,
+      "abs_correlation": 0.7897488441415011
+    },
+    {
+      "coin1": "KCSUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7896173687431177,
+      "abs_correlation": 0.7896173687431177
+    },
+    {
+      "coin1": "ONDOUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7891047197832561,
+      "abs_correlation": 0.7891047197832561
+    },
+    {
+      "coin1": "BSC-USDUSDT",
+      "coin2": "USDFUSDT",
+      "correlation": 0.7881452367334654,
+      "abs_correlation": 0.7881452367334654
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "ADAUSDT",
+      "correlation": 0.7875647258804721,
+      "abs_correlation": 0.7875647258804721
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.787427072149758,
+      "abs_correlation": 0.787427072149758
     },
     {
       "coin1": "FIGR_HELOCUSDT",
+      "coin2": "USDT0USDT",
+      "correlation": 0.7860439833083495,
+      "abs_correlation": 0.7860439833083495
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 0.7852008796394601,
+      "abs_correlation": 0.7852008796394601
+    },
+    {
+      "coin1": "ALGOUSDT",
+      "coin2": "FLRUSDT",
+      "correlation": 0.7851813107051216,
+      "abs_correlation": 0.7851813107051216
+    },
+    {
+      "coin1": "GTUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.7845358245037428,
+      "abs_correlation": 0.7845358245037428
+    },
+    {
+      "coin1": "ALGOUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7843404229769442,
+      "abs_correlation": 0.7843404229769442
+    },
+    {
+      "coin1": "CBBTCUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.7843065953654951,
+      "abs_correlation": 0.7843065953654951
+    },
+    {
+      "coin1": "UNIUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.7836841276871829,
+      "abs_correlation": 0.7836841276871829
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7829470398132748,
+      "abs_correlation": 0.7829470398132748
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.7827416709033787,
+      "abs_correlation": 0.7827416709033787
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.7825970614179354,
+      "abs_correlation": 0.7825970614179354
+    },
+    {
+      "coin1": "APTUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 0.7821471178865383,
+      "abs_correlation": 0.7821471178865383
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.7803952822615449,
+      "abs_correlation": 0.7803952822615449
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "LTCUSDT",
+      "correlation": 0.7794209987016146,
+      "abs_correlation": 0.7794209987016146
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7790753009641087,
+      "abs_correlation": 0.7790753009641087
+    },
+    {
+      "coin1": "OKBUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.7790041570626183,
+      "abs_correlation": 0.7790041570626183
+    },
+    {
+      "coin1": "USDSUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": 0.7786453192274192,
+      "abs_correlation": 0.7786453192274192
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "DOTUSDT",
+      "correlation": 0.7773146479884824,
+      "abs_correlation": 0.7773146479884824
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.7767787744874464,
+      "abs_correlation": 0.7767787744874464
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.775199782626345,
+      "abs_correlation": 0.775199782626345
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "LTCUSDT",
+      "correlation": 0.7744709696465678,
+      "abs_correlation": 0.7744709696465678
+    },
+    {
+      "coin1": "CBBTCUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.7744100096421909,
+      "abs_correlation": 0.7744100096421909
+    },
+    {
+      "coin1": "JITOSOLUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.7743957857997058,
+      "abs_correlation": 0.7743957857997058
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.7743449092980295,
+      "abs_correlation": 0.7743449092980295
+    },
+    {
+      "coin1": "TRUMPUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": 0.7735591751269111,
+      "abs_correlation": 0.7735591751269111
+    },
+    {
+      "coin1": "BSC-USDUSDT",
+      "coin2": "SUSDEUSDT",
+      "correlation": 0.7734058167746699,
+      "abs_correlation": 0.7734058167746699
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.772490864346744,
+      "abs_correlation": 0.772490864346744
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "AAVEUSDT",
+      "correlation": 0.7718898779220947,
+      "abs_correlation": 0.7718898779220947
+    },
+    {
+      "coin1": "OKBUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7717854703842831,
+      "abs_correlation": 0.7717854703842831
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.7712147495862394,
+      "abs_correlation": 0.7712147495862394
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "OKBUSDT",
+      "correlation": 0.77097513516383,
+      "abs_correlation": 0.77097513516383
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7708267022622026,
+      "abs_correlation": 0.7708267022622026
+    },
+    {
+      "coin1": "DOTUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.7703271544964746,
+      "abs_correlation": 0.7703271544964746
+    },
+    {
+      "coin1": "JLPUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7691355612509332,
+      "abs_correlation": 0.7691355612509332
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "ICPUSDT",
+      "correlation": 0.7685468382399132,
+      "abs_correlation": 0.7685468382399132
+    },
+    {
+      "coin1": "ZECUSDT",
+      "coin2": "USDT0USDT",
+      "correlation": -0.76851345179099,
+      "abs_correlation": 0.76851345179099
+    },
+    {
+      "coin1": "WLFIUSDT",
+      "coin2": "BFUSDUSDT",
+      "correlation": 0.7684732719973782,
+      "abs_correlation": 0.7684732719973782
+    },
+    {
+      "coin1": "NEARUSDT",
+      "coin2": "HASHUSDT",
+      "correlation": 0.7673427856698875,
+      "abs_correlation": 0.7673427856698875
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.7673311233062317,
+      "abs_correlation": 0.7673311233062317
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.7663905123017081,
+      "abs_correlation": 0.7663905123017081
+    },
+    {
+      "coin1": "PYUSDUSDT",
+      "coin2": "RLUSDUSDT",
+      "correlation": 0.766270360178773,
+      "abs_correlation": 0.766270360178773
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "LINKUSDT",
+      "correlation": 0.7658002096520523,
+      "abs_correlation": 0.7658002096520523
+    },
+    {
+      "coin1": "HBARUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7657068085001958,
+      "abs_correlation": 0.7657068085001958
+    },
+    {
+      "coin1": "WBTUSDT",
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.7656911565212821,
+      "abs_correlation": 0.7656911565212821
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7653704310471636,
+      "abs_correlation": 0.7653704310471636
+    },
+    {
+      "coin1": "OKBUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7651115413519388,
+      "abs_correlation": 0.7651115413519388
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.7645510308588581,
+      "abs_correlation": 0.7645510308588581
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "LTCUSDT",
+      "correlation": 0.7644742870255489,
+      "abs_correlation": 0.7644742870255489
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.7644684938385264,
+      "abs_correlation": 0.7644684938385264
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "DOGEUSDT",
+      "correlation": 0.7644544138512637,
+      "abs_correlation": 0.7644544138512637
+    },
+    {
+      "coin1": "WBTUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7640597322725762,
+      "abs_correlation": 0.7640597322725762
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.76382773381301,
+      "abs_correlation": 0.76382773381301
+    },
+    {
+      "coin1": "HYPEUSDT",
+      "coin2": "CCUSDT",
+      "correlation": 0.763312414613656,
+      "abs_correlation": 0.763312414613656
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HBARUSDT",
+      "correlation": 0.7632537949394564,
+      "abs_correlation": 0.7632537949394564
+    },
+    {
+      "coin1": "WBNBUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.7626288400290877,
+      "abs_correlation": 0.7626288400290877
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7625640157258134,
+      "abs_correlation": 0.7625640157258134
+    },
+    {
+      "coin1": "UNIUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7622112920000157,
+      "abs_correlation": 0.7622112920000157
+    },
+    {
+      "coin1": "UNIUSDT",
+      "coin2": "KCSUSDT",
+      "correlation": 0.7621706473177527,
+      "abs_correlation": 0.7621706473177527
+    },
+    {
+      "coin1": "WLFIUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": -0.7618349993607588,
+      "abs_correlation": 0.7618349993607588
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.761742528801275,
+      "abs_correlation": 0.761742528801275
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": -0.7615773568234749,
+      "abs_correlation": 0.7615773568234749
+    },
+    {
+      "coin1": "HTXUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7611492652361951,
+      "abs_correlation": 0.7611492652361951
+    },
+    {
+      "coin1": "CBBTCUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7610489663994494,
+      "abs_correlation": 0.7610489663994494
+    },
+    {
+      "coin1": "HBARUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7604185474048671,
+      "abs_correlation": 0.7604185474048671
+    },
+    {
+      "coin1": "DOTUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7602997521377187,
+      "abs_correlation": 0.7602997521377187
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "HBARUSDT",
+      "correlation": 0.7602972391608899,
+      "abs_correlation": 0.7602972391608899
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7601663793201577,
+      "abs_correlation": 0.7601663793201577
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "FLRUSDT",
+      "correlation": 0.7594536574159597,
+      "abs_correlation": 0.7594536574159597
+    },
+    {
+      "coin1": "JLPUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7590902343260812,
+      "abs_correlation": 0.7590902343260812
+    },
+    {
+      "coin1": "GTUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.7589810426750726,
+      "abs_correlation": 0.7589810426750726
+    },
+    {
+      "coin1": "USDT0USDT",
       "coin2": "USDTBUSDT",
-      "correlation": 0.7256988761502879,
-      "abs_correlation": 0.7256988761502879
+      "correlation": 0.7586334663493386,
+      "abs_correlation": 0.7586334663493386
+    },
+    {
+      "coin1": "CBBTCUSDT",
+      "coin2": "HBARUSDT",
+      "correlation": 0.7585224239812544,
+      "abs_correlation": 0.7585224239812544
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "KCSUSDT",
+      "correlation": 0.7567702628556687,
+      "abs_correlation": 0.7567702628556687
+    },
+    {
+      "coin1": "WBTUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7566065863587733,
+      "abs_correlation": 0.7566065863587733
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "WBTUSDT",
+      "correlation": 0.756323941348077,
+      "abs_correlation": 0.756323941348077
+    },
+    {
+      "coin1": "XLMUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.755928867792381,
+      "abs_correlation": 0.755928867792381
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.7558853106632982,
+      "abs_correlation": 0.7558853106632982
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 0.7553313743158652,
+      "abs_correlation": 0.7553313743158652
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.7548841493899068,
+      "abs_correlation": 0.7548841493899068
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7546139264012064,
+      "abs_correlation": 0.7546139264012064
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.754158806416051,
+      "abs_correlation": 0.754158806416051
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "LINKUSDT",
+      "correlation": 0.7534307112949449,
+      "abs_correlation": 0.7534307112949449
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 0.7533877845331309,
+      "abs_correlation": 0.7533877845331309
+    },
+    {
+      "coin1": "USD1USDT",
+      "coin2": "USDFUSDT",
+      "correlation": 0.7533304004349429,
+      "abs_correlation": 0.7533304004349429
+    },
+    {
+      "coin1": "MNTUSDT",
+      "coin2": "NEARUSDT",
+      "correlation": 0.7531680188971851,
+      "abs_correlation": 0.7531680188971851
+    },
+    {
+      "coin1": "AAVEUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7531313156764278,
+      "abs_correlation": 0.7531313156764278
+    },
+    {
+      "coin1": "DAIUSDT",
+      "coin2": "HASHUSDT",
+      "correlation": -0.7529313045744638,
+      "abs_correlation": 0.7529313045744638
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.752688204177485,
+      "abs_correlation": 0.752688204177485
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.752676849835783,
+      "abs_correlation": 0.752676849835783
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.7525217147812633,
+      "abs_correlation": 0.7525217147812633
+    },
+    {
+      "coin1": "USDEUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": -0.7519434374506413,
+      "abs_correlation": 0.7519434374506413
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 0.7513029211553124,
+      "abs_correlation": 0.7513029211553124
+    },
+    {
+      "coin1": "JLPUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": -0.7510950848676007,
+      "abs_correlation": 0.7510950848676007
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "FBTCUSDT",
+      "correlation": 0.7507012732498408,
+      "abs_correlation": 0.7507012732498408
+    },
+    {
+      "coin1": "MNTUSDT",
+      "coin2": "BGBUSDT",
+      "correlation": 0.7505575848175535,
+      "abs_correlation": 0.7505575848175535
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ADAUSDT",
+      "correlation": 0.7504255431321748,
+      "abs_correlation": 0.7504255431321748
+    },
+    {
+      "coin1": "ENAUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.7501636964128163,
+      "abs_correlation": 0.7501636964128163
+    },
+    {
+      "coin1": "BCHUSDT",
+      "coin2": "SUSDEUSDT",
+      "correlation": 0.7497083604194483,
+      "abs_correlation": 0.7497083604194483
+    },
+    {
+      "coin1": "HTXUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.749543822085174,
+      "abs_correlation": 0.749543822085174
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.7495229456268107,
+      "abs_correlation": 0.7495229456268107
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7487958362474123,
+      "abs_correlation": 0.7487958362474123
+    },
+    {
+      "coin1": "ONDOUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.7485972277396182,
+      "abs_correlation": 0.7485972277396182
+    },
+    {
+      "coin1": "ONDOUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7485522956812719,
+      "abs_correlation": 0.7485522956812719
+    },
+    {
+      "coin1": "OKBUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.7483528627547317,
+      "abs_correlation": 0.7483528627547317
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.747921827794299,
+      "abs_correlation": 0.747921827794299
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.7476707124700156,
+      "abs_correlation": 0.7476707124700156
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7475673234994771,
+      "abs_correlation": 0.7475673234994771
+    },
+    {
+      "coin1": "ZECUSDT",
+      "coin2": "WLFIUSDT",
+      "correlation": -0.7473067889424143,
+      "abs_correlation": 0.7473067889424143
+    },
+    {
+      "coin1": "APTUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7465378031602959,
+      "abs_correlation": 0.7465378031602959
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.7459875706121063,
+      "abs_correlation": 0.7459875706121063
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.7458016714609019,
+      "abs_correlation": 0.7458016714609019
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7455854961664103,
+      "abs_correlation": 0.7455854961664103
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "ENAUSDT",
+      "correlation": 0.7455520965892711,
+      "abs_correlation": 0.7455520965892711
+    },
+    {
+      "coin1": "HTXUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.7453808257974369,
+      "abs_correlation": 0.7453808257974369
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "UNIUSDT",
+      "correlation": 0.745202947100115,
+      "abs_correlation": 0.745202947100115
+    },
+    {
+      "coin1": "UNIUSDT",
+      "coin2": "FBTCUSDT",
+      "correlation": 0.7451947878876705,
+      "abs_correlation": 0.7451947878876705
+    },
+    {
+      "coin1": "SUSDEUSDT",
+      "coin2": "WLFIUSDT",
+      "correlation": 0.7450246647216963,
+      "abs_correlation": 0.7450246647216963
+    },
+    {
+      "coin1": "WBTCUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7445476488287998,
+      "abs_correlation": 0.7445476488287998
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "CCUSDT",
+      "correlation": 0.7439078247688503,
+      "abs_correlation": 0.7439078247688503
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "AAVEUSDT",
+      "correlation": 0.7434647985675817,
+      "abs_correlation": 0.7434647985675817
+    },
+    {
+      "coin1": "SHIBUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.7434585194506542,
+      "abs_correlation": 0.7434585194506542
+    },
+    {
+      "coin1": "KCSUSDT",
+      "coin2": "FBTCUSDT",
+      "correlation": 0.7427648900294868,
+      "abs_correlation": 0.7427648900294868
     },
     {
       "coin1": "WLDUSDT",
       "coin2": "GTUSDT",
-      "correlation": 0.7256902674875184,
-      "abs_correlation": 0.7256902674875184
+      "correlation": 0.7410519080498569,
+      "abs_correlation": 0.7410519080498569
     },
     {
-      "coin1": "TRXUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7254084360323175,
-      "abs_correlation": 0.7254084360323175
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7253373646134078,
-      "abs_correlation": 0.7253373646134078
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.7252286620112061,
-      "abs_correlation": 0.7252286620112061
-    },
-    {
-      "coin1": "SHIBUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7250913695381808,
-      "abs_correlation": 0.7250913695381808
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7242596480101466,
-      "abs_correlation": 0.7242596480101466
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7235862358582766,
-      "abs_correlation": 0.7235862358582766
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "ARBUSDT",
-      "correlation": 0.7234983334375178,
-      "abs_correlation": 0.7234983334375178
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.723268920078749,
-      "abs_correlation": 0.723268920078749
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "BNBUSDT",
-      "correlation": 0.7231438193311551,
-      "abs_correlation": 0.7231438193311551
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.7228214426754083,
-      "abs_correlation": 0.7228214426754083
-    },
-    {
-      "coin1": "POLUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.722783427329856,
-      "abs_correlation": 0.722783427329856
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7226193702166107,
-      "abs_correlation": 0.7226193702166107
-    },
-    {
-      "coin1": "TRUMPUSDT",
-      "coin2": "ARBUSDT",
-      "correlation": 0.7226070016675973,
-      "abs_correlation": 0.7226070016675973
+      "coin1": "BTCUSDT",
+      "coin2": "UNIUSDT",
+      "correlation": 0.7410300163911929,
+      "abs_correlation": 0.7410300163911929
     },
     {
       "coin1": "XLMUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.722516138278689,
-      "abs_correlation": 0.722516138278689
+      "coin2": "FLRUSDT",
+      "correlation": 0.7407277420491043,
+      "abs_correlation": 0.7407277420491043
+    },
+    {
+      "coin1": "USDT0USDT",
+      "coin2": "PIUSDT",
+      "correlation": -0.7403656968857744,
+      "abs_correlation": 0.7403656968857744
+    },
+    {
+      "coin1": "BCHUSDT",
+      "coin2": "USDT0USDT",
+      "correlation": 0.740281236964696,
+      "abs_correlation": 0.740281236964696
+    },
+    {
+      "coin1": "USDT0USDT",
+      "coin2": "ATOMUSDT",
+      "correlation": -0.7402423510117259,
+      "abs_correlation": 0.7402423510117259
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "KCSUSDT",
+      "correlation": 0.7398753109172689,
+      "abs_correlation": 0.7398753109172689
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "DOTUSDT",
+      "correlation": 0.7396744808869004,
+      "abs_correlation": 0.7396744808869004
     },
     {
       "coin1": "LTCUSDT",
-      "coin2": "SHIBUSDT",
-      "correlation": 0.7223960589500029,
-      "abs_correlation": 0.7223960589500029
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7220274547448154,
-      "abs_correlation": 0.7220274547448154
-    },
-    {
-      "coin1": "WETHUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7213099815346197,
-      "abs_correlation": 0.7213099815346197
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7210349459791366,
-      "abs_correlation": 0.7210349459791366
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "WETHUSDT",
-      "correlation": 0.7209754527091227,
-      "abs_correlation": 0.7209754527091227
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7205321418793075,
-      "abs_correlation": 0.7205321418793075
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.7202158470869328,
-      "abs_correlation": 0.7202158470869328
-    },
-    {
-      "coin1": "ENAUSDT",
       "coin2": "JLPUSDT",
-      "correlation": 0.7196007452549343,
-      "abs_correlation": 0.7196007452549343
-    },
-    {
-      "coin1": "FIGR_HELOCUSDT",
-      "coin2": "MUSDT",
-      "correlation": 0.719549042255755,
-      "abs_correlation": 0.719549042255755
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7195395824663706,
-      "abs_correlation": 0.7195395824663706
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7188732334972878,
-      "abs_correlation": 0.7188732334972878
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "WETHUSDT",
-      "correlation": 0.718846350536543,
-      "abs_correlation": 0.718846350536543
-    },
-    {
-      "coin1": "AVAXUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.718574585903367,
-      "abs_correlation": 0.718574585903367
-    },
-    {
-      "coin1": "HYPEUSDT",
-      "coin2": "TAOUSDT",
-      "correlation": 0.7183172615581022,
-      "abs_correlation": 0.7183172615581022
-    },
-    {
-      "coin1": "SHIBUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.7180240357588461,
-      "abs_correlation": 0.7180240357588461
+      "correlation": 0.7391887594543808,
+      "abs_correlation": 0.7391887594543808
     },
     {
       "coin1": "CBBTCUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7180048563742224,
-      "abs_correlation": 0.7180048563742224
+      "coin2": "VETUSDT",
+      "correlation": 0.7382947613956282,
+      "abs_correlation": 0.7382947613956282
     },
     {
-      "coin1": "POLUSDT",
+      "coin1": "BNBUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7377147524893012,
+      "abs_correlation": 0.7377147524893012
+    },
+    {
+      "coin1": "HTXUSDT",
+      "coin2": "FILUSDT",
+      "correlation": 0.7373543530369335,
+      "abs_correlation": 0.7373543530369335
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7372516490863149,
+      "abs_correlation": 0.7372516490863149
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "WLDUSDT",
+      "correlation": 0.7372027096928795,
+      "abs_correlation": 0.7372027096928795
+    },
+    {
+      "coin1": "DOTUSDT",
+      "coin2": "HTXUSDT",
+      "correlation": 0.737057957699537,
+      "abs_correlation": 0.737057957699537
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "ADAUSDT",
+      "correlation": 0.7369386430286389,
+      "abs_correlation": 0.7369386430286389
+    },
+    {
+      "coin1": "ONDOUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7358837880709742,
+      "abs_correlation": 0.7358837880709742
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7355973472631927,
+      "abs_correlation": 0.7355973472631927
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.735476879962629,
+      "abs_correlation": 0.735476879962629
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7353472098593469,
+      "abs_correlation": 0.7353472098593469
+    },
+    {
+      "coin1": "HTXUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7352017599062246,
+      "abs_correlation": 0.7352017599062246
+    },
+    {
+      "coin1": "ZECUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7349483513291221,
+      "abs_correlation": 0.7349483513291221
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7347726738953396,
+      "abs_correlation": 0.7347726738953396
+    },
+    {
+      "coin1": "CBBTCUSDT",
+      "coin2": "UNIUSDT",
+      "correlation": 0.7346178379367385,
+      "abs_correlation": 0.7346178379367385
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "MNTUSDT",
+      "correlation": 0.7338013089282815,
+      "abs_correlation": 0.7338013089282815
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.7334243430828308,
+      "abs_correlation": 0.7334243430828308
+    },
+    {
+      "coin1": "CROUSDT",
       "coin2": "QNTUSDT",
-      "correlation": 0.7178229658278877,
-      "abs_correlation": 0.7178229658278877
+      "correlation": 0.7333644516011136,
+      "abs_correlation": 0.7333644516011136
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "WLDUSDT",
+      "correlation": 0.7332010181358724,
+      "abs_correlation": 0.7332010181358724
+    },
+    {
+      "coin1": "SUSDSUSDT",
+      "coin2": "BFUSDUSDT",
+      "correlation": 0.7331888986431077,
+      "abs_correlation": 0.7331888986431077
+    },
+    {
+      "coin1": "BSC-USDUSDT",
+      "coin2": "ASTERUSDT",
+      "correlation": 0.7330949008050716,
+      "abs_correlation": 0.7330949008050716
+    },
+    {
+      "coin1": "OKBUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7328232422660284,
+      "abs_correlation": 0.7328232422660284
+    },
+    {
+      "coin1": "AAVEUSDT",
+      "coin2": "USDGUSDT",
+      "correlation": -0.7325678132731103,
+      "abs_correlation": 0.7325678132731103
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "OKBUSDT",
+      "correlation": 0.7323011196108007,
+      "abs_correlation": 0.7323011196108007
     },
     {
       "coin1": "BGBUSDT",
       "coin2": "GTUSDT",
-      "correlation": 0.717696025301203,
-      "abs_correlation": 0.717696025301203
+      "correlation": 0.7316301282792296,
+      "abs_correlation": 0.7316301282792296
     },
     {
-      "coin1": "BTCUSDT",
+      "coin1": "CBBTCUSDT",
+      "coin2": "KCSUSDT",
+      "correlation": 0.731280778069035,
+      "abs_correlation": 0.731280778069035
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7311371717390507,
+      "abs_correlation": 0.7311371717390507
+    },
+    {
+      "coin1": "CROUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7308225958626617,
+      "abs_correlation": 0.7308225958626617
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "WBTCUSDT",
+      "correlation": 0.7302537312601736,
+      "abs_correlation": 0.7302537312601736
+    },
+    {
+      "coin1": "WLDUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7299909589921095,
+      "abs_correlation": 0.7299909589921095
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "WLDUSDT",
+      "correlation": 0.7296971456612769,
+      "abs_correlation": 0.7296971456612769
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.729094653620951,
+      "abs_correlation": 0.729094653620951
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.7290733167792568,
+      "abs_correlation": 0.7290733167792568
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.7289136944715079,
+      "abs_correlation": 0.7289136944715079
+    },
+    {
+      "coin1": "ADAUSDT",
       "coin2": "ONDOUSDT",
-      "correlation": 0.7176127989684216,
-      "abs_correlation": 0.7176127989684216
+      "correlation": 0.7278345217160229,
+      "abs_correlation": 0.7278345217160229
+    },
+    {
+      "coin1": "WBNBUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.7262915479384567,
+      "abs_correlation": 0.7262915479384567
+    },
+    {
+      "coin1": "ENAUSDT",
+      "coin2": "TRUMPUSDT",
+      "correlation": 0.7252970784545943,
+      "abs_correlation": 0.7252970784545943
+    },
+    {
+      "coin1": "USDEUSDT",
+      "coin2": "USDFUSDT",
+      "correlation": 0.7248282818956403,
+      "abs_correlation": 0.7248282818956403
+    },
+    {
+      "coin1": "TRUMPUSDT",
+      "coin2": "FILUSDT",
+      "correlation": 0.7245709557602172,
+      "abs_correlation": 0.7245709557602172
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "OKBUSDT",
+      "correlation": 0.7244654826686013,
+      "abs_correlation": 0.7244654826686013
+    },
+    {
+      "coin1": "SHIBUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.7244237106368469,
+      "abs_correlation": 0.7244237106368469
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "LINKUSDT",
+      "correlation": 0.7241111160105899,
+      "abs_correlation": 0.7241111160105899
+    },
+    {
+      "coin1": "FIGR_HELOCUSDT",
+      "coin2": "MUSDT",
+      "correlation": 0.7240369720312042,
+      "abs_correlation": 0.7240369720312042
+    },
+    {
+      "coin1": "CCUSDT",
+      "coin2": "GTUSDT",
+      "correlation": 0.7237226230197102,
+      "abs_correlation": 0.7237226230197102
+    },
+    {
+      "coin1": "ZECUSDT",
+      "coin2": "USDFUSDT",
+      "correlation": -0.723698596805223,
+      "abs_correlation": 0.723698596805223
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "SHIBUSDT",
+      "correlation": 0.7236874177187874,
+      "abs_correlation": 0.7236874177187874
+    },
+    {
+      "coin1": "MNTUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.723582946611993,
+      "abs_correlation": 0.723582946611993
+    },
+    {
+      "coin1": "USDTUSDT",
+      "coin2": "USDT0USDT",
+      "correlation": 0.723560482900767,
+      "abs_correlation": 0.723560482900767
+    },
+    {
+      "coin1": "JLPUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.722251355048561,
+      "abs_correlation": 0.722251355048561
+    },
+    {
+      "coin1": "AAVEUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.7220442082475893,
+      "abs_correlation": 0.7220442082475893
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "AAVEUSDT",
+      "correlation": 0.7219482210670375,
+      "abs_correlation": 0.7219482210670375
     },
     {
       "coin1": "WBTCUSDT",
-      "coin2": "RSETHUSDT",
-      "correlation": 0.7175734494953101,
-      "abs_correlation": 0.7175734494953101
+      "coin2": "VETUSDT",
+      "correlation": 0.7214126587510145,
+      "abs_correlation": 0.7214126587510145
     },
     {
-      "coin1": "STETHUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7173856202043585,
-      "abs_correlation": 0.7173856202043585
+      "coin1": "USDEUSDT",
+      "coin2": "PIUSDT",
+      "correlation": -0.7208243139143418,
+      "abs_correlation": 0.7208243139143418
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LTCUSDT",
+      "correlation": 0.7207406666895482,
+      "abs_correlation": 0.7207406666895482
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.7204756017126728,
+      "abs_correlation": 0.7204756017126728
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "DOTUSDT",
+      "correlation": 0.7204129141388443,
+      "abs_correlation": 0.7204129141388443
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7202042353678539,
+      "abs_correlation": 0.7202042353678539
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7200385236671915,
+      "abs_correlation": 0.7200385236671915
+    },
+    {
+      "coin1": "LEOUSDT",
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.7200175782976342,
+      "abs_correlation": 0.7200175782976342
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.7194191722997777,
+      "abs_correlation": 0.7194191722997777
+    },
+    {
+      "coin1": "DOTUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7189144256292361,
+      "abs_correlation": 0.7189144256292361
+    },
+    {
+      "coin1": "HYPEUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 0.7185341936796025,
+      "abs_correlation": 0.7185341936796025
+    },
+    {
+      "coin1": "TAOUSDT",
+      "coin2": "ENAUSDT",
+      "correlation": 0.7185105340328332,
+      "abs_correlation": 0.7185105340328332
+    },
+    {
+      "coin1": "USDGUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": -0.718343876666146,
+      "abs_correlation": 0.718343876666146
+    },
+    {
+      "coin1": "USDTUSDT",
+      "coin2": "SUSDSUSDT",
+      "correlation": 0.7178879278783902,
+      "abs_correlation": 0.7178879278783902
+    },
+    {
+      "coin1": "SHIBUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7174310471680792,
+      "abs_correlation": 0.7174310471680792
+    },
+    {
+      "coin1": "ICPUSDT",
+      "coin2": "FILUSDT",
+      "correlation": 0.7168971776274647,
+      "abs_correlation": 0.7168971776274647
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.7165467154422609,
+      "abs_correlation": 0.7165467154422609
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "CROUSDT",
+      "correlation": 0.7162359410757098,
+      "abs_correlation": 0.7162359410757098
+    },
+    {
+      "coin1": "ALGOUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.7161083498187026,
+      "abs_correlation": 0.7161083498187026
+    },
+    {
+      "coin1": "XLMUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.7156775441637397,
+      "abs_correlation": 0.7156775441637397
     },
     {
       "coin1": "ATOMUSDT",
       "coin2": "FILUSDT",
-      "correlation": 0.7173345228590263,
-      "abs_correlation": 0.7173345228590263
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7173129462367716,
-      "abs_correlation": 0.7173129462367716
-    },
-    {
-      "coin1": "USDTUSDT",
-      "coin2": "SUSDSUSDT",
-      "correlation": 0.7171843602843979,
-      "abs_correlation": 0.7171843602843979
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7169635359731555,
-      "abs_correlation": 0.7169635359731555
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7167663977716023,
-      "abs_correlation": 0.7167663977716023
-    },
-    {
-      "coin1": "CCUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7166277778324455,
-      "abs_correlation": 0.7166277778324455
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "SOLUSDT",
-      "correlation": 0.7163561217826112,
-      "abs_correlation": 0.7163561217826112
-    },
-    {
-      "coin1": "CROUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7161323927152309,
-      "abs_correlation": 0.7161323927152309
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7159240419262366,
-      "abs_correlation": 0.7159240419262366
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "WBETHUSDT",
-      "correlation": 0.7158140032843681,
-      "abs_correlation": 0.7158140032843681
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.71581079585488,
-      "abs_correlation": 0.71581079585488
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7156644199098475,
-      "abs_correlation": 0.7156644199098475
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7154290716380645,
-      "abs_correlation": 0.7154290716380645
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7153882606438018,
-      "abs_correlation": 0.7153882606438018
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7152007844791318,
-      "abs_correlation": 0.7152007844791318
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7150499670800575,
-      "abs_correlation": 0.7150499670800575
-    },
-    {
-      "coin1": "WEETHUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7145688494924921,
-      "abs_correlation": 0.7145688494924921
-    },
-    {
-      "coin1": "SUSDEUSDT",
-      "coin2": "SUSDSUSDT",
-      "correlation": 0.7145434878478958,
-      "abs_correlation": 0.7145434878478958
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7143283580229378,
-      "abs_correlation": 0.7143283580229378
-    },
-    {
-      "coin1": "ADAUSDT",
-      "coin2": "UNIUSDT",
-      "correlation": 0.7143194038792525,
-      "abs_correlation": 0.7143194038792525
-    },
-    {
-      "coin1": "WETHUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7142742979665345,
-      "abs_correlation": 0.7142742979665345
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7140977882750934,
-      "abs_correlation": 0.7140977882750934
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7140976369879821,
-      "abs_correlation": 0.7140976369879821
-    },
-    {
-      "coin1": "RETHUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7139601947201765,
-      "abs_correlation": 0.7139601947201765
-    },
-    {
-      "coin1": "TRXUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7139554521670345,
-      "abs_correlation": 0.7139554521670345
+      "correlation": 0.7156409419630321,
+      "abs_correlation": 0.7156409419630321
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.71386992620536,
-      "abs_correlation": 0.71386992620536
+      "coin2": "XLMUSDT",
+      "correlation": 0.7152157442279173,
+      "abs_correlation": 0.7152157442279173
     },
     {
-      "coin1": "TRXUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7138027977675189,
-      "abs_correlation": 0.7138027977675189
+      "coin1": "ADAUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.715080896602371,
+      "abs_correlation": 0.715080896602371
     },
     {
-      "coin1": "WSTETHUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7135168835744334,
-      "abs_correlation": 0.7135168835744334
+      "coin1": "POLUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": 0.7149221812948254,
+      "abs_correlation": 0.7149221812948254
     },
     {
-      "coin1": "WETHUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7129281482305236,
-      "abs_correlation": 0.7129281482305236
+      "coin1": "XLMUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7148257483660683,
+      "abs_correlation": 0.7148257483660683
     },
     {
       "coin1": "ZECUSDT",
       "coin2": "APTUSDT",
-      "correlation": 0.7128479902140782,
-      "abs_correlation": 0.7128479902140782
+      "correlation": 0.714223113925494,
+      "abs_correlation": 0.714223113925494
     },
     {
-      "coin1": "RETHUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7124414178348706,
-      "abs_correlation": 0.7124414178348706
+      "coin1": "ADAUSDT",
+      "coin2": "VETUSDT",
+      "correlation": 0.7141989159903804,
+      "abs_correlation": 0.7141989159903804
     },
     {
-      "coin1": "BNBUSDT",
-      "coin2": "TRXUSDT",
-      "correlation": 0.7123621031447263,
-      "abs_correlation": 0.7123621031447263
+      "coin1": "WBTCUSDT",
+      "coin2": "XLMUSDT",
+      "correlation": 0.7134820783977831,
+      "abs_correlation": 0.7134820783977831
     },
     {
-      "coin1": "WSTETHUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7122946862365122,
-      "abs_correlation": 0.7122946862365122
+      "coin1": "CBBTCUSDT",
+      "coin2": "OKBUSDT",
+      "correlation": 0.7125471414338537,
+      "abs_correlation": 0.7125471414338537
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "LTCUSDT",
+      "correlation": 0.7122203221415175,
+      "abs_correlation": 0.7122203221415175
     },
     {
       "coin1": "LTCUSDT",
       "coin2": "WLDUSDT",
-      "correlation": 0.7122072985664095,
-      "abs_correlation": 0.7122072985664095
+      "correlation": 0.7121084507522703,
+      "abs_correlation": 0.7121084507522703
     },
     {
-      "coin1": "WSTETHUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7122039932936602,
-      "abs_correlation": 0.7122039932936602
+      "coin1": "DOGEUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 0.7120431146820919,
+      "abs_correlation": 0.7120431146820919
     },
     {
-      "coin1": "STETHUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7121043770888011,
-      "abs_correlation": 0.7121043770888011
+      "coin1": "LINKUSDT",
+      "coin2": "AAVEUSDT",
+      "correlation": 0.7116900162055826,
+      "abs_correlation": 0.7116900162055826
+    },
+    {
+      "coin1": "WBTUSDT",
+      "coin2": "SUSDEUSDT",
+      "correlation": 0.7114346584576419,
+      "abs_correlation": 0.7114346584576419
+    },
+    {
+      "coin1": "WBTUSDT",
+      "coin2": "USDSUSDT",
+      "correlation": -0.7113916698872145,
+      "abs_correlation": 0.7113916698872145
+    },
+    {
+      "coin1": "USDT0USDT",
+      "coin2": "USD1USDT",
+      "correlation": 0.7113524844115643,
+      "abs_correlation": 0.7113524844115643
+    },
+    {
+      "coin1": "ADAUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7112957745188864,
+      "abs_correlation": 0.7112957745188864
+    },
+    {
+      "coin1": "XLMUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.7112671983274643,
+      "abs_correlation": 0.7112671983274643
     },
     {
       "coin1": "XMRUSDT",
       "coin2": "OKBUSDT",
-      "correlation": 0.7120533376560182,
-      "abs_correlation": 0.7120533376560182
+      "correlation": 0.7111233420169261,
+      "abs_correlation": 0.7111233420169261
     },
     {
-      "coin1": "CBBTCUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7120041656064691,
-      "abs_correlation": 0.7120041656064691
-    },
-    {
-      "coin1": "WEETHUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7117978058216364,
-      "abs_correlation": 0.7117978058216364
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7117460702220098,
-      "abs_correlation": 0.7117460702220098
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.7117343933324484,
-      "abs_correlation": 0.7117343933324484
-    },
-    {
-      "coin1": "ALGOUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7113696542082621,
-      "abs_correlation": 0.7113696542082621
-    },
-    {
-      "coin1": "XRPUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7111209738151487,
-      "abs_correlation": 0.7111209738151487
-    },
-    {
-      "coin1": "HBARUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7110989837263021,
-      "abs_correlation": 0.7110989837263021
-    },
-    {
-      "coin1": "WBTUSDT",
-      "coin2": "JLPUSDT",
-      "correlation": 0.7107995040950839,
-      "abs_correlation": 0.7107995040950839
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7104424138998847,
-      "abs_correlation": 0.7104424138998847
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "OKBUSDT",
-      "correlation": 0.7103664156060011,
-      "abs_correlation": 0.7103664156060011
-    },
-    {
-      "coin1": "TRUMPUSDT",
-      "coin2": "FILUSDT",
-      "correlation": 0.7103633356632199,
-      "abs_correlation": 0.7103633356632199
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "CROUSDT",
-      "correlation": 0.7103137216429466,
-      "abs_correlation": 0.7103137216429466
-    },
-    {
-      "coin1": "ENAUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7102391098439386,
-      "abs_correlation": 0.7102391098439386
-    },
-    {
-      "coin1": "LTCUSDT",
-      "coin2": "RSETHUSDT",
-      "correlation": 0.7101101839052552,
-      "abs_correlation": 0.7101101839052552
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "LEOUSDT",
-      "correlation": 0.710089976408085,
-      "abs_correlation": 0.710089976408085
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7099064542401708,
-      "abs_correlation": 0.7099064542401708
-    },
-    {
-      "coin1": "MNTUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.70985077152629,
-      "abs_correlation": 0.70985077152629
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "WEETHUSDT",
-      "correlation": 0.7097496953264721,
-      "abs_correlation": 0.7097496953264721
-    },
-    {
-      "coin1": "APTUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7095283820812035,
-      "abs_correlation": 0.7095283820812035
-    },
-    {
-      "coin1": "ENAUSDT",
+      "coin1": "OKBUSDT",
       "coin2": "ONDOUSDT",
-      "correlation": 0.7094886185184829,
-      "abs_correlation": 0.7094886185184829
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "ADAUSDT",
-      "correlation": 0.7094476091353387,
-      "abs_correlation": 0.7094476091353387
-    },
-    {
-      "coin1": "WBTCUSDT",
-      "coin2": "LTCUSDT",
-      "correlation": 0.7094288372617517,
-      "abs_correlation": 0.7094288372617517
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "RSETHUSDT",
-      "correlation": 0.7091382150467316,
-      "abs_correlation": 0.7091382150467316
-    },
-    {
-      "coin1": "ONDOUSDT",
-      "coin2": "WLDUSDT",
-      "correlation": 0.7089725195918228,
-      "abs_correlation": 0.7089725195918228
-    },
-    {
-      "coin1": "TAOUSDT",
-      "coin2": "POLUSDT",
-      "correlation": 0.7089271714309974,
-      "abs_correlation": 0.7089271714309974
-    },
-    {
-      "coin1": "ASTERUSDT",
-      "coin2": "KCSUSDT",
-      "correlation": 0.7087143238608605,
-      "abs_correlation": 0.7087143238608605
+      "correlation": 0.7110236819703472,
+      "abs_correlation": 0.7110236819703472
     },
     {
       "coin1": "BNBUSDT",
-      "coin2": "WBETHUSDT",
-      "correlation": 0.7086016678477643,
-      "abs_correlation": 0.7086016678477643
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7084815686640887,
-      "abs_correlation": 0.7084815686640887
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7083087068822849,
-      "abs_correlation": 0.7083087068822849
-    },
-    {
-      "coin1": "TONUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.7082634799049915,
-      "abs_correlation": 0.7082634799049915
-    },
-    {
-      "coin1": "CBBTCUSDT",
-      "coin2": "QNTUSDT",
-      "correlation": 0.7080765516437938,
-      "abs_correlation": 0.7080765516437938
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "RETHUSDT",
-      "correlation": 0.7076279637318433,
-      "abs_correlation": 0.7076279637318433
+      "coin2": "ENAUSDT",
+      "correlation": 0.7105409312473712,
+      "abs_correlation": 0.7105409312473712
     },
     {
       "coin1": "APTUSDT",
-      "coin2": "ARBUSDT",
-      "correlation": 0.7075480296346899,
-      "abs_correlation": 0.7075480296346899
+      "coin2": "ALGOUSDT",
+      "correlation": 0.710436983724373,
+      "abs_correlation": 0.710436983724373
     },
     {
-      "coin1": "ETHUSDT",
-      "coin2": "RSETHUSDT",
-      "correlation": 0.7074801595800535,
-      "abs_correlation": 0.7074801595800535
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "CBBTCUSDT",
-      "correlation": 0.7073947017356529,
-      "abs_correlation": 0.7073947017356529
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "WETHUSDT",
-      "correlation": 0.707292304946474,
-      "abs_correlation": 0.707292304946474
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7069986785553166,
-      "abs_correlation": 0.7069986785553166
-    },
-    {
-      "coin1": "AAVEUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7069158679381519,
-      "abs_correlation": 0.7069158679381519
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "ADAUSDT",
-      "correlation": 0.7065337019437784,
-      "abs_correlation": 0.7065337019437784
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "XLMUSDT",
-      "correlation": 0.7064471708605923,
-      "abs_correlation": 0.7064471708605923
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.7063879296157571,
-      "abs_correlation": 0.7063879296157571
-    },
-    {
-      "coin1": "FLRUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.706315540940913,
-      "abs_correlation": 0.706315540940913
-    },
-    {
-      "coin1": "WBETHUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7060771310003052,
-      "abs_correlation": 0.7060771310003052
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7060093627734086,
-      "abs_correlation": 0.7060093627734086
-    },
-    {
-      "coin1": "VETUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7059760187756198,
-      "abs_correlation": 0.7059760187756198
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7059758412035717,
-      "abs_correlation": 0.7059758412035717
-    },
-    {
-      "coin1": "BNSOLUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7057443275617424,
-      "abs_correlation": 0.7057443275617424
-    },
-    {
-      "coin1": "CCUSDT",
-      "coin2": "ICPUSDT",
-      "correlation": 0.7052963705636692,
-      "abs_correlation": 0.7052963705636692
-    },
-    {
-      "coin1": "DOTUSDT",
-      "coin2": "WLDUSDT",
-      "correlation": 0.70524119473157,
-      "abs_correlation": 0.70524119473157
-    },
-    {
-      "coin1": "BSC-USDUSDT",
-      "coin2": "USDT0USDT",
-      "correlation": 0.7049690296079563,
-      "abs_correlation": 0.7049690296079563
+      "coin1": "APTUSDT",
+      "coin2": "FILUSDT",
+      "correlation": 0.7103591908607185,
+      "abs_correlation": 0.7103591908607185
     },
     {
       "coin1": "LEOUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.7048040257406502,
-      "abs_correlation": 0.7048040257406502
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7102223982386319,
+      "abs_correlation": 0.7102223982386319
     },
     {
-      "coin1": "MNTUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7047957770552703,
-      "abs_correlation": 0.7047957770552703
-    },
-    {
-      "coin1": "XRPUSDT",
-      "coin2": "XLMUSDT",
-      "correlation": 0.7047523980970362,
-      "abs_correlation": 0.7047523980970362
-    },
-    {
-      "coin1": "SOLUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7045936464458618,
-      "abs_correlation": 0.7045936464458618
-    },
-    {
-      "coin1": "STETHUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.7041447958134435,
-      "abs_correlation": 0.7041447958134435
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7040637506424134,
-      "abs_correlation": 0.7040637506424134
-    },
-    {
-      "coin1": "BNBUSDT",
-      "coin2": "JITOSOLUSDT",
-      "correlation": 0.7038497704273452,
-      "abs_correlation": 0.7038497704273452
-    },
-    {
-      "coin1": "ENAUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7037802822815076,
-      "abs_correlation": 0.7037802822815076
-    },
-    {
-      "coin1": "XLMUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7034043830445755,
-      "abs_correlation": 0.7034043830445755
-    },
-    {
-      "coin1": "JITOSOLUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7032201951596195,
-      "abs_correlation": 0.7032201951596195
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.7030276733345884,
-      "abs_correlation": 0.7030276733345884
-    },
-    {
-      "coin1": "DOGEUSDT",
-      "coin2": "SHIBUSDT",
-      "correlation": 0.7029171482624053,
-      "abs_correlation": 0.7029171482624053
+      "coin1": "USDEUSDT",
+      "coin2": "WLFIUSDT",
+      "correlation": 0.7096711804654693,
+      "abs_correlation": 0.7096711804654693
     },
     {
       "coin1": "ADAUSDT",
-      "coin2": "MNTUSDT",
-      "correlation": 0.7028761492317915,
-      "abs_correlation": 0.7028761492317915
+      "coin2": "OKBUSDT",
+      "correlation": 0.7093320899959206,
+      "abs_correlation": 0.7093320899959206
     },
     {
-      "coin1": "RSETHUSDT",
-      "coin2": "LBTCUSDT",
-      "correlation": 0.7028307678336616,
-      "abs_correlation": 0.7028307678336616
-    },
-    {
-      "coin1": "ENAUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.7028034983422515,
-      "abs_correlation": 0.7028034983422515
-    },
-    {
-      "coin1": "PEPEUSDT",
-      "coin2": "GTUSDT",
-      "correlation": 0.7026326111434914,
-      "abs_correlation": 0.7026326111434914
-    },
-    {
-      "coin1": "JITOSOLUSDT",
-      "coin2": "ENAUSDT",
-      "correlation": 0.7023652798135461,
-      "abs_correlation": 0.7023652798135461
-    },
-    {
-      "coin1": "LEOUSDT",
-      "coin2": "SUSDEUSDT",
-      "correlation": 0.7023054011782995,
-      "abs_correlation": 0.7023054011782995
-    },
-    {
-      "coin1": "USDTUSDT",
-      "coin2": "USDEUSDT",
-      "correlation": 0.7020202710595751,
-      "abs_correlation": 0.7020202710595751
-    },
-    {
-      "coin1": "ARBUSDT",
-      "coin2": "WBNBUSDT",
-      "correlation": 0.7020167129205723,
-      "abs_correlation": 0.7020167129205723
-    },
-    {
-      "coin1": "ETHUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.7019006691509252,
-      "abs_correlation": 0.7019006691509252
-    },
-    {
-      "coin1": "LINKUSDT",
-      "coin2": "DOTUSDT",
-      "correlation": 0.7018496614511692,
-      "abs_correlation": 0.7018496614511692
-    },
-    {
-      "coin1": "AVAXUSDT",
-      "coin2": "HTXUSDT",
-      "correlation": 0.70158257701682,
-      "abs_correlation": 0.70158257701682
-    },
-    {
-      "coin1": "WSTETHUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7015455167485339,
-      "abs_correlation": 0.7015455167485339
+      "coin1": "BNBUSDT",
+      "coin2": "TRXUSDT",
+      "correlation": 0.7088136351264545,
+      "abs_correlation": 0.7088136351264545
     },
     {
       "coin1": "GTUSDT",
       "coin2": "LBTCUSDT",
-      "correlation": 0.7014046094292916,
-      "abs_correlation": 0.7014046094292916
+      "correlation": 0.7087508996181396,
+      "abs_correlation": 0.7087508996181396
     },
     {
-      "coin1": "DOTUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": 0.7012790670776229,
-      "abs_correlation": 0.7012790670776229
+      "coin1": "BSC-USDUSDT",
+      "coin2": "USDEUSDT",
+      "correlation": 0.7086691190659755,
+      "abs_correlation": 0.7086691190659755
     },
     {
-      "coin1": "PEPEUSDT",
-      "coin2": "APTUSDT",
-      "correlation": 0.7011980437169306,
-      "abs_correlation": 0.7011980437169306
-    },
-    {
-      "coin1": "WETHUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.7011265782798698,
-      "abs_correlation": 0.7011265782798698
-    },
-    {
-      "coin1": "WETHUSDT",
+      "coin1": "AVAXUSDT",
       "coin2": "GTUSDT",
-      "correlation": 0.7010755963957539,
-      "abs_correlation": 0.7010755963957539
+      "correlation": 0.7086642758948266,
+      "abs_correlation": 0.7086642758948266
     },
     {
-      "coin1": "ADAUSDT",
-      "coin2": "WBETHUSDT",
-      "correlation": 0.7006471432604625,
-      "abs_correlation": 0.7006471432604625
+      "coin1": "BNBUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7082875343704026,
+      "abs_correlation": 0.7082875343704026
     },
     {
       "coin1": "POLUSDT",
-      "coin2": "ARBUSDT",
-      "correlation": 0.7005488856714305,
-      "abs_correlation": 0.7005488856714305
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7076438106134454,
+      "abs_correlation": 0.7076438106134454
     },
     {
-      "coin1": "TRUMPUSDT",
+      "coin1": "DOGEUSDT",
+      "coin2": "ENAUSDT",
+      "correlation": 0.7069613465614745,
+      "abs_correlation": 0.7069613465614745
+    },
+    {
+      "coin1": "VETUSDT",
+      "coin2": "LBTCUSDT",
+      "correlation": 0.7065435297320662,
+      "abs_correlation": 0.7065435297320662
+    },
+    {
+      "coin1": "SOLUSDT",
+      "coin2": "LEOUSDT",
+      "correlation": 0.7061077076667055,
+      "abs_correlation": 0.7061077076667055
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "JITOSOLUSDT",
+      "correlation": 0.7059665929983202,
+      "abs_correlation": 0.7059665929983202
+    },
+    {
+      "coin1": "ENAUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7058377922753959,
+      "abs_correlation": 0.7058377922753959
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "AAVEUSDT",
+      "correlation": 0.7056779783937186,
+      "abs_correlation": 0.7056779783937186
+    },
+    {
+      "coin1": "USDTBUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": -0.7053456974000727,
+      "abs_correlation": 0.7053456974000727
+    },
+    {
+      "coin1": "MNTUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7048676127518948,
+      "abs_correlation": 0.7048676127518948
+    },
+    {
+      "coin1": "SHIBUSDT",
+      "coin2": "APTUSDT",
+      "correlation": 0.7048598723574928,
+      "abs_correlation": 0.7048598723574928
+    },
+    {
+      "coin1": "DOGEUSDT",
+      "coin2": "XLMUSDT",
+      "correlation": 0.7047780178321484,
+      "abs_correlation": 0.7047780178321484
+    },
+    {
+      "coin1": "LTCUSDT",
+      "coin2": "SHIBUSDT",
+      "correlation": 0.7046435998608523,
+      "abs_correlation": 0.7046435998608523
+    },
+    {
+      "coin1": "MNTUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7044416760055556,
+      "abs_correlation": 0.7044416760055556
+    },
+    {
+      "coin1": "APTUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7043270415073911,
+      "abs_correlation": 0.7043270415073911
+    },
+    {
+      "coin1": "TAOUSDT",
       "coin2": "QNTUSDT",
-      "correlation": 0.700472397882223,
-      "abs_correlation": 0.700472397882223
+      "correlation": 0.7043111272040959,
+      "abs_correlation": 0.7043111272040959
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7038620472392916,
+      "abs_correlation": 0.7038620472392916
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "BNBUSDT",
-      "correlation": 0.7004480219673814,
-      "abs_correlation": 0.7004480219673814
+      "coin2": "OKBUSDT",
+      "correlation": 0.7036890380494998,
+      "abs_correlation": 0.7036890380494998
     },
     {
-      "coin1": "ALGOUSDT",
-      "coin2": "FBTCUSDT",
-      "correlation": 0.700194264160303,
-      "abs_correlation": 0.700194264160303
+      "coin1": "HTXUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 0.7034709203045044,
+      "abs_correlation": 0.7034709203045044
     },
     {
-      "coin1": "WEETHUSDT",
+      "coin1": "TRXUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 0.7030763681873495,
+      "abs_correlation": 0.7030763681873495
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "JLPUSDT",
+      "correlation": 0.7029986716853964,
+      "abs_correlation": 0.7029986716853964
+    },
+    {
+      "coin1": "WSTETHUSDT",
+      "coin2": "LTCUSDT",
+      "correlation": 0.7029009453410365,
+      "abs_correlation": 0.7029009453410365
+    },
+    {
+      "coin1": "PEPEUSDT",
       "coin2": "GTUSDT",
-      "correlation": 0.7001190725752141,
-      "abs_correlation": 0.7001190725752141
+      "correlation": 0.7026969796541815,
+      "abs_correlation": 0.7026969796541815
     },
     {
-      "coin1": "WETHUSDT",
-      "coin2": "VETUSDT",
-      "correlation": 0.7000076918070798,
-      "abs_correlation": 0.7000076918070798
+      "coin1": "BNBUSDT",
+      "coin2": "AAVEUSDT",
+      "correlation": 0.7025808241366642,
+      "abs_correlation": 0.7025808241366642
+    },
+    {
+      "coin1": "STETHUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.7022740630401297,
+      "abs_correlation": 0.7022740630401297
+    },
+    {
+      "coin1": "AAVEUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7019319131696332,
+      "abs_correlation": 0.7019319131696332
+    },
+    {
+      "coin1": "HTXUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 0.7015348142245477,
+      "abs_correlation": 0.7015348142245477
+    },
+    {
+      "coin1": "WSTETHUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.7013093762322948,
+      "abs_correlation": 0.7013093762322948
+    },
+    {
+      "coin1": "TRUMPUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 0.7011913028233727,
+      "abs_correlation": 0.7011913028233727
+    },
+    {
+      "coin1": "FIGR_HELOCUSDT",
+      "coin2": "USDTBUSDT",
+      "correlation": 0.7010571969297921,
+      "abs_correlation": 0.7010571969297921
+    },
+    {
+      "coin1": "BNSOLUSDT",
+      "coin2": "WBNBUSDT",
+      "correlation": 0.7010537754448721,
+      "abs_correlation": 0.7010537754448721
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "STETHUSDT",
+      "correlation": 0.7009055281758055,
+      "abs_correlation": 0.7009055281758055
+    },
+    {
+      "coin1": "TRXUSDT",
+      "coin2": "OKBUSDT",
+      "correlation": 0.7008364663820306,
+      "abs_correlation": 0.7008364663820306
+    },
+    {
+      "coin1": "ETHUSDT",
+      "coin2": "CBBTCUSDT",
+      "correlation": 0.7006631966598609,
+      "abs_correlation": 0.7006631966598609
+    },
+    {
+      "coin1": "BNBUSDT",
+      "coin2": "SOLUSDT",
+      "correlation": 0.7003785471767198,
+      "abs_correlation": 0.7003785471767198
+    },
+    {
+      "coin1": "LINKUSDT",
+      "coin2": "QNTUSDT",
+      "correlation": 0.700341955162179,
+      "abs_correlation": 0.700341955162179
     }
   ],
-  "total_pairs": 559
+  "total_pairs": 402
 }
