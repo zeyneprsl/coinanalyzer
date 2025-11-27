@@ -206,12 +206,18 @@ else:
     st.sidebar.info(f"⏱️ Son yenileme: {int(elapsed)}s önce")
 
 # JSON dosyalarını yükleme fonksiyonu
+@st.cache_data(ttl=60, show_spinner=False)  # 1 dakika cache (daha sık güncelleme)
 def load_json_file(filename):
+    """JSON dosyasını yükle (cache ile)"""
     if os.path.exists(filename):
         try:
             with open(filename, 'r', encoding='utf-8') as f:
                 return json.load(f)
-        except:
+        except json.JSONDecodeError as e:
+            st.error(f"❌ {filename} JSON parse hatası: {e}")
+            return None
+        except Exception as e:
+            st.error(f"❌ {filename} yüklenirken hata: {e}")
             return None
     return None
 
