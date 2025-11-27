@@ -341,16 +341,18 @@ if page == "Ana Sayfa":
                 marker_colorscale='RdBu',
                 text=df_corr['correlation'].round(3),
                 textposition='outside',
-            hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<extra></extra>'
-        ))
-        fig.update_layout(
-            title="Top 20 Yüksek Korelasyonlu Coin Çiftleri",
-            xaxis_title="Coin Çifti",
-            yaxis_title="Korelasyon",
-            height=500,
-            xaxis_tickangle=-45
-        )
-        st.plotly_chart(fig, use_container_width=True)
+                hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<extra></extra>'
+            ))
+            fig.update_layout(
+                title=f"Top 20 Yüksek Korelasyonlu Coin Çiftleri (Ortalama: {avg_corr:.3f})",
+                xaxis_title="Coin Çifti",
+                yaxis_title="Korelasyon",
+                height=500,
+                xaxis_tickangle=-45
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("⚠️ Henüz korelasyon verisi yok. 'Korelasyon Analizi' sayfasından korelasyon hesaplayın.")
         
         # Pozitif/Negatif ayrımı ile tablo
         st.markdown("---")
