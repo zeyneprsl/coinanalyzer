@@ -246,21 +246,39 @@ if page == "Ana Sayfa":
     corr_matrix_hist = load_csv_file('historical_correlation_matrix.csv')
     corr_matrix_realtime = load_csv_file('realtime_correlation_matrix.csv')
     
-    if correlations or corr_matrix_hist is not None or corr_matrix_realtime is not None:
+    # Price history'den coin sayısını al (en güncel)
+    price_history = load_json_file('realtime_price_history.json')
+    total_coins_from_history = 0
+    if price_history and 'history' in price_history and len(price_history['history']) > 0:
+        # En son veri noktasından coin sayısını al
+        last_point = price_history['history'][-1]
+        if 'prices' in last_point:
+            total_coins_from_history = len(last_point['prices'])
+    
+    if correlations or corr_matrix_hist is not None or corr_matrix_realtime is not None or total_coins_from_history > 0:
         col1, col2, col3, col4 = st.columns(4)
         
-        # Toplam coin sayısı
-        if corr_matrix_hist is not None:
+        # Toplam coin sayısı (öncelik sırası: price_history > corr_matrix > correlations)
+        if total_coins_from_history > 0:
+            total_coins = total_coins_from_history
+        elif corr_matrix_hist is not None:
             total_coins = len(corr_matrix_hist.columns)
         elif corr_matrix_realtime is not None:
             total_coins = len(corr_matrix_realtime.columns)
         else:
             # Korelasyonlardan coin sayısını çıkar
             unique_coins = set()
-            for corr in correlations:
+            if isinstance(correlations, dict) and 'high_correlations' in correlations:
+                corr_list = correlations['high_correlations']
+            elif isinstance(correlations, list):
+                corr_list = correlations
+            else:
+                corr_list = []
+            
+            for corr in corr_list:
                 unique_coins.add(corr.get('coin1', ''))
                 unique_coins.add(corr.get('coin2', ''))
-            total_coins = len(unique_coins)
+            total_coins = len(unique_coins) if unique_coins else 0
         
         # Toplam korelasyon çifti sayısı
         total_pairs = len(correlations) if correlations else 0
@@ -792,71 +810,71 @@ elif page == "Korelasyon Analizi":
                             
                             # Son N veriyi al
                             recent_history = history_data['history'][-n_data_points:]
-                        
-                        # Her coin için fiyat serisi oluştur
-                        price_data = {}
-                        for point in recent_history:
-                            for symbol, data in point.get('prices', {}).items():
-                                if symbol not in price_data:
-                                    price_data[symbol] = []
-                                price_data[symbol].append(data['price'])
-                        
-                        # En az 2 verisi olan coinleri filtrele
-                        valid_coins = {k: v for k, v in price_data.items() if len(v) >= 2}
-                        
-                        if len(valid_coins) < 2:
-                            st.error("⚠️ Yeterli coin verisi yok!")
-                        else:
-                            # DataFrame oluştur
-                            df = pd.DataFrame(valid_coins)
                             
-                            # Returns hesapla
-                            df_returns = df.pct_change().dropna()
+                            # Her coin için fiyat serisi oluştur
+                            price_data = {}
+                            for point in recent_history:
+                                for symbol, data in point.get('prices', {}).items():
+                                    if symbol not in price_data:
+                                        price_data[symbol] = []
+                                    price_data[symbol].append(data['price'])
                             
-                            if df_returns.empty or len(df_returns) < 2:
-                                st.error("⚠️ Korelasyon hesaplanamadı!")
+                            # En az 2 verisi olan coinleri filtrele
+                            valid_coins = {k: v for k, v in price_data.items() if len(v) >= 2}
+                            
+                            if len(valid_coins) < 2:
+                                st.error("⚠️ Yeterli coin verisi yok!")
                             else:
-                                # Korelasyon matrisi
-                                correlation_matrix = df_returns.corr()
+                                # DataFrame oluştur
+                                df = pd.DataFrame(valid_coins)
                                 
-                                # Yüksek korelasyonları bul
-                                high_corr = []
-                                symbols = correlation_matrix.columns.tolist()
+                                # Returns hesapla
+                                df_returns = df.pct_change().dropna()
                                 
-                                for i, symbol1 in enumerate(symbols):
-                                    for j, symbol2 in enumerate(symbols):
-                                        if i < j:
-                                            corr = correlation_matrix.loc[symbol1, symbol2]
-                                            if not np.isnan(corr) and abs(corr) >= 0.7:
-                                                high_corr.append({
-                                                    'coin1': symbol1,
-                                                    'coin2': symbol2,
-                                                    'correlation': float(corr),
-                                                    'abs_correlation': float(abs(corr))
-                                                })
-                                
-                                high_corr.sort(key=lambda x: x['abs_correlation'], reverse=True)
-                                
-                                # Sonuçları kaydet
-                                result_data = {
-                                    'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                    'data_points_used': n_data_points,
-                                    'total_data_points': history_count,
-                                    'high_correlations': high_corr,
-                                    'total_pairs': len(high_corr)
-                                }
-                                
-                                with open('realtime_correlations.json', 'w', encoding='utf-8') as f:
-                                    json.dump(result_data, f, indent=2, ensure_ascii=False)
-                                
-                                correlation_matrix.to_csv('realtime_correlation_matrix.csv')
-                                
-                                st.success(f"✅ Korelasyon hesaplandı! {len(high_corr)} yüksek korelasyon çifti bulundu.")
-                                st.info("💡 Sayfayı yenileyerek sonuçları görebilirsiniz.")
-                    except Exception as e:
-                        st.error(f"❌ Hata: {e}")
-                        import traceback
-                        st.code(traceback.format_exc())
+                                if df_returns.empty or len(df_returns) < 2:
+                                    st.error("⚠️ Korelasyon hesaplanamadı!")
+                                else:
+                                    # Korelasyon matrisi
+                                    correlation_matrix = df_returns.corr()
+                                    
+                                    # Yüksek korelasyonları bul
+                                    high_corr = []
+                                    symbols = correlation_matrix.columns.tolist()
+                                    
+                                    for i, symbol1 in enumerate(symbols):
+                                        for j, symbol2 in enumerate(symbols):
+                                            if i < j:
+                                                corr = correlation_matrix.loc[symbol1, symbol2]
+                                                if not np.isnan(corr) and abs(corr) >= 0.7:
+                                                    high_corr.append({
+                                                        'coin1': symbol1,
+                                                        'coin2': symbol2,
+                                                        'correlation': float(corr),
+                                                        'abs_correlation': float(abs(corr))
+                                                    })
+                                    
+                                    high_corr.sort(key=lambda x: x['abs_correlation'], reverse=True)
+                                    
+                                    # Sonuçları kaydet
+                                    result_data = {
+                                        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                        'data_points_used': n_data_points,
+                                        'total_data_points': history_count,
+                                        'high_correlations': high_corr,
+                                        'total_pairs': len(high_corr)
+                                    }
+                                    
+                                    with open('realtime_correlations.json', 'w', encoding='utf-8') as f:
+                                        json.dump(result_data, f, indent=2, ensure_ascii=False)
+                                    
+                                    correlation_matrix.to_csv('realtime_correlation_matrix.csv')
+                                    
+                                    st.success(f"✅ Korelasyon hesaplandı! {len(high_corr)} yüksek korelasyon çifti bulundu.")
+                                    st.info("💡 Sayfayı yenileyerek sonuçları görebilirsiniz.")
+                        except Exception as e:
+                            st.error(f"❌ Hata: {e}")
+                            import traceback
+                            st.code(traceback.format_exc())
         else:
             st.warning(f"⚠️ Korelasyon hesaplamak için en az {min_required} veri noktası gereklidir. Şu anda {history_count} veri noktası var.")
             st.info("💡 GitHub Actions her 5 dakikada bir veri toplar. Birkaç analiz sonrası yeterli veri olacaktır.")
