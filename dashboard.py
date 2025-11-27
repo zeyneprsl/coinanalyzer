@@ -2103,11 +2103,34 @@ elif page == "🔍 Coin Arama":
     pv_analysis_data = load_json_file(pv_analysis_file)
     sudden_analysis_data = load_json_file(sudden_analysis_file)
     
+    # Alternatif dosya kontrolü
     if corr_matrix is None or corr_matrix.empty:
-        st.warning(f"⚠️ {corr_matrix_file} dosyası bulunamadı. Önce analiz çalıştırın.")
-    else:
-        # Coin listesi
+        # Diğer dosyayı dene
+        alt_file = "realtime_correlation_matrix.csv" if data_source == "Geçmiş Veriler" else "historical_correlation_matrix.csv"
+        corr_matrix = load_csv_file(alt_file)
+        if corr_matrix is not None and not corr_matrix.empty:
+            st.info(f"💡 {corr_matrix_file} bulunamadı, {alt_file} kullanılıyor.")
+    
+    if corr_matrix is None or corr_matrix.empty:
+        st.error(f"❌ Korelasyon matrisi bulunamadı!")
+        st.warning(f"⚠️ {corr_matrix_file} dosyası bulunamadı. Önce analiz çalıştırın veya 'Korelasyon Hesapla' butonunu kullanın.")
+        st.info("""
+        **Çözüm:**
+        1. 'Korelasyon Analizi' sayfasına gidin
+        2. 'Anlık Verilerden Korelasyon Hesapla' bölümünden korelasyon hesaplayın
+        3. Veya GitHub Actions'ın birkaç kez çalışmasını bekleyin
+        """)
+        st.stop()
+    
+    # Coin listesi
+    try:
         all_coins = corr_matrix.columns.tolist()
+        if not all_coins:
+            st.error("❌ Korelasyon matrisinde coin bulunamadı!")
+            st.stop()
+    except Exception as e:
+        st.error(f"❌ Coin listesi alınamadı: {e}")
+        st.stop()
         
         # Arama kutusu
         st.subheader("🔍 Coin Ara")
@@ -2245,9 +2268,27 @@ elif page == "🔍 Coin Arama":
                 
                 # Korelasyon matrisinden bu coin'in korelasyonlarını al
                 if selected_coin in corr_matrix.index:
-                    coin_correlations = corr_matrix.loc[selected_coin].sort_values(ascending=False)
-                    # Kendisiyle olan korelasyonu (1.0) çıkar
-                    coin_correlations = coin_correlations[coin_correlations.index != selected_coin]
+                    try:
+                        coin_correlations = corr_matrix.loc[selected_coin].sort_values(ascending=False)
+                        # Kendisiyle olan korelasyonu (1.0) çıkar
+                        coin_correlations = coin_correlations[coin_correlations.index != selected_coin]
+                    except Exception as e:
+                        st.error(f"❌ Korelasyon verileri alınamadı: {e}")
+                        coin_correlations = None
+                else:
+                    # Coin matriste yoksa, columns'dan kontrol et
+                    if selected_coin in corr_matrix.columns:
+                        try:
+                            coin_correlations = corr_matrix[selected_coin].sort_values(ascending=False)
+                            coin_correlations = coin_correlations[coin_correlations.index != selected_coin]
+                        except Exception as e:
+                            st.error(f"❌ Korelasyon verileri alınamadı: {e}")
+                            coin_correlations = None
+                    else:
+                        st.warning(f"⚠️ {selected_coin} korelasyon matrisinde bulunamadı.")
+                        coin_correlations = None
+                
+                if coin_correlations is not None and len(coin_correlations) > 0:
                     
                     # En yüksek ve en düşük korelasyonlar
                     col1, col2 = st.columns(2)
@@ -2381,9 +2422,9 @@ elif page == "🔍 Coin Arama":
                     with col4:
                         avg_corr = coin_correlations.mean()
                         st.metric("Ortalama Korelasyon", f"{avg_corr:.3f}")
-                
                 else:
-                    st.warning(f"⚠️ {selected_coin} korelasyon matrisinde bulunamadı.")
+                    st.warning(f"⚠️ {selected_coin} korelasyon matrisinde bulunamadı veya korelasyon verisi yok.")
+                    st.info("💡 Bu coin için korelasyon verisi yok. 'Korelasyon Analizi' sayfasından korelasyon hesaplayabilirsiniz.")
             
             else:
                 st.error(f"❌ {search_query_upper} bulunamadı!")
