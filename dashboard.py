@@ -630,29 +630,168 @@ elif page == "Korelasyon Analizi":
                 st.warning(f"⚠️ Yetersiz veri ({history_count}/{min_required})")
         
         if history_count >= min_required:
-            col1, col2 = st.columns([2, 1])
-            with col1:
-                n_data_points = st.slider(
-                    "Kullanılacak Veri Noktası Sayısı (Son N)",
-                    min_value=min_required,
-                    max_value=min(history_count, 50),
-                    value=min(history_count, 20),
-                    step=1,
-                    help="Son N veri noktasını kullanarak korelasyon hesaplanır"
-                )
-            with col2:
-                st.write("")  # Boşluk
-                st.write("")  # Boşluk
-                calculate_btn = st.button("🔢 Korelasyon Hesapla", type="primary", use_container_width=True)
+            # Filtreleme seçenekleri
+            filter_type = st.radio(
+                "Filtreleme Tipi",
+                ["Zaman Bazlı (Son N Gün/Saat)", "Veri Noktası Sayısı (Son N)"],
+                horizontal=True,
+                key="corr_filter_type"
+            )
             
-            if calculate_btn:
-                with st.spinner(f"Son {n_data_points} veri noktası kullanılarak korelasyon hesaplanıyor..."):
+            if filter_type == "Zaman Bazlı (Son N Gün/Saat)":
+                col1, col2, col3 = st.columns([2, 2, 1])
+                with col1:
+                    time_period = st.number_input(
+                        "Zaman Periyodu",
+                        min_value=1,
+                        max_value=30,
+                        value=7,
+                        step=1,
+                        help="Kaç gün/saat geriye gidilecek"
+                    )
+                with col2:
+                    time_unit = st.selectbox(
+                        "Zaman Birimi",
+                        ["Gün", "Saat"],
+                        help="Gün veya saat cinsinden"
+                    )
+                with col3:
+                    st.write("")  # Boşluk
+                    st.write("")  # Boşluk
+                    calculate_btn = st.button("🔢 Korelasyon Hesapla", type="primary", use_container_width=True)
+                
+                # Zaman bazlı filtreleme
+                if calculate_btn:
+                    from datetime import datetime, timedelta
                     try:
-                        import pandas as pd
-                        import numpy as np
+                        # Şu anki zaman
+                        now = datetime.now()
                         
-                        # Son N veriyi al
-                        recent_history = history_data['history'][-n_data_points:]
+                        # Filtreleme zamanı hesapla
+                        if time_unit == "Gün":
+                            filter_time = now - timedelta(days=time_period)
+                        else:  # Saat
+                            filter_time = now - timedelta(hours=time_period)
+                        
+                        # Timestamp'e göre filtrele
+                        filtered_history = []
+                        for point in history_data['history']:
+                            try:
+                                point_time = datetime.fromisoformat(point['timestamp'])
+                                if point_time >= filter_time:
+                                    filtered_history.append(point)
+                            except:
+                                continue
+                        
+                        n_data_points = len(filtered_history)
+                        
+                        if n_data_points < min_required:
+                            st.error(f"⚠️ Seçilen zaman aralığında yeterli veri yok! ({n_data_points}/{min_required} veri noktası)")
+                            st.info(f"💡 Son {time_period} {time_unit.lower()} içinde {n_data_points} veri noktası bulundu. En az {min_required} veri noktası gereklidir.")
+                        else:
+                            with st.spinner(f"Son {time_period} {time_unit.lower()} verisi kullanılarak korelasyon hesaplanıyor... ({n_data_points} veri noktası)"):
+                                try:
+                                    import pandas as pd
+                                    import numpy as np
+                                    
+                                    # Filtrelenmiş veriyi kullan
+                                    recent_history = filtered_history
+                                    
+                                    # Her coin için fiyat serisi oluştur
+                                    price_data = {}
+                                    for point in recent_history:
+                                        for symbol, data in point.get('prices', {}).items():
+                                            if symbol not in price_data:
+                                                price_data[symbol] = []
+                                            price_data[symbol].append(data['price'])
+                                    
+                                    # En az 2 verisi olan coinleri filtrele
+                                    valid_coins = {k: v for k, v in price_data.items() if len(v) >= 2}
+                                    
+                                    if len(valid_coins) < 2:
+                                        st.error("⚠️ Yeterli coin verisi yok!")
+                                    else:
+                                        # DataFrame oluştur
+                                        df = pd.DataFrame(valid_coins)
+                                        
+                                        # Returns hesapla
+                                        df_returns = df.pct_change().dropna()
+                                        
+                                        if df_returns.empty or len(df_returns) < 2:
+                                            st.error("⚠️ Korelasyon hesaplanamadı!")
+                                        else:
+                                            # Korelasyon matrisi
+                                            correlation_matrix = df_returns.corr()
+                                            
+                                            # Yüksek korelasyonları bul
+                                            high_corr = []
+                                            symbols = correlation_matrix.columns.tolist()
+                                            
+                                            for i, symbol1 in enumerate(symbols):
+                                                for j, symbol2 in enumerate(symbols):
+                                                    if i < j:
+                                                        corr = correlation_matrix.loc[symbol1, symbol2]
+                                                        if not np.isnan(corr) and abs(corr) >= 0.7:
+                                                            high_corr.append({
+                                                                'coin1': symbol1,
+                                                                'coin2': symbol2,
+                                                                'correlation': float(corr),
+                                                                'abs_correlation': float(abs(corr))
+                                                            })
+                                            
+                                            high_corr.sort(key=lambda x: x['abs_correlation'], reverse=True)
+                                            
+                                            # Sonuçları kaydet
+                                            result_data = {
+                                                'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                                'filter_type': f'Son {time_period} {time_unit.lower()}',
+                                                'data_points_used': n_data_points,
+                                                'total_data_points': history_count,
+                                                'high_correlations': high_corr,
+                                                'total_pairs': len(high_corr)
+                                            }
+                                            
+                                            with open('realtime_correlations.json', 'w', encoding='utf-8') as f:
+                                                json.dump(result_data, f, indent=2, ensure_ascii=False)
+                                            
+                                            correlation_matrix.to_csv('realtime_correlation_matrix.csv')
+                                            
+                                            st.success(f"✅ Korelasyon hesaplandı! {len(high_corr)} yüksek korelasyon çifti bulundu.")
+                                            st.info(f"📊 Son {time_period} {time_unit.lower()} içindeki {n_data_points} veri noktası kullanıldı.")
+                                            st.info("💡 Sayfayı yenileyerek sonuçları görebilirsiniz.")
+                                except Exception as e:
+                                    st.error(f"❌ Hata: {e}")
+                                    import traceback
+                                    st.code(traceback.format_exc())
+                    except Exception as e:
+                        st.error(f"❌ Zaman filtreleme hatası: {e}")
+                        import traceback
+                        st.code(traceback.format_exc())
+            else:
+                # Veri noktası sayısı bazlı filtreleme (eski yöntem)
+                col1, col2 = st.columns([2, 1])
+                with col1:
+                    n_data_points = st.slider(
+                        "Kullanılacak Veri Noktası Sayısı (Son N)",
+                        min_value=min_required,
+                        max_value=min(history_count, 50),
+                        value=min(history_count, 20),
+                        step=1,
+                        help="Son N veri noktasını kullanarak korelasyon hesaplanır"
+                    )
+                with col2:
+                    st.write("")  # Boşluk
+                    st.write("")  # Boşluk
+                    calculate_btn = st.button("🔢 Korelasyon Hesapla", type="primary", use_container_width=True)
+                
+                if calculate_btn:
+                    with st.spinner(f"Son {n_data_points} veri noktası kullanılarak korelasyon hesaplanıyor..."):
+                        try:
+                            import pandas as pd
+                            import numpy as np
+                            
+                            # Son N veriyi al
+                            recent_history = history_data['history'][-n_data_points:]
                         
                         # Her coin için fiyat serisi oluştur
                         price_data = {}
