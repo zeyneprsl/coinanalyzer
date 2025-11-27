@@ -280,36 +280,67 @@ if page == "Ana Sayfa":
                 unique_coins.add(corr.get('coin2', ''))
             total_coins = len(unique_coins) if unique_coins else 0
         
-        # Toplam korelasyon çifti sayısı
-        total_pairs = len(correlations) if correlations else 0
+        # Korelasyon verilerini düzgün parse et
+        high_corr_list = []
+        if correlations:
+            if isinstance(correlations, dict):
+                # Yeni format: {"timestamp": "...", "high_correlations": [...]}
+                if 'high_correlations' in correlations:
+                    high_corr_list = correlations['high_correlations']
+                elif 'correlations' in correlations:
+                    high_corr_list = correlations['correlations']
+                else:
+                    # Eski format: direkt liste
+                    high_corr_list = list(correlations.values()) if correlations else []
+            elif isinstance(correlations, list):
+                high_corr_list = correlations
         
-        # Yüksek korelasyon sayısı
-        high_corr = [c for c in correlations if abs(c.get('correlation', 0)) > 0.7] if correlations else []
-        high_corr_count = len(high_corr)
+        # Toplam korelasyon çifti sayısı (sadece yüksek korelasyonlu olanlar kaydediliyor)
+        total_pairs = len(high_corr_list)
+        
+        # Yüksek korelasyon sayısı (≥0.7)
+        high_corr_filtered = [c for c in high_corr_list if abs(c.get('correlation', 0)) >= 0.7]
+        high_corr_count = len(high_corr_filtered)
+        
+        # Teorik maksimum çift sayısı (tüm coinler için)
+        theoretical_max_pairs = total_coins * (total_coins - 1) // 2 if total_coins > 1 else 0
         
         # Analiz edilen coin sayısı bilgisi
         col1.metric("📊 Analiz Edilen Coin", total_coins)
-        col2.metric("🔗 Toplam Korelasyon Çifti", total_pairs)
-        col3.metric("⭐ Yüksek Korelasyon (≥0.7)", high_corr_count)
-        col4.metric("📈 Ortalama Korelasyon", f"{np.mean([abs(c.get('correlation', 0)) for c in correlations]):.3f}" if correlations else "N/A")
+        col2.metric("🔗 Yüksek Korelasyon Çifti (≥0.7)", total_pairs)
+        col3.metric("📈 Teorik Maksimum Çift", f"{theoretical_max_pairs:,}")
+        col4.metric("📊 Korelasyon Matrisi Boyutu", f"{len(corr_matrix_realtime.columns) if corr_matrix_realtime is not None and not corr_matrix_realtime.empty else 0}x{len(corr_matrix_realtime.columns) if corr_matrix_realtime is not None and not corr_matrix_realtime.empty else 0}")
+        
+        # Açıklama
+        st.info(f"""
+        **📌 Bilgi:**
+        - **{total_coins:,} coin** analiz ediliyor
+        - **{total_pairs:,} yüksek korelasyon çifti** (≥0.7) bulundu
+        - Teorik olarak **{theoretical_max_pairs:,} çift** olabilir, ancak sadece yüksek korelasyonlu olanlar kaydediliyor
+        - Korelasyon matrisinde **{len(corr_matrix_realtime.columns) if corr_matrix_realtime is not None and not corr_matrix_realtime.empty else 0} coin** var (yeterli veri olanlar)
+        """)
         
         st.markdown("---")
         
         # En yüksek korelasyonlu çiftler grafiği
         st.subheader("🏆 En Yüksek Korelasyonlu Coin Çiftleri")
-        df_corr = pd.DataFrame(correlations)
-        if 'abs_correlation' not in df_corr.columns:
-            df_corr['abs_correlation'] = df_corr['correlation'].abs()
-        df_corr = df_corr.sort_values('abs_correlation', ascending=False).head(20)
-        
-        fig = go.Figure()
-        fig.add_trace(go.Bar(
-            x=df_corr['coin1'] + ' ↔ ' + df_corr['coin2'],
-            y=df_corr['correlation'],
-            marker_color=df_corr['correlation'],
-            marker_colorscale='RdBu',
-            text=df_corr['correlation'].round(3),
-            textposition='outside',
+        if high_corr_list and len(high_corr_list) > 0:
+            df_corr = pd.DataFrame(high_corr_list)
+            if 'abs_correlation' not in df_corr.columns:
+                df_corr['abs_correlation'] = df_corr['correlation'].abs()
+            df_corr = df_corr.sort_values('abs_correlation', ascending=False).head(20)
+            
+            # Ortalama korelasyon hesapla
+            avg_corr = df_corr['correlation'].mean()
+            
+            fig = go.Figure()
+            fig.add_trace(go.Bar(
+                x=df_corr['coin1'] + ' ↔ ' + df_corr['coin2'],
+                y=df_corr['correlation'],
+                marker_color=df_corr['correlation'],
+                marker_colorscale='RdBu',
+                text=df_corr['correlation'].round(3),
+                textposition='outside',
             hovertemplate='%{x}<br>Korelasyon: %{y:.3f}<extra></extra>'
         ))
         fig.update_layout(
