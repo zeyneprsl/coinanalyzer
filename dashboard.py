@@ -688,6 +688,13 @@ elif page == "Korelasyon Analizi":
     **⚠️ Minimum 5 veri noktası gereklidir** (yaklaşık 25 dakika veri)
     """)
     
+    # Cache temizleme butonu
+    col_refresh1, col_refresh2 = st.columns([1, 10])
+    with col_refresh1:
+        if st.button("🔄 Yenile", help="Verileri yeniden yükle (cache'i temizle)", key="refresh_data_btn"):
+            st.cache_data.clear()
+            st.rerun()
+    
     history_data = load_json_file('realtime_price_history.json')
     
     # Debug: Veri kontrolü
@@ -701,9 +708,9 @@ elif page == "Korelasyon Analizi":
         history_count = len(history_data['history'])
         last_update = history_data.get('last_update', 'Bilinmiyor')
         
-        # Debug bilgisi (geliştirme için)
+        # Debug bilgisi
         if history_count > 0:
-            st.caption(f"🔍 Debug: JSON'dan okunan veri noktası sayısı: {history_count}")
+            st.caption(f"🔍 JSON'dan okunan: {history_count} veri noktası | Son güncelleme: {last_update[:19] if len(last_update) > 19 else last_update}")
         
         col1, col2, col3 = st.columns(3)
         with col1:
