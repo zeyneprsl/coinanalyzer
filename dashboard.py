@@ -714,48 +714,91 @@ elif page == "Korelasyon Analizi":
                 st.warning(f"⚠️ Yetersiz veri ({history_count}/{min_required})")
                 st.caption(f"💡 GitHub Actions'ın {min_required - history_count} kez daha çalışması gerekiyor")
         
-        # Hızlı filtreleme seçenekleri (yetersiz veri durumunda da göster)
+        # Dinamik zaman bazlı filtreleme (mevcut verilere göre)
         st.markdown("---")
-        st.subheader("📅 Hızlı Filtreleme Seçenekleri")
-        st.info("💡 **Zaman bazlı filtreleme:** Belirli bir dönemin verilerine göre korelasyon hesaplayın")
+        st.subheader("📅 Zaman Bazlı Filtreleme")
+        st.info("💡 **Mevcut verilere göre zaman aralığı seçin:** Belirli bir dönemin verilerine göre korelasyon hesaplayın")
         
-        quick_filter_cols = st.columns(5)
-        quick_filters = {
-            "Son 24 Saat": (24, "Saat"),
-            "Son 3 Gün": (3, "Gün"),
-            "Son 7 Gün": (7, "Gün"),
-            "Son 14 Gün": (14, "Gün"),
-            "Son 30 Gün": (30, "Gün")
-        }
+        # Mevcut verilerden maksimum zaman aralığını hesapla
+        try:
+            from datetime import datetime
+            if history_count > 0:
+                first_point_time = datetime.fromisoformat(history_data['history'][0]['timestamp'])
+                last_point_time = datetime.fromisoformat(history_data['history'][-1]['timestamp'])
+                time_diff = last_point_time - first_point_time
+                
+                max_hours = int(time_diff.total_seconds() / 3600)
+                max_days = int(time_diff.total_seconds() / 86400)
+                
+                # Maksimum değerleri belirle
+                max_hours_available = max(1, max_hours)
+                max_days_available = max(1, max_days)
+                
+                st.caption(f"💡 Mevcut veri aralığı: ~{max_days_available} gün (~{max_hours_available} saat)")
+            else:
+                max_hours_available = 24
+                max_days_available = 1
+        except:
+            max_hours_available = 24
+            max_days_available = 7
         
-        # Session state'te seçili filtreyi sakla
-        if 'selected_quick_filter' not in st.session_state:
-            st.session_state.selected_quick_filter = None
+        # Zaman birimi seçimi
+        col1, col2, col3 = st.columns([2, 2, 1])
+        with col1:
+            time_unit = st.selectbox(
+                "Zaman Birimi",
+                ["Gün", "Saat"],
+                help="Gün veya saat cinsinden seçim yapın",
+                key="time_unit_filter"
+            )
         
-        selected_quick_filter = None
-        for idx, (label, (period, unit)) in enumerate(quick_filters.items()):
-            with quick_filter_cols[idx]:
-                button_key = f"quick_filter_{idx}"
-                if st.button(f"📅 {label}", use_container_width=True, key=button_key):
-                    st.session_state.selected_quick_filter = (period, unit, label)
-                    try:
-                        st.rerun()
-                    except:
-                        st.experimental_rerun()
+        with col2:
+            if time_unit == "Gün":
+                max_value = max(1, max_days_available)
+                time_period = st.number_input(
+                    f"Kaç {time_unit.lower()} geriye gidilecek",
+                    min_value=1,
+                    max_value=max_value,
+                    value=min(7, max_value),
+                    step=1,
+                    help=f"Mevcut veriler: {max_value} güne kadar",
+                    key="time_period_filter"
+                )
+            else:  # Saat
+                max_value = max(1, max_hours_available)
+                time_period = st.number_input(
+                    f"Kaç {time_unit.lower()} geriye gidilecek",
+                    min_value=1,
+                    max_value=max_value,
+                    value=min(24, max_value),
+                    step=1,
+                    help=f"Mevcut veriler: {max_value} saate kadar",
+                    key="time_period_filter"
+                )
         
-        # Session state'ten seçili filtreyi al
-        if st.session_state.selected_quick_filter:
-            period, unit, label = st.session_state.selected_quick_filter
-            st.success(f"✅ Seçili: {label} - Bu filtreye göre korelasyon hesaplanacak")
-            
-            # Otomatik olarak korelasyon hesapla
+        with col3:
+            st.write("")  # Boşluk
+            st.write("")  # Boşluk
+            calculate_btn = st.button("🔢 Korelasyon Hesapla", type="primary", use_container_width=True, key="calculate_correlation_btn")
+        
+        # Tahmini veri noktası sayısı göster
+        if time_unit == "Gün":
+            estimated_points = time_period * 24 * 12  # Gün × saat × veri/saat (her 5 dakikada bir)
+            st.caption(f"💡 Tahmini veri noktası: ~{estimated_points:,} (Son {time_period} gün)")
+        else:
+            estimated_points = time_period * 12  # Saat × veri/saat
+            st.caption(f"💡 Tahmini veri noktası: ~{estimated_points:,} (Son {time_period} saat)")
+        
+        # Korelasyon hesaplama
+        if calculate_btn:
+            # Seçilen zaman aralığını kullan
             from datetime import datetime, timedelta
             try:
                 now = datetime.now()
-                if unit == "Gün":
-                    filter_time = now - timedelta(days=period)
+                if time_unit == "Gün":
+                    filter_time = now - timedelta(days=time_period)
                 else:  # Saat
-                    filter_time = now - timedelta(hours=period)
+                    filter_time = now - timedelta(hours=time_period)
                 
                 # Timestamp'e göre filtrele
                 filtered_history = []
@@ -841,10 +884,7 @@ elif page == "Korelasyon Analizi":
                                     st.info(f"💡 Son {period} {unit.lower()} içinde {n_data_points} veri noktası kullanıldı.")
                                     # Filtreyi temizle
                                     st.session_state.selected_quick_filter = None
-                                    try:
-                                        st.rerun()
-                                    except:
-                                        st.experimental_rerun()
+                    st.rerun()
                         except Exception as e:
                             st.error(f"❌ Hata: {e}")
                             import traceback
