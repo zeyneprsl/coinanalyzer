@@ -654,26 +654,33 @@ elif page == "Korelasyon Analizi":
     st.header("🔗 Coin Korelasyon Analizi")
     
     # Anlık verilerden korelasyon hesaplama bölümü
-            st.subheader("⚡ Anlık Verilerden Korelasyon Hesapla")
-            st.info("""
-            **Bu özellik, biriktirilen anlık verilerden korelasyon hesaplar.**
-            
-            **📊 Veri Toplama:**
-            - Her 5 dakikada bir anlık veriler kaydedilir (`realtime_price_history.json`)
-            - Her veri noktası bir timestamp ile kaydedilir
-            
-            **🔢 Filtreleme Seçenekleri:**
-            1. **Veri Noktası Sayısı (Son N):** Son N kayıt kullanılır (örn: son 10 veri = son 10 kayıt)
-               - Örnek: Son 10 veri = son ~50 dakika (10 × 5 dakika)
-               - Örnek: Son 50 veri = son ~4 saat (50 × 5 dakika)
-            
-            2. **Zaman Bazlı (Son N Gün/Saat):** Belirli bir zaman aralığındaki tüm veriler kullanılır
-               - Örnek: Son 7 gün = son 7 günün tüm verileri (~2016 veri noktası)
-               - Örnek: Son 24 saat = son 24 saatin tüm verileri (~288 veri noktası)
-               - ✅ **Daha mantıklı:** Zaman bazlı analiz, belirli bir dönemin trendini gösterir
-            
-            **⚠️ Minimum 5 veri noktası gereklidir**
-            """)
+    st.subheader("⚡ Anlık Verilerden Korelasyon Hesapla")
+    st.info("""
+    **Bu özellik, biriktirilen anlık verilerden korelasyon hesaplar.**
+    
+    **📊 Veri Noktası Nedir?**
+    - **Veri Noktası** = Bir zaman anında (timestamp) tüm coinlerin fiyat/volume bilgileri
+    - Her veri noktası bir JSON kaydıdır: `{"timestamp": "...", "prices": {...}}`
+    - Örnek: 1 veri noktası = 2025-11-27 21:07:55 anında 4467 coin'in fiyat bilgileri
+    
+    **⏰ Veri Toplama:**
+    - GitHub Actions her **5 dakikada bir** çalışır
+    - Her çalıştırmada **1 yeni veri noktası** eklenir
+    - Veriler `realtime_price_history.json` dosyasına kaydedilir
+    - Maksimum **100 veri noktası** tutulur (yaklaşık 8 saatlik veri)
+    
+    **🔢 Filtreleme Seçenekleri:**
+    1. **Veri Noktası Sayısı (Son N):** Son N kayıt kullanılır
+       - Örnek: Son 10 veri = son ~50 dakika (10 × 5 dakika)
+       - Örnek: Son 50 veri = son ~4 saat (50 × 5 dakika)
+    
+    2. **Zaman Bazlı (Son N Gün/Saat):** Belirli bir zaman aralığındaki tüm veriler kullanılır
+       - Örnek: Son 7 gün = son 7 günün tüm verileri (~2016 veri noktası)
+       - Örnek: Son 24 saat = son 24 saatin tüm verileri (~288 veri noktası)
+       - ✅ **Daha mantıklı:** Zaman bazlı analiz, belirli bir dönemin trendini gösterir
+    
+    **⚠️ Minimum 5 veri noktası gereklidir** (yaklaşık 25 dakika veri)
+    """)
     
     history_data = load_json_file('realtime_price_history.json')
     
@@ -684,14 +691,28 @@ elif page == "Korelasyon Analizi":
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("📊 Veri Noktası Sayısı", history_count)
+            st.caption(f"💡 Her veri noktası = 5 dakika (Toplam: ~{history_count * 5} dakika)")
         with col2:
             st.metric("🕐 Son Güncelleme", last_update[:19] if len(last_update) > 19 else last_update)
+            # Son güncellemeden bu yana geçen süreyi hesapla
+            try:
+                from datetime import datetime
+                last_update_dt = datetime.fromisoformat(last_update)
+                now = datetime.now()
+                diff_minutes = (now - last_update_dt).total_seconds() / 60
+                if diff_minutes < 10:
+                    st.caption(f"✅ {diff_minutes:.0f} dakika önce güncellendi")
+                else:
+                    st.caption(f"⚠️ {diff_minutes:.0f} dakika önce güncellendi (GitHub Actions kontrol edin)")
+            except:
+                pass
         with col3:
             min_required = 5
             if history_count >= min_required:
                 st.success(f"✅ Yeterli veri var ({history_count}/{min_required})")
             else:
                 st.warning(f"⚠️ Yetersiz veri ({history_count}/{min_required})")
+                st.caption(f"💡 GitHub Actions'ın {min_required - history_count} kez daha çalışması gerekiyor")
         
         if history_count >= min_required:
             # Filtreleme seçenekleri
