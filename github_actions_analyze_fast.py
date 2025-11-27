@@ -163,7 +163,7 @@ def analyze_sudden_changes(current_prices, coin_mapping):
     
     return sudden_analyses
 
-def save_price_history(current_prices, coin_mapping, max_history=100):
+def save_price_history(current_prices, coin_mapping, max_history=288):
     """Anlık fiyat verilerini geçmişe ekle (zaman serisi için)"""
     try:
         history_file = 'realtime_price_history.json'
@@ -310,7 +310,7 @@ def main():
     
     # 3. Anlık verileri geçmişe ekle (zaman serisi için)
     print('[3/4] Anlık veriler geçmişe ekleniyor...')
-    history_count = save_price_history(current_prices, coin_mapping, max_history=100)
+    history_count = save_price_history(current_prices, coin_mapping, max_history=288)
     print(f'✓ Geçmiş veri noktası sayısı: {history_count}\n')
     
     # 4. Ani değişim analizi
