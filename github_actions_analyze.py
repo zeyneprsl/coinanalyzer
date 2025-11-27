@@ -10,45 +10,70 @@ import json
 from datetime import datetime, timedelta
 import time
 
-def fetch_top_coins_from_gecko(limit=100):
-    """CoinGecko'dan en popüler coinleri çek (tek istek)"""
+def fetch_all_coins_from_gecko(max_pages=20):
+    """CoinGecko'dan TÜM coinleri çek (pagination ile)"""
     try:
         url = 'https://api.coingecko.com/api/v3/coins/markets'
-        params = {
-            'vs_currency': 'usd',
-            'order': 'market_cap_desc',  # Market cap'e göre sırala
-            'per_page': limit,  # Maksimum 250
-            'page': 1,
-            'sparkline': False
-        }
-        
-        # Rate limit için bekleme
-        time.sleep(2)
-        
-        response = requests.get(url, params=params, timeout=20)
-        
-        if response.status_code == 429:
-            print('⚠️  Rate limit! 60 saniye bekleniyor...')
-            time.sleep(60)
-            response = requests.get(url, params=params, timeout=20)
-        
-        if response.status_code != 200:
-            print(f'⚠️  Top coinler çekme hatası: HTTP {response.status_code}')
-            return {}
-        
-        data = response.json()
-        
-        # Coin ID'lerini ve symbol'lerini eşleştir
         coin_mapping = {}
-        for coin in data:
-            coin_id = coin.get('id')
-            symbol = coin.get('symbol', '').upper() + 'USDT'  # Binance formatına çevir
-            coin_mapping[symbol] = coin_id
+        page = 1
+        per_page = 250  # CoinGecko maksimum sayfa başına coin sayısı
         
-        print(f'✓ {len(coin_mapping)} coin bulundu (Top {limit})')
+        print(f'📡 Pagination ile coin çekiliyor (maksimum {max_pages} sayfa)...')
+        
+        while page <= max_pages:
+            params = {
+                'vs_currency': 'usd',
+                'order': 'market_cap_desc',  # Market cap'e göre sırala
+                'per_page': per_page,
+                'page': page,
+                'sparkline': False
+            }
+            
+            # Rate limit için bekleme (ilk sayfa hariç)
+            if page > 1:
+                time.sleep(2)
+            
+            response = requests.get(url, params=params, timeout=20)
+            
+            if response.status_code == 429:
+                print(f'⚠️  Rate limit (sayfa {page})! 60 saniye bekleniyor...')
+                time.sleep(60)
+                response = requests.get(url, params=params, timeout=20)
+            
+            if response.status_code != 200:
+                print(f'⚠️  Sayfa {page} çekme hatası: HTTP {response.status_code}')
+                break
+            
+            data = response.json()
+            
+            # Eğer veri yoksa, son sayfaya ulaştık
+            if not data:
+                print(f'  Sayfa {page}: Veri yok, son sayfaya ulaşıldı')
+                break
+            
+            # Coin ID'lerini ve symbol'lerini eşleştir
+            page_count = 0
+            for coin in data:
+                coin_id = coin.get('id')
+                symbol = coin.get('symbol', '').upper() + 'USDT'  # Binance formatına çevir
+                coin_mapping[symbol] = coin_id
+                page_count += 1
+            
+            print(f'  ✓ Sayfa {page}: {page_count} coin eklendi (Toplam: {len(coin_mapping)})')
+            
+            # Eğer 250'den az coin geldiyse, son sayfaya ulaştık
+            if len(data) < per_page:
+                print(f'  Son sayfaya ulaşıldı (sayfa {page})')
+                break
+            
+            page += 1
+        
+        print(f'\n✓ Toplam {len(coin_mapping)} coin bulundu ({page-1} sayfa)')
         return coin_mapping
     except Exception as e:
-        print(f'⚠️  Top coinler çekme hatası: {e}')
+        print(f'⚠️  Coin çekme hatası: {e}')
+        import traceback
+        traceback.print_exc()
         return {}
 
 def fetch_current_prices_batch(coin_ids_list):
@@ -262,9 +287,9 @@ def main():
     print('GitHub Actions - Coin Korelasyon Analizi (CoinGecko API)')
     print('='*80)
     
-    # 1. Top coinleri çek (maksimum 100)
-    print('\n[0/3] Top coinler çekiliyor (CoinGecko markets endpoint)...')
-    coin_mapping = fetch_top_coins_from_gecko(limit=100)
+    # 1. TÜM coinleri çek (pagination ile)
+    print('\n[0/3] TÜM coinler çekiliyor (CoinGecko markets endpoint - Pagination)...')
+    coin_mapping = fetch_all_coins_from_gecko(max_pages=20)  # İlk 20 sayfa = ~5000 coin
     
     if not coin_mapping:
         print('❌ Coin listesi alınamadı!')
@@ -276,15 +301,17 @@ def main():
     print(f'\n{len(popular_coins)} coin için analiz yapılıyor...')
     print('📡 CoinGecko API kullanılıyor (Rate limit: 5-15 req/min)')
     print('⏱️  Her istek arasında 6 saniye bekleniyor...')
-    print(f'⏱️  Tahmini süre: ~{min(len(popular_coins), 100) * 6 / 60:.1f} dakika (maksimum 100 coin)\n')
     
-    # 2. Geçmiş veri çek ve korelasyon analizi (maksimum 100 coin - rate limit için)
+    # Geçmiş veri için maksimum coin sayısını artır
+    max_coins_for_history = min(300, len(popular_coins))  # İlk 300 coin için geçmiş veri
+    print(f'⏱️  Tahmini süre: ~{max_coins_for_history * 6 / 60:.1f} dakika (geçmiş veri: {max_coins_for_history} coin)\n')
+    
+    # 2. Geçmiş veri çek ve korelasyon analizi
     print('[1/3] Geçmiş veri analizi yapılıyor (CoinGecko)...')
-    print(f'⚠️  Rate limit nedeniyle maksimum 100 coin için geçmiş veri çekiliyor...')
+    print(f'⚠️  Rate limit nedeniyle maksimum {max_coins_for_history} coin için geçmiş veri çekiliyor...')
     
     historical_data = {}
     successful = 0
-    max_coins_for_history = min(100, len(popular_coins))  # Rate limit için maksimum 100
     
     for i, (symbol, coin_id) in enumerate(list(coin_mapping.items())[:max_coins_for_history], 1):
         print(f'  [{i}/{max_coins_for_history}] {symbol} ({coin_id}) verisi çekiliyor...', end=' ')
@@ -464,6 +491,8 @@ def main():
     print('\n' + '='*80)
     print('✅ Analiz tamamlandı!')
     print(f'📊 Toplam {len(popular_coins)} coin analiz edildi')
+    print(f'📈 Geçmiş veri: {len(historical_data)} coin')
+    print(f'💰 Anlık fiyat: {len(current_prices) if current_prices else 0} coin')
     print('='*80)
 
 if __name__ == '__main__':

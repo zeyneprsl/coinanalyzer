@@ -59,7 +59,7 @@ st.markdown("""
 st.sidebar.markdown('<div class="sidebar-settings">', unsafe_allow_html=True)
 st.sidebar.title("⚙️ Ayarlar")
 auto_refresh = st.sidebar.checkbox("🔄 Otomatik Yenileme", value=True)
-refresh_interval = st.sidebar.slider("Yenileme Aralığı (saniye)", min_value=10, max_value=300, value=60, step=10)
+refresh_interval = st.sidebar.slider("Yenileme Aralığı (saniye)", min_value=10, max_value=300, value=20, step=5)
 st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 # Son güncelleme zamanını göster
@@ -71,7 +71,7 @@ st.sidebar.markdown("---")
 st.sidebar.title("📑 Menü")
 page = st.sidebar.selectbox(
     "Sayfa Seçin",
-    ["Ana Sayfa", "Korelasyon Analizi", "Tüm Korelasyonlar", "Fiyat-Volume Analizi", "Ani Değişim Analizi", "Korelasyon Değişiklikleri"]
+    ["Ana Sayfa", "Korelasyon Analizi", "Tüm Korelasyonlar", "Fiyat-Volume Analizi", "Ani Değişim Analizi", "Korelasyon Değişiklikleri", "🔍 Coin Arama"]
 )
 
 # Otomatik analiz kontrolü ve başlatma (arka planda)
@@ -616,6 +616,7 @@ elif page == "Korelasyon Analizi":
     else:
         corr_matrix_file = "realtime_correlation_matrix.csv"
         correlations_file = "realtime_correlations.json"
+        # coin_correlations_file yoksa korelasyon matrisinden hesaplanacak
         coin_correlations_file = "realtime_coin_correlations.json"
     
     # Korelasyon matrisi
@@ -653,7 +654,11 @@ elif page == "Korelasyon Analizi":
         
         correlations = load_json_file(correlations_file)
         if correlations:
-            df_corr = pd.DataFrame(correlations)
+            # Format kontrolü: {"timestamp": "...", "high_correlations": [...]}
+            if isinstance(correlations, dict) and 'high_correlations' in correlations:
+                df_corr = pd.DataFrame(correlations['high_correlations'])
+            else:
+                df_corr = pd.DataFrame(correlations)
             
             # Filtreleme
             threshold = st.slider(
@@ -1066,7 +1071,11 @@ elif page == "Tüm Korelasyonlar":
     corr_matrix = load_csv_file(corr_matrix_file)
     
     if correlations:
-        df_all = pd.DataFrame(correlations)
+        # Format kontrolü: {"timestamp": "...", "high_correlations": [...]}
+        if isinstance(correlations, dict) and 'high_correlations' in correlations:
+            df_all = pd.DataFrame(correlations['high_correlations'])
+        else:
+            df_all = pd.DataFrame(correlations)
         
         # abs_correlation kolonu yoksa ekle
         if 'abs_correlation' not in df_all.columns:
@@ -1482,6 +1491,14 @@ elif page == "Fiyat-Volume Analizi":
 elif page == "Ani Değişim Analizi":
     st.header("⚡ Ani Fiyat Değişimlerinde Volume Analizi")
     
+    # Veri kaynağı seçimi
+    data_source = st.radio(
+        "Veri Kaynağı",
+        ["Geçmiş Veriler", "Anlık Veriler"],
+        horizontal=True,
+        key="sudden_analysis_source"
+    )
+    
     sudden_data = load_json_file('sudden_price_volume_analysis.json')
     
     if not sudden_data:
@@ -1548,13 +1565,31 @@ elif page == "Ani Değişim Analizi":
             st.stop()
     
     if sudden_data:
+        # Yeni format kontrolü: {"timestamp": "...", "analyses": {...}}
+        if 'analyses' in sudden_data:
+            sudden_data = sudden_data['analyses']
+        
         # Eşik seçimi
         thresholds = set()
         for coin_data in sudden_data.values():
-            for key in coin_data.keys():
-                if key.startswith('threshold_'):
-                    thresh = float(key.replace('threshold_', ''))
-                    thresholds.add(thresh)
+            if isinstance(coin_data, dict):
+                # Yeni format: {"thresholds": {"1%": {...}, "2%": {...}}}
+                if 'thresholds' in coin_data:
+                    for threshold_name in coin_data['thresholds'].keys():
+                        try:
+                            thresh = float(threshold_name.replace('%', ''))
+                            thresholds.add(thresh)
+                        except:
+                            pass
+                # Eski format: {"threshold_2.0": {...}}
+                else:
+                    for key in coin_data.keys():
+                        if key.startswith('threshold_'):
+                            try:
+                                thresh = float(key.replace('threshold_', ''))
+                                thresholds.add(thresh)
+                            except:
+                                pass
         
         selected_threshold = st.selectbox(
             "Eşik Seçin (%)",
@@ -1563,13 +1598,35 @@ elif page == "Ani Değişim Analizi":
         )
         
         if selected_threshold:
-            threshold_key = f"threshold_{selected_threshold}"
+            threshold_key_old = f"threshold_{selected_threshold}"
+            threshold_key_new = f"{selected_threshold}%"
             
             # Verileri topla
             coin_stats = []
             for coin, data in sudden_data.items():
-                if threshold_key in data:
-                    thresh_data = data[threshold_key]
+                if not isinstance(data, dict):
+                    continue
+                
+                # Yeni format kontrolü: {"thresholds": {"1%": {...}}}
+                if 'thresholds' in data:
+                    thresholds_dict = data.get('thresholds', {})
+                    if threshold_key_new in thresholds_dict:
+                        thresh_data = thresholds_dict[threshold_key_new]
+                        # Yeni format: {"triggered": True, "price_change": ..., "volume": ...}
+                        if thresh_data.get('triggered', False):
+                            price_change = thresh_data.get('price_change', 0)
+                            volume = thresh_data.get('volume', 0)
+                            
+                            coin_stats.append({
+                                'coin': coin,
+                                'price_change_24h': price_change,
+                                'volume_24h': volume,
+                                'threshold': selected_threshold,
+                                'triggered': True
+                            })
+                # Eski format: {"threshold_2.0": {"sudden_up": {...}, "sudden_down": {...}}}
+                elif threshold_key_old in data:
+                    thresh_data = data[threshold_key_old]
                     sudden_up = thresh_data.get('sudden_up', {})
                     sudden_down = thresh_data.get('sudden_down', {})
                     
@@ -1585,64 +1642,146 @@ elif page == "Ani Değişim Analizi":
                     })
             
             df_sudden = pd.DataFrame(coin_stats)
-            df_sudden = df_sudden[df_sudden['total_sudden'] > 0].sort_values('total_sudden', ascending=False)
             
-            # Metrikler
-            col1, col2, col3, col4 = st.columns(4)
-            col1.metric("Toplam Ani Değişim", df_sudden['total_sudden'].sum())
-            col2.metric("Ani Yükseliş", df_sudden['sudden_up_count'].sum())
-            col3.metric("Ani Düşüş", df_sudden['sudden_down_count'].sum())
-            col4.metric("Yükselişte Vol↑ Ort.%", f"{df_sudden[df_sudden['sudden_up_count']>0]['up_vol_increase_pct'].mean():.2f}%")
+            # Yeni format için farklı işleme
+            if 'triggered' in df_sudden.columns:
+                # Yeni format: sadece tetiklenen coinler
+                df_sudden = df_sudden[df_sudden['triggered'] == True].sort_values('price_change_24h', key=abs, ascending=False)
+                
+                # Metrikler (yeni format)
+                col1, col2, col3, col4 = st.columns(4)
+                col1.metric("Tetiklenen Coin Sayısı", len(df_sudden))
+                col2.metric("Ortalama Fiyat Değişimi", f"{df_sudden['price_change_24h'].mean():.2f}%")
+                col3.metric("Toplam Volume", f"{df_sudden['volume_24h'].sum()/1e9:.2f}B" if df_sudden['volume_24h'].sum() > 1e9 else f"{df_sudden['volume_24h'].sum()/1e6:.2f}M")
+                col4.metric("Pozitif Değişim", len(df_sudden[df_sudden['price_change_24h'] > 0]))
+            else:
+                # Eski format: detaylı istatistikler
+                df_sudden = df_sudden[df_sudden['total_sudden'] > 0].sort_values('total_sudden', ascending=False)
+                
+                # Metrikler (eski format)
+                col1, col2, col3, col4 = st.columns(4)
+                col1.metric("Toplam Ani Değişim", df_sudden['total_sudden'].sum())
+                col2.metric("Ani Yükseliş", df_sudden['sudden_up_count'].sum())
+                col3.metric("Ani Düşüş", df_sudden['sudden_down_count'].sum())
+                if len(df_sudden[df_sudden['sudden_up_count']>0]) > 0:
+                    col4.metric("Yükselişte Vol↑ Ort.%", f"{df_sudden[df_sudden['sudden_up_count']>0]['up_vol_increase_pct'].mean():.2f}%")
+                else:
+                    col4.metric("Yükselişte Vol↑ Ort.%", "N/A")
             
             # Grafikler
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                fig = go.Figure()
-                fig.add_trace(go.Bar(
-                    x=df_sudden.head(20)['coin'],
-                    y=df_sudden.head(20)['sudden_up_count'],
-                    name='Ani Yükseliş',
-                    marker_color='green'
-                ))
-                fig.add_trace(go.Bar(
-                    x=df_sudden.head(20)['coin'],
-                    y=df_sudden.head(20)['sudden_down_count'],
-                    name='Ani Düşüş',
-                    marker_color='red'
-                ))
-                fig.update_layout(
-                    title=f"Ani Değişim Sayıları (Eşik: ±{selected_threshold}%)",
-                    xaxis_title="Coin",
-                    yaxis_title="Sayı",
-                    barmode='group',
-                    height=400,
-                    xaxis_tickangle=-45
-                )
-                st.plotly_chart(fig, use_container_width=True)
-            
-            with col2:
-                fig = go.Figure()
-                fig.add_trace(go.Scatter(
-                    x=df_sudden['up_vol_increase_pct'],
-                    y=df_sudden['down_vol_increase_pct'],
-                    mode='markers',
-                    text=df_sudden['coin'],
-                    marker=dict(
-                        size=df_sudden['total_sudden'],
-                        color=df_sudden['total_sudden'],
-                        colorscale='Viridis',
-                        showscale=True
-                    ),
-                    name='Coinler'
-                ))
-                fig.update_layout(
-                    title="Yükseliş vs Düşüş - Volume Artışı %",
-                    xaxis_title="Yükselişte Volume Artışı %",
-                    yaxis_title="Düşüşte Volume Artışı %",
-                    height=400
-                )
-                st.plotly_chart(fig, use_container_width=True)
+            if 'triggered' in df_sudden.columns:
+                # Yeni format için grafik
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    fig = go.Figure()
+                    # Pozitif ve negatif değişimleri ayır
+                    positive = df_sudden[df_sudden['price_change_24h'] > 0]
+                    negative = df_sudden[df_sudden['price_change_24h'] < 0]
+                    
+                    if not positive.empty:
+                        fig.add_trace(go.Bar(
+                            x=positive.head(20)['coin'],
+                            y=positive.head(20)['price_change_24h'],
+                            name='Pozitif Değişim',
+                            marker_color='green',
+                            text=positive.head(20)['price_change_24h'].apply(lambda x: f"{x:.2f}%"),
+                            textposition='outside'
+                        ))
+                    
+                    if not negative.empty:
+                        fig.add_trace(go.Bar(
+                            x=negative.head(20)['coin'],
+                            y=negative.head(20)['price_change_24h'],
+                            name='Negatif Değişim',
+                            marker_color='red',
+                            text=negative.head(20)['price_change_24h'].apply(lambda x: f"{x:.2f}%"),
+                            textposition='outside'
+                        ))
+                    
+                    fig.update_layout(
+                        title=f"24 Saatlik Fiyat Değişimleri (Eşik: ±{selected_threshold}%)",
+                        xaxis_title="Coin",
+                        yaxis_title="Fiyat Değişimi (%)",
+                        barmode='group',
+                        height=400,
+                        xaxis_tickangle=-45
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                with col2:
+                    fig = go.Figure()
+                    fig.add_trace(go.Scatter(
+                        x=df_sudden['price_change_24h'],
+                        y=df_sudden['volume_24h'],
+                        mode='markers',
+                        text=df_sudden['coin'],
+                        marker=dict(
+                            size=10,
+                            color=df_sudden['price_change_24h'],
+                            colorscale='RdYlGn',
+                            showscale=True,
+                            colorbar=dict(title="Fiyat Değişimi %")
+                        ),
+                        name='Coinler'
+                    ))
+                    fig.update_layout(
+                        title="Fiyat Değişimi vs Volume",
+                        xaxis_title="Fiyat Değişimi (%)",
+                        yaxis_title="24 Saatlik Volume",
+                        height=400
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+            else:
+                # Eski format için grafik
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    fig = go.Figure()
+                    fig.add_trace(go.Bar(
+                        x=df_sudden.head(20)['coin'],
+                        y=df_sudden.head(20)['sudden_up_count'],
+                        name='Ani Yükseliş',
+                        marker_color='green'
+                    ))
+                    fig.add_trace(go.Bar(
+                        x=df_sudden.head(20)['coin'],
+                        y=df_sudden.head(20)['sudden_down_count'],
+                        name='Ani Düşüş',
+                        marker_color='red'
+                    ))
+                    fig.update_layout(
+                        title=f"Ani Değişim Sayıları (Eşik: ±{selected_threshold}%)",
+                        xaxis_title="Coin",
+                        yaxis_title="Sayı",
+                        barmode='group',
+                        height=400,
+                        xaxis_tickangle=-45
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                with col2:
+                    fig = go.Figure()
+                    fig.add_trace(go.Scatter(
+                        x=df_sudden['up_vol_increase_pct'],
+                        y=df_sudden['down_vol_increase_pct'],
+                        mode='markers',
+                        text=df_sudden['coin'],
+                        marker=dict(
+                            size=df_sudden['total_sudden'],
+                            color=df_sudden['total_sudden'],
+                            colorscale='Viridis',
+                            showscale=True
+                        ),
+                        name='Coinler'
+                    ))
+                    fig.update_layout(
+                        title="Yükseliş vs Düşüş - Volume Artışı %",
+                        xaxis_title="Yükselişte Volume Artışı %",
+                        yaxis_title="Düşüşte Volume Artışı %",
+                        height=400
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
             
             # Tablo
             st.subheader("📊 Detaylı Sonuçlar")
@@ -1804,6 +1943,332 @@ elif page == "Korelasyon Değişiklikleri":
             4. Son **30 günlük** değişiklikler bu sayfada görüntülenir
             5. Daha eski kayıtlar otomatik olarak temizlenir
             """)
+
+# ==================== COIN ARAMA ====================
+elif page == "🔍 Coin Arama":
+    st.header("🔍 Coin Detaylı Analiz")
+    
+    st.info("""
+    **Bu sayfada istediğiniz coin'i arayıp detaylı analiz bilgilerini görebilirsiniz.**
+    - Coin ile diğer tüm coinlerin korelasyonları
+    - Fiyat-Volume analizi bilgileri
+    - Ani değişim analizi bilgileri
+    - Grafikler ve görselleştirmeler
+    """)
+    
+    # Veri kaynağı seçimi
+    data_source = st.radio(
+        "Veri Kaynağı",
+        ["Geçmiş Veriler", "Anlık Veriler"],
+        horizontal=True,
+        key="coin_search_source"
+    )
+    
+    if data_source == "Geçmiş Veriler":
+        corr_matrix_file = "historical_correlation_matrix.csv"
+        correlations_file = "historical_correlations.json"
+        pv_analysis_file = "price_volume_analysis.json"
+        sudden_analysis_file = "sudden_price_volume_analysis.json"
+    else:
+        corr_matrix_file = "realtime_correlation_matrix.csv"
+        correlations_file = "realtime_correlations.json"
+        pv_analysis_file = "price_volume_analysis.json"
+        sudden_analysis_file = "sudden_price_volume_analysis.json"
+    
+    # Korelasyon matrisi ve diğer verileri yükle
+    corr_matrix = load_csv_file(corr_matrix_file)
+    correlations_data = load_json_file(correlations_file)
+    pv_analysis_data = load_json_file(pv_analysis_file)
+    sudden_analysis_data = load_json_file(sudden_analysis_file)
+    
+    if corr_matrix is None or corr_matrix.empty:
+        st.warning(f"⚠️ {corr_matrix_file} dosyası bulunamadı. Önce analiz çalıştırın.")
+    else:
+        # Coin listesi
+        all_coins = corr_matrix.columns.tolist()
+        
+        # Arama kutusu
+        st.subheader("🔍 Coin Ara")
+        col1, col2 = st.columns([3, 1])
+        
+        with col1:
+            search_query = st.text_input(
+                "Coin adını girin (örn: BTCUSDT, ETHUSDT)",
+                placeholder="BTCUSDT yazın ve Enter'a basın...",
+                key="coin_search_input"
+            )
+        
+        with col2:
+            st.write("")  # Boşluk
+            st.write("")  # Boşluk
+        
+        # Arama sonuçları
+        if search_query:
+            search_query_upper = search_query.upper().strip()
+            
+            # Eğer USDT ile bitmiyorsa ekle
+            if not search_query_upper.endswith('USDT'):
+                search_query_upper = search_query_upper + 'USDT'
+            
+            # Coin bulundu mu kontrol et
+            if search_query_upper in all_coins:
+                selected_coin = search_query_upper
+                st.success(f"✅ {selected_coin} bulundu!")
+                
+                # ========== COIN BİLGİLERİ ==========
+                st.markdown("---")
+                st.subheader(f"📊 {selected_coin} Detaylı Analiz")
+                
+                # Metrikler
+                col1, col2, col3, col4 = st.columns(4)
+                
+                # Fiyat-Volume analizi bilgisi
+                pv_info = None
+                if pv_analysis_data and selected_coin in pv_analysis_data:
+                    pv_info = pv_analysis_data[selected_coin]
+                    with col1:
+                        correlation_val = pv_info.get('correlation', 0)
+                        st.metric(
+                            "Fiyat-Volume Korelasyonu",
+                            f"{correlation_val:.3f}",
+                            help="Fiyat ve volume değişimleri arasındaki korelasyon"
+                        )
+                    
+                    with col2:
+                        abs_corr = pv_info.get('abs_correlation', 0)
+                        st.metric(
+                            "Mutlak Korelasyon",
+                            f"{abs_corr:.3f}",
+                            help="Mutlak korelasyon değeri"
+                        )
+                    
+                    with col3:
+                        vol_increase_pct = pv_info.get('volume_increase_on_price_up_pct', 0)
+                        st.metric(
+                            "Fiyat Artışında Volume Artışı %",
+                            f"{vol_increase_pct:.1f}%",
+                            help="Fiyat arttığında volume'un ne kadar arttığı"
+                        )
+                    
+                    with col4:
+                        data_points = pv_info.get('data_points', 0)
+                        st.metric(
+                            "Veri Noktası Sayısı",
+                            f"{data_points}",
+                            help="Analiz için kullanılan veri noktası sayısı"
+                        )
+                
+                # Ani değişim analizi bilgisi
+                sudden_info = None
+                if sudden_analysis_data:
+                    # Format kontrolü: {"timestamp": "...", "analyses": {...}}
+                    if isinstance(sudden_analysis_data, dict):
+                        if 'analyses' in sudden_analysis_data:
+                            analyses_dict = sudden_analysis_data['analyses']
+                        else:
+                            # Eski format: direkt coin dict'i
+                            analyses_dict = sudden_analysis_data
+                        
+                        if selected_coin in analyses_dict:
+                            sudden_info = analyses_dict[selected_coin]
+                        
+                        st.markdown("---")
+                        st.subheader("⚡ Ani Değişim Analizi")
+                        
+                        col1, col2, col3 = st.columns(3)
+                        
+                        with col1:
+                            price_change_24h = sudden_info.get('price_change_24h', 0)
+                            st.metric(
+                                "24 Saatlik Fiyat Değişimi",
+                                f"{price_change_24h:.2f}%",
+                                delta=f"{price_change_24h:.2f}%"
+                            )
+                        
+                        with col2:
+                            volume_24h = sudden_info.get('volume_24h', 0)
+                            if volume_24h > 1e9:
+                                vol_display = f"{volume_24h/1e9:.2f}B"
+                            elif volume_24h > 1e6:
+                                vol_display = f"{volume_24h/1e6:.2f}M"
+                            else:
+                                vol_display = f"{volume_24h:.2f}"
+                            st.metric(
+                                "24 Saatlik Volume",
+                                vol_display
+                            )
+                        
+                        with col3:
+                            current_price = sudden_info.get('price', 0)
+                            st.metric(
+                                "Güncel Fiyat",
+                                f"${current_price:.4f}"
+                            )
+                        
+                        # Eşikler
+                        thresholds = sudden_info.get('thresholds', {})
+                        if thresholds:
+                            st.write("**Eşik Değerleri:**")
+                            threshold_cols = st.columns(len(thresholds))
+                            for idx, (threshold_name, threshold_data) in enumerate(thresholds.items()):
+                                with threshold_cols[idx]:
+                                    if threshold_data.get('triggered', False):
+                                        st.success(f"✅ {threshold_name}")
+                                    else:
+                                        st.info(f"⏸️ {threshold_name}")
+                
+                # ========== KORELASYONLAR ==========
+                st.markdown("---")
+                st.subheader(f"🔗 {selected_coin} ile Diğer Coinlerin Korelasyonları")
+                
+                # Korelasyon matrisinden bu coin'in korelasyonlarını al
+                if selected_coin in corr_matrix.index:
+                    coin_correlations = corr_matrix.loc[selected_coin].sort_values(ascending=False)
+                    # Kendisiyle olan korelasyonu (1.0) çıkar
+                    coin_correlations = coin_correlations[coin_correlations.index != selected_coin]
+                    
+                    # En yüksek ve en düşük korelasyonlar
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        st.write("**📈 En Yüksek Korelasyonlar:**")
+                        top_corr = coin_correlations.head(10)
+                        top_df = pd.DataFrame({
+                            'Coin': top_corr.index,
+                            'Korelasyon': top_corr.values
+                        })
+                        st.dataframe(top_df, use_container_width=True, hide_index=True)
+                    
+                    with col2:
+                        st.write("**📉 En Düşük Korelasyonlar:**")
+                        bottom_corr = coin_correlations.tail(10)
+                        bottom_df = pd.DataFrame({
+                            'Coin': bottom_corr.index,
+                            'Korelasyon': bottom_corr.values
+                        })
+                        st.dataframe(bottom_df, use_container_width=True, hide_index=True)
+                    
+                    # Korelasyon grafiği
+                    st.subheader("📊 Korelasyon Grafiği")
+                    
+                    # Grafik için veri hazırla
+                    fig_data = pd.DataFrame({
+                        'Coin': coin_correlations.index,
+                        'Korelasyon': coin_correlations.values
+                    })
+                    
+                    # Pozitif ve negatif korelasyonları ayır
+                    positive_corr = fig_data[fig_data['Korelasyon'] >= 0]
+                    negative_corr = fig_data[fig_data['Korelasyon'] < 0]
+                    
+                    fig = go.Figure()
+                    
+                    # Pozitif korelasyonlar (yeşil)
+                    if not positive_corr.empty:
+                        fig.add_trace(go.Bar(
+                            x=positive_corr['Coin'],
+                            y=positive_corr['Korelasyon'],
+                            name='Pozitif Korelasyon',
+                            marker_color='green',
+                            text=positive_corr['Korelasyon'].round(3),
+                            textposition='outside'
+                        ))
+                    
+                    # Negatif korelasyonlar (kırmızı)
+                    if not negative_corr.empty:
+                        fig.add_trace(go.Bar(
+                            x=negative_corr['Coin'],
+                            y=negative_corr['Korelasyon'],
+                            name='Negatif Korelasyon',
+                            marker_color='red',
+                            text=negative_corr['Korelasyon'].round(3),
+                            textposition='outside'
+                        ))
+                    
+                    fig.update_layout(
+                        title=f"{selected_coin} ile Diğer Coinlerin Korelasyonları",
+                        xaxis_title="Coin",
+                        yaxis_title="Korelasyon",
+                        height=600,
+                        showlegend=True,
+                        xaxis={'tickangle': -45}
+                    )
+                    
+                    st.plotly_chart(fig, use_container_width=True)
+                    
+                    # Tüm korelasyonlar tablosu
+                    st.subheader("📋 Tüm Korelasyonlar")
+                    
+                    # Filtreleme
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        min_corr = st.slider(
+                            "Minimum Korelasyon",
+                            min_value=-1.0,
+                            max_value=1.0,
+                            value=-1.0,
+                            step=0.1,
+                            key="coin_search_min_corr"
+                        )
+                    
+                    with col2:
+                        sort_order = st.selectbox(
+                            "Sıralama",
+                            ["Yüksekten Düşüğe", "Düşükten Yükseğe"],
+                            key="coin_search_sort"
+                        )
+                    
+                    # Filtrele ve sırala
+                    filtered_corr = coin_correlations[
+                        (coin_correlations >= min_corr)
+                    ]
+                    
+                    if sort_order == "Yüksekten Düşüğe":
+                        filtered_corr = filtered_corr.sort_values(ascending=False)
+                    else:
+                        filtered_corr = filtered_corr.sort_values(ascending=True)
+                    
+                    # DataFrame oluştur
+                    all_corr_df = pd.DataFrame({
+                        'Coin': filtered_corr.index,
+                        'Korelasyon': filtered_corr.values
+                    })
+                    
+                    st.dataframe(
+                        all_corr_df,
+                        use_container_width=True,
+                        hide_index=True,
+                        height=400
+                    )
+                    
+                    # İstatistikler
+                    st.subheader("📊 İstatistikler")
+                    col1, col2, col3, col4 = st.columns(4)
+                    
+                    with col1:
+                        st.metric("Toplam Coin Sayısı", len(coin_correlations))
+                    
+                    with col2:
+                        positive_count = len(coin_correlations[coin_correlations >= 0])
+                        st.metric("Pozitif Korelasyon", positive_count)
+                    
+                    with col3:
+                        negative_count = len(coin_correlations[coin_correlations < 0])
+                        st.metric("Negatif Korelasyon", negative_count)
+                    
+                    with col4:
+                        avg_corr = coin_correlations.mean()
+                        st.metric("Ortalama Korelasyon", f"{avg_corr:.3f}")
+                
+                else:
+                    st.warning(f"⚠️ {selected_coin} korelasyon matrisinde bulunamadı.")
+            
+            else:
+                st.error(f"❌ {search_query_upper} bulunamadı!")
+                st.info(f"💡 Mevcut coinler: {', '.join(all_coins[:20])}... (Toplam {len(all_coins)} coin)")
+        
+        else:
+            st.info("👆 Yukarıdaki arama kutusuna coin adını girin (örn: BTCUSDT)")
 
 # Footer
 st.markdown("---")

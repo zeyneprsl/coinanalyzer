@@ -2,8 +2,9 @@ name: Otomatik Analiz
 
 on:
   schedule:
-    # Her 30 dakikada bir çalıştır
-    - cron: '*/30 * * * *'
+    # Her 2 dakikada bir çalıştır (GitHub Actions otomatik olarak 5 dakikaya yuvarlar)
+    # Minimum interval: 5 dakika, ama cron syntax'ı 2 dakika yazabiliriz
+    - cron: '*/2 * * * *'
   workflow_dispatch: # Manuel çalıştırma için
 
 permissions:
@@ -26,10 +27,10 @@ jobs:
       run: |
         pip install -r requirements.txt
         
-    - name: Run analysis
+    - name: Run fast analysis (anlık veriler)
       run: |
-        echo "CoinGecko API kullanılıyor..."
-        python github_actions_analyze.py
+        echo "CoinGecko API kullanılıyor (HIZLI mod - sadece anlık veriler)..."
+        python github_actions_analyze_fast.py
         
     - name: Commit and push results
       env:
