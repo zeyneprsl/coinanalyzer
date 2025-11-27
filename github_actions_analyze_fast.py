@@ -149,6 +149,123 @@ def analyze_sudden_changes(current_prices, coin_mapping):
     
     return sudden_analyses
 
+def save_price_history(current_prices, coin_mapping, max_history=100):
+    """Anlık fiyat verilerini geçmişe ekle (zaman serisi için)"""
+    try:
+        history_file = 'realtime_price_history.json'
+        
+        # Mevcut geçmişi yükle
+        try:
+            with open(history_file, 'r', encoding='utf-8') as f:
+                history_data = json.load(f)
+        except:
+            history_data = {'history': [], 'last_update': None}
+        
+        # Yeni veri noktası oluştur
+        timestamp = datetime.now().isoformat()
+        price_point = {
+            'timestamp': timestamp,
+            'prices': {}
+        }
+        
+        # Her coin için fiyatı kaydet
+        for symbol, coin_id in coin_mapping.items():
+            if coin_id in current_prices:
+                price_data = current_prices[coin_id]
+                price_point['prices'][symbol] = {
+                    'price': price_data.get('usd', 0),
+                    'volume_24h': price_data.get('usd_24h_vol', 0),
+                    'change_24h': price_data.get('usd_24h_change', 0)
+                }
+        
+        # Geçmişe ekle
+        history_data['history'].append(price_point)
+        history_data['last_update'] = timestamp
+        
+        # Maksimum geçmiş sayısını kontrol et (en eski verileri sil)
+        if len(history_data['history']) > max_history:
+            history_data['history'] = history_data['history'][-max_history:]
+        
+        # Kaydet
+        with open(history_file, 'w', encoding='utf-8') as f:
+            json.dump(history_data, f, indent=2, ensure_ascii=False)
+        
+        return len(history_data['history'])
+    except Exception as e:
+        print(f'⚠️  Geçmiş kaydetme hatası: {e}')
+        import traceback
+        traceback.print_exc()
+        return 0
+
+def calculate_correlation_from_history(history_data, min_data_points=5):
+    """Geçmiş verilerden korelasyon hesapla"""
+    try:
+        import pandas as pd
+        import numpy as np
+        
+        if not history_data or 'history' not in history_data:
+            return None, None
+        
+        history = history_data['history']
+        
+        if len(history) < min_data_points:
+            return None, None
+        
+        # Son N veriyi al (tüm geçmişi kullan)
+        price_data = {}
+        
+        # Her coin için fiyat serisi oluştur
+        for point in history:
+            timestamp = point['timestamp']
+            for symbol, data in point.get('prices', {}).items():
+                if symbol not in price_data:
+                    price_data[symbol] = []
+                price_data[symbol].append(data['price'])
+        
+        # En az min_data_points verisi olan coinleri filtrele
+        valid_coins = {k: v for k, v in price_data.items() if len(v) >= min_data_points}
+        
+        if len(valid_coins) < 2:
+            return None, None
+        
+        # DataFrame oluştur
+        df = pd.DataFrame(valid_coins)
+        
+        # Returns hesapla (fiyat değişimleri)
+        df_returns = df.pct_change().dropna()
+        
+        if df_returns.empty or len(df_returns) < 2:
+            return None, None
+        
+        # Korelasyon matrisi
+        correlation_matrix = df_returns.corr()
+        
+        # Yüksek korelasyonları bul
+        high_corr = []
+        symbols = correlation_matrix.columns.tolist()
+        
+        for i, symbol1 in enumerate(symbols):
+            for j, symbol2 in enumerate(symbols):
+                if i < j:
+                    corr = correlation_matrix.loc[symbol1, symbol2]
+                    if not np.isnan(corr) and abs(corr) >= 0.7:
+                        high_corr.append({
+                            'coin1': symbol1,
+                            'coin2': symbol2,
+                            'correlation': float(corr),
+                            'abs_correlation': float(abs(corr))
+                        })
+        
+        # Korelasyon değerine göre sırala
+        high_corr.sort(key=lambda x: x['abs_correlation'], reverse=True)
+        
+        return correlation_matrix, high_corr
+    except Exception as e:
+        print(f'⚠️  Korelasyon hesaplama hatası: {e}')
+        import traceback
+        traceback.print_exc()
+        return None, None
+
 def main():
     print('='*80)
     print('GitHub Actions - HIZLI Coin Analizi (Sadece Anlık Veriler)')
@@ -157,7 +274,7 @@ def main():
     start_time = time.time()
     
     # 1. TÜM coinleri çek
-    print('\n[1/3] TÜM coinler çekiliyor...')
+    print('\n[1/4] TÜM coinler çekiliyor...')
     coin_mapping = fetch_all_coins_from_gecko(max_pages=20)
     
     if not coin_mapping:
@@ -168,7 +285,7 @@ def main():
     print(f'✓ {len(coin_mapping)} coin bulundu\n')
     
     # 2. Anlık fiyat verileri (TÜM coinler - batch)
-    print('[2/3] Anlık fiyat verileri çekiliyor (Batch - TÜM coinler)...')
+    print('[2/4] Anlık fiyat verileri çekiliyor (Batch - TÜM coinler)...')
     current_prices = fetch_current_prices_batch(coin_ids_list)
     
     if not current_prices:
@@ -177,8 +294,13 @@ def main():
     
     print(f'✓ {len(current_prices)} coin için anlık fiyat verisi alındı\n')
     
-    # 3. Ani değişim analizi
-    print('[3/3] Ani değişim analizi yapılıyor...')
+    # 3. Anlık verileri geçmişe ekle (zaman serisi için)
+    print('[3/4] Anlık veriler geçmişe ekleniyor...')
+    history_count = save_price_history(current_prices, coin_mapping, max_history=100)
+    print(f'✓ Geçmiş veri noktası sayısı: {history_count}\n')
+    
+    # 4. Ani değişim analizi
+    print('[4/4] Ani değişim analizi yapılıyor...')
     sudden_analyses = analyze_sudden_changes(current_prices, coin_mapping)
     
     if sudden_analyses:
@@ -200,6 +322,7 @@ def main():
     print('\n' + '='*80)
     print('✅ HIZLI Analiz tamamlandı!')
     print(f'📊 Toplam {len(coin_mapping)} coin analiz edildi')
+    print(f'📈 Geçmiş veri noktası: {history_count}')
     print(f'⏱️  Toplam süre: {elapsed_time:.1f} saniye (~{elapsed_time/60:.1f} dakika)')
     print('='*80)
 
