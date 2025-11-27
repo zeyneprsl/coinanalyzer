@@ -2259,6 +2259,7 @@ elif page == "🔍 Coin Arama":
     correlations_data = load_json_file(correlations_file)
     pv_analysis_data = load_json_file(pv_analysis_file)
     sudden_analysis_data = load_json_file(sudden_analysis_file)
+    price_history = load_json_file('realtime_price_history.json')
     
     # Alternatif dosya kontrolü
     if corr_matrix is None or corr_matrix.empty:
@@ -2268,158 +2269,226 @@ elif page == "🔍 Coin Arama":
         if corr_matrix is not None and not corr_matrix.empty:
             st.info(f"💡 {corr_matrix_file} bulunamadı, {alt_file} kullanılıyor.")
     
-    if corr_matrix is None or corr_matrix.empty:
-        st.error(f"❌ Korelasyon matrisi bulunamadı!")
-        st.warning(f"⚠️ {corr_matrix_file} dosyası bulunamadı. Önce analiz çalıştırın veya 'Korelasyon Hesapla' butonunu kullanın.")
-        st.info("""
-        **Çözüm:**
-        1. 'Korelasyon Analizi' sayfasına gidin
-        2. 'Anlık Verilerden Korelasyon Hesapla' bölümünden korelasyon hesaplayın
-        3. Veya GitHub Actions'ın birkaç kez çalışmasını bekleyin
-        """)
+    # Coin listesi - önce korelasyon matrisinden, yoksa price_history'den
+    all_coins = []
+    try:
+        if corr_matrix is not None and not corr_matrix.empty:
+            all_coins = corr_matrix.columns.tolist()
+    except:
+        pass
+    
+    # Price history'den coin listesi ekle (korelasyon matrisinde olmayanlar için)
+    if price_history and 'history' in price_history and len(price_history['history']) > 0:
+        last_point = price_history['history'][-1]
+        if 'prices' in last_point:
+            history_coins = list(last_point['prices'].keys())
+            # Yeni coinleri ekle
+            for coin in history_coins:
+                if coin not in all_coins:
+                    all_coins.append(coin)
+    
+    if not all_coins:
+        st.warning("⚠️ Coin listesi bulunamadı. GitHub Actions'ın çalışmasını bekleyin.")
+        st.info("💡 Coin aramak için en az bir veri kaynağına ihtiyaç var.")
         st.stop()
     
-    # Coin listesi
-    try:
-        all_coins = corr_matrix.columns.tolist()
-        if not all_coins:
-            st.error("❌ Korelasyon matrisinde coin bulunamadı!")
-            st.stop()
-    except Exception as e:
-        st.error(f"❌ Coin listesi alınamadı: {e}")
-        st.stop()
+    # Arama kutusu
+    st.subheader("🔍 Coin Ara")
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        search_query = st.text_input(
+            "Coin adını girin (örn: BTCUSDT, ETHUSDT)",
+            placeholder="BTCUSDT yazın ve Enter'a basın...",
+            key="coin_search_input"
+        )
+    
+    with col2:
+        st.write("")  # Boşluk
+        st.write("")  # Boşluk
+    
+    # Arama sonuçları
+    if search_query:
+        search_query_upper = search_query.upper().strip()
         
-        # Arama kutusu
-        st.subheader("🔍 Coin Ara")
-        col1, col2 = st.columns([3, 1])
+        # Eğer USDT ile bitmiyorsa ekle
+        if not search_query_upper.endswith('USDT'):
+            search_query_upper = search_query_upper + 'USDT'
         
-        with col1:
-            search_query = st.text_input(
-                "Coin adını girin (örn: BTCUSDT, ETHUSDT)",
-                placeholder="BTCUSDT yazın ve Enter'a basın...",
-                key="coin_search_input"
-            )
+        # Coin bulundu mu kontrol et (korelasyon matrisi veya price_history'de)
+        coin_found = False
+        coin_in_matrix = False
         
-        with col2:
-            st.write("")  # Boşluk
-            st.write("")  # Boşluk
+        if corr_matrix is not None and not corr_matrix.empty:
+            coin_in_matrix = search_query_upper in corr_matrix.columns.tolist() or search_query_upper in corr_matrix.index.tolist()
         
-        # Arama sonuçları
-        if search_query:
-            search_query_upper = search_query.upper().strip()
+        coin_in_history = False
+        coin_data_from_history = None
+        if price_history and 'history' in price_history and len(price_history['history']) > 0:
+            last_point = price_history['history'][-1]
+            if 'prices' in last_point and search_query_upper in last_point['prices']:
+                coin_in_history = True
+                coin_data_from_history = last_point['prices'][search_query_upper]
+        
+        coin_found = coin_in_matrix or coin_in_history
+        
+        if coin_found:
+            selected_coin = search_query_upper
+            st.success(f"✅ {selected_coin} bulundu!")
             
-            # Eğer USDT ile bitmiyorsa ekle
-            if not search_query_upper.endswith('USDT'):
-                search_query_upper = search_query_upper + 'USDT'
+            # Coin'in hangi kaynakta olduğunu göster
+            if coin_in_matrix and coin_in_history:
+                st.info("💡 Coin hem korelasyon matrisinde hem de anlık verilerde mevcut.")
+            elif coin_in_matrix:
+                st.info("💡 Coin korelasyon matrisinde mevcut.")
+            elif coin_in_history:
+                st.info("💡 Coin anlık verilerde mevcut (korelasyon verisi yok).")
             
-            # Coin bulundu mu kontrol et
-            if search_query_upper in all_coins:
-                selected_coin = search_query_upper
-                st.success(f"✅ {selected_coin} bulundu!")
-                
-                # ========== COIN BİLGİLERİ ==========
-                st.markdown("---")
-                st.subheader(f"📊 {selected_coin} Detaylı Analiz")
-                
-                # Metrikler
+            # ========== COIN BİLGİLERİ ==========
+            st.markdown("---")
+            st.subheader(f"📊 {selected_coin} Detaylı Analiz")
+            
+            # Anlık verilerden coin bilgileri (price_history'den)
+            if coin_in_history and coin_data_from_history:
+                st.subheader("💰 Anlık Fiyat Bilgileri")
                 col1, col2, col3, col4 = st.columns(4)
                 
-                # Fiyat-Volume analizi bilgisi
-                pv_info = None
-                if pv_analysis_data and selected_coin in pv_analysis_data:
-                    pv_info = pv_analysis_data[selected_coin]
-                    with col1:
-                        correlation_val = pv_info.get('correlation', 0)
-                        st.metric(
-                            "Fiyat-Volume Korelasyonu",
-                            f"{correlation_val:.3f}",
-                            help="Fiyat ve volume değişimleri arasındaki korelasyon"
-                        )
-                    
-                    with col2:
-                        abs_corr = pv_info.get('abs_correlation', 0)
-                        st.metric(
-                            "Mutlak Korelasyon",
-                            f"{abs_corr:.3f}",
-                            help="Mutlak korelasyon değeri"
-                        )
-                    
-                    with col3:
-                        vol_increase_pct = pv_info.get('volume_increase_on_price_up_pct', 0)
-                        st.metric(
-                            "Fiyat Artışında Volume Artışı %",
-                            f"{vol_increase_pct:.1f}%",
-                            help="Fiyat arttığında volume'un ne kadar arttığı"
-                        )
-                    
-                    with col4:
-                        data_points = pv_info.get('data_points', 0)
-                        st.metric(
-                            "Veri Noktası Sayısı",
-                            f"{data_points}",
-                            help="Analiz için kullanılan veri noktası sayısı"
-                        )
+                with col1:
+                    current_price = coin_data_from_history.get('price', 0)
+                    st.metric("Güncel Fiyat", f"${current_price:.4f}")
                 
-                # Ani değişim analizi bilgisi
-                sudden_info = None
-                if sudden_analysis_data:
-                    # Format kontrolü: {"timestamp": "...", "analyses": {...}}
-                    if isinstance(sudden_analysis_data, dict):
-                        if 'analyses' in sudden_analysis_data:
-                            analyses_dict = sudden_analysis_data['analyses']
-                        else:
-                            # Eski format: direkt coin dict'i
-                            analyses_dict = sudden_analysis_data
-                        
-                        if selected_coin in analyses_dict:
-                            sudden_info = analyses_dict[selected_coin]
-                        
-                        st.markdown("---")
-                        st.subheader("⚡ Ani Değişim Analizi")
-                        
-                        col1, col2, col3 = st.columns(3)
-                        
-                        with col1:
-                            price_change_24h = sudden_info.get('price_change_24h', 0)
-                            st.metric(
-                                "24 Saatlik Fiyat Değişimi",
-                                f"{price_change_24h:.2f}%",
-                                delta=f"{price_change_24h:.2f}%"
-                            )
-                        
-                        with col2:
-                            volume_24h = sudden_info.get('volume_24h', 0)
-                            if volume_24h > 1e9:
-                                vol_display = f"{volume_24h/1e9:.2f}B"
-                            elif volume_24h > 1e6:
-                                vol_display = f"{volume_24h/1e6:.2f}M"
+                with col2:
+                    volume_24h = coin_data_from_history.get('volume_24h', 0)
+                    if volume_24h > 1e9:
+                        vol_display = f"{volume_24h/1e9:.2f}B"
+                    elif volume_24h > 1e6:
+                        vol_display = f"{volume_24h/1e6:.2f}M"
+                    else:
+                        vol_display = f"{volume_24h:.2f}"
+                    st.metric("24 Saatlik Volume", vol_display)
+                
+                with col3:
+                    change_24h = coin_data_from_history.get('change_24h', 0)
+                    st.metric("24 Saatlik Değişim", f"{change_24h:.2f}%", delta=f"{change_24h:.2f}%")
+                
+                with col4:
+                    # Price history'deki veri noktası sayısı
+                    if price_history and 'history' in price_history:
+                        coin_data_points = 0
+                        for point in price_history['history']:
+                            if 'prices' in point and selected_coin in point['prices']:
+                                coin_data_points += 1
+                        st.metric("Veri Noktası Sayısı", coin_data_points)
+                
+                st.markdown("---")
+            
+            # Metrikler
+            col1, col2, col3, col4 = st.columns(4)
+            
+            # Fiyat-Volume analizi bilgisi
+            pv_info = None
+            if pv_analysis_data and selected_coin in pv_analysis_data:
+                pv_info = pv_analysis_data[selected_coin]
+                with col1:
+                    correlation_val = pv_info.get('correlation', 0)
+                    st.metric(
+                        "Fiyat-Volume Korelasyonu",
+                        f"{correlation_val:.3f}",
+                        help="Fiyat ve volume değişimleri arasındaki korelasyon"
+                    )
+                
+                with col2:
+                    abs_corr = pv_info.get('abs_correlation', 0)
+                    st.metric(
+                        "Mutlak Korelasyon",
+                        f"{abs_corr:.3f}",
+                        help="Mutlak korelasyon değeri"
+                    )
+                
+                with col3:
+                    vol_increase_pct = pv_info.get('volume_increase_on_price_up_pct', 0)
+                    st.metric(
+                        "Fiyat Artışında Volume Artışı %",
+                        f"{vol_increase_pct:.1f}%",
+                        help="Fiyat arttığında volume'un ne kadar arttığı"
+                    )
+                
+                with col4:
+                    data_points = pv_info.get('data_points', 0)
+                    st.metric(
+                        "Veri Noktası Sayısı",
+                        f"{data_points}",
+                        help="Analiz için kullanılan veri noktası sayısı"
+                    )
+            else:
+                # Fiyat-Volume analizi yoksa bilgi göster
+                st.info("💡 Fiyat-Volume analizi verisi bulunamadı.")
+            
+            # Ani değişim analizi bilgisi
+            sudden_info = None
+            if sudden_analysis_data:
+                # Format kontrolü: {"timestamp": "...", "analyses": {...}}
+                if isinstance(sudden_analysis_data, dict):
+                    if 'analyses' in sudden_analysis_data:
+                        analyses_dict = sudden_analysis_data['analyses']
+                    else:
+                        # Eski format: direkt coin dict'i
+                        analyses_dict = sudden_analysis_data
+                    
+                    if selected_coin in analyses_dict:
+                        sudden_info = analyses_dict[selected_coin]
+            
+            if sudden_info:
+                st.markdown("---")
+                st.subheader("⚡ Ani Değişim Analizi")
+                
+                col1, col2, col3 = st.columns(3)
+                
+                with col1:
+                    price_change_24h = sudden_info.get('price_change_24h', 0) or 0
+                    st.metric(
+                        "24 Saatlik Fiyat Değişimi",
+                        f"{price_change_24h:.2f}%",
+                        delta=f"{price_change_24h:.2f}%"
+                    )
+                
+                with col2:
+                    volume_24h = sudden_info.get('volume_24h', 0) or 0
+                    if volume_24h > 1e9:
+                        vol_display = f"{volume_24h/1e9:.2f}B"
+                    elif volume_24h > 1e6:
+                        vol_display = f"{volume_24h/1e6:.2f}M"
+                    else:
+                        vol_display = f"{volume_24h:.2f}"
+                    st.metric(
+                        "24 Saatlik Volume",
+                        vol_display
+                    )
+                
+                with col3:
+                    current_price = sudden_info.get('price', 0) or 0
+                    st.metric(
+                        "Güncel Fiyat",
+                        f"${current_price:.4f}"
+                    )
+                
+                # Eşikler
+                thresholds = sudden_info.get('thresholds', {})
+                if thresholds:
+                    st.write("**Eşik Değerleri:**")
+                    threshold_cols = st.columns(len(thresholds))
+                    for idx, (threshold_name, threshold_data) in enumerate(thresholds.items()):
+                        with threshold_cols[idx]:
+                            if threshold_data.get('triggered', False):
+                                st.success(f"✅ {threshold_name}")
                             else:
-                                vol_display = f"{volume_24h:.2f}"
-                            st.metric(
-                                "24 Saatlik Volume",
-                                vol_display
-                            )
-                        
-                        with col3:
-                            current_price = sudden_info.get('price', 0)
-                            st.metric(
-                                "Güncel Fiyat",
-                                f"${current_price:.4f}"
-                            )
-                        
-                        # Eşikler
-                        thresholds = sudden_info.get('thresholds', {})
-                        if thresholds:
-                            st.write("**Eşik Değerleri:**")
-                            threshold_cols = st.columns(len(thresholds))
-                            for idx, (threshold_name, threshold_data) in enumerate(thresholds.items()):
-                                with threshold_cols[idx]:
-                                    if threshold_data.get('triggered', False):
-                                        st.success(f"✅ {threshold_name}")
-                                    else:
-                                        st.info(f"⏸️ {threshold_name}")
-                
-                # ========== KORELASYONLAR ==========
+                                st.info(f"⏸️ {threshold_name}")
+            elif coin_in_history:
+                # Ani değişim analizi yoksa ama anlık veri varsa bilgi göster
+                st.info("💡 Bu coin için ani değişim analizi verisi yok (24 saatlik değişim %1'den az).")
+            
+            # Korelasyonlar (sadece korelasyon matrisinde varsa)
+            if coin_in_matrix and corr_matrix is not None and not corr_matrix.empty:
                 st.markdown("---")
                 st.subheader(f"🔗 {selected_coin} ile Diğer Coinlerin Korelasyonları")
                 
