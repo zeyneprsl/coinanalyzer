@@ -673,7 +673,8 @@ elif page == "Korelasyon Analizi":
     - GitHub Actions her **5 dakikada bir** çalışır
     - Her çalıştırmada **1 yeni veri noktası** eklenir
     - Veriler `realtime_price_history.json` dosyasına kaydedilir
-    - Maksimum **288 veri noktası** tutulur (yaklaşık 24 saatlik veri)
+    - Maksimum **2016 veri noktası** tutulur (yaklaşık 7 günlük veri)
+    - **7 gün seçebilirsiniz** - Bu süre içindeki tüm veriler kullanılır
     
     **🔢 Filtreleme Seçenekleri:**
     1. **Veri Noktası Sayısı (Son N):** Son N kayıt kullanılır
