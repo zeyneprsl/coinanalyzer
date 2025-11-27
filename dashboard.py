@@ -719,6 +719,20 @@ elif page == "Korelasyon Analizi":
         st.subheader("📅 Zaman Bazlı Filtreleme")
         st.info("💡 **Mevcut verilere göre zaman aralığı seçin:** Belirli bir dönemin verilerine göre korelasyon hesaplayın")
         
+        # GitHub Actions durumu kontrolü
+        if history_count < 5:
+            st.warning("""
+            **⚠️ GitHub Actions Kontrolü:**
+            - Şu anda sadece **{history_count} veri noktası** var
+            - GitHub Actions her **5 dakikada bir** çalışmalı
+            - **Kontrol edin:**
+              1. GitHub repo → **Actions** sekmesi
+              2. Son çalıştırmaları kontrol edin
+              3. Hata var mı bakın
+              4. Manuel çalıştırmak için: Actions → "Otomatik Analiz" → "Run workflow"
+            - **Beklenen:** Her 5 dakikada bir yeni veri noktası eklenmeli
+            """.format(history_count=history_count))
+        
         # Açıklama kutusu
         with st.expander("📖 Korelasyon Nasıl Hesaplanıyor? (Detaylı Matematik)"):
             st.markdown("""

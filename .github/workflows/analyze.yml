@@ -2,9 +2,8 @@ name: Otomatik Analiz
 
 on:
   schedule:
-    # Her 2 dakikada bir çalıştır (GitHub Actions otomatik olarak 5 dakikaya yuvarlar)
-    # Minimum interval: 5 dakika, ama cron syntax'ı 2 dakika yazabiliriz
-    - cron: '*/2 * * * *'
+    # Her 5 dakikada bir çalıştır (GitHub Actions minimum interval)
+    - cron: '*/5 * * * *'
   workflow_dispatch: # Manuel çalıştırma için
 
 permissions:
