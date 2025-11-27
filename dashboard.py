@@ -813,7 +813,7 @@ elif page == "Korelasyon Analizi":
                 n_data_points = len(filtered_history)
                 
                 if n_data_points >= min_required:
-                    with st.spinner(f"Son {period} {unit.lower()} verisi kullanılarak korelasyon hesaplanıyor... ({n_data_points} veri noktası)"):
+                    with st.spinner(f"Son {time_period} {time_unit.lower()} verisi kullanılarak korelasyon hesaplanıyor... ({n_data_points} veri noktası)"):
                         try:
                             import pandas as pd
                             import numpy as np
@@ -868,7 +868,7 @@ elif page == "Korelasyon Analizi":
                                     # Sonuçları kaydet
                                     result_data = {
                                         'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                        'filter_type': f'Son {period} {unit.lower()}',
+                                        'filter_type': f'Son {time_period} {time_unit.lower()}',
                                         'data_points_used': n_data_points,
                                         'total_pairs': len(high_corr),
                                         'high_correlations': high_corr
@@ -881,17 +881,15 @@ elif page == "Korelasyon Analizi":
                                     correlation_matrix.to_csv('realtime_correlation_matrix.csv')
                                     
                                     st.success(f"✅ Korelasyon hesaplandı! {len(high_corr)} yüksek korelasyon çifti bulundu.")
-                                    st.info(f"💡 Son {period} {unit.lower()} içinde {n_data_points} veri noktası kullanıldı.")
-                                    # Filtreyi temizle
-                                    st.session_state.selected_quick_filter = None
-                    st.rerun()
+                                    st.info(f"💡 Son {time_period} {time_unit.lower()} içinde {n_data_points} veri noktası kullanıldı.")
+                                    st.rerun()
                         except Exception as e:
                             st.error(f"❌ Hata: {e}")
                             import traceback
                             st.code(traceback.format_exc())
                 else:
                     st.warning(f"⚠️ Seçilen zaman aralığında yeterli veri yok! ({n_data_points}/{min_required} veri noktası)")
-                    st.info(f"💡 Son {period} {unit.lower()} içinde {n_data_points} veri noktası bulundu. En az {min_required} veri noktası gereklidir.")
+                    st.info(f"💡 Son {time_period} {time_unit.lower()} içinde {n_data_points} veri noktası bulundu. En az {min_required} veri noktası gereklidir.")
             except Exception as e:
                 st.error(f"❌ Filtreleme hatası: {e}")
         
