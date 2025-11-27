@@ -129,6 +129,20 @@ def analyze_sudden_changes(current_prices, coin_mapping):
         price_change_24h = data.get('usd_24h_change', 0)
         volume_24h = data.get('usd_24h_vol', 0)
         
+        # None kontrolü ve varsayılan değer
+        if price_change_24h is None:
+            price_change_24h = 0
+        if volume_24h is None:
+            volume_24h = 0
+        
+        # Sayısal değer kontrolü
+        try:
+            price_change_24h = float(price_change_24h)
+            volume_24h = float(volume_24h)
+        except (ValueError, TypeError):
+            price_change_24h = 0
+            volume_24h = 0
+        
         # Ani değişim kontrolü (24 saatlik değişim %1'den fazlaysa)
         if abs(price_change_24h) >= 1.0:
             sudden_analyses[symbol] = {
