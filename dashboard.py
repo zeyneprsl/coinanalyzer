@@ -654,13 +654,26 @@ elif page == "Korelasyon Analizi":
     st.header("🔗 Coin Korelasyon Analizi")
     
     # Anlık verilerden korelasyon hesaplama bölümü
-    st.subheader("⚡ Anlık Verilerden Korelasyon Hesapla")
-    st.info("""
-    **Bu özellik, biriktirilen anlık verilerden korelasyon hesaplar.**
-    - Her 5 dakikada bir anlık veriler kaydedilir
-    - Son N veri noktasını kullanarak korelasyon hesaplanır
-    - Minimum 5 veri noktası gereklidir
-    """)
+            st.subheader("⚡ Anlık Verilerden Korelasyon Hesapla")
+            st.info("""
+            **Bu özellik, biriktirilen anlık verilerden korelasyon hesaplar.**
+            
+            **📊 Veri Toplama:**
+            - Her 5 dakikada bir anlık veriler kaydedilir (`realtime_price_history.json`)
+            - Her veri noktası bir timestamp ile kaydedilir
+            
+            **🔢 Filtreleme Seçenekleri:**
+            1. **Veri Noktası Sayısı (Son N):** Son N kayıt kullanılır (örn: son 10 veri = son 10 kayıt)
+               - Örnek: Son 10 veri = son ~50 dakika (10 × 5 dakika)
+               - Örnek: Son 50 veri = son ~4 saat (50 × 5 dakika)
+            
+            2. **Zaman Bazlı (Son N Gün/Saat):** Belirli bir zaman aralığındaki tüm veriler kullanılır
+               - Örnek: Son 7 gün = son 7 günün tüm verileri (~2016 veri noktası)
+               - Örnek: Son 24 saat = son 24 saatin tüm verileri (~288 veri noktası)
+               - ✅ **Daha mantıklı:** Zaman bazlı analiz, belirli bir dönemin trendini gösterir
+            
+            **⚠️ Minimum 5 veri noktası gereklidir**
+            """)
     
     history_data = load_json_file('realtime_price_history.json')
     
@@ -690,6 +703,14 @@ elif page == "Korelasyon Analizi":
             )
             
             if filter_type == "Zaman Bazlı (Son N Gün/Saat)":
+                st.info("""
+                **💡 Zaman Bazlı Filtreleme:**
+                - Belirli bir zaman aralığındaki **tüm veriler** kullanılır
+                - Örnek: Son 7 gün = son 7 günün tüm verileri (~2016 veri noktası)
+                - Örnek: Son 24 saat = son 24 saatin tüm verileri (~288 veri noktası)
+                - ✅ **Daha mantıklı:** Belirli bir dönemin trendini gösterir
+                """)
+                
                 col1, col2, col3 = st.columns([2, 2, 1])
                 with col1:
                     time_period = st.number_input(
@@ -710,6 +731,14 @@ elif page == "Korelasyon Analizi":
                     st.write("")  # Boşluk
                     st.write("")  # Boşluk
                     calculate_btn = st.button("🔢 Korelasyon Hesapla", type="primary", use_container_width=True)
+                
+                # Tahmini veri noktası sayısı göster
+                if time_unit == "Gün":
+                    estimated_points = time_period * 24 * 12  # Gün × saat × veri/saat (her 5 dakikada bir)
+                    st.caption(f"💡 Tahmini veri noktası: ~{estimated_points:,} (Son {time_period} gün)")
+                else:
+                    estimated_points = time_period * 12  # Saat × veri/saat
+                    st.caption(f"💡 Tahmini veri noktası: ~{estimated_points:,} (Son {time_period} saat)")
                 
                 # Zaman bazlı filtreleme
                 if calculate_btn:
@@ -819,7 +848,15 @@ elif page == "Korelasyon Analizi":
                         import traceback
                         st.code(traceback.format_exc())
             else:
-                # Veri noktası sayısı bazlı filtreleme (eski yöntem)
+                # Veri noktası sayısı bazlı filtreleme
+                st.info("""
+                **💡 Veri Noktası Sayısı Bazlı Filtreleme:**
+                - Son N kayıt kullanılır (örn: son 10 veri = son 10 kayıt)
+                - Örnek: Son 10 veri = son ~50 dakika (10 × 5 dakika)
+                - Örnek: Son 50 veri = son ~4 saat (50 × 5 dakika)
+                - ⚠️ **Not:** Zaman bazlı filtreleme daha mantıklı olabilir (belirli bir dönemin trendini gösterir)
+                """)
+                
                 col1, col2 = st.columns([2, 1])
                 with col1:
                     n_data_points = st.slider(
@@ -830,6 +867,13 @@ elif page == "Korelasyon Analizi":
                         step=1,
                         help="Son N veri noktasını kullanarak korelasyon hesaplanır"
                     )
+                    # Tahmini zaman göster
+                    estimated_time_minutes = n_data_points * 5  # Her veri 5 dakikada bir
+                    if estimated_time_minutes < 60:
+                        st.caption(f"💡 Tahmini zaman: ~{estimated_time_minutes} dakika (Son {n_data_points} veri)")
+                    else:
+                        estimated_hours = estimated_time_minutes / 60
+                        st.caption(f"💡 Tahmini zaman: ~{estimated_hours:.1f} saat (Son {n_data_points} veri)")
                 with col2:
                     st.write("")  # Boşluk
                     st.write("")  # Boşluk
