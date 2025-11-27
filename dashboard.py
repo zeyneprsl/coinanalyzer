@@ -717,7 +717,16 @@ elif page == "Korelasyon Analizi":
         # Dinamik zaman bazlı filtreleme (mevcut verilere göre)
         st.markdown("---")
         st.subheader("📅 Zaman Bazlı Filtreleme")
-        st.info("💡 **Mevcut verilere göre zaman aralığı seçin:** Belirli bir dönemin verilerine göre korelasyon hesaplayın")
+        st.info("""
+        💡 **Mevcut verilere göre zaman aralığı seçin:** Belirli bir dönemin verilerine göre korelasyon hesaplayın
+        
+        **📊 Ne Tür Korelasyon Hesaplanıyor?**
+        - **Fiyat Değişimleri (Returns) Korelasyonu:** Coinlerin fiyat hareketlerinin birbirine ne kadar benzer olduğunu gösterir
+        - **Nasıl Hesaplanır:** Her coin için fiyat değişimleri (returns) hesaplanır, sonra bu değişimler arasındaki korelasyon bulunur
+        - **Örnek:** BTC fiyatı %5 artarken ETH fiyatı da %5 artıyorsa → Yüksek pozitif korelasyon (+1.0)
+        - **Örnek:** BTC fiyatı %5 artarken ETH fiyatı %5 azalıyorsa → Yüksek negatif korelasyon (-1.0)
+        - **Eşik:** Sadece ≥0.7 veya ≤-0.7 korelasyonlu çiftler kaydedilir
+        """)
         
         # Mevcut verilerden maksimum zaman aralığını hesapla
         try:
