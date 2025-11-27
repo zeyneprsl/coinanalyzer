@@ -206,9 +206,8 @@ else:
     st.sidebar.info(f"⏱️ Son yenileme: {int(elapsed)}s önce")
 
 # JSON dosyalarını yükleme fonksiyonu
-@st.cache_data(ttl=60, show_spinner=False)  # 1 dakika cache (daha sık güncelleme)
 def load_json_file(filename):
-    """JSON dosyasını yükle (cache ile)"""
+    """JSON dosyasını yükle (cache YOK - her seferinde dosyadan oku)"""
     if os.path.exists(filename):
         try:
             with open(filename, 'r', encoding='utf-8') as f:
@@ -689,13 +688,13 @@ elif page == "Korelasyon Analizi":
     **⚠️ Minimum 5 veri noktası gereklidir** (yaklaşık 25 dakika veri)
     """)
     
-    # Cache temizleme butonu
+    # Yenile butonu (cache yok, sadece sayfayı yeniler)
     col_refresh1, col_refresh2 = st.columns([1, 10])
     with col_refresh1:
-        if st.button("🔄 Yenile", help="Verileri yeniden yükle (cache'i temizle)", key="refresh_data_btn"):
-            st.cache_data.clear()
+        if st.button("🔄 Yenile", help="Sayfayı yenile ve verileri JSON dosyasından tekrar yükle", key="refresh_data_btn"):
             st.rerun()
     
+    # JSON dosyasından direkt oku (cache YOK)
     history_data = load_json_file('realtime_price_history.json')
     
     # Debug: Veri kontrolü
