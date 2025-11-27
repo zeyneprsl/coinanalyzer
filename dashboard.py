@@ -717,16 +717,38 @@ elif page == "Korelasyon Analizi":
         # Dinamik zaman bazlı filtreleme (mevcut verilere göre)
         st.markdown("---")
         st.subheader("📅 Zaman Bazlı Filtreleme")
-        st.info("""
-        💡 **Mevcut verilere göre zaman aralığı seçin:** Belirli bir dönemin verilerine göre korelasyon hesaplayın
+        st.info("💡 **Mevcut verilere göre zaman aralığı seçin:** Belirli bir dönemin verilerine göre korelasyon hesaplayın")
         
-        **📊 Ne Tür Korelasyon Hesaplanıyor?**
-        - **Fiyat Değişimleri (Returns) Korelasyonu:** Coinlerin fiyat hareketlerinin birbirine ne kadar benzer olduğunu gösterir
-        - **Nasıl Hesaplanır:** Her coin için fiyat değişimleri (returns) hesaplanır, sonra bu değişimler arasındaki korelasyon bulunur
-        - **Örnek:** BTC fiyatı %5 artarken ETH fiyatı da %5 artıyorsa → Yüksek pozitif korelasyon (+1.0)
-        - **Örnek:** BTC fiyatı %5 artarken ETH fiyatı %5 azalıyorsa → Yüksek negatif korelasyon (-1.0)
-        - **Eşik:** Sadece ≥0.7 veya ≤-0.7 korelasyonlu çiftler kaydedilir
-        """)
+        # Açıklama kutusu
+        with st.expander("📖 Korelasyon Nasıl Hesaplanıyor?"):
+            st.markdown("""
+            **🔍 Korelasyon Ne Demek?**
+            - Korelasyon, iki coin'in **fiyat değişimlerinin** birbirleriyle ne kadar benzer hareket ettiğini ölçer
+            - **+1.0**: Mükemmel pozitif korelasyon (biri artarsa diğeri de artar)
+            - **-1.0**: Mükemmel negatif korelasyon (biri artarsa diğeri azalır)
+            - **0.0**: Korelasyon yok (bağımsız hareket)
+            
+            **📊 Hesaplama Adımları:**
+            1. **Zaman Aralığı Seçimi:** Örneğin "7 gün" seçtiğinizde → Son 7 günün **tüm veri noktaları** kullanılır
+            2. **Fiyat Serileri:** Her coin için o zaman aralığındaki fiyatları toplanır
+            3. **Fiyat Değişimleri (Returns):** Her veri noktasında fiyatın bir önceki noktaya göre % değişimi hesaplanır
+               - Örnek: BTC 100$ → 105$ = %5 artış
+               - Örnek: ETH 2000$ → 2100$ = %5 artış
+               - Bu iki coin'in returns'i benzer → Yüksek korelasyon
+            4. **Korelasyon Hesaplama:** Tüm coinlerin returns'leri arasındaki korelasyon hesaplanır
+            5. **Sonuç:** ≥0.7 korelasyonlu çiftler kaydedilir
+            
+            **💡 Örnek: "7 Gün" Seçtiğinizde:**
+            - Son 7 günün **tüm veri noktaları** kullanılır (her 5 dakikada bir = ~2016 veri noktası)
+            - Her coin için 7 günlük fiyat değişimleri analiz edilir
+            - Coinlerin bu 7 gün içinde birbirleriyle ne kadar benzer hareket ettiği bulunur
+            - Sonuç: "Son 7 günde BTC ve ETH'nin fiyat değişimleri %95 korelasyonlu"
+            
+            **⚠️ Önemli:**
+            - Korelasyon **fiyat değişimlerini** ölçer, mutlak fiyatları değil
+            - Yüksek korelasyon = Coinler aynı anda yükselip düşüyor
+            - Düşük korelasyon = Coinler bağımsız hareket ediyor
+            """)
         
         # Mevcut verilerden maksimum zaman aralığını hesapla
         try:
