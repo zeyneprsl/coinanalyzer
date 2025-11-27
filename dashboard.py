@@ -684,9 +684,20 @@ elif page == "Korelasyon Analizi":
     
     history_data = load_json_file('realtime_price_history.json')
     
+    # Debug: Veri kontrolü
+    if history_data:
+        if 'history' not in history_data:
+            st.warning("⚠️ JSON dosyasında 'history' anahtarı yok!")
+            st.json(history_data)  # Debug için göster
+            history_data = None
+    
     if history_data and 'history' in history_data:
         history_count = len(history_data['history'])
         last_update = history_data.get('last_update', 'Bilinmiyor')
+        
+        # Debug bilgisi (geliştirme için)
+        if history_count > 0:
+            st.caption(f"🔍 Debug: JSON'dan okunan veri noktası sayısı: {history_count}")
         
         col1, col2, col3 = st.columns(3)
         with col1:
