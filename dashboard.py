@@ -720,7 +720,7 @@ elif page == "Korelasyon Analizi":
         st.info("💡 **Mevcut verilere göre zaman aralığı seçin:** Belirli bir dönemin verilerine göre korelasyon hesaplayın")
         
         # Açıklama kutusu
-        with st.expander("📖 Korelasyon Nasıl Hesaplanıyor?"):
+        with st.expander("📖 Korelasyon Nasıl Hesaplanıyor? (Detaylı Matematik)"):
             st.markdown("""
             **🔍 Korelasyon Ne Demek?**
             - Korelasyon, iki coin'in **fiyat değişimlerinin** birbirleriyle ne kadar benzer hareket ettiğini ölçer
@@ -728,26 +728,62 @@ elif page == "Korelasyon Analizi":
             - **-1.0**: Mükemmel negatif korelasyon (biri artarsa diğeri azalır)
             - **0.0**: Korelasyon yok (bağımsız hareket)
             
-            **📊 Hesaplama Adımları:**
-            1. **Zaman Aralığı Seçimi:** Örneğin "7 gün" seçtiğinizde → Son 7 günün **tüm veri noktaları** kullanılır
-            2. **Fiyat Serileri:** Her coin için o zaman aralığındaki fiyatları toplanır
-            3. **Fiyat Değişimleri (Returns):** Her veri noktasında fiyatın bir önceki noktaya göre % değişimi hesaplanır
-               - Örnek: BTC 100$ → 105$ = %5 artış
-               - Örnek: ETH 2000$ → 2100$ = %5 artış
-               - Bu iki coin'in returns'i benzer → Yüksek korelasyon
-            4. **Korelasyon Hesaplama:** Tüm coinlerin returns'leri arasındaki korelasyon hesaplanır
-            5. **Sonuç:** ≥0.7 korelasyonlu çiftler kaydedilir
+            **📊 Matematiksel Hesaplama Adımları (Örnek: BTC ve ETH, 7 Gün):**
             
-            **💡 Örnek: "7 Gün" Seçtiğinizde:**
-            - Son 7 günün **tüm veri noktaları** kullanılır (her 5 dakikada bir = ~2016 veri noktası)
-            - Her coin için 7 günlük fiyat değişimleri analiz edilir
-            - Coinlerin bu 7 gün içinde birbirleriyle ne kadar benzer hareket ettiği bulunur
-            - Sonuç: "Son 7 günde BTC ve ETH'nin fiyat değişimleri %95 korelasyonlu"
+            **1. Veri Toplama:**
+            - Son 7 günün **tüm veri noktaları** alınır (örn: 2016 veri noktası, her 5 dakikada bir)
+            - BTC fiyatları: [100, 105, 110, 108, 112, 115, ...] (2016 değer)
+            - ETH fiyatları: [2000, 2100, 2200, 2160, 2240, 2300, ...] (2016 değer)
             
-            **⚠️ Önemli:**
-            - Korelasyon **fiyat değişimlerini** ölçer, mutlak fiyatları değil
-            - Yüksek korelasyon = Coinler aynı anda yükselip düşüyor
-            - Düşük korelasyon = Coinler bağımsız hareket ediyor
+            **2. Fiyat Değişimleri (Returns) Hesaplama:**
+            Her veri noktasında bir önceki noktaya göre % değişim:
+            ```
+            BTC Returns: [0.05, 0.0476, -0.0182, 0.0370, 0.0268, ...]
+            ETH Returns: [0.05, 0.0476, -0.0182, 0.0370, 0.0268, ...]
+            ```
+            - İlk değer: (105-100)/100 = 0.05 (%5)
+            - İkinci değer: (110-105)/105 = 0.0476 (%4.76)
+            - Üçüncü değer: (108-110)/110 = -0.0182 (%-1.82)
+            
+            **3. Pearson Korelasyon Katsayısı Hesaplama:**
+            **HAYIR, günlük ortalamalar alınmıyor!** Tüm veri noktaları üzerinden **tek bir korelasyon değeri** hesaplanıyor.
+            
+            **Formül:**
+            ```
+            r = Σ[(X_i - X_ortalama) × (Y_i - Y_ortalama)] / √[Σ(X_i - X_ortalama)² × Σ(Y_i - Y_ortalama)²]
+            ```
+            
+            **Adım adım:**
+            1. BTC returns'lerinin ortalaması hesaplanır: X_ortalama
+            2. ETH returns'lerinin ortalaması hesaplanır: Y_ortalama
+            3. Her veri noktası için:
+               - (BTC_i - X_ortalama) × (ETH_i - Y_ortalama) hesaplanır
+               - (BTC_i - X_ortalama)² hesaplanır
+               - (ETH_i - Y_ortalama)² hesaplanır
+            4. Tüm veri noktaları üzerinden toplamlar alınır
+            5. Formül uygulanır → Tek bir korelasyon değeri (örn: 0.95)
+            
+            **💡 Örnek Hesaplama (Basitleştirilmiş, 5 veri noktası):**
+            ```
+            BTC Returns: [0.05, 0.03, -0.02, 0.04, 0.01]
+            ETH Returns: [0.05, 0.03, -0.02, 0.04, 0.01]
+            
+            BTC Ortalama: 0.022
+            ETH Ortalama: 0.022
+            
+            Korelasyon = 1.0 (Mükemmel korelasyon, çünkü aynı değişimler)
+            ```
+            
+            **⚠️ ÖNEMLİ:**
+            - **Günlük ortalamalar alınmıyor!** Tüm veri noktaları (her 5 dakika) kullanılıyor
+            - **Tek bir korelasyon değeri** hesaplanıyor (7 günün tamamı için)
+            - Daha fazla veri noktası = Daha güvenilir korelasyon
+            - "7 günün korelasyonu" = Son 7 günün tüm veri noktaları üzerinden hesaplanan tek bir sayı
+            
+            **📈 Sonuç:**
+            - Örnek: BTC ve ETH arasında 0.95 korelasyon
+            - Bu, son 7 günde BTC ve ETH'nin fiyat değişimlerinin %95 benzer olduğu anlamına gelir
+            - Yani BTC yükseldiğinde ETH de yükseliyor, BTC düştüğünde ETH de düşüyor
             """)
         
         # Mevcut verilerden maksimum zaman aralığını hesapla
