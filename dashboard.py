@@ -479,15 +479,23 @@ if page == "Ana Sayfa":
         
         pv_data = load_json_file('price_volume_analysis.json')
         if pv_data:
-            # Binance formatı: correlation_analyzer'dan gelen format
+            # Yeni format: GitHub Actions Binance API formatı
+            if isinstance(pv_data, dict) and 'analyses' in pv_data:
+                analyses = pv_data['analyses']
+            else:
+                # Eski format için geriye dönük uyumluluk
+                analyses = pv_data
+            
             df_pv = pd.DataFrame([
                 {
                     'coin': coin,
                     'correlation': stats.get('correlation', 0),
                     'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
-                    'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
+                    'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0),
+                    'price_change_24h': stats.get('price_change_24h', 0),
+                    'volume': stats.get('volume', 0)
                 }
-                for coin, stats in pv_data.items()
+                for coin, stats in analyses.items()
             ])
             if 'abs_correlation' not in df_pv.columns:
                 df_pv['abs_correlation'] = df_pv['correlation'].abs()
@@ -2007,17 +2015,24 @@ elif page == "Fiyat-Volume Analizi":
         st.stop()
     
     if pv_data:
-        # Binance formatı: correlation_analyzer'dan gelen format
+        # Yeni format: GitHub Actions Binance API formatı
+        if isinstance(pv_data, dict) and 'analyses' in pv_data:
+            analyses = pv_data['analyses']
+        else:
+            # Eski format için geriye dönük uyumluluk
+            analyses = pv_data
+        
         df_pv = pd.DataFrame([
             {
                 'coin': coin,
                 'correlation': stats.get('correlation', 0),
-                'abs_correlation': stats.get('abs_correlation', 0),
-                'data_points': stats.get('data_points', 0),
+                'abs_correlation': abs(stats.get('correlation', 0)),
+                'data_points': stats.get('data_points', 1),
                 'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
-                'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
+                'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0),
+                'price_change_24h': stats.get('price_change_24h', 0)
             }
-            for coin, stats in pv_data.items()
+            for coin, stats in analyses.items()
         ])
         
         # Filtreleme
@@ -2276,9 +2291,15 @@ elif page == "Ani Değişim Analizi":
             threshold_key_old = f"threshold_{selected_threshold}"
             threshold_key_new = f"{selected_threshold}%"
             
+            # Yeni format kontrolü: analyses key'i var mı?
+            if isinstance(sudden_data, dict) and 'analyses' in sudden_data:
+                analyses = sudden_data['analyses']
+            else:
+                analyses = sudden_data
+            
             # Verileri topla
             coin_stats = []
-            for coin, data in sudden_data.items():
+            for coin, data in analyses.items():
                 if not isinstance(data, dict):
                     continue
                 
@@ -2323,8 +2344,11 @@ elif page == "Ani Değişim Analizi":
                 # Yeni format: sadece tetiklenen coinler
                 df_sudden = df_sudden[df_sudden['triggered'] == True].sort_values('price_change_24h', key=abs, ascending=False)
                 
-                # Toplam coin sayısı (sudden_data'dan)
-                total_coins_analyzed = len(sudden_data)
+                # Toplam coin sayısı
+                if isinstance(sudden_data, dict) and 'total_analyzed' in sudden_data:
+                    total_coins_analyzed = sudden_data['total_analyzed']
+                else:
+                    total_coins_analyzed = len(analyses)
                 triggered_coins = len(df_sudden)
                 
                 # Metrikler (yeni format)
@@ -2346,8 +2370,11 @@ elif page == "Ani Değişim Analizi":
                 # Eski format: detaylı istatistikler
                 df_sudden = df_sudden[df_sudden['total_sudden'] > 0].sort_values('total_sudden', ascending=False)
                 
-                # Toplam coin sayısı (sudden_data'dan)
-                total_coins_analyzed = len(sudden_data)
+                # Toplam coin sayısı
+                if isinstance(sudden_data, dict) and 'total_analyzed' in sudden_data:
+                    total_coins_analyzed = sudden_data['total_analyzed']
+                else:
+                    total_coins_analyzed = len(analyses)
                 
                 # Metrikler (eski format)
                 col1, col2, col3, col4 = st.columns(4)
