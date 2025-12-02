@@ -26,10 +26,10 @@ jobs:
       run: |
         pip install -r requirements.txt
         
-    - name: Run fast analysis (anlık veriler)
+    - name: Run Binance analysis (anlık veriler)
       run: |
-        echo "CoinGecko API kullanılıyor (HIZLI mod - sadece anlık veriler)..."
-        python github_actions_analyze_fast.py
+        echo "Binance REST API kullanılıyor - 440 USDT çifti analiz ediliyor..."
+        python github_actions_binance_analyze.py
         
     - name: Commit and push results
       env:
