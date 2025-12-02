@@ -2061,11 +2061,17 @@ elif page == "Fiyat-Volume Analizi":
         col3.metric("✅ Güçlü Pozitif (>0.5)", f"{strong_positive:,}")
         col4.metric("💹 Fiyat↑'da Vol↑ Ort.%", f"{avg_volume_increase:.2f}%")
         
+        # Dinamik bilgileri al
+        exchange = pv_data.get('exchange', 'Binance')
+        pair_type = pv_data.get('pair_type', 'USDT çiftleri')
+        total_available = pv_data.get('total_pairs_available', total_coins)
+        source = pv_data.get('source', 'Binance API')
+        
         # Bilgi mesajı
         st.info(f"""
         **📌 Analiz Bilgileri:**
-        - **{total_coins:,} coin** analiz edildi (Binance USDT çiftleri)
-        - Veri kaynağı: Binance WebSocket gerçek zamanlı veriler
+        - **{total_coins:,}/{total_available:,} coin** analiz edildi ({exchange} {pair_type})
+        - Veri kaynağı: {source}
         - Analiz zamanı: {pv_data.get('timestamp', 'Bilinmiyor')}
         """)
         
@@ -2358,13 +2364,18 @@ elif page == "Ani Değişim Analizi":
                 col3.metric("📈 Ortalama Fiyat Değişimi", f"{df_sudden['price_change_24h'].mean():.2f}%" if len(df_sudden) > 0 else "N/A")
                 col4.metric("💹 Pozitif Değişim", f"{len(df_sudden[df_sudden['price_change_24h'] > 0]):,}" if len(df_sudden) > 0 else "0")
                 
+                # Dinamik bilgileri al
+                exchange = sudden_data.get('exchange', 'Binance')
+                pair_type = sudden_data.get('pair_type', 'USDT çiftleri')
+                source = sudden_data.get('source', 'Binance API')
+                
                 # Bilgi mesajı
                 st.info(f"""
                 **📌 Analiz Bilgileri:**
-                - **{total_coins_analyzed:,} coin** analiz edildi (Binance USDT çiftleri)
+                - **{total_coins_analyzed:,} coin** analiz edildi ({exchange} {pair_type})
                 - **{triggered_coins:,} coin** %{selected_threshold} eşiğini aştı (ani değişim)
-                - Veri kaynağı: Binance WebSocket gerçek zamanlı veriler
-                - Analiz zamanı: {load_json_file('sudden_price_volume_analysis.json').get('timestamp', 'Bilinmiyor') if isinstance(load_json_file('sudden_price_volume_analysis.json'), dict) else 'Bilinmiyor'}
+                - Veri kaynağı: {source}
+                - Analiz zamanı: {sudden_data.get('timestamp', 'Bilinmiyor')}
                 """)
             else:
                 # Eski format: detaylı istatistikler
@@ -2383,12 +2394,17 @@ elif page == "Ani Değişim Analizi":
                 col3.metric("📈 Ani Yükseliş", f"{df_sudden['sudden_up_count'].sum():,}")
                 col4.metric("📉 Ani Düşüş", f"{df_sudden['sudden_down_count'].sum():,}")
                 
+                # Dinamik bilgileri al
+                exchange = sudden_data.get('exchange', 'Binance')
+                pair_type = sudden_data.get('pair_type', 'USDT çiftleri')
+                source = sudden_data.get('source', 'Binance API')
+                
                 # Bilgi mesajı
                 st.info(f"""
                 **📌 Analiz Bilgileri:**
-                - **{total_coins_analyzed:,} coin** analiz edildi (Binance USDT çiftleri)
+                - **{total_coins_analyzed:,} coin** analiz edildi ({exchange} {pair_type})
                 - **{len(df_sudden)} coin** ani değişim gösterdi
-                - Veri kaynağı: Binance WebSocket gerçek zamanlı veriler
+                - Veri kaynağı: {source}
                 """)
             
             # Grafikler

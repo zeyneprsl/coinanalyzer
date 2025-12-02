@@ -156,7 +156,7 @@ def calculate_simple_correlations(ticker_data):
     print(f"✓ {len(correlations)} yüksek korelasyonlu çift bulundu")
     return correlations
 
-def save_results(pv_analyses, sudden_analyses, correlations):
+def save_results(pv_analyses, sudden_analyses, correlations, total_pairs):
     """Sonuçları JSON dosyalarına kaydet"""
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
@@ -164,6 +164,10 @@ def save_results(pv_analyses, sudden_analyses, correlations):
     pv_output = {
         'timestamp': timestamp,
         'source': 'Binance REST API',
+        'exchange': 'Binance',
+        'quote_currency': 'USDT',
+        'pair_type': 'USDT çiftleri',
+        'total_pairs_available': total_pairs,
         'total_coins': len(pv_analyses),
         'analyses': pv_analyses
     }
@@ -175,6 +179,10 @@ def save_results(pv_analyses, sudden_analyses, correlations):
     sudden_output = {
         'timestamp': timestamp,
         'source': 'Binance REST API',
+        'exchange': 'Binance',
+        'quote_currency': 'USDT',
+        'pair_type': 'USDT çiftleri',
+        'total_pairs_available': total_pairs,
         'total_analyzed': len(pv_analyses),
         'triggered_coins': len(sudden_analyses),
         'analyses': sudden_analyses
@@ -187,8 +195,13 @@ def save_results(pv_analyses, sudden_analyses, correlations):
     corr_output = {
         'timestamp': timestamp,
         'source': 'Binance REST API (pseudo-correlation)',
+        'exchange': 'Binance',
+        'quote_currency': 'USDT',
+        'pair_type': 'USDT çiftleri',
         'note': 'Gerçek zamanlı korelasyon için WebSocket gerekli',
-        'total_pairs': len(correlations),
+        'total_pairs_available': total_pairs,
+        'total_coins_analyzed': len(pv_analyses),
+        'total_correlation_pairs': len(correlations),
         'correlations': correlations
     }
     with open('realtime_correlations.json', 'w', encoding='utf-8') as f:
@@ -227,7 +240,7 @@ def main():
     
     # 4. Sonuçları kaydet
     print("\n[4/4] Sonuçlar kaydediliyor...")
-    save_results(pv_analyses, sudden_analyses, correlations)
+    save_results(pv_analyses, sudden_analyses, correlations, len(pairs))
     
     print("\n" + "="*80)
     print("✅ ANALİZ TAMAMLANDI")
