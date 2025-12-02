@@ -89,3 +89,8 @@ python main.py  # Sürekli çalıştırın
 
 **Tüm bunlar olmadan REAL-TIME çalışmaz!**
 
+
+
+
+
+

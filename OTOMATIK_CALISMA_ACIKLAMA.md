@@ -115,3 +115,8 @@
 
 **Hepsi ✅ ise, sistem tamamen otomatik çalışıyor demektir!**
 
+
+
+
+
+

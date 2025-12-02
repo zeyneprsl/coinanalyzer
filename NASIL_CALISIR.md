@@ -144,3 +144,8 @@ streamlit run dashboard.py
 - ⚠️ JSON dosyalarını GitHub'a pushlamanız gerekir (opsiyonel)
 - ✅ Otomatik push scripti kullanabilirsiniz (`auto_push.py`)
 
+
+
+
+
+

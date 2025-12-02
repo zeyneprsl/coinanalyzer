@@ -143,3 +143,8 @@ pip --version     # pip 23.x görmeli
 python main.py    # main.py çalışmalı
 ```
 
+
+
+
+
+

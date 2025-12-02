@@ -110,3 +110,8 @@ Eğer her şey çalışıyorsa:
 
 **Bu durumda sistem tamamen otomatik çalışıyor demektir!**
 
+
+
+
+
+

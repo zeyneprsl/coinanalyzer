@@ -69,3 +69,8 @@ Eğer sadece test etmek istiyorsanız, `main.py`'yi çalıştırıp birkaç daki
 - Gerekli paketler yüklü mü? `pip install -r requirements.txt`
 - WebSocket bağlantısı çalışıyor mu? Terminal'de hata mesajı var mı kontrol edin
 
+
+
+
+
+

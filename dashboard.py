@@ -10,6 +10,7 @@ import time
 from datetime import datetime
 import subprocess
 import threading
+from correlation_change_tracker import CorrelationChangeTracker
 
 # Sayfa yapılandırması
 st.set_page_config(
@@ -478,36 +479,21 @@ if page == "Ana Sayfa":
         
         pv_data = load_json_file('price_volume_analysis.json')
         if pv_data:
-            # Yeni format kontrolü (CoinGecko - analyses array)
-            if isinstance(pv_data, dict) and 'analyses' in pv_data:
-                # Yeni format: CoinGecko'dan gelen basit format
-                df_pv = pd.DataFrame(pv_data['analyses'])
-                if 'symbol' in df_pv.columns:
-                    df_pv['coin'] = df_pv['symbol']
-                # CoinGecko formatında correlation yok, sadece price_change_24h var
-                df_pv['correlation'] = 0  # CoinGecko formatında correlation hesaplanmıyor
-                df_pv['volume_increase_on_price_up_pct'] = 0
-                df_pv['avg_volume_change_on_price_up'] = 0
-                df_pv['abs_correlation'] = 0
-            else:
-                # Eski format: correlation_analyzer'dan gelen format
-                df_pv = pd.DataFrame([
-                    {
-                        'coin': coin,
-                        'correlation': stats.get('correlation', 0),
-                        'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
-                        'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
-                    }
-                    for coin, stats in pv_data.items()
-                ])
+            # Binance formatı: correlation_analyzer'dan gelen format
+            df_pv = pd.DataFrame([
+                {
+                    'coin': coin,
+                    'correlation': stats.get('correlation', 0),
+                    'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
+                    'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
+                }
+                for coin, stats in pv_data.items()
+            ])
             if 'abs_correlation' not in df_pv.columns:
                 df_pv['abs_correlation'] = df_pv['correlation'].abs()
             
-            # CoinGecko formatında farklı sıralama
-            if 'price_change_24h' in df_pv.columns:
-                df_pv_sorted = df_pv.sort_values('price_change_24h', ascending=False, key=abs)
-            else:
-                df_pv_sorted = df_pv.sort_values('abs_correlation', ascending=False)
+            # Korelasyona göre sırala
+            df_pv_sorted = df_pv.sort_values('abs_correlation', ascending=False)
             
             # Özet metrikler
             col1, col2, col3, col4 = st.columns(4)
@@ -985,6 +971,15 @@ elif page == "Korelasyon Analizi":
                                     # Korelasyon matrisini CSV olarak kaydet
                                     correlation_matrix.to_csv('realtime_correlation_matrix.csv')
                                     
+                                    # Korelasyon değişiklik takibini yap
+                                    try:
+                                        tracker = CorrelationChangeTracker()
+                                        changes = tracker.analyze_and_save(high_corr)
+                                        if changes:
+                                            st.info(f"📊 {len(changes)} korelasyon değişikliği tespit edildi ve kaydedildi.")
+                                    except Exception as e:
+                                        st.warning(f"⚠️ Korelasyon değişiklik takibi yapılamadı: {e}")
+                                    
                                     st.success(f"✅ Korelasyon hesaplandı! {len(high_corr)} yüksek korelasyon çifti bulundu.")
                                     st.info(f"💡 Son {time_period} {time_unit.lower()} içinde {n_data_points} veri noktası kullanıldı.")
                                     st.rerun()
@@ -1141,6 +1136,15 @@ elif page == "Korelasyon Analizi":
                                             
                                             correlation_matrix.to_csv('realtime_correlation_matrix.csv')
                                             
+                                            # Korelasyon değişiklik takibini yap
+                                            try:
+                                                tracker = CorrelationChangeTracker()
+                                                changes = tracker.analyze_and_save(high_corr)
+                                                if changes:
+                                                    st.info(f"📊 {len(changes)} korelasyon değişikliği tespit edildi ve kaydedildi.")
+                                            except Exception as e:
+                                                st.warning(f"⚠️ Korelasyon değişiklik takibi yapılamadı: {e}")
+                                            
                                             st.success(f"✅ Korelasyon hesaplandı! {len(high_corr)} yüksek korelasyon çifti bulundu.")
                                             st.info(f"📊 Son {time_period} {time_unit.lower()} içindeki {n_data_points} veri noktası kullanıldı.")
                                             st.info("💡 Sayfayı yenileyerek sonuçları görebilirsiniz.")
@@ -1250,6 +1254,15 @@ elif page == "Korelasyon Analizi":
                                         json.dump(result_data, f, indent=2, ensure_ascii=False)
                                     
                                     correlation_matrix.to_csv('realtime_correlation_matrix.csv')
+                                    
+                                    # Korelasyon değişiklik takibini yap
+                                    try:
+                                        tracker = CorrelationChangeTracker()
+                                        changes = tracker.analyze_and_save(high_corr)
+                                        if changes:
+                                            st.info(f"📊 {len(changes)} korelasyon değişikliği tespit edildi ve kaydedildi.")
+                                    except Exception as e:
+                                        st.warning(f"⚠️ Korelasyon değişiklik takibi yapılamadı: {e}")
                                     
                                     st.success(f"✅ Korelasyon hesaplandı! {len(high_corr)} yüksek korelasyon çifti bulundu.")
                                     st.info("💡 Sayfayı yenileyerek sonuçları görebilirsiniz.")
@@ -1994,30 +2007,18 @@ elif page == "Fiyat-Volume Analizi":
         st.stop()
     
     if pv_data:
-        # Yeni format kontrolü (CoinGecko - analyses array)
-        if isinstance(pv_data, dict) and 'analyses' in pv_data:
-            # Yeni format: CoinGecko'dan gelen basit format
-            df_pv = pd.DataFrame(pv_data['analyses'])
-            if 'symbol' in df_pv.columns:
-                df_pv['coin'] = df_pv['symbol']
-            df_pv['correlation'] = 0
-            df_pv['abs_correlation'] = 0
-            df_pv['data_points'] = 1
-            df_pv['volume_increase_on_price_up_pct'] = 0
-            df_pv['avg_volume_change_on_price_up'] = 0
-        else:
-            # Eski format: correlation_analyzer'dan gelen format
-            df_pv = pd.DataFrame([
-                {
-                    'coin': coin,
-                    'correlation': stats.get('correlation', 0),
-                    'abs_correlation': stats.get('abs_correlation', 0),
-                    'data_points': stats.get('data_points', 0),
-                    'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
-                    'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
-                }
-                for coin, stats in pv_data.items()
-            ])
+        # Binance formatı: correlation_analyzer'dan gelen format
+        df_pv = pd.DataFrame([
+            {
+                'coin': coin,
+                'correlation': stats.get('correlation', 0),
+                'abs_correlation': stats.get('abs_correlation', 0),
+                'data_points': stats.get('data_points', 0),
+                'volume_increase_on_price_up_pct': stats.get('volume_increase_on_price_up_pct', 0),
+                'avg_volume_change_on_price_up': stats.get('avg_volume_change_on_price_up', 0)
+            }
+            for coin, stats in pv_data.items()
+        ])
         
         # Filtreleme
         threshold = st.slider(
@@ -2035,10 +2036,23 @@ elif page == "Fiyat-Volume Analizi":
         
         # Metrikler
         col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Toplam Coin", len(df_pv))
-        col2.metric("Ortalama Korelasyon", f"{df_pv['correlation'].mean():.3f}")
-        col3.metric("Güçlü Pozitif (>0.5)", len(df_pv[df_pv['correlation'] > 0.5]))
-        col4.metric("Fiyat↑'da Vol↑ Ort.%", f"{df_pv['volume_increase_on_price_up_pct'].mean():.2f}%")
+        total_coins = len(df_pv)
+        avg_correlation = df_pv['correlation'].mean() if len(df_pv) > 0 else 0
+        strong_positive = len(df_pv[df_pv['correlation'] > 0.5]) if len(df_pv) > 0 else 0
+        avg_volume_increase = df_pv['volume_increase_on_price_up_pct'].mean() if len(df_pv) > 0 else 0
+        
+        col1.metric("📊 Toplam Coin", f"{total_coins:,}")
+        col2.metric("📈 Ortalama Korelasyon", f"{avg_correlation:.3f}")
+        col3.metric("✅ Güçlü Pozitif (>0.5)", f"{strong_positive:,}")
+        col4.metric("💹 Fiyat↑'da Vol↑ Ort.%", f"{avg_volume_increase:.2f}%")
+        
+        # Bilgi mesajı
+        st.info(f"""
+        **📌 Analiz Bilgileri:**
+        - **{total_coins:,} coin** analiz edildi (Binance USDT çiftleri)
+        - Veri kaynağı: Binance WebSocket gerçek zamanlı veriler
+        - Analiz zamanı: {pv_data.get('timestamp', 'Bilinmiyor')}
+        """)
         
         # Grafikler
         col1, col2 = st.columns(2)
@@ -2309,25 +2323,46 @@ elif page == "Ani Değişim Analizi":
                 # Yeni format: sadece tetiklenen coinler
                 df_sudden = df_sudden[df_sudden['triggered'] == True].sort_values('price_change_24h', key=abs, ascending=False)
                 
+                # Toplam coin sayısı (sudden_data'dan)
+                total_coins_analyzed = len(sudden_data)
+                triggered_coins = len(df_sudden)
+                
                 # Metrikler (yeni format)
                 col1, col2, col3, col4 = st.columns(4)
-                col1.metric("Tetiklenen Coin Sayısı", len(df_sudden))
-                col2.metric("Ortalama Fiyat Değişimi", f"{df_sudden['price_change_24h'].mean():.2f}%")
-                col3.metric("Toplam Volume", f"{df_sudden['volume_24h'].sum()/1e9:.2f}B" if df_sudden['volume_24h'].sum() > 1e9 else f"{df_sudden['volume_24h'].sum()/1e6:.2f}M")
-                col4.metric("Pozitif Değişim", len(df_sudden[df_sudden['price_change_24h'] > 0]))
+                col1.metric("📊 Toplam Analiz Edilen Coin", f"{total_coins_analyzed:,}")
+                col2.metric("⚡ Tetiklenen Coin Sayısı", f"{triggered_coins:,}")
+                col3.metric("📈 Ortalama Fiyat Değişimi", f"{df_sudden['price_change_24h'].mean():.2f}%" if len(df_sudden) > 0 else "N/A")
+                col4.metric("💹 Pozitif Değişim", f"{len(df_sudden[df_sudden['price_change_24h'] > 0]):,}" if len(df_sudden) > 0 else "0")
+                
+                # Bilgi mesajı
+                st.info(f"""
+                **📌 Analiz Bilgileri:**
+                - **{total_coins_analyzed:,} coin** analiz edildi (Binance USDT çiftleri)
+                - **{triggered_coins:,} coin** %{selected_threshold} eşiğini aştı (ani değişim)
+                - Veri kaynağı: Binance WebSocket gerçek zamanlı veriler
+                - Analiz zamanı: {load_json_file('sudden_price_volume_analysis.json').get('timestamp', 'Bilinmiyor') if isinstance(load_json_file('sudden_price_volume_analysis.json'), dict) else 'Bilinmiyor'}
+                """)
             else:
                 # Eski format: detaylı istatistikler
                 df_sudden = df_sudden[df_sudden['total_sudden'] > 0].sort_values('total_sudden', ascending=False)
                 
+                # Toplam coin sayısı (sudden_data'dan)
+                total_coins_analyzed = len(sudden_data)
+                
                 # Metrikler (eski format)
                 col1, col2, col3, col4 = st.columns(4)
-                col1.metric("Toplam Ani Değişim", df_sudden['total_sudden'].sum())
-                col2.metric("Ani Yükseliş", df_sudden['sudden_up_count'].sum())
-                col3.metric("Ani Düşüş", df_sudden['sudden_down_count'].sum())
-                if len(df_sudden[df_sudden['sudden_up_count']>0]) > 0:
-                    col4.metric("Yükselişte Vol↑ Ort.%", f"{df_sudden[df_sudden['sudden_up_count']>0]['up_vol_increase_pct'].mean():.2f}%")
-                else:
-                    col4.metric("Yükselişte Vol↑ Ort.%", "N/A")
+                col1.metric("📊 Toplam Analiz Edilen Coin", f"{total_coins_analyzed:,}")
+                col2.metric("⚡ Toplam Ani Değişim", f"{df_sudden['total_sudden'].sum():,}")
+                col3.metric("📈 Ani Yükseliş", f"{df_sudden['sudden_up_count'].sum():,}")
+                col4.metric("📉 Ani Düşüş", f"{df_sudden['sudden_down_count'].sum():,}")
+                
+                # Bilgi mesajı
+                st.info(f"""
+                **📌 Analiz Bilgileri:**
+                - **{total_coins_analyzed:,} coin** analiz edildi (Binance USDT çiftleri)
+                - **{len(df_sudden)} coin** ani değişim gösterdi
+                - Veri kaynağı: Binance WebSocket gerçek zamanlı veriler
+                """)
             
             # Grafikler
             if 'triggered' in df_sudden.columns:
@@ -2456,10 +2491,11 @@ elif page == "Korelasyon Değişiklikleri":
     
     st.info("""
     **Bu sayfa, coinler arasındaki korelasyon değişikliklerini gösterir.**
-    - Her **30 dakikalık** analizde önceki analizle karşılaştırma yapılır
+    - Dashboard'da **"Korelasyon Analizi"** sayfasında korelasyon hesaplandığında otomatik olarak değişiklik takibi yapılır
     - Yüksek korelasyonlu çiftlerin korelasyonu düşerse veya artarsa burada görünür
     - Yeni yüksek korelasyonlu çiftler veya kaybolan yüksek korelasyonlar takip edilir
     - Son **30 günlük** değişiklikler saklanır ve gösterilir (daha eski kayıtlar otomatik temizlenir)
+    - **Önemli değişiklikler** (≥%10 değişim) otomatik olarak kaydedilir
     """)
     
     # Değişiklik geçmişini yükle (dosya yoksa oluştur)
@@ -2594,15 +2630,17 @@ elif page == "Korelasyon Değişiklikleri":
             else:
                 st.warning("Seçilen filtrelerle eşleşen değişiklik bulunamadı.")
         else:
-            st.warning("⚠️  Henüz korelasyon değişikliği kaydedilmemiş. Birkaç analiz döngüsü sonrası veriler görünecektir.")
+            st.warning("⚠️  Henüz korelasyon değişikliği kaydedilmemiş.")
             
             st.info("""
             **Nasıl Çalışır?**
-            1. `main.py` çalıştırıldığında her **30 dakikada** bir analiz yapılır
-            2. Her analizde önceki analizle karşılaştırma yapılır
+            1. **"Korelasyon Analizi"** sayfasında korelasyon hesaplandığında otomatik olarak değişiklik takibi yapılır
+            2. Her korelasyon hesaplamasında önceki korelasyonlarla karşılaştırma yapılır
             3. Önemli değişiklikler (≥%10) otomatik kaydedilir
             4. Son **30 günlük** değişiklikler bu sayfada görüntülenir
             5. Daha eski kayıtlar otomatik olarak temizlenir
+            
+            **💡 İlk korelasyon hesaplamasından sonra değişiklikler görünmeye başlar.**
             """)
 
 # ==================== COIN ARAMA ====================

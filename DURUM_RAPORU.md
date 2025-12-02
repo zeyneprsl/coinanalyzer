@@ -113,3 +113,8 @@ python main.py
 
 En pratik çözüm: Lokal bilgisayarınızda `main.py`'yi çalıştırın ve sonuçları GitHub'a pushlayın. Böylece Streamlit Cloud'da herkes gerçek verileri görebilir.
 
+
+
+
+
+

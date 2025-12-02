@@ -94,3 +94,8 @@ Eğer Railway'de worker servisi başarıyla çalışıyorsa:
 
 Streamlit Cloud logs'da `use_container_width` uyarıları görünüyor. Bunlar kritik değil, sadece deprecation uyarıları. Dashboard çalışıyor, sorun değil. İsterseniz sonra düzeltebiliriz.
 
+
+
+
+
+
