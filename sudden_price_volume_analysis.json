@@ -1,45 +1,19 @@
 {
-  "timestamp": "2025-12-02 15:50:35",
+  "timestamp": "2026-01-24 04:53:16",
   "source": "Binance REST API",
   "exchange": "Binance",
   "quote_currency": "USDT",
   "pair_type": "USDT çiftleri",
-  "total_pairs_available": 440,
-  "total_analyzed": 440,
-  "triggered_coins": 294,
+  "total_pairs_available": 445,
+  "total_analyzed": 445,
+  "triggered_coins": 275,
   "analyses": {
-    "BTCUSDT": {
-      "coin": "BTCUSDT",
-      "price": 87339.15,
-      "price_change_24h": 2.598,
-      "volume": 23458.17174,
-      "quote_volume": 2016331980.0998857,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "BNBUSDT": {
-      "coin": "BNBUSDT",
-      "price": 841.81,
-      "price_change_24h": 2.869,
-      "volume": 211488.009,
-      "quote_volume": 174194949.02986,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
     "NEOUSDT": {
       "coin": "NEOUSDT",
-      "price": 4.058,
-      "price_change_24h": 2.656,
-      "volume": 433206.53,
-      "quote_volume": 1737928.23687,
+      "price": 3.662,
+      "price_change_24h": -2.632,
+      "volume": 256867.69,
+      "quote_volume": 946645.70824,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -49,36 +23,22 @@
     },
     "LTCUSDT": {
       "coin": "LTCUSDT",
-      "price": 78.42,
-      "price_change_24h": 2.859,
-      "volume": 404637.869,
-      "quote_volume": 31057002.23671,
+      "price": 68.67,
+      "price_change_24h": -1.038,
+      "volume": 355857.828,
+      "quote_volume": 24285469.44587,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
-    "ADAUSDT": {
-      "coin": "ADAUSDT",
-      "price": 0.3946,
-      "price_change_24h": 4.863,
-      "volume": 111489631.5,
-      "quote_volume": 42684668.48978,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "XRPUSDT": {
-      "coin": "XRPUSDT",
-      "price": 2.0339,
-      "price_change_24h": 1.068,
-      "volume": 118141168.8,
-      "quote_volume": 238407934.76809,
+    "QTUMUSDT": {
+      "coin": "QTUMUSDT",
+      "price": 1.287,
+      "price_change_24h": -1.606,
+      "volume": 666055.2,
+      "quote_volume": 853967.5719,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -87,35 +47,22 @@
     },
     "IOTAUSDT": {
       "coin": "IOTAUSDT",
-      "price": 0.099,
-      "price_change_24h": 1.957,
-      "volume": 27259897.0,
-      "quote_volume": 2650771.0928,
+      "price": 0.0889,
+      "price_change_24h": -1.112,
+      "volume": 16656291.0,
+      "quote_volume": 1476286.7086,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
-    },
-    "XLMUSDT": {
-      "coin": "XLMUSDT",
-      "price": 0.2357,
-      "price_change_24h": 3.377,
-      "volume": 39829260.0,
-      "quote_volume": 9229916.7551,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
     },
     "ONTUSDT": {
       "coin": "ONTUSDT",
-      "price": 0.0683,
-      "price_change_24h": 3.957,
-      "volume": 8277713.0,
-      "quote_volume": 553349.3546,
+      "price": 0.0577,
+      "price_change_24h": -3.025,
+      "volume": 3732544.0,
+      "quote_volume": 218578.1104,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -123,24 +70,12 @@
       ],
       "max_threshold": 2.0
     },
-    "ETCUSDT": {
-      "coin": "ETCUSDT",
-      "price": 13.04,
-      "price_change_24h": 1.875,
-      "volume": 374167.55,
-      "quote_volume": 4825217.3908,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "ICXUSDT": {
-      "coin": "ICXUSDT",
-      "price": 0.0643,
-      "price_change_24h": 2.716,
-      "volume": 3021732.7,
-      "quote_volume": 192640.29842,
+    "TRXUSDT": {
+      "coin": "TRXUSDT",
+      "price": 0.2974,
+      "price_change_24h": -3.536,
+      "volume": 250366186.2,
+      "quote_volume": 75600171.72569,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -150,23 +85,22 @@
     },
     "VETUSDT": {
       "coin": "VETUSDT",
-      "price": 0.01256,
-      "price_change_24h": 4.146,
-      "volume": 276417475.4,
-      "quote_volume": 3399165.050056,
+      "price": 0.01028,
+      "price_change_24h": -1.627,
+      "volume": 224106406.3,
+      "quote_volume": 2310561.827941,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "LINKUSDT": {
       "coin": "LINKUSDT",
       "price": 12.25,
-      "price_change_24h": 1.998,
-      "volume": 3801698.31,
-      "quote_volume": 45715491.1591,
+      "price_change_24h": -1.05,
+      "volume": 1581798.47,
+      "quote_volume": 19377204.0304,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -175,10 +109,22 @@
     },
     "HOTUSDT": {
       "coin": "HOTUSDT",
-      "price": 0.000505,
-      "price_change_24h": 2.227,
-      "volume": 918782736.0,
-      "quote_volume": 456572.018259,
+      "price": 0.00048,
+      "price_change_24h": -1.437,
+      "volume": 315360090.0,
+      "quote_volume": 151511.020669,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ZILUSDT": {
+      "coin": "ZILUSDT",
+      "price": 0.00495,
+      "price_change_24h": -2.174,
+      "volume": 61906344.5,
+      "quote_volume": 308114.712305,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -186,24 +132,25 @@
       ],
       "max_threshold": 2.0
     },
-    "ZILUSDT": {
-      "coin": "ZILUSDT",
-      "price": 0.00522,
-      "price_change_24h": 1.556,
-      "volume": 141278779.5,
-      "quote_volume": 730146.180504,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
     "ZRXUSDT": {
       "coin": "ZRXUSDT",
-      "price": 0.1469,
-      "price_change_24h": 1.661,
-      "volume": 2955368.0,
-      "quote_volume": 430594.8157,
+      "price": 0.1285,
+      "price_change_24h": 2.554,
+      "volume": 2879260.0,
+      "quote_volume": 364391.4886,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "FETUSDT": {
+      "coin": "FETUSDT",
+      "price": 0.2356,
+      "price_change_24h": -1.956,
+      "volume": 21922374.8,
+      "quote_volume": 5174244.47487,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -212,10 +159,10 @@
     },
     "BATUSDT": {
       "coin": "BATUSDT",
-      "price": 0.244,
-      "price_change_24h": -4.947,
-      "volume": 26584352.0,
-      "quote_volume": 6605595.0805,
+      "price": 0.1841,
+      "price_change_24h": -3.258,
+      "volume": 6710748.0,
+      "quote_volume": 1247412.7861,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -225,36 +172,10 @@
     },
     "ZECUSDT": {
       "coin": "ZECUSDT",
-      "price": 324.42,
-      "price_change_24h": -6.434,
-      "volume": 997965.997,
-      "quote_volume": 338927004.98392,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "IOSTUSDT": {
-      "coin": "IOSTUSDT",
-      "price": 0.002232,
-      "price_change_24h": 1.041,
-      "volume": 1329375713.0,
-      "quote_volume": 2987625.433718,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "CELRUSDT": {
-      "coin": "CELRUSDT",
-      "price": 0.00408,
-      "price_change_24h": 3.187,
-      "volume": 79560393.2,
-      "quote_volume": 317337.3749223,
+      "price": 375.25,
+      "price_change_24h": 2.992,
+      "volume": 162265.009,
+      "quote_volume": 59574740.68959,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -264,97 +185,22 @@
     },
     "DASHUSDT": {
       "coin": "DASHUSDT",
-      "price": 46.52,
-      "price_change_24h": -2.942,
-      "volume": 292365.881,
-      "quote_volume": 13994520.26406,
+      "price": 65.96,
+      "price_change_24h": 1.088,
+      "volume": 844694.173,
+      "quote_volume": 58229082.77727,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "THETAUSDT": {
       "coin": "THETAUSDT",
-      "price": 0.322,
-      "price_change_24h": 4.545,
-      "volume": 6510488.5,
-      "quote_volume": 2028338.3046,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "ATOMUSDT": {
-      "coin": "ATOMUSDT",
-      "price": 2.272,
-      "price_change_24h": 1.929,
-      "volume": 2058321.76,
-      "quote_volume": 4592612.73469,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "TFUELUSDT": {
-      "coin": "TFUELUSDT",
-      "price": 0.02037,
-      "price_change_24h": 2.105,
-      "volume": 21754284.0,
-      "quote_volume": 434738.02134,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "ONEUSDT": {
-      "coin": "ONEUSDT",
-      "price": 0.00373,
-      "price_change_24h": 1.084,
-      "volume": 135919297.5,
-      "quote_volume": 506083.443157,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "ALGOUSDT": {
-      "coin": "ALGOUSDT",
-      "price": 0.1317,
-      "price_change_24h": 1.856,
-      "volume": 28943646.0,
-      "quote_volume": 3760108.7703,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "DOGEUSDT": {
-      "coin": "DOGEUSDT",
-      "price": 0.13705,
-      "price_change_24h": 1.451,
-      "volume": 683732330.0,
-      "quote_volume": 92118928.82313,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "DUSKUSDT": {
-      "coin": "DUSKUSDT",
-      "price": 0.0429,
-      "price_change_24h": -5.088,
-      "volume": 12499450.0,
-      "quote_volume": 552428.0577,
+      "price": 0.298,
+      "price_change_24h": -5.397,
+      "volume": 4637874.9,
+      "quote_volume": 1402133.3165,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -363,51 +209,79 @@
       ],
       "max_threshold": 5.0
     },
+    "ENJUSDT": {
+      "coin": "ENJUSDT",
+      "price": 0.03055,
+      "price_change_24h": -6.461,
+      "volume": 13239906.9,
+      "quote_volume": 414725.713317,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "max_threshold": 5.0
+    },
+    "ATOMUSDT": {
+      "coin": "ATOMUSDT",
+      "price": 2.355,
+      "price_change_24h": -1.916,
+      "volume": 995997.72,
+      "quote_volume": 2361978.55513,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ONEUSDT": {
+      "coin": "ONEUSDT",
+      "price": 0.00364,
+      "price_change_24h": -2.413,
+      "volume": 64540724.1,
+      "quote_volume": 234980.860371,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "ALGOUSDT": {
+      "coin": "ALGOUSDT",
+      "price": 0.1201,
+      "price_change_24h": -2.595,
+      "volume": 22396622.0,
+      "quote_volume": 2704636.296,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "DUSKUSDT": {
+      "coin": "DUSKUSDT",
+      "price": 0.1527,
+      "price_change_24h": -12.241,
+      "volume": 83522850.0,
+      "quote_volume": 13355937.2819,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
     "ANKRUSDT": {
       "coin": "ANKRUSDT",
-      "price": 0.00756,
-      "price_change_24h": 2.439,
-      "volume": 53705053.4,
-      "quote_volume": 401103.09565,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "MTLUSDT": {
-      "coin": "MTLUSDT",
-      "price": 0.402,
-      "price_change_24h": 3.077,
-      "volume": 362387.4,
-      "quote_volume": 144399.5751,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "DENTUSDT": {
-      "coin": "DENTUSDT",
-      "price": 0.000258,
-      "price_change_24h": -4.444,
-      "volume": 4515196777.0,
-      "quote_volume": 1207188.439098,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "WANUSDT": {
-      "coin": "WANUSDT",
-      "price": 0.0677,
-      "price_change_24h": 1.045,
-      "volume": 2890366.0,
-      "quote_volume": 194016.5657,
+      "price": 0.00636,
+      "price_change_24h": -1.548,
+      "volume": 58611439.4,
+      "quote_volume": 374834.871489,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -416,24 +290,23 @@
     },
     "FUNUSDT": {
       "coin": "FUNUSDT",
-      "price": 0.002217,
-      "price_change_24h": -6.298,
-      "volume": 860858080.0,
-      "quote_volume": 1992567.68362,
+      "price": 0.001497,
+      "price_change_24h": -4.467,
+      "volume": 648804410.0,
+      "quote_volume": 984864.369505,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "CHZUSDT": {
       "coin": "CHZUSDT",
-      "price": 0.029,
-      "price_change_24h": 2.437,
-      "volume": 54596517.0,
-      "quote_volume": 1561942.88796,
+      "price": 0.05044,
+      "price_change_24h": -3.722,
+      "volume": 111401133.0,
+      "quote_volume": 5635486.97805,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -443,37 +316,47 @@
     },
     "BANDUSDT": {
       "coin": "BANDUSDT",
-      "price": 0.443,
-      "price_change_24h": 12.723,
-      "volume": 14760362.7,
-      "quote_volume": 6790934.8304,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
-      ],
-      "max_threshold": 10.0
-    },
-    "RVNUSDT": {
-      "coin": "RVNUSDT",
-      "price": 0.0076,
-      "price_change_24h": -1.17,
-      "volume": 100103266.1,
-      "quote_volume": 765032.911466,
+      "price": 0.305,
+      "price_change_24h": -1.613,
+      "volume": 983657.9,
+      "quote_volume": 302208.2462,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "HBARUSDT": {
-      "coin": "HBARUSDT",
-      "price": 0.13392,
-      "price_change_24h": 2.338,
-      "volume": 132001434.0,
-      "quote_volume": 17491964.86017,
+    "XTZUSDT": {
+      "coin": "XTZUSDT",
+      "price": 0.5763,
+      "price_change_24h": -2.882,
+      "volume": 4991021.5,
+      "quote_volume": 2931847.875,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "RVNUSDT": {
+      "coin": "RVNUSDT",
+      "price": 0.00682,
+      "price_change_24h": -1.445,
+      "volume": 43405718.2,
+      "quote_volume": 295594.255597,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "NKNUSDT": {
+      "coin": "NKNUSDT",
+      "price": 0.0123,
+      "price_change_24h": -2.381,
+      "volume": 4019751.0,
+      "quote_volume": 49637.3122,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -483,70 +366,23 @@
     },
     "STXUSDT": {
       "coin": "STXUSDT",
-      "price": 0.285,
-      "price_change_24h": 1.858,
-      "volume": 4240987.2,
-      "quote_volume": 1190177.23161,
+      "price": 0.3096,
+      "price_change_24h": -4.415,
+      "volume": 5147499.5,
+      "quote_volume": 1614241.36835,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 2.0
     },
-    "KAVAUSDT": {
-      "coin": "KAVAUSDT",
-      "price": 0.1162,
-      "price_change_24h": 1.573,
-      "volume": 5670490.3,
-      "quote_volume": 650961.31824,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "IOTXUSDT": {
-      "coin": "IOTXUSDT",
-      "price": 0.00797,
-      "price_change_24h": -1.483,
-      "volume": 125117405.0,
-      "quote_volume": 996073.70041,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "RLCUSDT": {
-      "coin": "RLCUSDT",
-      "price": 0.681,
-      "price_change_24h": 1.946,
-      "volume": 648744.3,
-      "quote_volume": 440003.0132,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "BCHUSDT": {
-      "coin": "BCHUSDT",
-      "price": 530.7,
-      "price_change_24h": 1.92,
-      "volume": 60299.778,
-      "quote_volume": 31463933.0985,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "FTTUSDT": {
-      "coin": "FTTUSDT",
-      "price": 0.5205,
-      "price_change_24h": -5.689,
-      "volume": 1531856.09,
-      "quote_volume": 808527.877592,
+    "ARPAUSDT": {
+      "coin": "ARPAUSDT",
+      "price": 0.01351,
+      "price_change_24h": -7.782,
+      "volume": 162874901.9,
+      "quote_volume": 2304492.220356,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -555,53 +391,75 @@
       ],
       "max_threshold": 5.0
     },
-    "LSKUSDT": {
-      "coin": "LSKUSDT",
-      "price": 0.221,
-      "price_change_24h": -2.212,
-      "volume": 23947774.2,
-      "quote_volume": 5427025.335,
+    "IOTXUSDT": {
+      "coin": "IOTXUSDT",
+      "price": 0.0079,
+      "price_change_24h": -1.003,
+      "volume": 28593695.0,
+      "quote_volume": 226917.55266,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
-    "MBLUSDT": {
-      "coin": "MBLUSDT",
-      "price": 0.001431,
-      "price_change_24h": -11.721,
-      "volume": 4355306238.0,
-      "quote_volume": 7027671.147098,
+    "FTTUSDT": {
+      "coin": "FTTUSDT",
+      "price": 0.4525,
+      "price_change_24h": -5.057,
+      "volume": 848625.36,
+      "quote_volume": 398114.357263,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0,
-        5.0,
-        10.0
+        5.0
       ],
-      "max_threshold": 10.0
+      "max_threshold": 5.0
     },
     "COTIUSDT": {
       "coin": "COTIUSDT",
-      "price": 0.02506,
-      "price_change_24h": -2.109,
-      "volume": 34639154.0,
-      "quote_volume": 869395.04303,
+      "price": 0.01893,
+      "price_change_24h": -3.664,
+      "volume": 32124425.0,
+      "quote_volume": 612389.91013,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0
       ],
       "max_threshold": 2.0
+    },
+    "DATAUSDT": {
+      "coin": "DATAUSDT",
+      "price": 0.004,
+      "price_change_24h": 1.266,
+      "volume": 107241613.5,
+      "quote_volume": 421316.690858,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
     },
     "SOLUSDT": {
       "coin": "SOLUSDT",
-      "price": 128.77,
-      "price_change_24h": 2.101,
-      "volume": 3605384.746,
-      "quote_volume": 453958718.93928,
+      "price": 127.81,
+      "price_change_24h": -1.038,
+      "volume": 1964108.064,
+      "quote_volume": 250816652.35549,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "CHRUSDT": {
+      "coin": "CHRUSDT",
+      "price": 0.0406,
+      "price_change_24h": -2.169,
+      "volume": 8089544.0,
+      "quote_volume": 331689.6877,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -609,36 +467,38 @@
       ],
       "max_threshold": 2.0
     },
-    "HIVEUSDT": {
-      "coin": "HIVEUSDT",
-      "price": 0.1011,
-      "price_change_24h": 1.506,
-      "volume": 2061196.0,
-      "quote_volume": 206693.5867,
+    "MDTUSDT": {
+      "coin": "MDTUSDT",
+      "price": 0.01263,
+      "price_change_24h": -2.017,
+      "volume": 17515523.3,
+      "quote_volume": 222645.734106,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 2.0
+    },
+    "LRCUSDT": {
+      "coin": "LRCUSDT",
+      "price": 0.0487,
+      "price_change_24h": -2.988,
+      "volume": 6588264.0,
+      "quote_volume": 324335.5294,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
     },
     "COMPUSDT": {
       "coin": "COMPUSDT",
-      "price": 34.1,
-      "price_change_24h": -1.899,
-      "volume": 445113.209,
-      "quote_volume": 15675185.19186,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "SCUSDT": {
-      "coin": "SCUSDT",
-      "price": 0.001624,
-      "price_change_24h": 2.59,
-      "volume": 195597577.0,
-      "quote_volume": 316065.953023,
+      "price": 24.12,
+      "price_change_24h": -2.938,
+      "volume": 46320.663,
+      "quote_volume": 1125051.2407,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -646,51 +506,36 @@
       ],
       "max_threshold": 2.0
     },
-    "ZENUSDT": {
-      "coin": "ZENUSDT",
-      "price": 9.645,
-      "price_change_24h": 1.966,
-      "volume": 853383.81,
-      "quote_volume": 8211302.92472,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
     "VTHOUSDT": {
       "coin": "VTHOUSDT",
-      "price": 0.000936,
-      "price_change_24h": 1.189,
-      "volume": 272845839.0,
-      "quote_volume": 254555.929306,
+      "price": 0.000782,
+      "price_change_24h": 1.558,
+      "volume": 228391532.0,
+      "quote_volume": 176843.80207,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "SXPUSDT": {
-      "coin": "SXPUSDT",
-      "price": 0.0476,
-      "price_change_24h": -20.0,
-      "volume": 55017952.0,
-      "quote_volume": 2915210.23061,
+    "DGBUSDT": {
+      "coin": "DGBUSDT",
+      "price": 0.00606,
+      "price_change_24h": -1.303,
+      "volume": 37380369.2,
+      "quote_volume": 228384.336705,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
+        1.0
       ],
-      "max_threshold": 10.0
+      "max_threshold": 1.0
     },
     "DCRUSDT": {
       "coin": "DCRUSDT",
-      "price": 18.34,
-      "price_change_24h": -5.464,
-      "volume": 56194.876,
-      "quote_volume": 1055538.25767,
+      "price": 19.06,
+      "price_change_24h": -5.221,
+      "volume": 76963.976,
+      "quote_volume": 1519534.62769,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -701,518 +546,10 @@
     },
     "MANAUSDT": {
       "coin": "MANAUSDT",
-      "price": 0.1509,
-      "price_change_24h": 1.685,
-      "volume": 13157423.0,
-      "quote_volume": 1968271.1939,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "YFIUSDT": {
-      "coin": "YFIUSDT",
-      "price": 3657.0,
-      "price_change_24h": -4.617,
-      "volume": 519.23431,
-      "quote_volume": 1933794.40933,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "JSTUSDT": {
-      "coin": "JSTUSDT",
-      "price": 0.04343,
-      "price_change_24h": 1.972,
-      "volume": 168002997.1,
-      "quote_volume": 7323217.820366,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "SANDUSDT": {
-      "coin": "SANDUSDT",
-      "price": 0.1414,
-      "price_change_24h": 1.217,
-      "volume": 10597082.0,
-      "quote_volume": 1490953.2768,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "DOTUSDT": {
-      "coin": "DOTUSDT",
-      "price": 2.085,
-      "price_change_24h": 3.577,
-      "volume": 7124660.76,
-      "quote_volume": 14450756.89462,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "LUNAUSDT": {
-      "coin": "LUNAUSDT",
-      "price": 0.0687,
-      "price_change_24h": 3.464,
-      "volume": 11537009.41,
-      "quote_volume": 777271.221536,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "RSRUSDT": {
-      "coin": "RSRUSDT",
-      "price": 0.003057,
-      "price_change_24h": 3.138,
-      "volume": 351640171.4,
-      "quote_volume": 1051963.1846267,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "PAXGUSDT": {
-      "coin": "PAXGUSDT",
-      "price": 4211.6,
-      "price_change_24h": -1.281,
-      "volume": 17428.4014,
-      "quote_volume": 73881727.743875,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "KSMUSDT": {
-      "coin": "KSMUSDT",
-      "price": 7.92,
-      "price_change_24h": 1.149,
-      "volume": 75073.242,
-      "quote_volume": 592913.68097,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "EGLDUSDT": {
-      "coin": "EGLDUSDT",
-      "price": 7.18,
-      "price_change_24h": 7.485,
-      "volume": 185489.43,
-      "quote_volume": 1277527.312,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "RUNEUSDT": {
-      "coin": "RUNEUSDT",
-      "price": 0.616,
-      "price_change_24h": 3.356,
-      "volume": 5345661.9,
-      "quote_volume": 3202480.6397,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "FIOUSDT": {
-      "coin": "FIOUSDT",
-      "price": 0.01036,
-      "price_change_24h": 1.969,
-      "volume": 39287618.0,
-      "quote_volume": 400508.3318,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "UMAUSDT": {
-      "coin": "UMAUSDT",
-      "price": 0.778,
-      "price_change_24h": 1.039,
-      "volume": 833103.8,
-      "quote_volume": 648970.7351,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "BELUSDT": {
-      "coin": "BELUSDT",
-      "price": 0.1394,
-      "price_change_24h": 2.575,
-      "volume": 3976713.8,
-      "quote_volume": 544895.70639,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "UNIUSDT": {
-      "coin": "UNIUSDT",
-      "price": 5.536,
-      "price_change_24h": 1.114,
-      "volume": 6609510.01,
-      "quote_volume": 36460380.32028,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "XVSUSDT": {
-      "coin": "XVSUSDT",
-      "price": 4.56,
-      "price_change_24h": 2.472,
-      "volume": 85167.17,
-      "quote_volume": 384509.2436,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "AAVEUSDT": {
-      "coin": "AAVEUSDT",
-      "price": 170.29,
-      "price_change_24h": 2.449,
-      "volume": 124529.983,
-      "quote_volume": 20880124.9808,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "NEARUSDT": {
-      "coin": "NEARUSDT",
-      "price": 1.735,
-      "price_change_24h": 7.764,
-      "volume": 16972221.6,
-      "quote_volume": 28018807.0513,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "FILUSDT": {
-      "coin": "FILUSDT",
-      "price": 1.477,
-      "price_change_24h": 2.569,
-      "volume": 6382179.19,
-      "quote_volume": 9372000.66832,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "INJUSDT": {
-      "coin": "INJUSDT",
-      "price": 5.28,
-      "price_change_24h": 3.733,
-      "volume": 943456.29,
-      "quote_volume": 4884439.3747,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "AUDIOUSDT": {
-      "coin": "AUDIOUSDT",
-      "price": 0.0325,
-      "price_change_24h": 2.201,
-      "volume": 13575974.6,
-      "quote_volume": 437466.99265,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "CTKUSDT": {
-      "coin": "CTKUSDT",
-      "price": 0.2439,
-      "price_change_24h": 2.221,
-      "volume": 4519917.2,
-      "quote_volume": 1090611.33427,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "AXSUSDT": {
-      "coin": "AXSUSDT",
-      "price": 1.022,
-      "price_change_24h": 2.92,
-      "volume": 1071447.02,
-      "quote_volume": 1076681.95637,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "STRAXUSDT": {
-      "coin": "STRAXUSDT",
-      "price": 0.02371,
-      "price_change_24h": 2.331,
-      "volume": 10765500.0,
-      "quote_volume": 252578.69197,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "AVAUSDT": {
-      "coin": "AVAUSDT",
-      "price": 0.2989,
-      "price_change_24h": 1.667,
-      "volume": 3234548.7,
-      "quote_volume": 950541.56819,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "SKLUSDT": {
-      "coin": "SKLUSDT",
-      "price": 0.01284,
-      "price_change_24h": 2.392,
-      "volume": 124060398.0,
-      "quote_volume": 1589220.50976,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "GRTUSDT": {
-      "coin": "GRTUSDT",
-      "price": 0.0477,
-      "price_change_24h": 3.831,
-      "volume": 40112219.0,
-      "quote_volume": 1847756.28258,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "JUVUSDT": {
-      "coin": "JUVUSDT",
-      "price": 0.632,
-      "price_change_24h": -1.558,
-      "volume": 686984.67,
-      "quote_volume": 437406.25694,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "1INCHUSDT": {
-      "coin": "1INCHUSDT",
-      "price": 0.1911,
-      "price_change_24h": 7.541,
-      "volume": 13275030.6,
-      "quote_volume": 2480715.30096,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "OGUSDT": {
-      "coin": "OGUSDT",
-      "price": 12.241,
-      "price_change_24h": 4.294,
-      "volume": 271837.1,
-      "quote_volume": 3337371.6863,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "CELOUSDT": {
-      "coin": "CELOUSDT",
-      "price": 0.156,
-      "price_change_24h": 2.564,
-      "volume": 4392114.3,
-      "quote_volume": 679542.34655,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "TRUUSDT": {
-      "coin": "TRUUSDT",
-      "price": 0.0117,
-      "price_change_24h": -1.681,
-      "volume": 38365041.0,
-      "quote_volume": 449918.3724,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "CKBUSDT": {
-      "coin": "CKBUSDT",
-      "price": 0.002457,
-      "price_change_24h": 1.278,
-      "volume": 583738247.0,
-      "quote_volume": 1449743.7837,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "SFPUSDT": {
-      "coin": "SFPUSDT",
-      "price": 0.3176,
-      "price_change_24h": 1.762,
-      "volume": 808236.0,
-      "quote_volume": 251143.2512,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "CAKEUSDT": {
-      "coin": "CAKEUSDT",
-      "price": 2.309,
-      "price_change_24h": 2.759,
-      "volume": 4848230.15,
-      "quote_volume": 11070495.4501,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "ACMUSDT": {
-      "coin": "ACMUSDT",
-      "price": 0.528,
-      "price_change_24h": -1.859,
-      "volume": 987012.1,
-      "quote_volume": 523193.089,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "FISUSDT": {
-      "coin": "FISUSDT",
-      "price": 0.0398,
-      "price_change_24h": -4.096,
-      "volume": 21394805.0,
-      "quote_volume": 856715.9523,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "OMUSDT": {
-      "coin": "OMUSDT",
-      "price": 0.0732,
-      "price_change_24h": 2.092,
-      "volume": 23705751.2,
-      "quote_volume": 1747149.59953,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "PONDUSDT": {
-      "coin": "PONDUSDT",
-      "price": 0.00433,
-      "price_change_24h": 1.168,
-      "volume": 42431516.0,
-      "quote_volume": 182051.02114,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "ALICEUSDT": {
-      "coin": "ALICEUSDT",
-      "price": 0.216,
-      "price_change_24h": 3.3,
-      "volume": 6338385.72,
-      "quote_volume": 1340300.523389,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "SUPERUSDT": {
-      "coin": "SUPERUSDT",
-      "price": 0.2534,
-      "price_change_24h": 12.273,
-      "volume": 25194634.0,
-      "quote_volume": 6183957.796,
+      "price": 0.1625,
+      "price_change_24h": -13.564,
+      "volume": 34242074.0,
+      "quote_volume": 5866635.9839,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1222,48 +559,476 @@
       ],
       "max_threshold": 10.0
     },
-    "CFXUSDT": {
-      "coin": "CFXUSDT",
-      "price": 0.0697,
-      "price_change_24h": 1.014,
-      "volume": 40048276.0,
-      "quote_volume": 2795383.482,
+    "YFIUSDT": {
+      "coin": "YFIUSDT",
+      "price": 3351.0,
+      "price_change_24h": -2.218,
+      "volume": 183.25353,
+      "quote_volume": 616868.44278,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "CRVUSDT": {
+      "coin": "CRVUSDT",
+      "price": 0.3568,
+      "price_change_24h": -4.42,
+      "volume": 10892730.2,
+      "quote_volume": 3973752.28753,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "SANDUSDT": {
+      "coin": "SANDUSDT",
+      "price": 0.1533,
+      "price_change_24h": -13.095,
+      "volume": 114555217.0,
+      "quote_volume": 18384356.9938,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
+    "NMRUSDT": {
+      "coin": "NMRUSDT",
+      "price": 9.44,
+      "price_change_24h": -1.667,
+      "volume": 44981.91,
+      "quote_volume": 423651.0517,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "SLPUSDT": {
-      "coin": "SLPUSDT",
-      "price": 0.000838,
-      "price_change_24h": 1.699,
-      "volume": 547115996.0,
-      "quote_volume": 452514.475536,
+    "DOTUSDT": {
+      "coin": "DOTUSDT",
+      "price": 1.938,
+      "price_change_24h": -2.072,
+      "volume": 3490332.16,
+      "quote_volume": 6766010.90255,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "PAXGUSDT": {
+      "coin": "PAXGUSDT",
+      "price": 5028.3,
+      "price_change_24h": 1.106,
+      "volume": 19503.1516,
+      "quote_volume": 96986339.994756,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
+    },
+    "TRBUSDT": {
+      "coin": "TRBUSDT",
+      "price": 20.01,
+      "price_change_24h": -2.008,
+      "volume": 51439.848,
+      "quote_volume": 1034541.94473,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "SUSHIUSDT": {
+      "coin": "SUSHIUSDT",
+      "price": 0.3041,
+      "price_change_24h": -3.399,
+      "volume": 2473330.1,
+      "quote_volume": 757288.90431,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "EGLDUSDT": {
+      "coin": "EGLDUSDT",
+      "price": 5.97,
+      "price_change_24h": -1.485,
+      "volume": 88135.93,
+      "quote_volume": 526840.6892,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "RUNEUSDT": {
+      "coin": "RUNEUSDT",
+      "price": 0.59,
+      "price_change_24h": -1.993,
+      "volume": 3129368.3,
+      "quote_volume": 1840408.6045,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "UMAUSDT": {
+      "coin": "UMAUSDT",
+      "price": 0.705,
+      "price_change_24h": -1.122,
+      "volume": 241123.6,
+      "quote_volume": 171560.9831,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "OXTUSDT": {
+      "coin": "OXTUSDT",
+      "price": 0.022,
+      "price_change_24h": -1.786,
+      "volume": 7808846.0,
+      "quote_volume": 172295.6154,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "SUNUSDT": {
+      "coin": "SUNUSDT",
+      "price": 0.02073,
+      "price_change_24h": -1.8,
+      "volume": 58792027.0,
+      "quote_volume": 1226945.53801,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "AVAXUSDT": {
+      "coin": "AVAXUSDT",
+      "price": 12.17,
+      "price_change_24h": -1.537,
+      "volume": 1937538.88,
+      "quote_volume": 23615144.376,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "AAVEUSDT": {
+      "coin": "AAVEUSDT",
+      "price": 157.36,
+      "price_change_24h": -1.373,
+      "volume": 55068.86,
+      "quote_volume": 8690201.25485,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "NEARUSDT": {
+      "coin": "NEARUSDT",
+      "price": 1.512,
+      "price_change_24h": -1.818,
+      "volume": 7249683.7,
+      "quote_volume": 11003183.969,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "FILUSDT": {
+      "coin": "FILUSDT",
+      "price": 1.319,
+      "price_change_24h": -2.441,
+      "volume": 11862691.19,
+      "quote_volume": 15692028.24392,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "INJUSDT": {
+      "coin": "INJUSDT",
+      "price": 4.59,
+      "price_change_24h": -1.944,
+      "volume": 588884.63,
+      "quote_volume": 2707587.3341,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ROSEUSDT": {
+      "coin": "ROSEUSDT",
+      "price": 0.01657,
+      "price_change_24h": -13.427,
+      "volume": 660984299.2,
+      "quote_volume": 11533554.852314,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
+    "AVAUSDT": {
+      "coin": "AVAUSDT",
+      "price": 0.3319,
+      "price_change_24h": -1.776,
+      "volume": 493045.7,
+      "quote_volume": 163347.55598,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "GRTUSDT": {
+      "coin": "GRTUSDT",
+      "price": 0.03675,
+      "price_change_24h": -2.416,
+      "volume": 32436505.0,
+      "quote_volume": 1195753.88285,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "JUVUSDT": {
+      "coin": "JUVUSDT",
+      "price": 0.71,
+      "price_change_24h": -2.204,
+      "volume": 563894.26,
+      "quote_volume": 404388.71337,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "1INCHUSDT": {
+      "coin": "1INCHUSDT",
+      "price": 0.1439,
+      "price_change_24h": -1.1,
+      "volume": 3237182.2,
+      "quote_volume": 464038.55961,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ATMUSDT": {
+      "coin": "ATMUSDT",
+      "price": 0.963,
+      "price_change_24h": -2.727,
+      "volume": 304033.3,
+      "quote_volume": 297626.81917,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "CELOUSDT": {
+      "coin": "CELOUSDT",
+      "price": 0.1164,
+      "price_change_24h": -1.439,
+      "volume": 9764986.5,
+      "quote_volume": 1135795.85329,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "RIFUSDT": {
+      "coin": "RIFUSDT",
+      "price": 0.042,
+      "price_change_24h": 2.19,
+      "volume": 30017736.0,
+      "quote_volume": 1228458.8313,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "TWTUSDT": {
+      "coin": "TWTUSDT",
+      "price": 0.8701,
+      "price_change_24h": -1.628,
+      "volume": 1018313.0,
+      "quote_volume": 892326.7783,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "DODOUSDT": {
+      "coin": "DODOUSDT",
+      "price": 0.0172,
+      "price_change_24h": -1.714,
+      "volume": 12872241.6,
+      "quote_volume": 222342.89319,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ACMUSDT": {
+      "coin": "ACMUSDT",
+      "price": 0.52,
+      "price_change_24h": -1.141,
+      "volume": 869572.8,
+      "quote_volume": 454967.9726,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "PONDUSDT": {
+      "coin": "PONDUSDT",
+      "price": 0.00351,
+      "price_change_24h": -1.955,
+      "volume": 46605088.0,
+      "quote_volume": 166231.77628,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ALICEUSDT": {
+      "coin": "ALICEUSDT",
+      "price": 0.1744,
+      "price_change_24h": -1.246,
+      "volume": 6571051.67,
+      "quote_volume": 1150642.050443,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "CFXUSDT": {
+      "coin": "CFXUSDT",
+      "price": 0.071,
+      "price_change_24h": -1.252,
+      "volume": 26572736.0,
+      "quote_volume": 1907986.7318,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "TKOUSDT": {
+      "coin": "TKOUSDT",
+      "price": 0.0808,
+      "price_change_24h": -2.415,
+      "volume": 1819618.1,
+      "quote_volume": 148365.98128,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "PUNDIXUSDT": {
+      "coin": "PUNDIXUSDT",
+      "price": 0.2217,
+      "price_change_24h": -1.247,
+      "volume": 468234.3,
+      "quote_volume": 104449.78961,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "TLMUSDT": {
+      "coin": "TLMUSDT",
+      "price": 0.002339,
+      "price_change_24h": -3.067,
+      "volume": 477213125.0,
+      "quote_volume": 1130252.542955,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "FORTHUSDT": {
+      "coin": "FORTHUSDT",
+      "price": 1.692,
+      "price_change_24h": -2.14,
+      "volume": 57357.67,
+      "quote_volume": 97692.53681,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
     },
     "ICPUSDT": {
       "coin": "ICPUSDT",
-      "price": 3.643,
-      "price_change_24h": 1.675,
-      "volume": 3816884.43,
-      "quote_volume": 14036332.27238,
+      "price": 3.482,
+      "price_change_24h": -4.811,
+      "volume": 4037301.65,
+      "quote_volume": 14217004.00748,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 2.0
     },
-    "MASKUSDT": {
-      "coin": "MASKUSDT",
-      "price": 0.663,
-      "price_change_24h": 2.315,
-      "volume": 793711.5,
-      "quote_volume": 523542.9483,
+    "ARUSDT": {
+      "coin": "ARUSDT",
+      "price": 3.54,
+      "price_change_24h": -2.21,
+      "volume": 812578.96,
+      "quote_volume": 2882776.3843,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1273,35 +1038,39 @@
     },
     "LPTUSDT": {
       "coin": "LPTUSDT",
-      "price": 3.731,
-      "price_change_24h": 2.247,
-      "volume": 288078.28,
-      "quote_volume": 1064460.4627,
+      "price": 3.339,
+      "price_change_24h": 16.099,
+      "volume": 2406345.26,
+      "quote_volume": 7766154.52156,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0
+        2.0,
+        5.0,
+        10.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 10.0
     },
     "XVGUSDT": {
       "coin": "XVGUSDT",
-      "price": 0.0059,
-      "price_change_24h": -1.354,
-      "volume": 563693553.0,
-      "quote_volume": 3356724.988037,
+      "price": 0.007936,
+      "price_change_24h": 7.214,
+      "volume": 712708549.0,
+      "quote_volume": 5393550.906574,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0,
+        5.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 5.0
     },
     "GTCUSDT": {
       "coin": "GTCUSDT",
-      "price": 0.137,
-      "price_change_24h": -3.521,
-      "volume": 1342126.0,
-      "quote_volume": 187999.6912,
+      "price": 0.135,
+      "price_change_24h": 3.846,
+      "volume": 1265828.3,
+      "quote_volume": 166036.7654,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1311,23 +1080,10 @@
     },
     "PHAUSDT": {
       "coin": "PHAUSDT",
-      "price": 0.0403,
-      "price_change_24h": -4.048,
-      "volume": 26656842.0,
-      "quote_volume": 1092846.2261,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "MLNUSDT": {
-      "coin": "MLNUSDT",
-      "price": 5.61,
-      "price_change_24h": 6.049,
-      "volume": 770876.151,
-      "quote_volume": 4312693.17699,
+      "price": 0.0383,
+      "price_change_24h": -8.81,
+      "volume": 25359797.0,
+      "quote_volume": 1012052.1937,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1338,51 +1094,35 @@
     },
     "DEXEUSDT": {
       "coin": "DEXEUSDT",
-      "price": 3.794,
-      "price_change_24h": 9.148,
-      "volume": 331429.76,
-      "quote_volume": 1261538.08617,
+      "price": 3.019,
+      "price_change_24h": -2.895,
+      "volume": 110135.66,
+      "quote_volume": 342249.19852,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "C98USDT": {
       "coin": "C98USDT",
-      "price": 0.0257,
-      "price_change_24h": 4.472,
-      "volume": 13742708.6,
-      "quote_volume": 344474.15688,
+      "price": 0.0222,
+      "price_change_24h": -1.333,
+      "volume": 18190908.7,
+      "quote_volume": 408480.84343,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "QNTUSDT": {
       "coin": "QNTUSDT",
-      "price": 99.27,
-      "price_change_24h": 7.018,
-      "volume": 77372.974,
-      "quote_volume": 7539649.35339,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "MINAUSDT": {
-      "coin": "MINAUSDT",
-      "price": 0.1,
-      "price_change_24h": 3.627,
-      "volume": 16781028.8,
-      "quote_volume": 1648497.09246,
+      "price": 79.47,
+      "price_change_24h": -2.61,
+      "volume": 19195.379,
+      "quote_volume": 1533025.38546,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1390,12 +1130,25 @@
       ],
       "max_threshold": 2.0
     },
-    "RAYUSDT": {
-      "coin": "RAYUSDT",
-      "price": 1.062,
-      "price_change_24h": 7.927,
-      "volume": 3097236.4,
-      "quote_volume": 3131835.5813,
+    "FLOWUSDT": {
+      "coin": "FLOWUSDT",
+      "price": 0.072,
+      "price_change_24h": -2.703,
+      "volume": 9779058.78,
+      "quote_volume": 704323.45454,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "MINAUSDT": {
+      "coin": "MINAUSDT",
+      "price": 0.088,
+      "price_change_24h": -5.782,
+      "volume": 22703160.8,
+      "quote_volume": 2067842.66869,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1404,12 +1157,24 @@
       ],
       "max_threshold": 5.0
     },
+    "RAYUSDT": {
+      "coin": "RAYUSDT",
+      "price": 1.015,
+      "price_change_24h": -1.361,
+      "volume": 1316174.9,
+      "quote_volume": 1342636.6747,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
     "FARMUSDT": {
       "coin": "FARMUSDT",
-      "price": 19.84,
-      "price_change_24h": 2.426,
-      "volume": 15055.037,
-      "quote_volume": 294787.26592,
+      "price": 17.42,
+      "price_change_24h": -2.953,
+      "volume": 14899.949,
+      "quote_volume": 262013.96707,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1419,75 +1184,88 @@
     },
     "MBOXUSDT": {
       "coin": "MBOXUSDT",
-      "price": 0.0341,
-      "price_change_24h": 1.187,
-      "volume": 9941678.6,
-      "quote_volume": 336478.14029,
+      "price": 0.0299,
+      "price_change_24h": -2.288,
+      "volume": 7095029.2,
+      "quote_volume": 213442.43303,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 2.0
     },
     "GHSTUSDT": {
       "coin": "GHSTUSDT",
-      "price": 0.211,
-      "price_change_24h": -4.091,
-      "volume": 5647689.8,
-      "quote_volume": 1227933.5925,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "WAXPUSDT": {
-      "coin": "WAXPUSDT",
-      "price": 0.0086,
-      "price_change_24h": 2.138,
-      "volume": 19983323.0,
-      "quote_volume": 170001.23369,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "GNOUSDT": {
-      "coin": "GNOUSDT",
-      "price": 119.99,
-      "price_change_24h": -1.905,
-      "volume": 3212.866,
-      "quote_volume": 386286.60951,
+      "price": 0.195,
+      "price_change_24h": 1.036,
+      "volume": 1214972.7,
+      "quote_volume": 232659.4395,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "IDEXUSDT": {
-      "coin": "IDEXUSDT",
-      "price": 0.01286,
-      "price_change_24h": -11.554,
-      "volume": 57157202.4,
-      "quote_volume": 747460.083082,
+    "WAXPUSDT": {
+      "coin": "WAXPUSDT",
+      "price": 0.00856,
+      "price_change_24h": -5.934,
+      "volume": 150070006.0,
+      "quote_volume": 1338902.33155,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0,
-        5.0,
-        10.0
+        5.0
       ],
-      "max_threshold": 10.0
+      "max_threshold": 5.0
     },
-    "DFUSDT": {
-      "coin": "DFUSDT",
-      "price": 0.01297,
-      "price_change_24h": -1.891,
-      "volume": 36946459.0,
-      "quote_volume": 481289.02983,
+    "DYDXUSDT": {
+      "coin": "DYDXUSDT",
+      "price": 0.1698,
+      "price_change_24h": -4.714,
+      "volume": 8326756.03,
+      "quote_volume": 1450662.918693,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "GALAUSDT": {
+      "coin": "GALAUSDT",
+      "price": 0.00632,
+      "price_change_24h": -4.819,
+      "volume": 622594502.0,
+      "quote_volume": 3989899.19505,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "YGGUSDT": {
+      "coin": "YGGUSDT",
+      "price": 0.065,
+      "price_change_24h": -2.84,
+      "volume": 24498157.6,
+      "quote_volume": 1597750.71619,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "SYSUSDT": {
+      "coin": "SYSUSDT",
+      "price": 0.01984,
+      "price_change_24h": -1.636,
+      "volume": 5157284.0,
+      "quote_volume": 102809.49146,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -1496,10 +1274,10 @@
     },
     "FIDAUSDT": {
       "coin": "FIDAUSDT",
-      "price": 0.0444,
-      "price_change_24h": 2.778,
-      "volume": 22122471.7,
-      "quote_volume": 965324.76413,
+      "price": 0.0269,
+      "price_change_24h": -2.182,
+      "volume": 34121841.5,
+      "quote_volume": 921491.37867,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1507,12 +1285,12 @@
       ],
       "max_threshold": 2.0
     },
-    "AGLDUSDT": {
-      "coin": "AGLDUSDT",
-      "price": 0.274,
-      "price_change_24h": 2.622,
-      "volume": 1400849.2,
-      "quote_volume": 372897.7497,
+    "RAREUSDT": {
+      "coin": "RAREUSDT",
+      "price": 0.0267,
+      "price_change_24h": -3.261,
+      "volume": 61418189.3,
+      "quote_volume": 1689310.14352,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1522,10 +1300,10 @@
     },
     "LAZIOUSDT": {
       "coin": "LAZIOUSDT",
-      "price": 1.133,
-      "price_change_24h": 1.98,
-      "volume": 1020810.6,
-      "quote_volume": 1156970.18535,
+      "price": 1.056,
+      "price_change_24h": -1.308,
+      "volume": 213527.75,
+      "quote_volume": 226599.82499,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -1534,25 +1312,58 @@
     },
     "CHESSUSDT": {
       "coin": "CHESSUSDT",
-      "price": 0.02719,
-      "price_change_24h": -44.51,
-      "volume": 245531144.5,
-      "quote_volume": 8728849.693829,
+      "price": 0.02889,
+      "price_change_24h": 1.618,
+      "volume": 5781382.3,
+      "quote_volume": 165460.14596,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
+        1.0
       ],
-      "max_threshold": 10.0
+      "max_threshold": 1.0
     },
     "AUCTIONUSDT": {
       "coin": "AUCTIONUSDT",
-      "price": 5.5,
-      "price_change_24h": 3.189,
-      "volume": 237226.95,
-      "quote_volume": 1300414.6557,
+      "price": 4.92,
+      "price_change_24h": 1.027,
+      "volume": 275391.56,
+      "quote_volume": 1363739.2782,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "MOVRUSDT": {
+      "coin": "MOVRUSDT",
+      "price": 2.306,
+      "price_change_24h": -1.03,
+      "volume": 92333.207,
+      "quote_volume": 212458.089849,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "QIUSDT": {
+      "coin": "QIUSDT",
+      "price": 0.00304,
+      "price_change_24h": -1.935,
+      "volume": 60065640.0,
+      "quote_volume": 184562.07923,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "PORTOUSDT": {
+      "coin": "PORTOUSDT",
+      "price": 1.115,
+      "price_change_24h": -2.364,
+      "volume": 113760.51,
+      "quote_volume": 128026.40078,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1560,12 +1371,12 @@
       ],
       "max_threshold": 2.0
     },
-    "ENSUSDT": {
-      "coin": "ENSUSDT",
-      "price": 10.84,
-      "price_change_24h": 3.831,
-      "volume": 175735.9,
-      "quote_volume": 1860324.8155,
+    "JASMYUSDT": {
+      "coin": "JASMYUSDT",
+      "price": 0.00756,
+      "price_change_24h": 2.162,
+      "volume": 296725664.4,
+      "quote_volume": 2223617.308474,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1573,25 +1384,24 @@
       ],
       "max_threshold": 2.0
     },
-    "ALCXUSDT": {
-      "coin": "ALCXUSDT",
-      "price": 10.48,
-      "price_change_24h": 4.175,
-      "volume": 218734.7242,
-      "quote_volume": 2309017.957063,
+    "AMPUSDT": {
+      "coin": "AMPUSDT",
+      "price": 0.002028,
+      "price_change_24h": -1.362,
+      "volume": 152288990.0,
+      "quote_volume": 312378.684958,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "SANTOSUSDT": {
       "coin": "SANTOSUSDT",
-      "price": 2.02,
-      "price_change_24h": -3.534,
-      "volume": 2676110.75,
-      "quote_volume": 5719295.02017,
+      "price": 2.402,
+      "price_change_24h": -3.805,
+      "volume": 549744.12,
+      "quote_volume": 1348817.12453,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1599,48 +1409,24 @@
       ],
       "max_threshold": 2.0
     },
+    "BICOUSDT": {
+      "coin": "BICOUSDT",
+      "price": 0.0398,
+      "price_change_24h": -1.241,
+      "volume": 7940234.47,
+      "quote_volume": 316250.340373,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
     "FLUXUSDT": {
       "coin": "FLUXUSDT",
-      "price": 0.1064,
-      "price_change_24h": 1.818,
-      "volume": 4713444.6,
-      "quote_volume": 497392.690857,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "FXSUSDT": {
-      "coin": "FXSUSDT",
-      "price": 0.787,
-      "price_change_24h": 1.548,
-      "volume": 505597.7,
-      "quote_volume": 395298.4656,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "VOXELUSDT": {
-      "coin": "VOXELUSDT",
-      "price": 0.0262,
-      "price_change_24h": -1.132,
-      "volume": 14597500.6,
-      "quote_volume": 383603.25138,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "HIGHUSDT": {
-      "coin": "HIGHUSDT",
-      "price": 0.24,
-      "price_change_24h": -1.235,
-      "volume": 6763268.151,
-      "quote_volume": 1648761.430961,
+      "price": 0.1014,
+      "price_change_24h": -1.934,
+      "volume": 2915616.52,
+      "quote_volume": 297950.349866,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -1649,23 +1435,10 @@
     },
     "PEOPLEUSDT": {
       "coin": "PEOPLEUSDT",
-      "price": 0.00937,
-      "price_change_24h": 3.65,
-      "volume": 172389261.9,
-      "quote_volume": 1588416.303851,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "SPELLUSDT": {
-      "coin": "SPELLUSDT",
-      "price": 0.0002508,
-      "price_change_24h": 1.703,
-      "volume": 821832542.0,
-      "quote_volume": 202806.3485625,
+      "price": 0.0094,
+      "price_change_24h": -1.571,
+      "volume": 64059779.5,
+      "quote_volume": 605551.489346,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -1674,22 +1447,10 @@
     },
     "JOEUSDT": {
       "coin": "JOEUSDT",
-      "price": 0.0693,
-      "price_change_24h": 1.168,
-      "volume": 2834711.1,
-      "quote_volume": 195583.19145,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "ACHUSDT": {
-      "coin": "ACHUSDT",
-      "price": 0.00888,
-      "price_change_24h": -1.661,
-      "volume": 105376331.0,
-      "quote_volume": 942540.89589,
+      "price": 0.0575,
+      "price_change_24h": -1.033,
+      "volume": 2877042.58,
+      "quote_volume": 164366.186995,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -1698,23 +1459,10 @@
     },
     "IMXUSDT": {
       "coin": "IMXUSDT",
-      "price": 0.283,
-      "price_change_24h": 4.428,
-      "volume": 5605161.93,
-      "quote_volume": 1576801.76777,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "GLMRUSDT": {
-      "coin": "GLMRUSDT",
-      "price": 0.0245,
-      "price_change_24h": 2.083,
-      "volume": 19976762.5,
-      "quote_volume": 480620.15431,
+      "price": 0.25,
+      "price_change_24h": -3.846,
+      "volume": 5742480.52,
+      "quote_volume": 1453167.85561,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1724,101 +1472,10 @@
     },
     "SCRTUSDT": {
       "coin": "SCRTUSDT",
-      "price": 0.1235,
-      "price_change_24h": -1.672,
-      "volume": 3383322.9,
-      "quote_volume": 417957.03496,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "API3USDT": {
-      "coin": "API3USDT",
-      "price": 0.5157,
-      "price_change_24h": 3.783,
-      "volume": 1728762.77,
-      "quote_volume": 879127.846782,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "ACAUSDT": {
-      "coin": "ACAUSDT",
-      "price": 0.0109,
-      "price_change_24h": -5.217,
-      "volume": 52866791.94,
-      "quote_volume": 591496.00722,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "XNOUSDT": {
-      "coin": "XNOUSDT",
-      "price": 0.799,
-      "price_change_24h": 2.305,
-      "volume": 446850.52,
-      "quote_volume": 351304.83248,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "WOOUSDT": {
-      "coin": "WOOUSDT",
-      "price": 0.0244,
-      "price_change_24h": 2.092,
-      "volume": 14542101.1,
-      "quote_volume": 349143.64142,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "ASTRUSDT": {
-      "coin": "ASTRUSDT",
-      "price": 0.01268,
-      "price_change_24h": 1.766,
-      "volume": 27038733.4,
-      "quote_volume": 338716.082024,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "GMTUSDT": {
-      "coin": "GMTUSDT",
-      "price": 0.01621,
-      "price_change_24h": 6.645,
-      "volume": 77210497.3,
-      "quote_volume": 1210775.163097,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "BIFIUSDT": {
-      "coin": "BIFIUSDT",
-      "price": 115.3,
-      "price_change_24h": 13.15,
-      "volume": 13561.572,
-      "quote_volume": 1646321.262,
+      "price": 0.1722,
+      "price_change_24h": -10.266,
+      "volume": 33550813.1,
+      "quote_volume": 6342265.18407,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1828,24 +1485,36 @@
       ],
       "max_threshold": 10.0
     },
-    "STEEMUSDT": {
-      "coin": "STEEMUSDT",
-      "price": 0.0727,
-      "price_change_24h": 1.964,
-      "volume": 4747854.6,
-      "quote_volume": 341673.31249,
+    "XNOUSDT": {
+      "coin": "XNOUSDT",
+      "price": 0.694,
+      "price_change_24h": -1.28,
+      "volume": 204245.8,
+      "quote_volume": 142618.82826,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "NEXOUSDT": {
-      "coin": "NEXOUSDT",
-      "price": 0.964,
-      "price_change_24h": 3.879,
-      "volume": 2327460.66,
-      "quote_volume": 2179769.85049,
+    "WOOUSDT": {
+      "coin": "WOOUSDT",
+      "price": 0.025,
+      "price_change_24h": -1.961,
+      "volume": 15143004.8,
+      "quote_volume": 381268.67594,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ALPINEUSDT": {
+      "coin": "ALPINEUSDT",
+      "price": 0.552,
+      "price_change_24h": -2.473,
+      "volume": 666770.64,
+      "quote_volume": 371390.03458,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1853,25 +1522,74 @@
       ],
       "max_threshold": 2.0
     },
-    "REIUSDT": {
-      "coin": "REIUSDT",
-      "price": 0.00805,
-      "price_change_24h": 2.157,
-      "volume": 98095998.4,
-      "quote_volume": 805508.565058,
+    "GMTUSDT": {
+      "coin": "GMTUSDT",
+      "price": 0.01631,
+      "price_change_24h": -4.002,
+      "volume": 47503947.0,
+      "quote_volume": 791905.633055,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0
       ],
       "max_threshold": 2.0
+    },
+    "APEUSDT": {
+      "coin": "APEUSDT",
+      "price": 0.1893,
+      "price_change_24h": -1.56,
+      "volume": 11352212.69,
+      "quote_volume": 2163625.809598,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "BIFIUSDT": {
+      "coin": "BIFIUSDT",
+      "price": 182.8,
+      "price_change_24h": 2.409,
+      "volume": 7110.929,
+      "quote_volume": 1273886.355,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "STEEMUSDT": {
+      "coin": "STEEMUSDT",
+      "price": 0.0662,
+      "price_change_24h": 1.223,
+      "volume": 2066625.7,
+      "quote_volume": 135687.41046,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
     },
     "LDOUSDT": {
       "coin": "LDOUSDT",
-      "price": 0.5605,
-      "price_change_24h": -2.045,
-      "volume": 10742431.83,
-      "quote_volume": 6100383.695117,
+      "price": 0.5267,
+      "price_change_24h": -1.033,
+      "volume": 4692806.22,
+      "quote_volume": 2462281.381386,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "OPUSDT": {
+      "coin": "OPUSDT",
+      "price": 0.3053,
+      "price_change_24h": -4.265,
+      "volume": 18928343.95,
+      "quote_volume": 5844338.112203,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1879,64 +1597,38 @@
       ],
       "max_threshold": 2.0
     },
-    "OPUSDT": {
-      "coin": "OPUSDT",
-      "price": 0.2917,
-      "price_change_24h": 1.957,
-      "volume": 24296909.78,
-      "quote_volume": 6938170.019295,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
     "STGUSDT": {
       "coin": "STGUSDT",
-      "price": 0.1157,
-      "price_change_24h": 6.538,
-      "volume": 9355690.7,
-      "quote_volume": 1042414.35771,
+      "price": 0.1937,
+      "price_change_24h": -3.44,
+      "volume": 28962522.2,
+      "quote_volume": 5729226.27809,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
-    },
-    "LUNCUSDT": {
-      "coin": "LUNCUSDT",
-      "price": 2.724e-05,
-      "price_change_24h": 8.873,
-      "volume": 100638231211.1,
-      "quote_volume": 2662865.20355225,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "POLYXUSDT": {
       "coin": "POLYXUSDT",
-      "price": 0.0617,
-      "price_change_24h": 1.314,
-      "volume": 4139950.5,
-      "quote_volume": 253252.2005,
+      "price": 0.0559,
+      "price_change_24h": -2.443,
+      "volume": 13410896.4,
+      "quote_volume": 761856.39804,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 2.0
     },
     "APTUSDT": {
       "coin": "APTUSDT",
-      "price": 1.902,
-      "price_change_24h": 3.651,
-      "volume": 8077016.62,
-      "quote_volume": 15138926.4871,
+      "price": 1.553,
+      "price_change_24h": -3.42,
+      "volume": 5771691.55,
+      "quote_volume": 9085123.67412,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1946,10 +1638,10 @@
     },
     "OSMOUSDT": {
       "coin": "OSMOUSDT",
-      "price": 0.071,
-      "price_change_24h": 1.284,
-      "volume": 2630428.14,
-      "quote_volume": 184300.509832,
+      "price": 0.0529,
+      "price_change_24h": -1.49,
+      "volume": 3656502.11,
+      "quote_volume": 194495.868257,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -1958,10 +1650,10 @@
     },
     "PHBUSDT": {
       "coin": "PHBUSDT",
-      "price": 0.298,
-      "price_change_24h": 2.405,
-      "volume": 1420685.6,
-      "quote_volume": 422315.2267,
+      "price": 0.257,
+      "price_change_24h": -3.019,
+      "volume": 1411209.9,
+      "quote_volume": 362653.5532,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1971,22 +1663,10 @@
     },
     "HOOKUSDT": {
       "coin": "HOOKUSDT",
-      "price": 0.0409,
-      "price_change_24h": 1.741,
-      "volume": 14170501.3,
-      "quote_volume": 570389.2128,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "MAGICUSDT": {
-      "coin": "MAGICUSDT",
-      "price": 0.0945,
-      "price_change_24h": 2.162,
-      "volume": 8507686.6,
-      "quote_volume": 793197.07715,
+      "price": 0.0368,
+      "price_change_24h": 2.222,
+      "volume": 12720234.6,
+      "quote_volume": 466709.88048,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -1994,12 +1674,12 @@
       ],
       "max_threshold": 2.0
     },
-    "GNSUSDT": {
-      "coin": "GNSUSDT",
-      "price": 1.406,
-      "price_change_24h": 1.81,
-      "volume": 133085.12,
-      "quote_volume": 182846.75576,
+    "MAGICUSDT": {
+      "coin": "MAGICUSDT",
+      "price": 0.0923,
+      "price_change_24h": -1.913,
+      "volume": 6056855.1,
+      "quote_volume": 558011.00042,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -2008,49 +1688,34 @@
     },
     "SSVUSDT": {
       "coin": "SSVUSDT",
-      "price": 3.229,
-      "price_change_24h": 2.248,
-      "volume": 392930.415,
-      "quote_volume": 1259338.877361,
+      "price": 4.168,
+      "price_change_24h": -1.209,
+      "volume": 303645.365,
+      "quote_volume": 1269319.225329,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "LQTYUSDT": {
       "coin": "LQTYUSDT",
-      "price": 0.479,
-      "price_change_24h": -2.642,
-      "volume": 1995193.6,
-      "quote_volume": 973666.3839,
+      "price": 0.333,
+      "price_change_24h": -1.77,
+      "volume": 872555.2,
+      "quote_volume": 292307.3241,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
-    },
-    "USTCUSDT": {
-      "coin": "USTCUSDT",
-      "price": 0.00585,
-      "price_change_24h": 3.357,
-      "volume": 114915923.0,
-      "quote_volume": 650537.69705,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "GASUSDT": {
       "coin": "GASUSDT",
-      "price": 2.092,
-      "price_change_24h": 1.014,
-      "volume": 110829.7,
-      "quote_volume": 231561.7913,
+      "price": 1.905,
+      "price_change_24h": -1.398,
+      "volume": 113091.3,
+      "quote_volume": 216695.6791,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -2059,87 +1724,96 @@
     },
     "GLMUSDT": {
       "coin": "GLMUSDT",
-      "price": 0.225,
-      "price_change_24h": -5.621,
-      "volume": 6038374.8,
-      "quote_volume": 1423650.56241,
+      "price": 0.226,
+      "price_change_24h": -2.037,
+      "volume": 1247730.9,
+      "quote_volume": 285477.07858,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
+    },
+    "PROMUSDT": {
+      "coin": "PROMUSDT",
+      "price": 2.326,
+      "price_change_24h": 1.661,
+      "volume": 1100992.61,
+      "quote_volume": 2606144.84143,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
     },
     "ARBUSDT": {
       "coin": "ARBUSDT",
-      "price": 0.1945,
-      "price_change_24h": 1.461,
-      "volume": 64291303.2,
-      "quote_volume": 12308142.31693,
+      "price": 0.1784,
+      "price_change_24h": -1.6,
+      "volume": 46520900.1,
+      "quote_volume": 8306228.74029,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "WBTCUSDT": {
-      "coin": "WBTCUSDT",
-      "price": 87177.77,
-      "price_change_24h": 2.519,
-      "volume": 118.57368,
-      "quote_volume": 10151674.7075041,
+    "RDNTUSDT": {
+      "coin": "RDNTUSDT",
+      "price": 0.0087,
+      "price_change_24h": -1.361,
+      "volume": 22814896.0,
+      "quote_volume": 200327.15556,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "EDUUSDT": {
       "coin": "EDUUSDT",
-      "price": 0.1612,
-      "price_change_24h": 1.003,
-      "volume": 5372860.0,
-      "quote_volume": 866450.7634,
+      "price": 0.1587,
+      "price_change_24h": -3.993,
+      "volume": 2821407.0,
+      "quote_volume": 451632.9206,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "SUIUSDT": {
+      "coin": "SUIUSDT",
+      "price": 1.4933,
+      "price_change_24h": -1.001,
+      "volume": 29511890.1,
+      "quote_volume": 44120010.2786,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "SUIUSDT": {
-      "coin": "SUIUSDT",
-      "price": 1.381,
-      "price_change_24h": 3.175,
-      "volume": 38139580.2,
-      "quote_volume": 51151472.31593,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
     "FLOKIUSDT": {
       "coin": "FLOKIUSDT",
-      "price": 4.36e-05,
-      "price_change_24h": 2.661,
-      "volume": 103290964882.0,
-      "quote_volume": 4436998.86274494,
+      "price": 4.341e-05,
+      "price_change_24h": -1.787,
+      "volume": 85402607744.0,
+      "quote_volume": 3725262.60011814,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
-    "MAVUSDT": {
-      "coin": "MAVUSDT",
-      "price": 0.03037,
-      "price_change_24h": 6.152,
-      "volume": 100893126.0,
-      "quote_volume": 3036514.45457,
+    "PENDLEUSDT": {
+      "coin": "PENDLEUSDT",
+      "price": 2.02,
+      "price_change_24h": -5.915,
+      "volume": 3793517.4,
+      "quote_volume": 7863602.7284,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2148,12 +1822,12 @@
       ],
       "max_threshold": 5.0
     },
-    "PENDLEUSDT": {
-      "coin": "PENDLEUSDT",
-      "price": 2.506,
-      "price_change_24h": 3.597,
-      "volume": 2394831.7,
-      "quote_volume": 5867353.8574,
+    "ARKMUSDT": {
+      "coin": "ARKMUSDT",
+      "price": 0.179,
+      "price_change_24h": -2.717,
+      "volume": 16756872.4,
+      "quote_volume": 3001297.5104,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2163,10 +1837,10 @@
     },
     "WLDUSDT": {
       "coin": "WLDUSDT",
-      "price": 0.578,
-      "price_change_24h": 2.12,
-      "volume": 26580620.0,
-      "quote_volume": 15148658.7553,
+      "price": 0.4724,
+      "price_change_24h": -2.093,
+      "volume": 18546342.5,
+      "quote_volume": 8730904.09129,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2176,10 +1850,10 @@
     },
     "CYBERUSDT": {
       "coin": "CYBERUSDT",
-      "price": 0.864,
-      "price_change_24h": 3.597,
-      "volume": 4994383.77,
-      "quote_volume": 4421376.87273,
+      "price": 0.758,
+      "price_change_24h": 3.978,
+      "volume": 1721056.67,
+      "quote_volume": 1282586.05386,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2189,10 +1863,22 @@
     },
     "ARKUSDT": {
       "coin": "ARKUSDT",
-      "price": 0.2788,
-      "price_change_24h": 3.682,
-      "volume": 3805155.0,
-      "quote_volume": 1056450.466,
+      "price": 0.2573,
+      "price_change_24h": -1.19,
+      "volume": 382489.0,
+      "quote_volume": 98433.51,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "TIAUSDT": {
+      "coin": "TIAUSDT",
+      "price": 0.457,
+      "price_change_24h": -3.219,
+      "volume": 9851541.96,
+      "quote_volume": 4518191.275388,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2200,38 +1886,25 @@
       ],
       "max_threshold": 2.0
     },
-    "IQUSDT": {
-      "coin": "IQUSDT",
-      "price": 0.001745,
-      "price_change_24h": 1.453,
-      "volume": 163898604.0,
-      "quote_volume": 285074.275639,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "NTRNUSDT": {
-      "coin": "NTRNUSDT",
-      "price": 0.0304,
-      "price_change_24h": -6.462,
-      "volume": 19294218.8,
-      "quote_volume": 601611.4343,
+    "MEMEUSDT": {
+      "coin": "MEMEUSDT",
+      "price": 0.001066,
+      "price_change_24h": -2.826,
+      "volume": 1399806374.0,
+      "quote_volume": 1506513.118516,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "ORDIUSDT": {
       "coin": "ORDIUSDT",
-      "price": 3.639,
-      "price_change_24h": 4.21,
-      "volume": 667099.05,
-      "quote_volume": 2374134.68525,
+      "price": 4.025,
+      "price_change_24h": -3.5,
+      "volume": 768718.28,
+      "quote_volume": 3129588.9169,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2241,10 +1914,10 @@
     },
     "BEAMXUSDT": {
       "coin": "BEAMXUSDT",
-      "price": 0.003183,
-      "price_change_24h": 2.943,
-      "volume": 355626460.0,
-      "quote_volume": 1116297.494869,
+      "price": 0.0029,
+      "price_change_24h": -2.159,
+      "volume": 250551772.0,
+      "quote_volume": 731015.242722,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2254,50 +1927,36 @@
     },
     "PIVXUSDT": {
       "coin": "PIVXUSDT",
-      "price": 0.1573,
-      "price_change_24h": -5.469,
-      "volume": 3674340.0,
-      "quote_volume": 591046.3655,
+      "price": 0.1856,
+      "price_change_24h": -4.478,
+      "volume": 3358491.0,
+      "quote_volume": 636282.2252,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
+    },
+    "BLURUSDT": {
+      "coin": "BLURUSDT",
+      "price": 0.03162,
+      "price_change_24h": -3.45,
+      "volume": 17994341.6,
+      "quote_volume": 575336.139971,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
     },
     "VANRYUSDT": {
       "coin": "VANRYUSDT",
-      "price": 0.0093,
-      "price_change_24h": -2.105,
-      "volume": 53544260.0,
-      "quote_volume": 501794.8583,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "JTOUSDT": {
-      "coin": "JTOUSDT",
-      "price": 0.426,
-      "price_change_24h": 3.398,
-      "volume": 4218994.3,
-      "quote_volume": 1757002.9488,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "1000SATSUSDT": {
-      "coin": "1000SATSUSDT",
-      "price": 1.581e-05,
-      "price_change_24h": 5.894,
-      "volume": 114221432582.0,
-      "quote_volume": 1768136.11533726,
+      "price": 0.008,
+      "price_change_24h": -6.977,
+      "volume": 90240491.0,
+      "quote_volume": 752266.2302,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2306,12 +1965,74 @@
       ],
       "max_threshold": 5.0
     },
+    "1000SATSUSDT": {
+      "coin": "1000SATSUSDT",
+      "price": 1.591e-05,
+      "price_change_24h": -2.929,
+      "volume": 58099113639.0,
+      "quote_volume": 931636.06085414,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
     "BONKUSDT": {
       "coin": "BONKUSDT",
-      "price": 8.8e-06,
-      "price_change_24h": 1.266,
-      "volume": 1175942970209.0,
-      "quote_volume": 10303424.96508818,
+      "price": 9.05e-06,
+      "price_change_24h": -1.737,
+      "volume": 991192726541.0,
+      "quote_volume": 9032079.53514326,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ACEUSDT": {
+      "coin": "ACEUSDT",
+      "price": 0.246,
+      "price_change_24h": 1.235,
+      "volume": 3452674.1,
+      "quote_volume": 823750.8311,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "NFPUSDT": {
+      "coin": "NFPUSDT",
+      "price": 0.0244,
+      "price_change_24h": -2.789,
+      "volume": 24128768.0,
+      "quote_volume": 594850.6834,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "AIUSDT": {
+      "coin": "AIUSDT",
+      "price": 0.0355,
+      "price_change_24h": -1.934,
+      "volume": 11197461.6,
+      "quote_volume": 394961.24342,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "XAIUSDT": {
+      "coin": "XAIUSDT",
+      "price": 0.01504,
+      "price_change_24h": -1.956,
+      "volume": 67392866.5,
+      "quote_volume": 1012458.796477,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -2320,10 +2041,10 @@
     },
     "MANTAUSDT": {
       "coin": "MANTAUSDT",
-      "price": 0.0928,
-      "price_change_24h": -3.734,
-      "volume": 10412597.1,
-      "quote_volume": 980826.6727,
+      "price": 0.0735,
+      "price_change_24h": -4.297,
+      "volume": 9120421.5,
+      "quote_volume": 687263.74745,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2331,94 +2052,37 @@
       ],
       "max_threshold": 2.0
     },
-    "ALTUSDT": {
-      "coin": "ALTUSDT",
-      "price": 0.01331,
-      "price_change_24h": 7.166,
-      "volume": 223522735.0,
-      "quote_volume": 2839600.25938,
+    "RONINUSDT": {
+      "coin": "RONINUSDT",
+      "price": 0.1609,
+      "price_change_24h": -2.603,
+      "volume": 14430413.78,
+      "quote_volume": 2337679.803988,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
-    },
-    "JUPUSDT": {
-      "coin": "JUPUSDT",
-      "price": 0.2362,
-      "price_change_24h": 6.926,
-      "volume": 17678275.4,
-      "quote_volume": 4069142.54572,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "DYMUSDT": {
       "coin": "DYMUSDT",
-      "price": 0.0876,
-      "price_change_24h": -10.976,
-      "volume": 49303235.8,
-      "quote_volume": 4480766.32835,
+      "price": 0.0598,
+      "price_change_24h": -1.806,
+      "volume": 4766755.3,
+      "quote_volume": 286651.78637,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
+        1.0
       ],
-      "max_threshold": 10.0
+      "max_threshold": 1.0
     },
     "PIXELUSDT": {
       "coin": "PIXELUSDT",
-      "price": 0.01038,
-      "price_change_24h": 1.367,
-      "volume": 60665756.1,
-      "quote_volume": 625364.365147,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "STRKUSDT": {
-      "coin": "STRKUSDT",
-      "price": 0.1183,
-      "price_change_24h": 1.284,
-      "volume": 78664428.01,
-      "quote_volume": 9252910.555392,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "PORTALUSDT": {
-      "coin": "PORTALUSDT",
-      "price": 0.0183,
-      "price_change_24h": -16.055,
-      "volume": 73863804.4,
-      "quote_volume": 1509544.41646,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
-      ],
-      "max_threshold": 10.0
-    },
-    "WIFUSDT": {
-      "coin": "WIFUSDT",
-      "price": 0.347,
-      "price_change_24h": 4.518,
-      "volume": 35712988.7,
-      "quote_volume": 12152819.37888,
+      "price": 0.00819,
+      "price_change_24h": -4.878,
+      "volume": 90638222.9,
+      "quote_volume": 757075.989008,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2426,12 +2090,50 @@
       ],
       "max_threshold": 2.0
     },
+    "STRKUSDT": {
+      "coin": "STRKUSDT",
+      "price": 0.0718,
+      "price_change_24h": -4.011,
+      "volume": 85451777.0,
+      "quote_volume": 6240438.276027,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "AXLUSDT": {
+      "coin": "AXLUSDT",
+      "price": 0.0681,
+      "price_change_24h": 2.715,
+      "volume": 25596484.44,
+      "quote_volume": 1742868.46328,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "WIFUSDT": {
+      "coin": "WIFUSDT",
+      "price": 0.336,
+      "price_change_24h": -1.466,
+      "volume": 23219251.65,
+      "quote_volume": 7808305.61423,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
     "AEVOUSDT": {
       "coin": "AEVOUSDT",
-      "price": 0.0417,
-      "price_change_24h": 1.214,
-      "volume": 25182611.68,
-      "quote_volume": 1047042.425593,
+      "price": 0.0372,
+      "price_change_24h": -1.587,
+      "volume": 7649694.79,
+      "quote_volume": 285054.04674,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -2440,10 +2142,10 @@
     },
     "BOMEUSDT": {
       "coin": "BOMEUSDT",
-      "price": 0.000654,
-      "price_change_24h": 1.395,
-      "volume": 3206425535.0,
-      "quote_volume": 2066040.809411,
+      "price": 0.000592,
+      "price_change_24h": -1.824,
+      "volume": 1500527099.0,
+      "quote_volume": 892576.531318,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -2452,118 +2154,124 @@
     },
     "ETHFIUSDT": {
       "coin": "ETHFIUSDT",
-      "price": 0.773,
-      "price_change_24h": 5.746,
-      "volume": 9394459.0,
-      "quote_volume": 7029682.0622,
+      "price": 0.608,
+      "price_change_24h": -1.935,
+      "volume": 7410164.8,
+      "quote_volume": 4566472.3651,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
+        1.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 1.0
     },
-    "WUSDT": {
-      "coin": "WUSDT",
-      "price": 0.0414,
-      "price_change_24h": 5.076,
-      "volume": 107476245.0,
-      "quote_volume": 4353515.76821,
+    "ENAUSDT": {
+      "coin": "ENAUSDT",
+      "price": 0.1763,
+      "price_change_24h": -1.398,
+      "volume": 90600727.37,
+      "quote_volume": 16023735.926102,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
+        1.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 1.0
     },
     "TNSRUSDT": {
       "coin": "TNSRUSDT",
-      "price": 0.1211,
-      "price_change_24h": -10.296,
-      "volume": 183312423.8,
-      "quote_volume": 23258138.93586,
+      "price": 0.0614,
+      "price_change_24h": -2.385,
+      "volume": 12156713.9,
+      "quote_volume": 754271.1619,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "SAGAUSDT": {
+      "coin": "SAGAUSDT",
+      "price": 0.0482,
+      "price_change_24h": -8.015,
+      "volume": 28294144.0,
+      "quote_volume": 1407404.84628,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0,
-        5.0,
-        10.0
+        5.0
       ],
-      "max_threshold": 10.0
+      "max_threshold": 5.0
+    },
+    "TAOUSDT": {
+      "coin": "TAOUSDT",
+      "price": 238.1,
+      "price_change_24h": -2.016,
+      "volume": 48267.622,
+      "quote_volume": 11566926.76037,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "REZUSDT": {
+      "coin": "REZUSDT",
+      "price": 0.00455,
+      "price_change_24h": -2.361,
+      "volume": 134228462.1,
+      "quote_volume": 611129.220061,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
     },
     "BBUSDT": {
       "coin": "BBUSDT",
-      "price": 0.0715,
-      "price_change_24h": -1.786,
-      "volume": 19079256.6,
-      "quote_volume": 1387446.82637,
+      "price": 0.0533,
+      "price_change_24h": -3.791,
+      "volume": 19874643.1,
+      "quote_volume": 1078115.79926,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 2.0
     },
     "NOTUSDT": {
       "coin": "NOTUSDT",
-      "price": 0.000552,
-      "price_change_24h": 7.602,
-      "volume": 1782031592.0,
-      "quote_volume": 950135.342324,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "IOUSDT": {
-      "coin": "IOUSDT",
-      "price": 0.197,
-      "price_change_24h": -1.5,
-      "volume": 12476941.66,
-      "quote_volume": 2482533.95381,
+      "price": 0.000559,
+      "price_change_24h": 1.821,
+      "volume": 1483172115.0,
+      "quote_volume": 820483.360406,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "LISTAUSDT": {
-      "coin": "LISTAUSDT",
-      "price": 0.1759,
-      "price_change_24h": 2.865,
-      "volume": 3130068.6,
-      "quote_volume": 545778.12099,
+    "ZKUSDT": {
+      "coin": "ZKUSDT",
+      "price": 0.0293,
+      "price_change_24h": -1.479,
+      "volume": 107948596.3,
+      "quote_volume": 3181483.448466,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
     "ZROUSDT": {
       "coin": "ZROUSDT",
-      "price": 1.322,
-      "price_change_24h": 8.717,
-      "volume": 3849779.81,
-      "quote_volume": 4846874.09742,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "RENDERUSDT": {
-      "coin": "RENDERUSDT",
-      "price": 1.593,
-      "price_change_24h": 2.378,
-      "volume": 3059604.3,
-      "quote_volume": 4771787.69433,
+      "price": 2.223,
+      "price_change_24h": -4.428,
+      "volume": 10807939.76,
+      "quote_volume": 24691577.01315,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2571,117 +2279,49 @@
       ],
       "max_threshold": 2.0
     },
-    "TONUSDT": {
-      "coin": "TONUSDT",
-      "price": 1.503,
-      "price_change_24h": 1.417,
-      "volume": 6861154.82,
-      "quote_volume": 10218454.22223,
+    "BANANAUSDT": {
+      "coin": "BANANAUSDT",
+      "price": 6.13,
+      "price_change_24h": 1.49,
+      "volume": 138078.662,
+      "quote_volume": 838686.97969,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
+    "RENDERUSDT": {
+      "coin": "RENDERUSDT",
+      "price": 2.015,
+      "price_change_24h": -4.048,
+      "volume": 5018628.13,
+      "quote_volume": 10313150.79008,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
     "DOGSUSDT": {
       "coin": "DOGSUSDT",
-      "price": 4.99e-05,
-      "price_change_24h": 23.821,
-      "volume": 117555163823.0,
-      "quote_volume": 5392884.9340891,
+      "price": 3.99e-05,
+      "price_change_24h": -1.724,
+      "volume": 8397188212.0,
+      "quote_volume": 336712.8412054,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
+        1.0
       ],
-      "max_threshold": 10.0
+      "max_threshold": 1.0
     },
-    "TURBOUSDT": {
-      "coin": "TURBOUSDT",
-      "price": 0.001817,
-      "price_change_24h": -2.99,
-      "volume": 1938291082.0,
-      "quote_volume": 3521735.790084,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "1MBABYDOGEUSDT": {
-      "coin": "1MBABYDOGEUSDT",
-      "price": 0.0006641,
-      "price_change_24h": 3.298,
-      "volume": 2423146182.0,
-      "quote_volume": 1584265.8712581,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "HMSTRUSDT": {
-      "coin": "HMSTRUSDT",
-      "price": 0.000219,
-      "price_change_24h": 2.817,
-      "volume": 9260474978.0,
-      "quote_volume": 1975697.369109,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "BNSOLUSDT": {
-      "coin": "BNSOLUSDT",
-      "price": 139.6,
-      "price_change_24h": 2.047,
-      "volume": 15399.264,
-      "quote_volume": 2106172.3121,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "KAIAUSDT": {
-      "coin": "KAIAUSDT",
-      "price": 0.0761,
-      "price_change_24h": 4.39,
-      "volume": 12462814.8,
-      "quote_volume": 929917.24226,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "COWUSDT": {
-      "coin": "COWUSDT",
-      "price": 0.1824,
-      "price_change_24h": 2.53,
-      "volume": 2735503.3,
-      "quote_volume": 492257.70455,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "ACTUSDT": {
-      "coin": "ACTUSDT",
-      "price": 0.0205,
-      "price_change_24h": -5.963,
-      "volume": 120440816.4,
-      "quote_volume": 2510228.32628,
+    "POLUSDT": {
+      "coin": "POLUSDT",
+      "price": 0.1278,
+      "price_change_24h": -5.193,
+      "volume": 58122135.0,
+      "quote_volume": 7545012.03696,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2690,38 +2330,72 @@
       ],
       "max_threshold": 5.0
     },
-    "THEUSDT": {
-      "coin": "THEUSDT",
-      "price": 0.1371,
-      "price_change_24h": 3.707,
-      "volume": 5024588.7,
-      "quote_volume": 662758.4287,
+    "NEIROUSDT": {
+      "coin": "NEIROUSDT",
+      "price": 0.00011884,
+      "price_change_24h": -1.508,
+      "volume": 26175087652.0,
+      "quote_volume": 3149360.06909978,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
-    "ACXUSDT": {
-      "coin": "ACXUSDT",
-      "price": 0.0551,
-      "price_change_24h": 2.991,
-      "volume": 4513949.3,
-      "quote_volume": 242043.39774,
+    "TURBOUSDT": {
+      "coin": "TURBOUSDT",
+      "price": 0.001536,
+      "price_change_24h": -1.095,
+      "volume": 474655243.0,
+      "quote_volume": 732970.950879,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
-    "ORCAUSDT": {
-      "coin": "ORCAUSDT",
-      "price": 1.312,
-      "price_change_24h": 11.281,
-      "volume": 4524553.64,
-      "quote_volume": 5925220.54845,
+    "1MBABYDOGEUSDT": {
+      "coin": "1MBABYDOGEUSDT",
+      "price": 0.0006012,
+      "price_change_24h": -1.346,
+      "volume": 1267800868.0,
+      "quote_volume": 766995.6575656,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "EIGENUSDT": {
+      "coin": "EIGENUSDT",
+      "price": 0.334,
+      "price_change_24h": -1.475,
+      "volume": 17634949.42,
+      "quote_volume": 5968765.65428,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "BNSOLUSDT": {
+      "coin": "BNSOLUSDT",
+      "price": 139.9,
+      "price_change_24h": -1.061,
+      "volume": 38465.552,
+      "quote_volume": 5373061.0992,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "KAIAUSDT": {
+      "coin": "KAIAUSDT",
+      "price": 0.0837,
+      "price_change_24h": 42.347,
+      "volume": 247233457.0,
+      "quote_volume": 17125987.23735,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2731,12 +2405,26 @@
       ],
       "max_threshold": 10.0
     },
-    "MOVEUSDT": {
-      "coin": "MOVEUSDT",
-      "price": 0.0465,
-      "price_change_24h": 2.423,
-      "volume": 16887406.4,
-      "quote_volume": 763920.43132,
+    "USUALUSDT": {
+      "coin": "USUALUSDT",
+      "price": 0.028,
+      "price_change_24h": -5.405,
+      "volume": 48534569.6,
+      "quote_volume": 1383485.69146,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "max_threshold": 5.0
+    },
+    "ACXUSDT": {
+      "coin": "ACXUSDT",
+      "price": 0.0492,
+      "price_change_24h": 4.237,
+      "volume": 4720675.6,
+      "quote_volume": 224998.67434,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2744,12 +2432,24 @@
       ],
       "max_threshold": 2.0
     },
+    "MOVEUSDT": {
+      "coin": "MOVEUSDT",
+      "price": 0.034,
+      "price_change_24h": 1.493,
+      "volume": 32183779.8,
+      "quote_volume": 1087656.13041,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
     "MEUSDT": {
       "coin": "MEUSDT",
-      "price": 0.321,
-      "price_change_24h": 7.0,
-      "volume": 6602566.53,
-      "quote_volume": 2071141.08352,
+      "price": 0.2198,
+      "price_change_24h": -5.787,
+      "volume": 4944313.05,
+      "quote_volume": 1114036.339,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2760,10 +2460,34 @@
     },
     "VANAUSDT": {
       "coin": "VANAUSDT",
-      "price": 2.906,
-      "price_change_24h": 7.869,
-      "volume": 1040527.06,
-      "quote_volume": 2971974.12665,
+      "price": 2.12,
+      "price_change_24h": -1.349,
+      "volume": 220596.14,
+      "quote_volume": 471778.67601,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "1000CATUSDT": {
+      "coin": "1000CATUSDT",
+      "price": 0.00276,
+      "price_change_24h": -1.075,
+      "volume": 141264003.6,
+      "quote_volume": 389538.347607,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "BIOUSDT": {
+      "coin": "BIOUSDT",
+      "price": 0.0482,
+      "price_change_24h": -7.129,
+      "volume": 112809676.9,
+      "quote_volume": 5676988.14737,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2772,50 +2496,12 @@
       ],
       "max_threshold": 5.0
     },
-    "1000CATUSDT": {
-      "coin": "1000CATUSDT",
-      "price": 0.00306,
-      "price_change_24h": 2.685,
-      "volume": 218550281.8,
-      "quote_volume": 672042.593634,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "PENGUUSDT": {
-      "coin": "PENGUUSDT",
-      "price": 0.01003,
-      "price_change_24h": 3.391,
-      "volume": 1604788961.0,
-      "quote_volume": 15519416.340916,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "BIOUSDT": {
-      "coin": "BIOUSDT",
-      "price": 0.0498,
-      "price_change_24h": -1.386,
-      "volume": 64934042.7,
-      "quote_volume": 3260962.67973,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
     "AIXBTUSDT": {
       "coin": "AIXBTUSDT",
-      "price": 0.0401,
-      "price_change_24h": -2.433,
-      "volume": 51331367.7,
-      "quote_volume": 2080001.24693,
+      "price": 0.0295,
+      "price_change_24h": -2.318,
+      "volume": 109942683.6,
+      "quote_volume": 3352181.58785,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2825,10 +2511,10 @@
     },
     "CGPTUSDT": {
       "coin": "CGPTUSDT",
-      "price": 0.0351,
-      "price_change_24h": 2.632,
-      "volume": 10467050.3,
-      "quote_volume": 364665.19906,
+      "price": 0.03116,
+      "price_change_24h": -2.228,
+      "volume": 11239319.8,
+      "quote_volume": 352580.679901,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2838,10 +2524,23 @@
     },
     "COOKIEUSDT": {
       "coin": "COOKIEUSDT",
-      "price": 0.0503,
-      "price_change_24h": 2.236,
-      "volume": 12895312.2,
-      "quote_volume": 644830.73014,
+      "price": 0.0282,
+      "price_change_24h": -4.407,
+      "volume": 19169239.2,
+      "quote_volume": 554416.2635,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "SUSDT": {
+      "coin": "SUSDT",
+      "price": 0.0714,
+      "price_change_24h": -4.032,
+      "volume": 37874549.7,
+      "quote_volume": 2715021.36113,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2851,10 +2550,22 @@
     },
     "SOLVUSDT": {
       "coin": "SOLVUSDT",
-      "price": 0.01778,
-      "price_change_24h": -2.522,
-      "volume": 146288979.0,
-      "quote_volume": 2647937.33863,
+      "price": 0.01271,
+      "price_change_24h": -1.166,
+      "volume": 146685828.0,
+      "quote_volume": 1914342.68577,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ANIMEUSDT": {
+      "coin": "ANIMEUSDT",
+      "price": 0.00658,
+      "price_change_24h": 2.174,
+      "volume": 135838333.7,
+      "quote_volume": 890760.270005,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2862,53 +2573,12 @@
       ],
       "max_threshold": 2.0
     },
-    "ANIMEUSDT": {
-      "coin": "ANIMEUSDT",
-      "price": 0.00652,
-      "price_change_24h": 13.986,
-      "volume": 1754783096.1,
-      "quote_volume": 11993392.606446,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
-      ],
-      "max_threshold": 10.0
-    },
     "BERAUSDT": {
       "coin": "BERAUSDT",
-      "price": 0.877,
-      "price_change_24h": -8.455,
-      "volume": 5278466.058,
-      "quote_volume": 4729211.573101,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "1000CHEEMSUSDT": {
-      "coin": "1000CHEEMSUSDT",
-      "price": 0.001204,
-      "price_change_24h": 1.092,
-      "volume": 928428215.0,
-      "quote_volume": 1121862.89429,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "TSTUSDT": {
-      "coin": "TSTUSDT",
-      "price": 0.01635,
-      "price_change_24h": 5.894,
-      "volume": 187132223.3,
-      "quote_volume": 3010435.6538,
+      "price": 0.751,
+      "price_change_24h": -5.177,
+      "volume": 5084544.777,
+      "quote_volume": 3897559.104905,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2919,10 +2589,10 @@
     },
     "HEIUSDT": {
       "coin": "HEIUSDT",
-      "price": 0.2212,
-      "price_change_24h": 8.325,
-      "volume": 13554802.7,
-      "quote_volume": 2949464.21712,
+      "price": 0.1427,
+      "price_change_24h": 6.731,
+      "volume": 11397796.2,
+      "quote_volume": 1588983.94153,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2933,24 +2603,34 @@
     },
     "KAITOUSDT": {
       "coin": "KAITOUSDT",
-      "price": 0.6553,
-      "price_change_24h": 5.95,
-      "volume": 2873617.1,
-      "quote_volume": 1847206.9903,
+      "price": 0.4173,
+      "price_change_24h": -1.09,
+      "volume": 10615805.2,
+      "quote_volume": 4343528.25681,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
+        1.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 1.0
+    },
+    "SHELLUSDT": {
+      "coin": "SHELLUSDT",
+      "price": 0.0493,
+      "price_change_24h": 1.232,
+      "volume": 13702898.0,
+      "quote_volume": 666096.94146,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
     },
     "REDUSDT": {
       "coin": "REDUSDT",
-      "price": 0.2493,
-      "price_change_24h": 3.358,
-      "volume": 2570474.9,
-      "quote_volume": 626049.16349,
+      "price": 0.2345,
+      "price_change_24h": 2.402,
+      "volume": 2357874.8,
+      "quote_volume": 545072.35311,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2960,10 +2640,35 @@
     },
     "GPSUSDT": {
       "coin": "GPSUSDT",
-      "price": 0.00609,
-      "price_change_24h": 3.046,
-      "volume": 113073142.6,
-      "quote_volume": 689384.589106,
+      "price": 0.00709,
+      "price_change_24h": -1.116,
+      "volume": 126137478.1,
+      "quote_volume": 918530.646649,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "EPICUSDT": {
+      "coin": "EPICUSDT",
+      "price": 0.557,
+      "price_change_24h": -2.281,
+      "volume": 795967.3,
+      "quote_volume": 447399.5122,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "BMTUSDT": {
+      "coin": "BMTUSDT",
+      "price": 0.0234,
+      "price_change_24h": 2.632,
+      "volume": 18699976.0,
+      "quote_volume": 431971.17293,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -2973,39 +2678,10 @@
     },
     "NILUSDT": {
       "coin": "NILUSDT",
-      "price": 0.0733,
-      "price_change_24h": -5.297,
-      "volume": 22601194.0,
-      "quote_volume": 1701886.59472,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "PARTIUSDT": {
-      "coin": "PARTIUSDT",
-      "price": 0.1152,
-      "price_change_24h": 11.304,
-      "volume": 54017685.2,
-      "quote_volume": 5633474.28704,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
-      ],
-      "max_threshold": 10.0
-    },
-    "MUBARAKUSDT": {
-      "coin": "MUBARAKUSDT",
-      "price": 0.01569,
-      "price_change_24h": 3.088,
-      "volume": 59004659.2,
-      "quote_volume": 907386.977688,
+      "price": 0.0715,
+      "price_change_24h": -2.322,
+      "volume": 7666069.7,
+      "quote_volume": 548710.9689,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3013,12 +2689,36 @@
       ],
       "max_threshold": 2.0
     },
+    "PARTIUSDT": {
+      "coin": "PARTIUSDT",
+      "price": 0.0917,
+      "price_change_24h": 1.776,
+      "volume": 12751480.2,
+      "quote_volume": 1150228.15776,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "MUBARAKUSDT": {
+      "coin": "MUBARAKUSDT",
+      "price": 0.0199,
+      "price_change_24h": -1.874,
+      "volume": 67732319.7,
+      "quote_volume": 1359688.660228,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
     "TUTUSDT": {
       "coin": "TUTUSDT",
-      "price": 0.01475,
-      "price_change_24h": 2.006,
-      "volume": 75626208.0,
-      "quote_volume": 1105067.66936,
+      "price": 0.01544,
+      "price_change_24h": -3.137,
+      "volume": 25839740.0,
+      "quote_volume": 404567.62742,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3028,36 +2728,49 @@
     },
     "BROCCOLI714USDT": {
       "coin": "BROCCOLI714USDT",
-      "price": 0.01389,
-      "price_change_24h": 7.591,
-      "volume": 111650475.0,
-      "quote_volume": 1489342.43639,
+      "price": 0.01964,
+      "price_change_24h": -2.531,
+      "volume": 226332442.0,
+      "quote_volume": 4570566.52441,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "BANANAS31USDT": {
       "coin": "BANANAS31USDT",
-      "price": 0.003684,
-      "price_change_24h": -1.339,
-      "volume": 783577972.0,
-      "quote_volume": 2894057.90924,
+      "price": 0.004283,
+      "price_change_24h": -2.571,
+      "volume": 577639713.0,
+      "quote_volume": 2555330.370417,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 2.0
     },
     "GUNUSDT": {
       "coin": "GUNUSDT",
-      "price": 0.0116,
-      "price_change_24h": -2.11,
-      "volume": 48113118.0,
-      "quote_volume": 564155.78538,
+      "price": 0.03393,
+      "price_change_24h": -2.528,
+      "volume": 413002922.0,
+      "quote_volume": 14504060.115,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "BABYUSDT": {
+      "coin": "BABYUSDT",
+      "price": 0.01771,
+      "price_change_24h": 2.37,
+      "volume": 21996916.0,
+      "quote_volume": 384362.50154,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3067,10 +2780,10 @@
     },
     "ONDOUSDT": {
       "coin": "ONDOUSDT",
-      "price": 0.4652,
-      "price_change_24h": 2.174,
-      "volume": 12188103.4,
-      "quote_volume": 5585123.68324,
+      "price": 0.3458,
+      "price_change_24h": -2.206,
+      "volume": 16586368.6,
+      "quote_volume": 5842169.60355,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3080,22 +2793,38 @@
     },
     "BIGTIMEUSDT": {
       "coin": "BIGTIMEUSDT",
-      "price": 0.0224,
-      "price_change_24h": 1.22,
-      "volume": 21440272.0,
-      "quote_volume": 481456.29928,
+      "price": 0.02178,
+      "price_change_24h": -6.202,
+      "volume": 43404031.0,
+      "quote_volume": 958211.47397,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0,
+        5.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 5.0
     },
     "VIRTUALUSDT": {
       "coin": "VIRTUALUSDT",
-      "price": 0.8538,
-      "price_change_24h": 5.944,
-      "volume": 22015387.2,
-      "quote_volume": 18521266.93614,
+      "price": 0.8286,
+      "price_change_24h": -5.389,
+      "volume": 11463428.1,
+      "quote_volume": 9791447.78185,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "max_threshold": 5.0
+    },
+    "KERNELUSDT": {
+      "coin": "KERNELUSDT",
+      "price": 0.0734,
+      "price_change_24h": 9.552,
+      "volume": 25587848.0,
+      "quote_volume": 1798545.18975,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3106,74 +2835,36 @@
     },
     "WCTUSDT": {
       "coin": "WCTUSDT",
-      "price": 0.0904,
-      "price_change_24h": 3.432,
-      "volume": 27776761.6,
-      "quote_volume": 2456408.02707,
+      "price": 0.0783,
+      "price_change_24h": 6.531,
+      "volume": 32101605.6,
+      "quote_volume": 2457430.0891,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0
+        2.0,
+        5.0
       ],
-      "max_threshold": 2.0
-    },
-    "HYPERUSDT": {
-      "coin": "HYPERUSDT",
-      "price": 0.1226,
-      "price_change_24h": 2.594,
-      "volume": 9562777.6,
-      "quote_volume": 1148122.54863,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
+      "max_threshold": 5.0
     },
     "INITUSDT": {
       "coin": "INITUSDT",
-      "price": 0.0987,
-      "price_change_24h": -2.567,
-      "volume": 39908483.4,
-      "quote_volume": 4100765.74917,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "SIGNUSDT": {
-      "coin": "SIGNUSDT",
-      "price": 0.03779,
-      "price_change_24h": 4.71,
-      "volume": 85059669.0,
-      "quote_volume": 3103510.23585,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "STOUSDT": {
-      "coin": "STOUSDT",
-      "price": 0.1126,
-      "price_change_24h": -1.487,
-      "volume": 3710408.3,
-      "quote_volume": 424496.81423,
+      "price": 0.0841,
+      "price_change_24h": 1.939,
+      "volume": 7162558.1,
+      "quote_volume": 588591.37514,
       "triggered": true,
       "triggered_thresholds": [
         1.0
       ],
       "max_threshold": 1.0
     },
-    "SYRUPUSDT": {
-      "coin": "SYRUPUSDT",
-      "price": 0.2575,
-      "price_change_24h": 2.549,
-      "volume": 18702691.2,
-      "quote_volume": 4714539.02144,
+    "STOUSDT": {
+      "coin": "STOUSDT",
+      "price": 0.0811,
+      "price_change_24h": -2.99,
+      "volume": 6203204.7,
+      "quote_volume": 507742.10728,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3183,24 +2874,36 @@
     },
     "KMNOUSDT": {
       "coin": "KMNOUSDT",
-      "price": 0.05946,
-      "price_change_24h": 5.127,
-      "volume": 60365001.0,
-      "quote_volume": 3507343.37933,
+      "price": 0.04781,
+      "price_change_24h": -2.627,
+      "volume": 7385654.0,
+      "quote_volume": 359467.68329,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
+    },
+    "SXTUSDT": {
+      "coin": "SXTUSDT",
+      "price": 0.0305,
+      "price_change_24h": -2.866,
+      "volume": 40681363.9,
+      "quote_volume": 1267016.13261,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
     },
     "NXPCUSDT": {
       "coin": "NXPCUSDT",
-      "price": 0.4436,
-      "price_change_24h": 2.733,
-      "volume": 2693357.5,
-      "quote_volume": 1177007.54216,
+      "price": 0.3721,
+      "price_change_24h": 4.846,
+      "volume": 829416.7,
+      "quote_volume": 296871.25972,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3210,35 +2913,10 @@
     },
     "AWEUSDT": {
       "coin": "AWEUSDT",
-      "price": 0.05579,
-      "price_change_24h": 3.2,
-      "volume": 36857328.0,
-      "quote_volume": 2096015.27992,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "HAEDALUSDT": {
-      "coin": "HAEDALUSDT",
-      "price": 0.0512,
-      "price_change_24h": 1.789,
-      "volume": 8998283.3,
-      "quote_volume": 457623.39062,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "HUMAUSDT": {
-      "coin": "HUMAUSDT",
-      "price": 0.02591,
-      "price_change_24h": -3.609,
-      "volume": 143581007.0,
-      "quote_volume": 3765404.92511,
+      "price": 0.05482,
+      "price_change_24h": 3.181,
+      "volume": 4160527.0,
+      "quote_volume": 224108.81134,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3248,10 +2926,10 @@
     },
     "AUSDT": {
       "coin": "AUSDT",
-      "price": 0.1829,
-      "price_change_24h": 1.498,
-      "volume": 10050060.8,
-      "quote_volume": 1849881.92556,
+      "price": 0.114,
+      "price_change_24h": 1.423,
+      "volume": 31443267.1,
+      "quote_volume": 3592512.58521,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -3260,38 +2938,38 @@
     },
     "SOPHUSDT": {
       "coin": "SOPHUSDT",
-      "price": 0.01579,
-      "price_change_24h": 5.057,
-      "volume": 40297487.0,
-      "quote_volume": 619641.90289,
+      "price": 0.01239,
+      "price_change_24h": 4.557,
+      "volume": 48911210.0,
+      "quote_volume": 595060.64873,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "RESOLVUSDT": {
       "coin": "RESOLVUSDT",
-      "price": 0.0728,
-      "price_change_24h": -8.428,
-      "volume": 86946651.0,
-      "quote_volume": 6741661.61578,
+      "price": 0.0984,
+      "price_change_24h": -10.708,
+      "volume": 18900584.7,
+      "quote_volume": 1934256.23013,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0,
-        5.0
+        5.0,
+        10.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 10.0
     },
     "HOMEUSDT": {
       "coin": "HOMEUSDT",
-      "price": 0.0238,
-      "price_change_24h": -4.647,
-      "volume": 83611354.0,
-      "quote_volume": 2008253.82237,
+      "price": 0.02987,
+      "price_change_24h": -2.799,
+      "volume": 82006841.0,
+      "quote_volume": 2543594.45765,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3301,10 +2979,10 @@
     },
     "SPKUSDT": {
       "coin": "SPKUSDT",
-      "price": 0.027058,
-      "price_change_24h": 3.548,
-      "volume": 116111340.0,
-      "quote_volume": 3114750.37793,
+      "price": 0.022506,
+      "price_change_24h": 3.714,
+      "volume": 131102664.0,
+      "quote_volume": 2926439.448659,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3312,12 +2990,26 @@
       ],
       "max_threshold": 2.0
     },
+    "NEWTUSDT": {
+      "coin": "NEWTUSDT",
+      "price": 0.0994,
+      "price_change_24h": 6.767,
+      "volume": 7180552.5,
+      "quote_volume": 693852.14783,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "max_threshold": 5.0
+    },
     "SAHARAUSDT": {
       "coin": "SAHARAUSDT",
-      "price": 0.03841,
-      "price_change_24h": -3.589,
-      "volume": 203683320.0,
-      "quote_volume": 7972936.33749,
+      "price": 0.02428,
+      "price_change_24h": 2.794,
+      "volume": 37430562.0,
+      "quote_volume": 902268.92873,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3327,22 +3019,24 @@
     },
     "LAUSDT": {
       "coin": "LAUSDT",
-      "price": 0.382,
-      "price_change_24h": 1.085,
-      "volume": 7276555.8,
-      "quote_volume": 2851146.55475,
+      "price": 0.3131,
+      "price_change_24h": 5.314,
+      "volume": 2145255.5,
+      "quote_volume": 664778.09921,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0,
+        5.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 5.0
     },
     "ERAUSDT": {
       "coin": "ERAUSDT",
-      "price": 0.2359,
-      "price_change_24h": -2.44,
-      "volume": 5995163.1,
-      "quote_volume": 1429191.02934,
+      "price": 0.211,
+      "price_change_24h": 3.736,
+      "volume": 4703529.1,
+      "quote_volume": 983147.66988,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3352,64 +3046,38 @@
     },
     "CUSDT": {
       "coin": "CUSDT",
-      "price": 0.0754,
-      "price_change_24h": 5.75,
-      "volume": 16749186.9,
-      "quote_volume": 1249885.93473,
+      "price": 0.0728,
+      "price_change_24h": 4.149,
+      "volume": 5212376.5,
+      "quote_volume": 375874.58682,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
-        2.0,
-        5.0
+        2.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 2.0
     },
     "TREEUSDT": {
       "coin": "TREEUSDT",
-      "price": 0.1212,
-      "price_change_24h": 3.237,
-      "volume": 6169307.0,
-      "quote_volume": 738515.25677,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "A2ZUSDT": {
-      "coin": "A2ZUSDT",
-      "price": 0.001914,
-      "price_change_24h": -8.64,
-      "volume": 1457013492.0,
-      "quote_volume": 2967137.396904,
+      "price": 0.1052,
+      "price_change_24h": 10.97,
+      "volume": 21185667.1,
+      "quote_volume": 2133376.98398,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0,
-        5.0
+        5.0,
+        10.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 10.0
     },
     "TOWNSUSDT": {
       "coin": "TOWNSUSDT",
-      "price": 0.00745,
-      "price_change_24h": 3.329,
-      "volume": 164725791.0,
-      "quote_volume": 1210756.52566,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "PROVEUSDT": {
-      "coin": "PROVEUSDT",
-      "price": 0.4394,
-      "price_change_24h": 3.534,
-      "volume": 4242543.3,
-      "quote_volume": 1812391.26628,
+      "price": 0.00607,
+      "price_change_24h": -2.568,
+      "volume": 89342472.0,
+      "quote_volume": 543975.91564,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3419,23 +3087,22 @@
     },
     "PLUMEUSDT": {
       "coin": "PLUMEUSDT",
-      "price": 0.01967,
-      "price_change_24h": 4.628,
-      "volume": 215185252.0,
-      "quote_volume": 4248029.45665,
+      "price": 0.01531,
+      "price_change_24h": 1.931,
+      "volume": 277978287.0,
+      "quote_volume": 4369905.87102,
       "triggered": true,
       "triggered_thresholds": [
-        1.0,
-        2.0
+        1.0
       ],
-      "max_threshold": 2.0
+      "max_threshold": 1.0
     },
-    "WLFIUSDT": {
-      "coin": "WLFIUSDT",
-      "price": 0.1575,
-      "price_change_24h": 8.471,
-      "volume": 265206042.5,
-      "quote_volume": 40180515.48345,
+    "MITOUSDT": {
+      "coin": "MITOUSDT",
+      "price": 0.0614,
+      "price_change_24h": -6.345,
+      "volume": 6638757.6,
+      "quote_volume": 414949.688062,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3444,12 +3111,12 @@
       ],
       "max_threshold": 5.0
     },
-    "SOMIUSDT": {
-      "coin": "SOMIUSDT",
-      "price": 0.2384,
-      "price_change_24h": 3.788,
-      "volume": 5717877.4,
-      "quote_volume": 1337289.44271,
+    "WLFIUSDT": {
+      "coin": "WLFIUSDT",
+      "price": 0.176,
+      "price_change_24h": 2.684,
+      "volume": 52236692.7,
+      "quote_volume": 9055010.74738,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3457,24 +3124,55 @@
       ],
       "max_threshold": 2.0
     },
-    "OPENUSDT": {
-      "coin": "OPENUSDT",
-      "price": 0.2121,
-      "price_change_24h": 1.338,
-      "volume": 2096621.1,
-      "quote_volume": 446885.4914,
+    "SOMIUSDT": {
+      "coin": "SOMIUSDT",
+      "price": 0.224,
+      "price_change_24h": 16.667,
+      "volume": 38422720.6,
+      "quote_volume": 8057729.85028,
       "triggered": true,
       "triggered_thresholds": [
-        1.0
+        1.0,
+        2.0,
+        5.0,
+        10.0
       ],
-      "max_threshold": 1.0
+      "max_threshold": 10.0
+    },
+    "OPENUSDT": {
+      "coin": "OPENUSDT",
+      "price": 0.1679,
+      "price_change_24h": 11.045,
+      "volume": 23159780.3,
+      "quote_volume": 3750702.5156,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
+    "LINEAUSDT": {
+      "coin": "LINEAUSDT",
+      "price": 0.00547,
+      "price_change_24h": 2.434,
+      "volume": 1105759337.0,
+      "quote_volume": 5908021.67023,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
     },
     "HOLOUSDT": {
       "coin": "HOLOUSDT",
-      "price": 0.0778,
-      "price_change_24h": 3.183,
-      "volume": 4015611.5,
-      "quote_volume": 308330.3786,
+      "price": 0.0702,
+      "price_change_24h": 4.776,
+      "volume": 12717681.7,
+      "quote_volume": 881312.31933,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3484,10 +3182,61 @@
     },
     "PUMPUSDT": {
       "coin": "PUMPUSDT",
-      "price": 0.002899,
-      "price_change_24h": 10.818,
-      "volume": 11119736957.0,
-      "quote_volume": 30464321.997674,
+      "price": 0.002459,
+      "price_change_24h": -2.691,
+      "volume": 7698709460.0,
+      "quote_volume": 18815007.788855,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "AVNTUSDT": {
+      "coin": "AVNTUSDT",
+      "price": 0.2764,
+      "price_change_24h": 2.332,
+      "volume": 6188024.7,
+      "quote_volume": 1704432.45914,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "ZKCUSDT": {
+      "coin": "ZKCUSDT",
+      "price": 0.1085,
+      "price_change_24h": 4.327,
+      "volume": 27905868.8,
+      "quote_volume": 2988780.572,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "SKYUSDT": {
+      "coin": "SKYUSDT",
+      "price": 0.06673,
+      "price_change_24h": 1.106,
+      "volume": 33282551.0,
+      "quote_volume": 2208363.96833,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "0GUSDT": {
+      "coin": "0GUSDT",
+      "price": 1.113,
+      "price_change_24h": 29.118,
+      "volume": 25893690.48,
+      "quote_volume": 26454794.81368,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3497,130 +3246,40 @@
       ],
       "max_threshold": 10.0
     },
-    "AVNTUSDT": {
-      "coin": "AVNTUSDT",
-      "price": 0.3259,
-      "price_change_24h": -1.66,
-      "volume": 7766124.3,
-      "quote_volume": 2540381.83792,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "ZKCUSDT": {
-      "coin": "ZKCUSDT",
-      "price": 0.1373,
-      "price_change_24h": 5.697,
-      "volume": 21969926.9,
-      "quote_volume": 3028220.94695,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "SKYUSDT": {
-      "coin": "SKYUSDT",
-      "price": 0.05372,
-      "price_change_24h": 7.937,
-      "volume": 54967490.0,
-      "quote_volume": 2823339.96497,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "BARDUSDT": {
-      "coin": "BARDUSDT",
-      "price": 0.741,
-      "price_change_24h": 1.119,
-      "volume": 3541538.4,
-      "quote_volume": 2602816.33097,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "0GUSDT": {
-      "coin": "0GUSDT",
-      "price": 1.17,
-      "price_change_24h": 8.736,
-      "volume": 4840322.28,
-      "quote_volume": 5605980.42412,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
     "HEMIUSDT": {
       "coin": "HEMIUSDT",
-      "price": 0.0137,
-      "price_change_24h": -2.143,
-      "volume": 189054274.1,
-      "quote_volume": 2606917.02861,
+      "price": 0.0143,
+      "price_change_24h": 2.878,
+      "volume": 120903109.3,
+      "quote_volume": 1704132.64991,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0
       ],
       "max_threshold": 2.0
-    },
-    "XPLUSDT": {
-      "coin": "XPLUSDT",
-      "price": 0.1793,
-      "price_change_24h": 1.185,
-      "volume": 174902690.4,
-      "quote_volume": 31464645.48478,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
     },
     "MIRAUSDT": {
       "coin": "MIRAUSDT",
-      "price": 0.1485,
-      "price_change_24h": 6.528,
-      "volume": 10072381.2,
-      "quote_volume": 1433642.60747,
+      "price": 0.1346,
+      "price_change_24h": 10.873,
+      "volume": 17344086.7,
+      "quote_volume": 2248974.68943,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0,
-        5.0
+        5.0,
+        10.0
       ],
-      "max_threshold": 5.0
-    },
-    "FFUSDT": {
-      "coin": "FFUSDT",
-      "price": 0.10785,
-      "price_change_24h": 3.404,
-      "volume": 42619499.1,
-      "quote_volume": 4549586.899163,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
+      "max_threshold": 10.0
     },
     "EDENUSDT": {
       "coin": "EDENUSDT",
-      "price": 0.0696,
-      "price_change_24h": 2.504,
-      "volume": 24654030.2,
-      "quote_volume": 1725771.65036,
+      "price": 0.0599,
+      "price_change_24h": 4.174,
+      "volume": 14102237.7,
+      "quote_volume": 830208.31451,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3630,10 +3289,40 @@
     },
     "NOMUSDT": {
       "coin": "NOMUSDT",
-      "price": 0.00996,
-      "price_change_24h": 2.786,
-      "volume": 60347364.0,
-      "quote_volume": 592031.91419,
+      "price": 0.00763,
+      "price_change_24h": 12.041,
+      "volume": 211438944.0,
+      "quote_volume": 1535745.16095,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
+    "2ZUSDT": {
+      "coin": "2ZUSDT",
+      "price": 0.14516,
+      "price_change_24h": 13.815,
+      "volume": 67314173.0,
+      "quote_volume": 9426753.74296,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
+    "ASTERUSDT": {
+      "coin": "ASTERUSDT",
+      "price": 0.639,
+      "price_change_24h": 2.24,
+      "volume": 47903334.79,
+      "quote_volume": 30622108.7457,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3641,54 +3330,12 @@
       ],
       "max_threshold": 2.0
     },
-    "2ZUSDT": {
-      "coin": "2ZUSDT",
-      "price": 0.10761,
-      "price_change_24h": 5.728,
-      "volume": 22655141.0,
-      "quote_volume": 2419510.84299,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "ASTERUSDT": {
-      "coin": "ASTERUSDT",
-      "price": 0.978,
-      "price_change_24h": 5.616,
-      "volume": 134327743.08,
-      "quote_volume": 125693077.71729,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
-    "WALUSDT": {
-      "coin": "WALUSDT",
-      "price": 0.1456,
-      "price_change_24h": 9.391,
-      "volume": 20204185.4,
-      "quote_volume": 2796249.24605,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0
-      ],
-      "max_threshold": 5.0
-    },
     "EULUSDT": {
       "coin": "EULUSDT",
-      "price": 4.199,
-      "price_change_24h": 1.917,
-      "volume": 522833.31,
-      "quote_volume": 2142785.63556,
+      "price": 1.781,
+      "price_change_24h": -1.765,
+      "volume": 536993.2,
+      "quote_volume": 962544.90025,
       "triggered": true,
       "triggered_thresholds": [
         1.0
@@ -3697,36 +3344,53 @@
     },
     "ENSOUSDT": {
       "coin": "ENSOUSDT",
-      "price": 0.708,
-      "price_change_24h": 1.143,
-      "volume": 1175181.21,
-      "quote_volume": 826848.39765,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0
-      ],
-      "max_threshold": 1.0
-    },
-    "YBUSDT": {
-      "coin": "YBUSDT",
-      "price": 0.4134,
-      "price_change_24h": -6.661,
-      "volume": 3258401.9,
-      "quote_volume": 1404263.12454,
+      "price": 1.151,
+      "price_change_24h": 69.764,
+      "volume": 36528836.66,
+      "quote_volume": 32512371.10924,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
         2.0,
-        5.0
+        5.0,
+        10.0
       ],
-      "max_threshold": 5.0
+      "max_threshold": 10.0
+    },
+    "YBUSDT": {
+      "coin": "YBUSDT",
+      "price": 0.2665,
+      "price_change_24h": 3.335,
+      "volume": 8236508.9,
+      "quote_volume": 2180735.71129,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
     },
     "ZBTUSDT": {
       "coin": "ZBTUSDT",
-      "price": 0.1084,
-      "price_change_24h": 2.846,
-      "volume": 6967335.2,
-      "quote_volume": 745502.33198,
+      "price": 0.1074,
+      "price_change_24h": 11.642,
+      "volume": 70192780.8,
+      "quote_volume": 7360952.28294,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
+    "TURTLEUSDT": {
+      "coin": "TURTLEUSDT",
+      "price": 0.057,
+      "price_change_24h": 4.972,
+      "volume": 32104925.8,
+      "quote_volume": 1784057.52539,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3736,40 +3400,10 @@
     },
     "GIGGLEUSDT": {
       "coin": "GIGGLEUSDT",
-      "price": 88.59,
-      "price_change_24h": -25.872,
-      "volume": 893334.243,
-      "quote_volume": 85772434.14285,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
-      ],
-      "max_threshold": 10.0
-    },
-    "KITEUSDT": {
-      "coin": "KITEUSDT",
-      "price": 0.0912,
-      "price_change_24h": -13.636,
-      "volume": 135139169.9,
-      "quote_volume": 12880025.23405,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0,
-        5.0,
-        10.0
-      ],
-      "max_threshold": 10.0
-    },
-    "MMTUSDT": {
-      "coin": "MMTUSDT",
-      "price": 0.2365,
-      "price_change_24h": 4.971,
-      "volume": 37048464.3,
-      "quote_volume": 8779244.53325,
+      "price": 51.74,
+      "price_change_24h": -2.433,
+      "volume": 131496.946,
+      "quote_volume": 6748705.63047,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3777,38 +3411,12 @@
       ],
       "max_threshold": 2.0
     },
-    "SAPIENUSDT": {
-      "coin": "SAPIENUSDT",
-      "price": 0.1146,
-      "price_change_24h": 2.048,
-      "volume": 18317962.8,
-      "quote_volume": 2089197.04856,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "BANKUSDT": {
-      "coin": "BANKUSDT",
-      "price": 0.0426,
-      "price_change_24h": -3.401,
-      "volume": 41443048.7,
-      "quote_volume": 1861253.20674,
-      "triggered": true,
-      "triggered_thresholds": [
-        1.0,
-        2.0
-      ],
-      "max_threshold": 2.0
-    },
-    "METUSDT": {
-      "coin": "METUSDT",
-      "price": 0.3101,
-      "price_change_24h": 6.053,
-      "volume": 17903383.8,
-      "quote_volume": 5352157.13062,
+    "FUSDT": {
+      "coin": "FUSDT",
+      "price": 0.00682,
+      "price_change_24h": 9.823,
+      "volume": 243072758.0,
+      "quote_volume": 1594731.74426,
       "triggered": true,
       "triggered_thresholds": [
         1.0,
@@ -3817,12 +3425,119 @@
       ],
       "max_threshold": 5.0
     },
-    "ATUSDT": {
-      "coin": "ATUSDT",
-      "price": 0.1327,
-      "price_change_24h": -23.206,
-      "volume": 278068647.9,
-      "quote_volume": 42810888.83697,
+    "KITEUSDT": {
+      "coin": "KITEUSDT",
+      "price": 0.1147,
+      "price_change_24h": -2.549,
+      "volume": 34015051.5,
+      "quote_volume": 3970801.50158,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "MMTUSDT": {
+      "coin": "MMTUSDT",
+      "price": 0.2428,
+      "price_change_24h": 19.783,
+      "volume": 80650081.2,
+      "quote_volume": 19156141.64095,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "max_threshold": 10.0
+    },
+    "SAPIENUSDT": {
+      "coin": "SAPIENUSDT",
+      "price": 0.1266,
+      "price_change_24h": 1.524,
+      "volume": 10023752.5,
+      "quote_volume": 1282275.81784,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "ALLOUSDT": {
+      "coin": "ALLOUSDT",
+      "price": 0.0906,
+      "price_change_24h": 6.588,
+      "volume": 22624584.9,
+      "quote_volume": 1971228.03734,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "max_threshold": 5.0
+    },
+    "BANKUSDT": {
+      "coin": "BANKUSDT",
+      "price": 0.0545,
+      "price_change_24h": 6.445,
+      "volume": 29509967.5,
+      "quote_volume": 1612767.1253,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "max_threshold": 5.0
+    },
+    "BREVUSDT": {
+      "coin": "BREVUSDT",
+      "price": 0.2478,
+      "price_change_24h": 1.85,
+      "volume": 27915166.3,
+      "quote_volume": 6881182.45043,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0
+      ],
+      "max_threshold": 1.0
+    },
+    "币安人生USDT": {
+      "coin": "币安人生USDT",
+      "price": 0.1747,
+      "price_change_24h": -4.796,
+      "volume": 121034865.8,
+      "quote_volume": 21071159.63821,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0
+      ],
+      "max_threshold": 2.0
+    },
+    "FRAXUSDT": {
+      "coin": "FRAXUSDT",
+      "price": 0.9327,
+      "price_change_24h": -7.909,
+      "volume": 4520448.1,
+      "quote_volume": 4392122.92831,
+      "triggered": true,
+      "triggered_thresholds": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "max_threshold": 5.0
+    },
+    "SENTUSDT": {
+      "coin": "SENTUSDT",
+      "price": 0.026,
+      "price_change_24h": -11.202,
+      "volume": 4008501414.0,
+      "quote_volume": 107162598.65962,
       "triggered": true,
       "triggered_thresholds": [
         1.0,

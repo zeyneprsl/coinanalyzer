@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-12-02 15:50:35",
+  "timestamp": "2026-01-24 04:53:16",
   "source": "Binance REST API (pseudo-correlation)",
   "exchange": "Binance",
   "quote_currency": "USDT",
   "pair_type": "USDT çiftleri",
   "note": "Gerçek zamanlı korelasyon için WebSocket gerekli",
-  "total_pairs_available": 440,
-  "total_coins_analyzed": 440,
-  "total_correlation_pairs": 263,
+  "total_pairs_available": 445,
+  "total_coins_analyzed": 445,
+  "total_correlation_pairs": 411,
   "correlations": [
     {
       "coin1": "BTCUSDT",
-      "coin2": "BNBUSDT",
+      "coin2": "ETHUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -29,7 +29,25 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "QTUMUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "ADAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "XRPUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "IOTAUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -47,7 +65,13 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ICXUSDT",
+      "coin2": "TRXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ETCUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -59,20 +83,50 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "BATUSDT",
+      "coin2": "LINKUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ONGUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HOTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ZILUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ZRXUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "FETUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BATUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "ZECUSDT",
       "correlation": -1.0,
-      "abs_correlation": 1.0
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "CELRUSDT",
-      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -89,8 +143,62 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "ENJUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ATOMUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TFUELUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ONEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ALGOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DOGEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "DUSKUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ANKRUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "WINUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "COSUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -101,14 +209,20 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "DENTUSDT",
-      "correlation": -1.0,
+      "coin2": "WANUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "FUNUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CHZUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -119,8 +233,86 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "XTZUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RVNUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HBARUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "NKNUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "STXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "KAVAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ARPAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "IOTXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RLCUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "FTTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "EURUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "OGNUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LSKUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BNTUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -131,20 +323,140 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "SXPUSDT",
+      "coin2": "COTIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DATAUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SOLUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CTSIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HIVEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CHRUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ARDRUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "MDTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "KNCUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LRCUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "COMPUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SCUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SNXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "VTHOUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DGBUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "DCRUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "STORJUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "MANAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "YFIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "JSTUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CRVUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SANDUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "NMRUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -155,13 +467,31 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "LUNAUSDT",
+      "coin2": "RSRUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PAXGUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TRBUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "RSRUSDT",
+      "coin2": "SUSHIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "KSMUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -173,7 +503,67 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "DIAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "RUNEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "FIOUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "UMAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BELUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "UNIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "OXTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SUNUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AVAXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "XVSUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AAVEUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -185,19 +575,61 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "FILUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "INJUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "CTKUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "AXSUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ROSEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AVAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SKLUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "GRTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "JUVUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PSGUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -215,13 +647,79 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "ATMUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ASRUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CELOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RIFUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CKBUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TWTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SFPUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DODOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "CAKEUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "FISUSDT",
+      "coin2": "ACMUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "OMUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PONDUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DEGOUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
@@ -234,7 +732,79 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "SUPERUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CFXUSDT",
       "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TKOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PUNDIXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TLMUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BARUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "FORTHUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SHIBUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ICPUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ARUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LPTUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "XVGUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ATAUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -246,12 +816,6 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "PHAUSDT",
-      "correlation": -1.0,
-      "abs_correlation": 1.0
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "MLNUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -275,6 +839,12 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "FLOWUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "MINAUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
@@ -287,14 +857,86 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "FARMUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "QUICKUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "MBOXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "REQUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "GHSTUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "IDEXUSDT",
+      "coin2": "WAXPUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "GNOUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "XECUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DYDXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "GALAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ILVUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "YGGUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SYSUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DFUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -306,6 +948,24 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "AGLDUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RADUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RAREUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LAZIOUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -317,31 +977,103 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "AUCTIONUSDT",
+      "coin2": "ADXUSDT",
       "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AUCTIONUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "MOVRUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CITYUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "ENSUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "QIUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ALCXUSDT",
+      "coin2": "PORTOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "JASMYUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AMPUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PYRUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SANTOSUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BICOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "FLUXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HIGHUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "CVXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "PEOPLEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "JOEUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -353,14 +1085,44 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "SCRTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "API3USDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ACAUSDT",
+      "coin2": "XNOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "WOOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ALPINEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ASTRUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -371,13 +1133,37 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "BIFIUSDT",
+      "coin2": "APEUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "BIFIUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "STEEMUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "NEXOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LDOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "OPUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -389,7 +1175,13 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "LUNCUSDT",
+      "coin2": "GMXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "POLYXUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -401,8 +1193,56 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "LQTYUSDT",
+      "coin2": "OSMOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HFTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PHBUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HOOKUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "MAGICUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "GNSUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SYNUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SSVUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LQTYUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -413,14 +1253,68 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "GASUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "GLMUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PROMUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "QKCUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "IDUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ARBUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RDNTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "WBTCUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "EDUUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SUIUSDT",
       "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PEPEUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -432,7 +1326,7 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "MAVUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -443,8 +1337,32 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "CYBERUSDT",
+      "coin2": "ARKMUSDT",
       "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "WBETHUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "WLDUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SEIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CYBERUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -455,8 +1373,26 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "IQUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "NTRNUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TIAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "MEMEUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -474,13 +1410,31 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "PIVXUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "JTOUSDT",
+      "coin2": "VICUSDT",
       "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BLURUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "VANRYUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AEURUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -491,31 +1445,85 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "MANTAUSDT",
-      "correlation": -1.0,
-      "abs_correlation": 1.0
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ALTUSDT",
+      "coin2": "BONKUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "JUPUSDT",
+      "coin2": "ACEUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "NFPUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "XAIUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "MANTAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ALTUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PYTHUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RONINUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "DYMUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PIXELUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "STRKUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "PORTALUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AXLUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
@@ -527,37 +1535,115 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "METISUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AEVOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BOMEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "ETHFIUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "WUSDT",
+      "coin2": "ENAUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "TNSRUSDT",
+      "coin2": "WUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "TNSRUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SAGAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TAOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "REZUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BBUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "NOTUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ZKUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "LISTAUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "ZROUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "GUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BANANAUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "RENDERUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TONUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -569,8 +1655,26 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "TURBOUSDT",
+      "coin2": "EURIUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "POLUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "NEIROUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TURBOUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -582,19 +1686,61 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "HMSTRUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "EIGENUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BNSOLUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LUMIAUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "KAIAUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "COWUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "CETUSUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PNUTUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "ACTUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "USUALUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -606,7 +1752,7 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "ACXUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -617,7 +1763,19 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "MOVEUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "MEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "VELODROMEUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -641,20 +1799,62 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "BIOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AIXBTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "CGPTUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ANIMEUSDT",
+      "coin2": "COOKIEUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "BERAUSDT",
+      "coin2": "SUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SOLVUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ANIMEUSDT",
       "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BERAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "1000CHEEMSUSDT",
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -665,8 +1865,14 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "HEIUSDT",
+      "coin2": "LAYERUSDT",
       "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HEIUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -677,8 +1883,14 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "SHELLUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "REDUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -689,19 +1901,43 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "NILUSDT",
-      "correlation": -1.0,
-      "abs_correlation": 1.0
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "PARTIUSDT",
+      "coin2": "EPICUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "BMTUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "FORMUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "NILUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "PARTIUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "MUBARAKUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TUTUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -713,19 +1949,67 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "BANANAS31USDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "GUNUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BABYUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ONDOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BIGTIMEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "VIRTUALUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "KERNELUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "WCTUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "INITUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SIGNUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "STOUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
@@ -737,44 +2021,68 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "NXPCUSDT",
+      "coin2": "SXTUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "NXPCUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "AWEUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HAEDALUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "HUMAUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "AUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SOPHUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "RESOLVUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "HOMEUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SPKUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "NEWTUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -785,20 +2093,32 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "LAUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ERAUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "CUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "TREEUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "A2ZUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
@@ -816,25 +2136,49 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "PLUMEUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "DOLOUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "MITOUSDT",
       "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "WLFIUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SOMIUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "OPENUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "LINEAUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "HOLOUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -845,56 +2189,92 @@
     },
     {
       "coin1": "BTCUSDT",
+      "coin2": "AVNTUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
       "coin2": "ZKCUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SKYUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "BARDUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "0GUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "HEMIUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "XPLUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "MIRAUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "FFUSDT",
-      "correlation": 1.0,
+      "coin2": "EDENUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "NOMUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "2ZUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "ASTERUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "WALUSDT",
       "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "EULUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ENSOUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -906,25 +2286,49 @@
     {
       "coin1": "BTCUSDT",
       "coin2": "ZBTUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "TURTLEUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "GIGGLEUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "FUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "KITEUSDT",
-      "correlation": -1.0,
+      "correlation": 1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "MMTUSDT",
-      "correlation": 1.0,
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "SAPIENUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
+    },
+    {
+      "coin1": "BTCUSDT",
+      "coin2": "ALLOUSDT",
+      "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
@@ -941,651 +2345,135 @@
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ATUSDT",
+      "coin2": "BREVUSDT",
       "correlation": -1.0,
       "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "HYPERUSDT",
-      "correlation": 0.9984603541185527,
-      "abs_correlation": 0.9984603541185527
+      "coin2": "币安人生USDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "SCUSDT",
-      "correlation": 0.9969207082371054,
-      "abs_correlation": 0.9969207082371054
+      "coin2": "ZKPUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "BELUSDT",
-      "correlation": 0.9911470361816783,
-      "abs_correlation": 0.9911470361816783
+      "coin2": "FRAXUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "FILUSDT",
-      "correlation": 0.9888375673595073,
-      "abs_correlation": 0.9888375673595073
+      "coin2": "FOGOUSDT",
+      "correlation": -1.0,
+      "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "INITUSDT",
-      "correlation": -0.9880677444187838,
-      "abs_correlation": 0.9880677444187838
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "CELOUSDT",
-      "correlation": 0.9869130100076983,
-      "abs_correlation": 0.9869130100076983
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SYRUPUSDT",
-      "correlation": 0.981139337952271,
-      "abs_correlation": 0.981139337952271
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "COWUSDT",
-      "correlation": 0.9738260200153964,
-      "abs_correlation": 0.9738260200153964
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SOLVUSDT",
-      "correlation": -0.9707467282525019,
-      "abs_correlation": 0.9707467282525019
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WBTCUSDT",
-      "correlation": 0.9695919938414166,
-      "abs_correlation": 0.9695919938414166
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "EDENUSDT",
-      "correlation": 0.9638183217859893,
-      "abs_correlation": 0.9638183217859893
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "XVSUSDT",
-      "correlation": 0.9515011547344111,
-      "abs_correlation": 0.9515011547344111
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "AAVEUSDT",
-      "correlation": 0.9426481909160893,
-      "abs_correlation": 0.9426481909160893
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ERAUSDT",
-      "correlation": -0.939183987682833,
-      "abs_correlation": 0.939183987682833
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ANKRUSDT",
-      "correlation": 0.9387990762124712,
-      "abs_correlation": 0.9387990762124712
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "CHZUSDT",
-      "correlation": 0.9380292532717475,
-      "abs_correlation": 0.9380292532717475
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "AIXBTUSDT",
-      "correlation": -0.9364896073903002,
-      "abs_correlation": 0.9364896073903002
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "FARMUSDT",
-      "correlation": 0.9337952270977676,
-      "abs_correlation": 0.9337952270977676
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "MOVEUSDT",
-      "correlation": 0.9326404926866821,
-      "abs_correlation": 0.9326404926866821
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "PHBUSDT",
-      "correlation": 0.9257120862201693,
-      "abs_correlation": 0.9257120862201693
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SKLUSDT",
-      "correlation": 0.9207082371054658,
-      "abs_correlation": 0.9207082371054658
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "RENDERUSDT",
-      "correlation": 0.9153194765204004,
-      "abs_correlation": 0.9153194765204004
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "HBARUSDT",
-      "correlation": 0.8999230177059278,
-      "abs_correlation": 0.8999230177059278
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "STRAXUSDT",
-      "correlation": 0.897228637413395,
-      "abs_correlation": 0.897228637413395
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "MASKUSDT",
-      "correlation": 0.8910700538876059,
-      "abs_correlation": 0.8910700538876059
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "XNOUSDT",
-      "correlation": 0.8872209391839878,
-      "abs_correlation": 0.8872209391839878
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SSVUSDT",
-      "correlation": 0.8652809853733643,
-      "abs_correlation": 0.8652809853733643
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "LPTUSDT",
-      "correlation": 0.8648960739030023,
-      "abs_correlation": 0.8648960739030023
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "COOKIEUSDT",
-      "correlation": 0.8606620477290224,
-      "abs_correlation": 0.8606620477290224
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "HOTUSDT",
-      "correlation": 0.857197844495766,
-      "abs_correlation": 0.857197844495766
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "CTKUSDT",
-      "correlation": 0.8548883756735951,
-      "abs_correlation": 0.8548883756735951
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "LSKUSDT",
-      "correlation": -0.8514241724403389,
-      "abs_correlation": 0.8514241724403389
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "AUDIOUSDT",
-      "correlation": 0.8471901462663588,
-      "abs_correlation": 0.8471901462663588
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ONDOUSDT",
-      "correlation": 0.8367975365665897,
-      "abs_correlation": 0.8367975365665897
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "MAGICUSDT",
-      "correlation": 0.8321785989222479,
-      "abs_correlation": 0.8321785989222479
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "REIUSDT",
-      "correlation": 0.8302540415704388,
-      "abs_correlation": 0.8302540415704388
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "HEMIUSDT",
-      "correlation": -0.8248652809853734,
-      "abs_correlation": 0.8248652809853734
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WAXPUSDT",
-      "correlation": 0.8229407236335643,
-      "abs_correlation": 0.8229407236335643
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WLDUSDT",
-      "correlation": 0.8160123171670517,
-      "abs_correlation": 0.8160123171670517
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "GUNUSDT",
-      "correlation": -0.8121632024634334,
-      "abs_correlation": 0.8121632024634334
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "COTIUSDT",
-      "correlation": -0.8117782909930716,
-      "abs_correlation": 0.8117782909930716
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "TFUELUSDT",
-      "correlation": 0.8102386451116244,
-      "abs_correlation": 0.8102386451116244
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "VANRYUSDT",
-      "correlation": -0.8102386451116244,
-      "abs_correlation": 0.8102386451116244
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SOLUSDT",
-      "correlation": 0.8086989992301771,
-      "abs_correlation": 0.8086989992301771
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "OMUSDT",
-      "correlation": 0.8052347959969208,
-      "abs_correlation": 0.8052347959969208
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "WOOUSDT",
-      "correlation": 0.8052347959969208,
-      "abs_correlation": 0.8052347959969208
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "GLMRUSDT",
-      "correlation": 0.8017705927636645,
-      "abs_correlation": 0.8017705927636645
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SAPIENUSDT",
-      "correlation": 0.7882986913010008,
-      "abs_correlation": 0.7882986913010008
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "BNSOLUSDT",
-      "correlation": 0.787913779830639,
-      "abs_correlation": 0.787913779830639
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "LDOUSDT",
-      "correlation": -0.7871439568899153,
-      "abs_correlation": 0.7871439568899153
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "TUTUSDT",
-      "correlation": 0.7721324095458044,
-      "abs_correlation": 0.7721324095458044
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "LINKUSDT",
-      "correlation": 0.76905311778291,
-      "abs_correlation": 0.76905311778291
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "LAZIOUSDT",
-      "correlation": 0.7621247113163973,
-      "abs_correlation": 0.7621247113163973
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "JSTUSDT",
-      "correlation": 0.7590454195535027,
-      "abs_correlation": 0.7590454195535027
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "FIOUSDT",
-      "correlation": 0.7578906851424173,
-      "abs_correlation": 0.7578906851424173
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ZENUSDT",
-      "correlation": 0.7567359507313318,
-      "abs_correlation": 0.7567359507313318
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "STEEMUSDT",
-      "correlation": 0.7559661277906082,
-      "abs_correlation": 0.7559661277906082
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "IOTAUSDT",
-      "correlation": 0.7532717474980755,
-      "abs_correlation": 0.7532717474980755
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "OPUSDT",
-      "correlation": 0.7532717474980755,
-      "abs_correlation": 0.7532717474980755
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "RLCUSDT",
-      "correlation": 0.7490377213240955,
-      "abs_correlation": 0.7490377213240955
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ATOMUSDT",
-      "correlation": 0.7424942263279446,
-      "abs_correlation": 0.7424942263279446
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "BCHUSDT",
-      "correlation": 0.7390300230946882,
-      "abs_correlation": 0.7390300230946882
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "EULUSDT",
-      "correlation": 0.7378752886836029,
-      "abs_correlation": 0.7378752886836029
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "GNOUSDT",
-      "correlation": -0.733256351039261,
-      "abs_correlation": 0.733256351039261
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "COMPUSDT",
-      "correlation": -0.7309468822170901,
-      "abs_correlation": 0.7309468822170901
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "DFUSDT",
-      "correlation": -0.7278675904541956,
-      "abs_correlation": 0.7278675904541956
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ETCUSDT",
-      "correlation": 0.7217090069284064,
-      "abs_correlation": 0.7217090069284064
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ACMUSDT",
-      "correlation": -0.7155504234026174,
-      "abs_correlation": 0.7155504234026174
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "STXUSDT",
-      "correlation": 0.7151655119322556,
-      "abs_correlation": 0.7151655119322556
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ALGOUSDT",
-      "correlation": 0.714395688991532,
-      "abs_correlation": 0.714395688991532
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "FLUXUSDT",
-      "correlation": 0.6997690531177829,
-      "abs_correlation": 0.6997690531177829
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "GNSUSDT",
-      "correlation": 0.6966897613548885,
-      "abs_correlation": 0.6966897613548885
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "HAEDALUSDT",
-      "correlation": 0.6886066204772903,
-      "abs_correlation": 0.6886066204772903
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "BBUSDT",
-      "correlation": -0.6874518860662048,
-      "abs_correlation": 0.6874518860662048
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ASTRUSDT",
-      "correlation": 0.6797536566589685,
-      "abs_correlation": 0.6797536566589685
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SFPUSDT",
-      "correlation": 0.6782140107775212,
-      "abs_correlation": 0.6782140107775212
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "HOOKUSDT",
-      "correlation": 0.6701308698999231,
-      "abs_correlation": 0.6701308698999231
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "SPELLUSDT",
-      "correlation": 0.6555042340261741,
-      "abs_correlation": 0.6555042340261741
+      "coin2": "SENTUSDT",
+      "correlation": 1.0,
+      "abs_correlation": 1.0
     },
     {
       "coin1": "BTCUSDT",
       "coin2": "SLPUSDT",
-      "correlation": 0.6539645881447268,
-      "abs_correlation": 0.6539645881447268
+      "correlation": 0.9174757281553398,
+      "abs_correlation": 0.9174757281553398
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "MANAUSDT",
-      "correlation": 0.6485758275596614,
-      "abs_correlation": 0.6485758275596614
+      "coin2": "LUNCUSDT",
+      "correlation": 0.8883495145631068,
+      "abs_correlation": 0.8883495145631068
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "TRUUSDT",
-      "correlation": -0.6470361816782141,
-      "abs_correlation": 0.6470361816782141
+      "coin2": "ICXUSDT",
+      "correlation": -0.883495145631068,
+      "abs_correlation": 0.883495145631068
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ICPUSDT",
-      "correlation": 0.6447267128560432,
-      "abs_correlation": 0.6447267128560432
+      "coin2": "KGSTUSDT",
+      "correlation": -0.8543689320388349,
+      "abs_correlation": 0.8543689320388349
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "SCRTUSDT",
-      "correlation": -0.6435719784449576,
-      "abs_correlation": 0.6435719784449576
+      "coin2": "CATIUSDT",
+      "correlation": 0.8155339805825244,
+      "abs_correlation": 0.8155339805825244
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "AVAUSDT",
-      "correlation": 0.6416474210931487,
-      "abs_correlation": 0.6416474210931487
+      "coin2": "HYPERUSDT",
+      "correlation": 0.8106796116504855,
+      "abs_correlation": 0.8106796116504855
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ZRXUSDT",
-      "correlation": 0.6393379522709777,
-      "abs_correlation": 0.6393379522709777
+      "coin2": "MASKUSDT",
+      "correlation": 0.7815533980582525,
+      "abs_correlation": 0.7815533980582525
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ACHUSDT",
-      "correlation": -0.6393379522709777,
-      "abs_correlation": 0.6393379522709777
+      "coin2": "SXPUSDT",
+      "correlation": 0.7766990291262137,
+      "abs_correlation": 0.7766990291262137
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "AVNTUSDT",
-      "correlation": -0.6389530408006159,
-      "abs_correlation": 0.6389530408006159
+      "coin2": "UTKUSDT",
+      "correlation": 0.7718446601941749,
+      "abs_correlation": 0.7718446601941749
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "KAVAUSDT",
-      "correlation": 0.6054657428791378,
-      "abs_correlation": 0.6054657428791378
+      "coin2": "JUPUSDT",
+      "correlation": -0.7378640776699029,
+      "abs_correlation": 0.7378640776699029
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "JUVUSDT",
-      "correlation": -0.5996920708237106,
-      "abs_correlation": 0.5996920708237106
+      "coin2": "BCHUSDT",
+      "correlation": 0.7330097087378641,
+      "abs_correlation": 0.7330097087378641
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "ZILUSDT",
-      "correlation": 0.598922247882987,
-      "abs_correlation": 0.598922247882987
+      "coin2": "ZENUSDT",
+      "correlation": 0.7184466019417476,
+      "abs_correlation": 0.7184466019417476
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "FXSUSDT",
-      "correlation": 0.5958429561200924,
-      "abs_correlation": 0.5958429561200924
+      "coin2": "IOSTUSDT",
+      "correlation": 0.6262135922330098,
+      "abs_correlation": 0.6262135922330098
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "HIVEUSDT",
-      "correlation": 0.5796766743648961,
-      "abs_correlation": 0.5796766743648961
+      "coin2": "LUNAUSDT",
+      "correlation": 0.6067961165048544,
+      "abs_correlation": 0.6067961165048544
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "IOUSDT",
-      "correlation": -0.5773672055427252,
-      "abs_correlation": 0.5773672055427252
+      "coin2": "ATUSDT",
+      "correlation": 0.587378640776699,
+      "abs_correlation": 0.587378640776699
     },
     {
       "coin1": "BTCUSDT",
-      "coin2": "AUSDT",
-      "correlation": 0.5765973826020016,
-      "abs_correlation": 0.5765973826020016
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "STOUSDT",
-      "correlation": -0.5723633564280216,
-      "abs_correlation": 0.5723633564280216
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "IOTXUSDT",
-      "correlation": -0.5708237105465743,
-      "abs_correlation": 0.5708237105465743
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "ARBUSDT",
-      "correlation": 0.5623556581986143,
-      "abs_correlation": 0.5623556581986143
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "IQUSDT",
-      "correlation": 0.5592763664357199,
-      "abs_correlation": 0.5592763664357199
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "DOGEUSDT",
-      "correlation": 0.5585065434949962,
-      "abs_correlation": 0.5585065434949962
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "TONUSDT",
-      "correlation": 0.5454195535026944,
-      "abs_correlation": 0.5454195535026944
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "BOMEUSDT",
-      "correlation": 0.5369515011547344,
-      "abs_correlation": 0.5369515011547344
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "BIOUSDT",
-      "correlation": -0.5334872979214781,
-      "abs_correlation": 0.5334872979214781
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "PIXELUSDT",
-      "correlation": 0.5261739799846036,
-      "abs_correlation": 0.5261739799846036
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "XVGUSDT",
-      "correlation": -0.5211701308698999,
-      "abs_correlation": 0.5211701308698999
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "BANANAS31USDT",
-      "correlation": -0.5153964588144727,
-      "abs_correlation": 0.5153964588144727
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "OPENUSDT",
-      "correlation": 0.5150115473441109,
-      "abs_correlation": 0.5150115473441109
-    },
-    {
-      "coin1": "BTCUSDT",
-      "coin2": "POLYXUSDT",
-      "correlation": 0.5057736720554273,
-      "abs_correlation": 0.5057736720554273
+      "coin2": "IDEXUSDT",
+      "correlation": 0.5097087378640777,
+      "abs_correlation": 0.5097087378640777
     }
   ]
 }
